@@ -97,10 +97,10 @@ if(!empty($post)){
      <div class="title_area">
       <p class="date">' . esc_html( $date ) . '</p>
       <div class="title">
-       <a href="' . esc_url( $atts['url'] ) . '">' . esc_html( $title ) . '</a>
+       <a href="' . esc_url( $atts['url'] ) . '">' . wp_strip_all_tags( $title ) . '</a>
       </div>
      </div>
-     <p class="desc"><span>' . esc_html( $excerpt ) . '</span></p>
+     <p class="desc"><span>' . wp_strip_all_tags( $excerpt ) . '</span></p>
     </div>
    </div>' . "\n";
 
@@ -155,10 +155,10 @@ if(!empty($graph)){
     <div class="content">
      <div class="title_area">
       <div class="title">
-       <a href="' . esc_url( $atts['url'] ) . '">' . esc_html( $title ) . '</a>
+       <a href="' . esc_url( $atts['url'] ) . '">' . wp_strip_all_tags( $title ) . '</a>
       </div>
      </div>
-     <p class="desc"><span>' . esc_html( $excerpt ) . '</span></p>
+     <p class="desc"><span>' . wp_strip_all_tags( $excerpt ) . '</span></p>
     </div>
    </div>' . "\n";
 

@@ -12,16 +12,16 @@
 body { font-size:<?php echo esc_html($options['content_font_size']); ?>px; }
 .single_title { font-size:<?php echo esc_html($options['single_title_font_size']); ?>px; }
 #page_header .catch, #page_header_small .catch { font-size:<?php echo esc_html($options['page_header_font_size']); ?>px; }
-.common_catch, .cb_free_space .post_content h2:not(.styled_h2) { font-size:<?php echo esc_html($options['catch_font_size']); ?>px !important; }
+.common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2) { font-size:<?php echo esc_html($options['catch_font_size']); ?>px !important; }
 @media screen and (max-width:1221px) {
-  .common_catch,  .cb_free_space .post_content h2:not(.styled_h2) { font-size:<?php echo esc_html(floor( (( int )$options['catch_font_size'] + ( int )$options['catch_font_size_sp']) / 2)); ?>px  !important; }
+  .common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2) { font-size:<?php echo esc_html(floor( (( int )$options['catch_font_size'] + ( int )$options['catch_font_size_sp']) / 2)); ?>px  !important; }
   #page_header .catch, #page_header_small .catch { font-size:<?php echo esc_html(floor( (( int )$options['page_header_font_size'] + ( int )$options['page_header_font_size_sp']) / 2 ) ); ?>px; }
 }
 @media screen and (max-width:800px) {
   body { font-size:<?php echo esc_html($options['content_font_size_sp']); ?>px; }
   #page_header .catch, #page_header_small .catch { font-size:<?php echo esc_html($options['page_header_font_size_sp']); ?>px; }
   .single_title { font-size:<?php echo esc_html($options['single_title_font_size_sp']); ?>px; }
-  .common_catch,  .cb_free_space .post_content h2:not(.styled_h2) { font-size:<?php echo esc_html($options['catch_font_size_sp']); ?>px !important; }
+  .common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2) { font-size:<?php echo esc_html($options['catch_font_size_sp']); ?>px !important; }
 }
 <?php
      // 基本のフォントタイプ
@@ -49,11 +49,11 @@ body, input, textarea { font-family: "Times New Roman" , "游明朝" , "Yu Minch
      // 見出しのフォントタイプ
      if($options['catch_font_type'] == 'type1') {
 ?>
-.common_catch,  .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif; font-weight:600; }
+.common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif; font-weight:600; }
 <?php } elseif($options['catch_font_type'] == 'type2') { ?>
-.common_catch,  .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: Arial, "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif; font-weight:600; }
+.common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: Arial, "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif; font-weight:600; }
 <?php } else { ?>
-.common_catch,  .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif; font-weight:600; }
+.common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif; font-weight:600; }
 <?php }; ?>
 
 <?php

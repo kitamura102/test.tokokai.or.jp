@@ -158,7 +158,6 @@ jQuery(document).ready(function($){
 
 
   // inner link ---------------------------------
-  $(window).on('load', function() {
     $('a[href*=#], area[href*=#]').not("a.no_auto_scroll").click(function() {
 
       var speed = 1000,
@@ -187,7 +186,6 @@ jQuery(document).ready(function($){
       }
 
     });
-  });
 
 
   //front page scroll button
@@ -371,54 +369,6 @@ jQuery(document).ready(function($){
       $(this).addClass('active');
     }
   });
-
-
-  // quick tag - underline ------------------------------------------
-  if ($('.q_underline').length) {
-    var gradient_prefix = null;
-
-    $('.q_underline').each(function(){
-      var bbc = $(this).css('borderBottomColor');
-      if (jQuery.inArray(bbc, ['transparent', 'rgba(0, 0, 0, 0)']) == -1) {
-        if (gradient_prefix === null) {
-          gradient_prefix = '';
-          var ua = navigator.userAgent.toLowerCase();
-          if (/webkit/.test(ua)) {
-            gradient_prefix = '-webkit-';
-          } else if (/firefox/.test(ua)) {
-            gradient_prefix = '-moz-';
-          } else {
-            gradient_prefix = '';
-          }
-        }
-        $(this).css('borderBottomColor', 'transparent');
-        if (gradient_prefix) {
-          $(this).css('backgroundImage', gradient_prefix+'linear-gradient(left, transparent 50%, '+bbc+ ' 50%)');
-        } else {
-          $(this).css('backgroundImage', 'linear-gradient(to right, transparent 50%, '+bbc+ ' 50%)');
-        }
-      }
-    });
-
-    $window.on('scroll.q_underline', function(){
-      $('.q_underline:not(.is-active)').each(function(){
-        if ($body.hasClass('show-serumtal')) {
-          var left = $(this).offset().left;
-          if (window.scrollX > left - window.innerHeight) {
-            $(this).addClass('is-active');
-          }
-        } else {
-          var top = $(this).offset().top;
-          if (window.scrollY > top - window.innerHeight) {
-            $(this).addClass('is-active');
-          }
-        }
-      });
-      if (!$('.q_underline:not(.is-active)').length) {
-        $window.off('scroll.q_underline');
-      }
-    });
-  }
 
 
   //return top button

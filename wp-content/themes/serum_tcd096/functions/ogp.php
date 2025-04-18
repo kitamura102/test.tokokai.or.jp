@@ -30,7 +30,7 @@ function og_image( $n ) {
 function twitter_image() {
 	global $post;
 	$options = get_design_plus_option();
-	if ( is_single() && has_post_thumbnail()) {
+	if ( is_single() && has_post_thumbnail() || is_page() && has_post_thumbnail()) {
 		$post_thumbnail_id = get_post_thumbnail_id($post->ID);
 		$image = wp_get_attachment_image_src( $post_thumbnail_id, 'size1');
 		list($src, $width, $height) = $image;

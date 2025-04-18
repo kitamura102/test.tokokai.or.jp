@@ -1,7 +1,7 @@
 <?php
 
 // 言語ファイル --------------------------------------------------------------------------------
-load_textdomain('tcd-serum', dirname(__FILE__).'/languages/' . get_locale() . '.mo');
+load_textdomain('tcd-serum', dirname(__FILE__).'/languages/' . determine_locale() . '.mo');
 
 
 // テーマの説明文
@@ -115,14 +115,6 @@ function my_admin_styles() {
   wp_enqueue_style('lightcase_style', get_template_directory_uri() . '/admin/js/lightcase/lightcase.css','','1.0.2');
 }
 add_action('admin_print_styles', 'my_admin_styles');
-
-
-// ビジュアルエディタ用スタイルシートの読み込み
-function wpdocs_theme_add_editor_styles() {
-  add_theme_support('editor-styles');
-  add_editor_style( get_template_directory_uri()."/admin/css/editor-style-07.css?d=".date('YmdGis', filemtime(get_template_directory().'/admin/css/editor-style-07.css')) );
-}
-add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
 
 
 // ウィジェット ------------------------------------------------------------------------
@@ -303,78 +295,6 @@ require_once ( dirname(__FILE__) . '/functions/password_form.php' );
 
 // 高速化 --------------------------------------------------------------------------------
 require ( dirname(__FILE__) . '/functions/acceleration.php' );
-
-
-// ビジュアルエディタに表(テーブル)の機能を追加 -----------------------------------------------
-function mce_external_plugins_table($plugins) {
-    $plugins['table'] = 'https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.7.4/plugins/table/plugin.min.js';
-    return $plugins;
-}
-add_filter( 'mce_external_plugins', 'mce_external_plugins_table' );
-
-// tinymceのtableボタンにclass属性プルダウンメニューを追加
-function mce_buttons_table($buttons) {
-    $buttons[] = 'table';
-    return $buttons;
-}
-add_filter( 'mce_buttons', 'mce_buttons_table' );
-
-function bootstrap_classes_tinymce($settings) {
-  $styles = array(
-    array('title' => __('Default style', 'tcd-serum'), 'value' => ''),
-    array('title' => __('No border', 'tcd-serum'), 'value' => 'table_no_border'),
-    array('title' => __('Display only serumtal border', 'tcd-serum'), 'value' => 'table_border_serumtal')
-  );
-  $settings['table_class_list'] = json_encode($styles);
-  return $settings;
-}
-add_filter('tiny_mce_before_init', 'bootstrap_classes_tinymce');
-
-
-// ビジュアルエディタに書体を追加 ---------------------------------------------------------------------
-add_filter('mce_buttons', function($buttons){
-  array_unshift($buttons, 'fontselect');
-  return $buttons;
-});
-add_filter('tiny_mce_before_init', function($settings){
-  $settings['font_formats'] =
-    "メイリオ=Arial, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;" .
-    "游ゴシック='Hiragino Sans', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', '游ゴシック', YuGothic, 'メイリオ', Meiryo, sans-serif;" .
-    "游明朝='Times New Roman' , '游明朝' , 'Yu Mincho' , '游明朝体' , 'YuMincho' , 'ヒラギノ明朝 Pro W3' , 'Hiragino Mincho Pro' , 'HiraMinProN-W3' , 'HGS明朝E' , 'ＭＳ Ｐ明朝' , 'MS PMincho' , serif;" .
-    "Andale Mono=andale mono,times;" .
-    "Arial=arial,helvetica,sans-serif;" .
-    "Arial Black=arial black,avant garde;" .
-    "Book Antiqua=book antiqua,palatino;" .
-    "Comic Sans MS=comic sans ms,sans-serif;" .
-    "Courier New=courier new,courier;" .
-    "Georgia=georgia,palatino;" .
-    "Helvetica=helvetica;" .
-    "Impact=impact,chicago;" .
-    "Symbol=symbol;" .
-    "Tahoma=tahoma,arial,helvetica,sans-serif;" .
-    "Terminal=terminal,monaco;" .
-    "Times New Roman=times new roman,times;" .
-    "Trebuchet MS=trebuchet ms,geneva;" .
-    "Verdana=verdana,geneva;" .
-    "Webdings=webdings;" .
-    "Wingdings=wingdings,zapf dingbats";
-  ;
-  return $settings;
-});
-
-
-// ビジュアルエディタに文字サイズを追加 ---------------------------------------------------------------------
-function add_font_size_to_tinymce( $buttons ) {
-  array_unshift( $buttons, 'fontsizeselect' ); 
-  return $buttons;
-}
-add_filter( 'mce_buttons_2', 'add_font_size_to_tinymce' );
-
-function change_font_size_of_tinymce( $initArray ){
-  $initArray['fontsize_formats'] = "10px 11px 12px 14px 16px 18px 20px 24px 28px 32px 38px";
-  return $initArray;
-}
-add_filter( 'tiny_mce_before_init', 'change_font_size_of_tinymce' );
 
 
 // ユーザーエージェントを判定するための関数---------------------------------------------------------------------
@@ -1207,14 +1127,18 @@ function sepLine($text) {
   return $text;
 }
 
-
-// table スクロール対応 ------------------------------------------------------------------------
-add_filter('the_content', function( $content ){
-  if( !has_blocks() ){
-    $content = str_replace( '<table', '<div class="s_table"><table', $content );
-    $content = str_replace( '</table>', '</table></div>', $content );
+/**
+ * 管理画面 サイトヘルスのWP情報にユーザーエージェント追加
+ *
+ * NOTE: カスタマーサポート対策
+ */
+add_filter( 'debug_information', 'tcd_add_debug_information' );
+function tcd_add_debug_information( $info ) {
+  if( isset( $info['wp-core']['fields'] ) ){
+    $info['wp-core']['fields']['user_agent'] = [
+      'label' => 'User Agent',
+      'value' => $_SERVER['HTTP_USER_AGENT'] ?? 'UA could not be retrieved',
+    ];
   }
-  return $content;
-} );
-
-?>
+  return $info;
+}

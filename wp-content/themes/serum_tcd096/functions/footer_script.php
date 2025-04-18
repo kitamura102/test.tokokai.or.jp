@@ -134,7 +134,10 @@ function after_load() {
        };
   ?>
 
-  <?php if(!is_front_page()) { ?>
+  <?php if(!is_front_page() || (is_front_page() && count($options['index_slider'])<1)) { ?>
+  <?php if(is_front_page()){ ?>
+  $('#header_logo, #news_ticker, #site_desc, #drawer_menu_button').addClass('animate');
+  <?php } ?>
   <?php  if($options['header_logo_type'] == 'type2' && empty($options['header_logo_image'])){ ?>
   $('#header_logo2').addClass('animate');
   <?php } else { ?>
@@ -327,7 +330,10 @@ if( jQuery('#footer_image_carousel').length ){
 
 jQuery(document).ready(function($){
 
-  <?php if(!is_front_page()) { ?>
+  <?php if(!is_front_page() || (is_front_page() && count($options['index_slider'])<1)) { ?>
+  <?php if(is_front_page()){ ?>
+  $('#header_logo, #news_ticker, #site_desc, #drawer_menu_button').addClass('animate');
+  <?php } ?>
   <?php  if($options['header_logo_type'] == 'type2' && empty($options['header_logo_image'])){ ?>
   $('#header_logo2').addClass('animate');
   <?php } else { ?>

@@ -203,29 +203,29 @@ body.admin-bar #drawer_menu { padding-top:32px; }
 
 
 /* 2カラムコンテンツ */
-.two_column_content .header { width:auto; margin:0 100px 70px; }
+:is(.two_column_content, .tcdce-body .two_column_content) .header { width:auto; margin:0 100px 70px; }
 @media only screen and (max-width: 1000px) {
-	.two_column_content { margin:100px 0; padding:95px 0 100px; }
-	.design_content + .two_column_content.no_bg_color { margin-bottom:90px; margin-top:97px; }
-  .two_column_content .header { margin:0 0 70px; }
+	:is(.two_column_content, .tcdce-body .two_column_content) { margin:100px 0; padding:95px 0 100px; }
+	.design_content + :is(.two_column_content, .tcdce-body .two_column_content).no_bg_color { margin-bottom:90px; margin-top:97px; }
+  :is(.two_column_content, .tcdce-body .two_column_content) .header { margin:0 0 70px; }
 }
 @media only screen and (max-width: 800px) {
-	.two_column_content { padding:40px 0 35px; margin:40px 0 40px; }
-	.design_content + .two_column_content.no_bg_color { margin-bottom:-5px; padding-bottom:1px; margin-top:35px; }
-  .two_column_content .header { margin:-5px 0 35px; }
-	.two_column_content .common_catch:only-child { margin-bottom:35px; }
-	.two_column_content .desc.mobile { display:block; }
-	.two_column_content .desc.pc { display:none; }
-	.two_column_content p { line-height:2; }
-  .two_column_content .post_list { display:block; }
-  .two_column_content .post_list > .item { width:auto; margin:0 0 35px 0; }
-  .two_column_content .post_list > .item:nth-last-of-type(2) { margin-bottom:35px; }
-	.two_column_content .post_list > .item:last-of-type { margin-bottom:0px; }
-	.two_column_content .post_list > .item .image { margin-bottom:15px; width:100%; height:auto; aspect-ratio:320/150; position:relative; overflow:hidden; }
-	.two_column_content .post_list > .item .image img { width:100%; height:100%; position:absolute; top:0; left:0; object-fit:cover; }
-  .two_column_content .post_list > .item .desc { font-size:14px; }
-	.two_column_content .post_list > .item .image_wrap { margin-bottom:15px; width:100%; height:auto; aspect-ratio:320/150; }
-	.two_column_content .post_list > .item .image_wrap .image { margin-bottom:0px !important; width:100%; height:100%; aspect-ratio:1; object-fit:cover; }
+	:is(.two_column_content, .tcdce-body .two_column_content) { padding:40px 0 35px; margin:40px 0 40px; }
+	.design_content + :is(.two_column_content, .tcdce-body .two_column_content).no_bg_color { margin-bottom:-5px; padding-bottom:1px; margin-top:35px; }
+  :is(.two_column_content, .tcdce-body .two_column_content) .header { margin:-5px 0 35px; }
+	:is(.two_column_content, .tcdce-body .two_column_content) .common_catch:only-child { margin-bottom:35px; }
+	:is(.two_column_content, .tcdce-body .two_column_content) .desc.mobile { display:block; }
+	:is(.two_column_content, .tcdce-body .two_column_content) .desc.pc { display:none; }
+	:is(.two_column_content, .tcdce-body .two_column_content) p { line-height:2; }
+  :is(.two_column_content, .tcdce-body .two_column_content) .post_list { display:block; }
+  :is(.two_column_content, .tcdce-body .two_column_content) .post_list > .item { width:auto; margin:0 0 35px 0; }
+  :is(.two_column_content, .tcdce-body .two_column_content) .post_list > .item:nth-last-of-type(2) { margin-bottom:35px; }
+	:is(.two_column_content, .tcdce-body .two_column_content) .post_list > .item:last-of-type { margin-bottom:0px; }
+	:is(.two_column_content, .tcdce-body .two_column_content) .post_list > .item .image { margin-bottom:15px; width:100%; height:auto; aspect-ratio:320/150; position:relative; overflow:hidden; }
+	:is(.two_column_content, .tcdce-body .two_column_content) .post_list > .item .image img { width:100%; height:100%; position:absolute; top:0; left:0; object-fit:cover; }
+  :is(.two_column_content, .tcdce-body .two_column_content) .post_list > .item .desc { font-size:14px; }
+	:is(.two_column_content, .tcdce-body .two_column_content) .post_list > .item .image_wrap { margin-bottom:15px; width:100%; height:auto; aspect-ratio:320/150; }
+	:is(.two_column_content, .tcdce-body .two_column_content) .post_list > .item .image_wrap .image { margin-bottom:0px !important; width:100%; height:100%; aspect-ratio:1; object-fit:cover; }
 }
 
 
@@ -247,7 +247,7 @@ body.hide_page_header_bar #page_contents .post_content { margin:0 130px; }
   body.home #page_contents { margin:0 60px; }
   body.page_width_large #page_contents .post_content { margin:0 60px; }
   body.hide_page_header_bar #page_contents .post_content { margin:0 60px; }
-	.color_bg_content { padding:95px 0 80px; margin-bottom:90px; }
+	:is(.color_bg_content, .tcdce-body .color_bg_content) { padding:95px 0 80px; margin-bottom:90px; }
 	.access_basic_info { margin-bottom:0px !important; }
 }
 @media only screen and (max-width: 800px) {
@@ -263,25 +263,25 @@ body.hide_page_header_bar #page_contents .post_content { margin:0 130px; }
 	#page_contents .design_content .catch { margin-bottom:15px; }
 	#page_contents .design_content + .link_button { margin-top:40px; }
 	#page_contents .design_content + .content_header { margin-top:-5px; }
-	.two_col_content { display:block; margin-bottom:40px; }
-	.two_col_content + .two_col_content { margin-top:-5px; }
-  .two_col_content > .item { width:auto; margin:0 0 40px 0; }
-	.two_col_content > .item:last-of-type { margin:0 !important; }
-	.two_col_content > .item p:last-child { margin-bottom:-7px !important; }
-	.two_col_content > .item .image_wrap + p:last-child { margin-bottom:0px; }
-	.two_col_content .item img { margin:0 auto; }
-	.two_col_content .item .image_wrap { margin-bottom:15px; width:100%; height:auto; aspect-ratio:320/150; position:relative; overflow:hidden; }
-	.two_col_content .item .image_wrap img { width:100%; height:100%; position:absolute; top:0; left:0; object-fit:cover; }
-	.two_col_content + .color_bg_content { margin-top:0px; }
-	.two_col_content .image_wrap + p { font-size:14px; }
-	.color_bg_content { padding:40px 0 40px; margin:40px 0 35px 0; }
-	.color_bg_content .common_catch { margin:0 0 30px 0; }
-	.color_bg_content .qt_google_map { height:250px; }
-  .color_bg_content .qt_google_map .qt_googlemap_embed { height:250px; }
+	:is(.two_col_content, .tcdce-body .two_col_content) { display:block; margin-bottom:40px; }
+	:is(.two_col_content, .tcdce-body .two_col_content) + :is(.two_col_content, .tcdce-body .two_col_content) { margin-top:-5px; }
+  :is(.two_col_content, .tcdce-body .two_col_content) > .item { width:auto; margin:0 0 40px 0; }
+	:is(.two_col_content, .tcdce-body .two_col_content) > .item:last-of-type { margin:0 !important; }
+	:is(.two_col_content, .tcdce-body .two_col_content) > .item p:last-child { margin-bottom:-7px !important; }
+	:is(.two_col_content, .tcdce-body .two_col_content) > .item .image_wrap + p:last-child { margin-bottom:0px; }
+	:is(.two_col_content, .tcdce-body .two_col_content) .item img { margin:0 auto; }
+	:is(.two_col_content, .tcdce-body .two_col_content) .item .image_wrap { margin-bottom:15px; width:100%; height:auto; aspect-ratio:320/150; position:relative; overflow:hidden; }
+	:is(.two_col_content, .tcdce-body .two_col_content) .item .image_wrap img { width:100%; height:100%; position:absolute; top:0; left:0; object-fit:cover; }
+	:is(.two_col_content, .tcdce-body .two_col_content) + :is(.color_bg_content, .tcdce-body .color_bg_content) { margin-top:0px; }
+	:is(.two_col_content, .tcdce-body .two_col_content) .image_wrap + p { font-size:14px; }
+	:is(.color_bg_content, .tcdce-body .color_bg_content) { padding:40px 0 40px; margin:40px 0 35px 0; }
+	:is(.color_bg_content, .tcdce-body .color_bg_content) .common_catch { margin:0 0 30px 0; }
+	:is(.color_bg_content, .tcdce-body .color_bg_content) .qt_google_map { height:250px; }
+  :is(.color_bg_content, .tcdce-body .color_bg_content) .qt_google_map .qt_googlemap_embed { height:250px; }
 	.content_header { margin-bottom:40px; }
 	.design_headline { margin-top:37px !important; margin-bottom:30px; }
 	.design_headline:first-of-type { margin-top:-2px !important; }
-	.two_col_content + .design_headline { margin-top:-10px !important; margin-bottom:25px !important; }
+	:is(.two_col_content, .tcdce-body .two_col_content) + .design_headline { margin-top:-10px !important; margin-bottom:25px !important; }
 	.faq + .design_headline { margin-top:38px !important; }
 }
 
@@ -377,14 +377,14 @@ body.hide_page_header_bar #page_contents .post_content { margin:0 130px; }
 
 /* 詳細ページ */
 @media only screen and (max-width: 1000px) {
-  .single_treatment_faq { padding:90px 0 100px; margin-bottom:90px; }
+  :is(.single_treatment_faq, .tcdce-body .single_treatment_faq) { padding:90px 0 100px; margin-bottom:90px; }
 }
 @media only screen and (max-width: 800px) {
 	.single_treatment_top { margin:-6px 0 30px 0 !important; }
 	.single_treatment_top .common_catch { margin-bottom:15px; }
-  .single_treatment_faq { padding:90px 0 100px; margin-bottom:90px; }
-  .single_treatment_faq { padding:35px 0 40px; margin-bottom:35px; }
-	.single_treatment_faq .common_catch { margin-bottom:28px; }
+  :is(.single_treatment_faq, .tcdce-body .single_treatment_faq) { padding:90px 0 100px; margin-bottom:90px; }
+  :is(.single_treatment_faq, .tcdce-body .single_treatment_faq) { padding:35px 0 40px; margin-bottom:35px; }
+	:is(.single_treatment_faq, .tcdce-body .single_treatment_faq) .common_catch { margin-bottom:28px; }
 	.single_treatment_price .desc { margin-bottom:33px; }
 	.price_list .item { display:block; padding:12px 20px; }
   .price_list .item .title { width:auto; }
@@ -1148,18 +1148,6 @@ body.show_footer_bar #return_top { bottom:65px; }
 /* ----------------------------------------------------------------------
  その他
 ---------------------------------------------------------------------- */
-/*  WordPress プリセットスタイル */
-@media screen and (max-width:800px) {
-  .post_content h1, .post_content h2, .post_content h3, .post_content h4, .post_content h5, .post_content h6 { }
-  .post_content p { line-height:2; }
-	body.page .post_content > p:first-child { margin-top:-5px; }
-  .post_content li, .post_content dt, .post_content dd { line-height:1.8; }
-  .post_content td, .post_content th { line-height:1.8; padding:14px 15px; }
-	.post_content .wp-caption-text { font-size:12px; }
-}
-
-
-
 
 
 /* serum モバイル用スタイルシート */

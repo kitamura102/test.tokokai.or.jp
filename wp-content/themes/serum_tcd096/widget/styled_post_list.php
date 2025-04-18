@@ -112,13 +112,13 @@ class styled_post_list1_widget extends WP_Widget {
 
   // Update Settings //
   function update($new_instance, $old_instance) {
-    $instance['title'] = strip_tags($new_instance['title']);
+    $instance['title'] = strip_tags($new_instance['title'] ?? '');
     $instance['post_num'] = $new_instance['post_num'];
     $instance['post_order'] = $new_instance['post_order'];
     $instance['post_type'] = $new_instance['post_type'];
-    $instance['category'] = $new_instance['category'];
-    $instance['news_category'] = $new_instance['news_category'];
-    $instance['treatment_category'] = $new_instance['treatment_category'];
+    $instance['category'] = $new_instance['category'] ?? '';
+    $instance['news_category'] = $new_instance['news_category'] ?? '';
+    $instance['treatment_category'] = $new_instance['treatment_category'] ?? '';
     return $instance;
   }
 

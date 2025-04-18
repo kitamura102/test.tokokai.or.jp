@@ -15,7 +15,6 @@
 <?php }; ?>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <?php wp_head(); ?>
-<link rel="shortcut icon" href="https://test.tokokai.or.jp/img/common/favicon.ico">	
 </head>
 <body id="body" <?php body_class(); ?>>
 <div id="js-body-start"></div>

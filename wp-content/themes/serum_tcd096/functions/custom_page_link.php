@@ -5,17 +5,16 @@ function add_nextpage_buttons($buttons){
 	array_push($buttons, "wp_page");
 	return $buttons;
 }
-add_filter("mce_buttons", "add_nextpage_buttons");
 
 
 // マークアップを変更 -----------------------------------------------
 function custom_wp_link_pages( $args = '' ) {
 	$defaults = array(
-		'before' => '<div id="post_pagination" class="clearfix">', 
+		'before' => '<div id="post_pagination" class="clearfix">',
 		'after' => '</div>',
 		'text_before' => '',
 		'text_after' => '',
-		'next_or_number' => 'number', 
+		'next_or_number' => 'number',
 		'nextpagelink' => __( 'Next page' ),
 		'previouspagelink' => __( 'Previous page' ),
 		'pagelink' => '%',

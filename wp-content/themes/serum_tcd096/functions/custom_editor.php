@@ -1,5 +1,285 @@
 <?php
 
+/**
+ * エディターに関連する記述をここにまとめる
+ *
+ * NOTE: TCD Classic Editorの個別対応もここ
+ */
+
+/**
+ * プラグインが有効化されている場合の処理
+ *
+ * NOTE: TCDCE_ACTIVEは、プラグインで定義された定数（有効化されていればtrue）
+ */
+if ( defined( 'TCDCE_ACTIVE' ) && TCDCE_ACTIVE ) {
+	/**
+	 * スタートガイド
+	 */
+	// 告知追加： このプラグインを有効化している間、TCDテーマの「クイックタグ」機能は利用できません。
+	add_action( 'tcdce_top_menu', 'tcdce_top_menu_common_caution', 9 );
+	/**
+	 * 基本設定
+	 */
+	// 告知追加： TCDテーマオプションの設定が本文に反映されるため、基本設定はお使いいただけません。
+	add_action( 'tcdce_submenu_tcd_classic_editor_basic', 'tcdce_submenu_basic_common_caution' );
+	// 基本設定のスタイルを読み込まない
+	remove_filter( 'tcdce_render_quicktag_style', 'tcdce_render_quicktag_basic_style' );
+	/**
+	 * クイックタグ
+	 */
+	// フロントの use_quicktagオプションを強制的にオフにする（元テーマの関連スタイルを除去）
+	add_filter( 'option_dp_options', 'tcdce_disable_theme_quicktag' );
+	/**
+	 * Googleマップ
+	 */
+	// 特に無し
+	/**
+	 * 目次
+	 */
+	// 告知追加： このテーマはサイドバーに目次を表示できません。
+	add_action( 'tcdce_submenu_tcd_classic_editor_toc', 'tcdce_submenu_disable_sidebar_toc_caution' );
+
+	// スマホ用目次ウィジェットアイコンを表示するブレイクポイントはサイドバーがないため、767に指定
+	add_filter( 'tcdce_toc_show_breakpoint', fn() => 767 );
+
+	// ワンカラムテーマのため、目次ウィジェットを削除
+	add_action( 'widgets_init', 'tcdce_unregister_toc_widget' );
+
+	// ワンカラムテーマのため、目次の選択肢からサイドバーを無くす
+	add_filter( 'tcdce_toc_setting_display_options', function( $options ){
+		unset($options[2]);
+		unset($options[3]);
+		return $options;
+	});
+
+	// 目次のスタイル調整
+	add_filter( 'tcdce_enqueue_inline_style', function( $style ){
+		$style .=
+		// 目次のスタイル調整（背景がグレーの場合など）
+		// '.widget_tcdce_toc_widget { background:initial; }
+		// .p-toc--sidebar { background:#fff; }' .
+		// 目次アイコン表示時は、トップに戻るボタンを非表示にする
+		'body:has(.p-toc-open) #return_top { display: none; }' .
+		// スマホフッターバー表示時の対策
+		'body:has(.p-footer-bar) .p-toc-open { margin-bottom: 50px; }' .
+		// ドロワーメニュー表示に目次アイコン非表示
+		'html.open_menu .p-toc-open { display:none; }';
+		return $style;
+	} );
+
+	// 目次の投稿タイプから「診療案内」を削除
+	add_filter( 'tcdce_toc_setting_post_types_options', function( $post_types ){
+		return array_filter( $post_types, function ( $post_type ) {
+			return $post_type !== 'treatment';
+		} );
+	} );
+	/**
+	 * design-plus.cssを取り除く
+	 *
+	 * NOTE: design-plus.cssの中に必要な記述があればスタイルシートに移設
+	 */
+	add_action( 'wp_enqueue_scripts', function(){
+		wp_dequeue_style( 'design-plus' );
+	} );
+	/**
+	 * エディタ独自スタイル対応
+	 */
+	add_filter( 'tcdce_enqueue_inline_style', function( $style ){
+		$style .=
+		/* LP内のテーブルスタイル */
+		'#lp_table th { background:#f7f7f7; }' .
+		'#lp_table :is(td, th) { padding: 15px 30px 13px; line-height: 2.2; }' .
+		'@media screen and (max-width:800px) { #lp_table :is(td, th) { padding: 14px 15px; line-height: 1.8; } }' .
+		'';
+		return $style;
+	} );
+	/**
+	 * 有効化されていれば、ココで処理を止める
+	 */
+	return;
+}
+/**
+ * 以下はテーマのエディタ周りの機能
+ *
+ * NOTE: プラグイン有効化時は、以下は実行されない
+ * テーマの機能を移設する場合は、この下に追記してください
+ */
+
+/**
+ * the_contentで実行されているもの
+ */
+
+// table スクロール対応 ------------------------------------------------------------------------
+add_filter('the_content', function( $content ){
+  if( !has_blocks() ){
+    $content = str_replace( '<table', '<div class="s_table"><table', $content );
+    $content = str_replace( '</table>', '</table></div>', $content );
+  }
+  return $content;
+} );
+
+/**
+ * mce関連のカスタマイズ
+ */
+// ビジュアルエディタに表(テーブル)の機能を追加 -----------------------------------------------
+function mce_external_plugins_table($plugins) {
+	$plugins['table'] = 'https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.7.4/plugins/table/plugin.min.js';
+	return $plugins;
+}
+add_filter( 'mce_external_plugins', 'mce_external_plugins_table' );
+
+// tinymceのtableボタンにclass属性プルダウンメニューを追加
+function mce_buttons_table($buttons) {
+	$buttons[] = 'table';
+	return $buttons;
+}
+add_filter( 'mce_buttons', 'mce_buttons_table' );
+
+function bootstrap_classes_tinymce($settings) {
+	$styles = array(
+		array('title' => __('Default style', 'tcd-serum'), 'value' => ''),
+		array('title' => __('No border', 'tcd-serum'), 'value' => 'table_no_border'),
+		array('title' => __('Display only serumtal border', 'tcd-serum'), 'value' => 'table_border_serumtal')
+	);
+	$settings['table_class_list'] = json_encode($styles);
+	return $settings;
+}
+add_filter('tiny_mce_before_init', 'bootstrap_classes_tinymce');
+
+
+// ビジュアルエディタに書体を追加 ---------------------------------------------------------------------
+add_filter('mce_buttons', function($buttons){
+	array_unshift($buttons, 'fontselect');
+	return $buttons;
+});
+add_filter('tiny_mce_before_init', function($settings){
+	$settings['font_formats'] =
+		"メイリオ=Arial, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;" .
+		"游ゴシック='Hiragino Sans', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', '游ゴシック', YuGothic, 'メイリオ', Meiryo, sans-serif;" .
+		"游明朝='Times New Roman' , '游明朝' , 'Yu Mincho' , '游明朝体' , 'YuMincho' , 'ヒラギノ明朝 Pro W3' , 'Hiragino Mincho Pro' , 'HiraMinProN-W3' , 'HGS明朝E' , 'ＭＳ Ｐ明朝' , 'MS PMincho' , serif;" .
+		"Andale Mono=andale mono,times;" .
+		"Arial=arial,helvetica,sans-serif;" .
+		"Arial Black=arial black,avant garde;" .
+		"Book Antiqua=book antiqua,palatino;" .
+		"Comic Sans MS=comic sans ms,sans-serif;" .
+		"Courier New=courier new,courier;" .
+		"Georgia=georgia,palatino;" .
+		"Helvetica=helvetica;" .
+		"Impact=impact,chicago;" .
+		"Symbol=symbol;" .
+		"Tahoma=tahoma,arial,helvetica,sans-serif;" .
+		"Terminal=terminal,monaco;" .
+		"Times New Roman=times new roman,times;" .
+		"Trebuchet MS=trebuchet ms,geneva;" .
+		"Verdana=verdana,geneva;" .
+		"Webdings=webdings;" .
+		"Wingdings=wingdings,zapf dingbats";
+	;
+	return $settings;
+});
+
+
+// ビジュアルエディタに文字サイズを追加 ---------------------------------------------------------------------
+function add_font_size_to_tinymce( $buttons ) {
+	array_unshift( $buttons, 'fontsizeselect' );
+	return $buttons;
+}
+add_filter( 'mce_buttons_2', 'add_font_size_to_tinymce' );
+
+function change_font_size_of_tinymce( $initArray ){
+	$initArray['fontsize_formats'] = "10px 11px 12px 14px 16px 18px 20px 24px 28px 32px 38px";
+	return $initArray;
+}
+add_filter( 'tiny_mce_before_init', 'change_font_size_of_tinymce' );
+
+// ページ分割
+add_filter("mce_buttons", "add_nextpage_buttons");
+
+/**
+ * ビジュアルエディタ用スタイルシートの読み込みを移設
+ */
+// ビジュアルエディタ用スタイルシートの読み込み
+function wpdocs_theme_add_editor_styles() {
+  add_theme_support('editor-styles');
+  add_editor_style( get_template_directory_uri()."/admin/css/editor-style-07.css?d=".date('YmdGis', filemtime(get_template_directory().'/admin/css/editor-style-07.css')) );
+}
+add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
+
+/**
+ * TCDCE有効化時に無効化したいテーマのスタイル、スクリプトをココに記載
+ */
+add_action( 'wp_head', function(){
+	/**
+	 * エディタに使われているhead内のスタイルがあればココに移設
+	 *
+	 * NOTE: use_quicktagsをオフにするので、head内のクイックタグスタイルは移設不要（要確認）
+	 * NOTE: その他styleの上書きが必要なら
+	 */
+	/**
+	 * エディタに使われているスクリプトをココに移設
+	 *
+	 * NOTE: マーカーは干渉するので移設が必要
+	 */
+?>
+<script>
+jQuery(function ($) {
+	var $window = $(window);
+	var $body = $('body');
+	  // quick tag - underline ------------------------------------------
+		if ($('.q_underline').length) {
+    var gradient_prefix = null;
+
+    $('.q_underline').each(function(){
+      var bbc = $(this).css('borderBottomColor');
+      if (jQuery.inArray(bbc, ['transparent', 'rgba(0, 0, 0, 0)']) == -1) {
+        if (gradient_prefix === null) {
+          gradient_prefix = '';
+          var ua = navigator.userAgent.toLowerCase();
+          if (/webkit/.test(ua)) {
+            gradient_prefix = '-webkit-';
+          } else if (/firefox/.test(ua)) {
+            gradient_prefix = '-moz-';
+          } else {
+            gradient_prefix = '';
+          }
+        }
+        $(this).css('borderBottomColor', 'transparent');
+        if (gradient_prefix) {
+          $(this).css('backgroundImage', gradient_prefix+'linear-gradient(left, transparent 50%, '+bbc+ ' 50%)');
+        } else {
+          $(this).css('backgroundImage', 'linear-gradient(to right, transparent 50%, '+bbc+ ' 50%)');
+        }
+      }
+    });
+
+    $window.on('scroll.q_underline', function(){
+      $('.q_underline:not(.is-active)').each(function(){
+        if ($body.hasClass('show-serumtal')) {
+          var left = $(this).offset().left;
+          if (window.scrollX > left - window.innerHeight) {
+            $(this).addClass('is-active');
+          }
+        } else {
+          var top = $(this).offset().top;
+          if (window.scrollY > top - window.innerHeight) {
+            $(this).addClass('is-active');
+          }
+        }
+      });
+      if (!$('.q_underline:not(.is-active)').length) {
+        $window.off('scroll.q_underline');
+      }
+    });
+  }
+} );
+</script>
+<?php
+} );
+
+/**
+ * テーマのクイックタグの登録
+ */
+
 function tcd_quicktag_admin_init() {
 	global $dp_options;
 	if ( ! $dp_options ) $dp_options = get_design_plus_option();
