@@ -1,0 +1,8 @@
+# authenticate(Basic)
+AuthUserFile /var/www/vhosts/test.tokokai.or.jp/httpdocs/.htpasswd
+AuthName "Please enter your ID and password"
+AuthType Basic
+require valid-user
+    <Files ~ "^\.ht">
+    deny from all
+    </Files>
