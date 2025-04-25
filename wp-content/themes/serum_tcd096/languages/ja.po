@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: design-plus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-29 15:46+0900\n"
+"POT-Creation-Date: 2025-04-24 16:39+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Design Plus <support@wp-dp.com>\n"
 "Language-Team: design plus\n"
@@ -12,19 +12,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/inc/admin_parts.php:13 admin/inc/basic.php:302 admin/inc/basic.php:390
-#: admin/inc/basic.php:467 admin/inc/basic.php:501 admin/inc/basic.php:593
-#: admin/inc/basic.php:694 admin/inc/basic.php:817 admin/inc/basic.php:849
+#: admin/inc/admin_parts.php:13 admin/inc/basic.php:298 admin/inc/basic.php:386
+#: admin/inc/basic.php:463 admin/inc/basic.php:497 admin/inc/basic.php:589
+#: admin/inc/basic.php:690 admin/inc/basic.php:813 admin/inc/basic.php:845
 #: admin/inc/blog.php:138 admin/inc/blog.php:205 admin/inc/blog.php:241
 #: admin/inc/blog.php:343 admin/inc/blog.php:400 admin/inc/footer.php:312
 #: admin/inc/footer.php:357 admin/inc/footer.php:518
-#: admin/inc/front_page.php:256 admin/inc/front_page.php:683
-#: admin/inc/front_page.php:729 admin/inc/front_page.php:780
-#: admin/inc/front_page.php:1213 admin/inc/header.php:337
+#: admin/inc/front_page.php:257 admin/inc/front_page.php:684
+#: admin/inc/front_page.php:730 admin/inc/front_page.php:781
+#: admin/inc/front_page.php:1225 admin/inc/header.php:337
 #: admin/inc/header.php:468 admin/inc/news.php:119 admin/inc/news.php:147
 #: admin/inc/news.php:200 admin/inc/news.php:243 admin/inc/news.php:345
 #: admin/inc/quicktag.php:340 admin/inc/seo.php:133 admin/inc/seo.php:193
@@ -34,14 +34,14 @@ msgstr ""
 msgid "Save Changes"
 msgstr "設定を保存"
 
-#: admin/inc/admin_parts.php:14 admin/inc/basic.php:303 admin/inc/basic.php:391
-#: admin/inc/basic.php:468 admin/inc/basic.php:502 admin/inc/basic.php:594
-#: admin/inc/basic.php:695 admin/inc/basic.php:818 admin/inc/basic.php:850
+#: admin/inc/admin_parts.php:14 admin/inc/basic.php:299 admin/inc/basic.php:387
+#: admin/inc/basic.php:464 admin/inc/basic.php:498 admin/inc/basic.php:590
+#: admin/inc/basic.php:691 admin/inc/basic.php:814 admin/inc/basic.php:846
 #: admin/inc/blog.php:139 admin/inc/blog.php:206 admin/inc/blog.php:242
 #: admin/inc/blog.php:344 admin/inc/blog.php:401 admin/inc/footer.php:313
 #: admin/inc/footer.php:358 admin/inc/footer.php:439 admin/inc/footer.php:505
-#: admin/inc/footer.php:519 admin/inc/front_page.php:257
-#: admin/inc/front_page.php:684 admin/inc/front_page.php:1214
+#: admin/inc/footer.php:519 admin/inc/front_page.php:258
+#: admin/inc/front_page.php:685 admin/inc/front_page.php:1226
 #: admin/inc/header.php:338 admin/inc/header.php:469 admin/inc/news.php:148
 #: admin/inc/news.php:201 admin/inc/news.php:244 admin/inc/news.php:346
 #: admin/inc/quicktag.php:341 admin/inc/quicktag.php:516
@@ -52,15 +52,15 @@ msgstr "設定を保存"
 msgid "Close"
 msgstr "閉じる"
 
-#: admin/inc/admin_parts.php:17 admin/inc/basic.php:211 admin/inc/basic.php:224
-#: admin/inc/basic.php:241 admin/inc/basic.php:254 admin/inc/basic.php:278
-#: admin/inc/basic.php:291 admin/inc/basic.php:524 admin/inc/basic.php:744
-#: admin/inc/basic.php:785 admin/inc/blog.php:186 admin/inc/blog.php:281
+#: admin/inc/admin_parts.php:17 admin/inc/basic.php:207 admin/inc/basic.php:220
+#: admin/inc/basic.php:237 admin/inc/basic.php:250 admin/inc/basic.php:274
+#: admin/inc/basic.php:287 admin/inc/basic.php:520 admin/inc/basic.php:740
+#: admin/inc/basic.php:781 admin/inc/blog.php:186 admin/inc/blog.php:281
 #: admin/inc/blog.php:328 admin/inc/footer.php:139 admin/inc/footer.php:169
-#: admin/inc/front_page.php:204 admin/inc/front_page.php:221
-#: admin/inc/front_page.php:237 admin/inc/front_page.php:358
-#: admin/inc/front_page.php:374 admin/inc/front_page.php:545
-#: admin/inc/front_page.php:561 admin/inc/front_page.php:1053
+#: admin/inc/front_page.php:205 admin/inc/front_page.php:222
+#: admin/inc/front_page.php:238 admin/inc/front_page.php:359
+#: admin/inc/front_page.php:375 admin/inc/front_page.php:546
+#: admin/inc/front_page.php:562 admin/inc/front_page.php:1055
 #: admin/inc/news.php:178 admin/inc/news.php:283 admin/inc/news.php:330
 #: admin/inc/seo.php:160 admin/inc/treatment.php:163
 #: admin/inc/treatment.php:225 admin/inc/treatment.php:272
@@ -70,15 +70,15 @@ msgstr "閉じる"
 msgid "Select Image"
 msgstr "画像を選択する"
 
-#: admin/inc/admin_parts.php:18 admin/inc/basic.php:212 admin/inc/basic.php:225
-#: admin/inc/basic.php:242 admin/inc/basic.php:255 admin/inc/basic.php:279
-#: admin/inc/basic.php:292 admin/inc/basic.php:525 admin/inc/basic.php:745
-#: admin/inc/basic.php:786 admin/inc/blog.php:187 admin/inc/blog.php:282
+#: admin/inc/admin_parts.php:18 admin/inc/basic.php:208 admin/inc/basic.php:221
+#: admin/inc/basic.php:238 admin/inc/basic.php:251 admin/inc/basic.php:275
+#: admin/inc/basic.php:288 admin/inc/basic.php:521 admin/inc/basic.php:741
+#: admin/inc/basic.php:782 admin/inc/blog.php:187 admin/inc/blog.php:282
 #: admin/inc/blog.php:329 admin/inc/footer.php:140 admin/inc/footer.php:170
-#: admin/inc/front_page.php:205 admin/inc/front_page.php:222
-#: admin/inc/front_page.php:238 admin/inc/front_page.php:359
-#: admin/inc/front_page.php:375 admin/inc/front_page.php:546
-#: admin/inc/front_page.php:562 admin/inc/front_page.php:1054
+#: admin/inc/front_page.php:206 admin/inc/front_page.php:223
+#: admin/inc/front_page.php:239 admin/inc/front_page.php:360
+#: admin/inc/front_page.php:376 admin/inc/front_page.php:547
+#: admin/inc/front_page.php:563 admin/inc/front_page.php:1056
 #: admin/inc/news.php:179 admin/inc/news.php:284 admin/inc/news.php:331
 #: admin/inc/seo.php:161 admin/inc/treatment.php:164
 #: admin/inc/treatment.php:226 admin/inc/treatment.php:273
@@ -100,16 +100,16 @@ msgid "Basic"
 msgstr "基本"
 
 #: admin/inc/admin_parts.php:26 admin/inc/admin_parts.php:112
-#: admin/inc/blog.php:40 functions.php:907 functions/class-page-new.php:218
+#: admin/inc/blog.php:40 functions.php:833 functions/class-page-new.php:218
 msgid "Blog"
 msgstr "ブログ"
 
 #: admin/inc/admin_parts.php:27 admin/inc/admin_parts.php:114
-#: admin/inc/basic.php:160 admin/inc/front_page.php:148
-#: admin/inc/front_page.php:988 admin/inc/header.php:94 admin/inc/news.php:27
+#: admin/inc/basic.php:160 admin/inc/front_page.php:149
+#: admin/inc/front_page.php:990 admin/inc/header.php:94 admin/inc/news.php:27
 #: admin/inc/news.php:29 admin/inc/news.php:42 admin/inc/news.php:46
-#: admin/inc/news.php:98 admin/inc/seo.php:68 functions.php:128
-#: functions.php:931
+#: admin/inc/news.php:98 admin/inc/seo.php:68 functions.php:126
+#: functions.php:857
 msgid "News"
 msgstr "お知らせ"
 
@@ -134,15 +134,15 @@ msgid "Archive page"
 msgstr "アーカイブページ"
 
 #: admin/inc/admin_parts.php:32 admin/inc/blog.php:171
-#: admin/inc/front_page.php:1025 admin/inc/front_page.php:1105
+#: admin/inc/front_page.php:1027 admin/inc/front_page.php:1108
 #: admin/inc/header.php:25 admin/inc/news.php:163 admin/inc/treatment.php:148
 #: functions/page_cf.php:221 functions/page_cf.php:296
 msgid "Header"
 msgstr "ヘッダー"
 
-#: admin/inc/admin_parts.php:33 admin/inc/basic.php:731 admin/inc/basic.php:771
+#: admin/inc/admin_parts.php:33 admin/inc/basic.php:727 admin/inc/basic.php:767
 #: admin/inc/blog.php:236 admin/inc/front_page.php:104
-#: admin/inc/front_page.php:110 admin/inc/front_page.php:1059
+#: admin/inc/front_page.php:110 admin/inc/front_page.php:1061
 #: admin/inc/news.php:238 admin/theme-options.php:778
 #: functions/page_builder.php:106 functions/page_builder.php:291
 #: functions/treatment_category.php:133
@@ -153,8 +153,8 @@ msgstr "見出し"
 msgid "Sub headline"
 msgstr "小見出し"
 
-#: admin/inc/admin_parts.php:35 admin/inc/basic.php:732 admin/inc/basic.php:772
-#: admin/inc/blog.php:200 admin/inc/blog.php:309 admin/inc/front_page.php:1060
+#: admin/inc/admin_parts.php:35 admin/inc/basic.php:728 admin/inc/basic.php:768
+#: admin/inc/blog.php:200 admin/inc/blog.php:309 admin/inc/front_page.php:1062
 #: admin/inc/news.php:311 admin/inc/treatment.php:253
 #: functions/page_builder.php:119 functions/page_builder.php:296
 #: functions/treatment_category.php:42 functions/treatment_category.php:59
@@ -183,7 +183,7 @@ msgstr "タイトルの文字サイズ"
 msgid "Article title area"
 msgstr "記事タイトルエリア"
 
-#: admin/inc/admin_parts.php:41 admin/inc/basic.php:628 admin/inc/basic.php:685
+#: admin/inc/admin_parts.php:41 admin/inc/basic.php:624 admin/inc/basic.php:681
 #: admin/inc/blog.php:221 admin/inc/news.php:216 functions/page_cf.php:199
 msgid "Display setting"
 msgstr "表示設定"
@@ -193,11 +193,11 @@ msgstr "表示設定"
 msgid "Related post"
 msgstr "関連記事"
 
-#: admin/inc/admin_parts.php:44 admin/inc/basic.php:514
+#: admin/inc/admin_parts.php:44 admin/inc/basic.php:510
 msgid "Alternate image to be displayed when featured image is not registered"
 msgstr "アイキャッチ未設定の場合に表示する画像"
 
-#: admin/inc/admin_parts.php:45 admin/inc/basic.php:516
+#: admin/inc/admin_parts.php:45 admin/inc/basic.php:512
 msgid ""
 "If you set image here, you can display alternative image for article which "
 "featured image is not set."
@@ -215,17 +215,17 @@ msgstr ""
 "れます。"
 
 #: admin/inc/admin_parts.php:48 admin/inc/admin_parts.php:106
-#: admin/inc/basic.php:235 admin/inc/basic.php:248 admin/inc/basic.php:517
-#: admin/inc/basic.php:737 admin/inc/basic.php:778 admin/inc/blog.php:179
+#: admin/inc/basic.php:231 admin/inc/basic.php:244 admin/inc/basic.php:513
+#: admin/inc/basic.php:733 admin/inc/basic.php:774 admin/inc/blog.php:179
 #: admin/inc/blog.php:274 admin/inc/blog.php:321 admin/inc/footer.php:132
-#: admin/inc/footer.php:162 admin/inc/front_page.php:214
-#: admin/inc/front_page.php:230 admin/inc/front_page.php:351
-#: admin/inc/front_page.php:367 admin/inc/front_page.php:538
-#: admin/inc/front_page.php:554 admin/inc/front_page.php:1046
+#: admin/inc/footer.php:162 admin/inc/front_page.php:215
+#: admin/inc/front_page.php:231 admin/inc/front_page.php:352
+#: admin/inc/front_page.php:368 admin/inc/front_page.php:539
+#: admin/inc/front_page.php:555 admin/inc/front_page.php:1048
 #: admin/inc/news.php:171 admin/inc/news.php:276 admin/inc/news.php:323
 #: admin/inc/quicktag.php:610 admin/inc/quicktag.php:667 admin/inc/seo.php:167
 #: admin/inc/treatment.php:156 admin/inc/treatment.php:218
-#: admin/inc/treatment.php:265 functions.php:588 functions.php:592
+#: admin/inc/treatment.php:265 functions.php:514 functions.php:518
 #: functions/page_cf.php:350 functions/page_cf.php:351
 #: functions/treatment_category.php:46 functions/treatment_category.php:79
 #: functions/treatment_category.php:105 functions/user-profile.php:43
@@ -234,13 +234,13 @@ msgstr ""
 msgid "Recommend image size. Width:%1$spx, Height:%2$spx."
 msgstr "推奨画像サイズ：横幅%1$spx、縦幅%2$spx"
 
-#: admin/inc/admin_parts.php:50 admin/inc/front_page.php:193
+#: admin/inc/admin_parts.php:50 admin/inc/front_page.php:194
 #: admin/inc/quicktag.php:491
 msgid "Font color"
 msgstr "文字色"
 
-#: admin/inc/admin_parts.php:51 admin/inc/basic.php:381 admin/inc/basic.php:567
-#: admin/inc/basic.php:581 admin/inc/footer.php:421 admin/inc/footer.php:487
+#: admin/inc/admin_parts.php:51 admin/inc/basic.php:377 admin/inc/basic.php:563
+#: admin/inc/basic.php:577 admin/inc/footer.php:421 admin/inc/footer.php:487
 #: admin/inc/quicktag.php:499
 msgid "Background color"
 msgstr "背景色"
@@ -261,11 +261,11 @@ msgstr "メニュー"
 #: admin/inc/admin_parts.php:55 admin/inc/blog.php:173 admin/inc/blog.php:262
 #: admin/inc/blog.php:308 admin/inc/front_page.php:57
 #: admin/inc/front_page.php:72 admin/inc/front_page.php:102
-#: admin/inc/front_page.php:125 admin/inc/front_page.php:185
-#: admin/inc/front_page.php:190 admin/inc/front_page.php:301
-#: admin/inc/front_page.php:417 admin/inc/front_page.php:488
-#: admin/inc/front_page.php:604 admin/inc/front_page.php:1027
-#: admin/inc/front_page.php:1107 admin/inc/news.php:165 admin/inc/news.php:264
+#: admin/inc/front_page.php:125 admin/inc/front_page.php:186
+#: admin/inc/front_page.php:191 admin/inc/front_page.php:302
+#: admin/inc/front_page.php:418 admin/inc/front_page.php:489
+#: admin/inc/front_page.php:605 admin/inc/front_page.php:1029
+#: admin/inc/front_page.php:1110 admin/inc/news.php:165 admin/inc/news.php:264
 #: admin/inc/news.php:310 admin/inc/options.php:438 admin/inc/treatment.php:150
 #: admin/inc/treatment.php:206 admin/inc/treatment.php:252
 #: admin/theme-options.php:772 functions/page_builder.php:197
@@ -277,15 +277,15 @@ msgstr "キャッチフレーズ"
 msgid "Catchphrase (mobile)"
 msgstr "キャッチフレーズ（モバイルサイズ時）"
 
-#: admin/inc/admin_parts.php:57 admin/inc/basic.php:181 admin/inc/basic.php:184
-#: admin/inc/basic.php:413 admin/inc/basic.php:429 admin/inc/basic.php:445
-#: admin/inc/basic.php:461 admin/inc/front_page.php:192
-#: admin/inc/front_page.php:430 admin/inc/front_page.php:617
+#: admin/inc/admin_parts.php:57 admin/inc/basic.php:177 admin/inc/basic.php:180
+#: admin/inc/basic.php:409 admin/inc/basic.php:425 admin/inc/basic.php:441
+#: admin/inc/basic.php:457 admin/inc/front_page.php:193
+#: admin/inc/front_page.php:431 admin/inc/front_page.php:618
 msgid "Font size"
 msgstr "文字サイズ"
 
-#: admin/inc/admin_parts.php:58 admin/inc/basic.php:412 admin/inc/basic.php:428
-#: admin/inc/basic.php:444 admin/inc/basic.php:460
+#: admin/inc/admin_parts.php:58 admin/inc/basic.php:408 admin/inc/basic.php:424
+#: admin/inc/basic.php:440 admin/inc/basic.php:456
 msgid "Font type"
 msgstr "フォントタイプ"
 
@@ -297,7 +297,7 @@ msgstr "文字の整列"
 msgid "Font weight"
 msgstr "文字の太さ"
 
-#: admin/inc/admin_parts.php:62 admin/inc/front_page.php:1174
+#: admin/inc/admin_parts.php:62 admin/inc/front_page.php:1186
 msgid "Content"
 msgstr "コンテンツ"
 
@@ -306,7 +306,7 @@ msgstr "コンテンツ"
 msgid "Text"
 msgstr "テキスト"
 
-#: admin/inc/admin_parts.php:64 admin/inc/basic.php:476 admin/inc/footer.php:57
+#: admin/inc/admin_parts.php:64 admin/inc/basic.php:472 admin/inc/footer.php:57
 #: admin/inc/footer.php:63 admin/inc/footer.php:69 admin/inc/footer.php:218
 #: admin/inc/footer.php:268 admin/inc/front_page.php:106
 #: admin/inc/front_page.php:112 admin/inc/header.php:60 admin/inc/header.php:66
@@ -320,7 +320,7 @@ msgstr "ボタン"
 msgid "Button type"
 msgstr "ボタンのタイプ"
 
-#: admin/inc/admin_parts.php:66 admin/inc/front_page.php:1061
+#: admin/inc/admin_parts.php:66 admin/inc/front_page.php:1063
 msgid "Button label"
 msgstr "ボタンのラベル"
 
@@ -338,29 +338,29 @@ msgstr "ボタンを表示する"
 msgid "Open link in new window"
 msgstr "リンク先のURLを新しいウィンドウで表示する"
 
-#: admin/inc/admin_parts.php:71 admin/inc/basic.php:357
-#: admin/inc/front_page.php:300 admin/inc/front_page.php:487
+#: admin/inc/admin_parts.php:71 admin/inc/basic.php:353
+#: admin/inc/front_page.php:301 admin/inc/front_page.php:488
 msgid "Background"
 msgstr "背景"
 
-#: admin/inc/admin_parts.php:72 admin/inc/basic.php:736 admin/inc/basic.php:777
+#: admin/inc/admin_parts.php:72 admin/inc/basic.php:732 admin/inc/basic.php:773
 #: admin/inc/blog.php:178 admin/inc/blog.php:273 admin/inc/blog.php:320
-#: admin/inc/front_page.php:213 admin/inc/front_page.php:340
-#: admin/inc/front_page.php:350 admin/inc/front_page.php:527
-#: admin/inc/front_page.php:537 admin/inc/news.php:170 admin/inc/news.php:275
+#: admin/inc/front_page.php:214 admin/inc/front_page.php:341
+#: admin/inc/front_page.php:351 admin/inc/front_page.php:528
+#: admin/inc/front_page.php:538 admin/inc/news.php:170 admin/inc/news.php:275
 #: admin/inc/news.php:322 admin/inc/treatment.php:155
 #: admin/inc/treatment.php:217 admin/inc/treatment.php:264
 #: functions/page_cf.php:349 functions/page_cf.php:353
 msgid "Background image"
 msgstr "背景画像"
 
-#: admin/inc/admin_parts.php:73 admin/inc/front_page.php:229
-#: admin/inc/front_page.php:366 admin/inc/front_page.php:553
+#: admin/inc/admin_parts.php:73 admin/inc/front_page.php:230
+#: admin/inc/front_page.php:367 admin/inc/front_page.php:554
 msgid "Background image (mobile)"
 msgstr "背景画像（モバイルサイズ時）"
 
-#: admin/inc/admin_parts.php:75 admin/inc/basic.php:205 admin/inc/basic.php:272
-#: admin/inc/footer.php:129 admin/inc/front_page.php:1045
+#: admin/inc/admin_parts.php:75 admin/inc/basic.php:201 admin/inc/basic.php:268
+#: admin/inc/footer.php:129 admin/inc/front_page.php:1047
 #: admin/inc/options.php:141 admin/inc/options.php:194
 #: admin/inc/options.php:211 admin/inc/options.php:405
 #: functions/page_builder.php:78 functions/page_builder.php:259
@@ -368,30 +368,30 @@ msgstr "背景画像（モバイルサイズ時）"
 msgid "Image"
 msgstr "画像"
 
-#: admin/inc/admin_parts.php:77 admin/inc/front_page.php:383
-#: admin/inc/front_page.php:570
+#: admin/inc/admin_parts.php:77 admin/inc/front_page.php:384
+#: admin/inc/front_page.php:571
 msgid "Overlay"
 msgstr "オーバーレイ"
 
 #: admin/inc/admin_parts.php:78 admin/inc/blog.php:192 admin/inc/blog.php:287
-#: admin/inc/blog.php:334 admin/inc/front_page.php:243
-#: admin/inc/front_page.php:385 admin/inc/front_page.php:572
+#: admin/inc/blog.php:334 admin/inc/front_page.php:244
+#: admin/inc/front_page.php:386 admin/inc/front_page.php:573
 #: admin/inc/news.php:184 admin/inc/news.php:289 admin/inc/news.php:336
 #: admin/inc/treatment.php:169 admin/inc/treatment.php:231
 #: admin/inc/treatment.php:278 functions/treatment_category.php:92
 msgid "Color of overlay"
 msgstr "オーバーレイの色"
 
-#: admin/inc/admin_parts.php:79 admin/inc/basic.php:752 admin/inc/basic.php:793
-#: admin/inc/blog.php:194 admin/inc/blog.php:289 admin/inc/front_page.php:245
-#: admin/inc/front_page.php:387 admin/inc/front_page.php:574
+#: admin/inc/admin_parts.php:79 admin/inc/basic.php:748 admin/inc/basic.php:789
+#: admin/inc/blog.php:194 admin/inc/blog.php:289 admin/inc/front_page.php:246
+#: admin/inc/front_page.php:388 admin/inc/front_page.php:575
 #: admin/inc/news.php:186 admin/inc/news.php:291 admin/inc/treatment.php:171
 #: admin/inc/treatment.php:233 functions/page_cf.php:357
 #: functions/treatment_category.php:94
 msgid "Transparency of overlay"
 msgstr "オーバーレイの透過率"
 
-#: admin/inc/admin_parts.php:81 admin/inc/basic.php:572 admin/inc/basic.php:586
+#: admin/inc/admin_parts.php:81 admin/inc/basic.php:568 admin/inc/basic.php:582
 msgid ""
 "Please specify the number of 0 from 1.0. Overlay color will be more "
 "transparent as the number is small."
@@ -408,31 +408,31 @@ msgstr ""
 "てください。"
 
 #: admin/inc/admin_parts.php:87 admin/inc/footer.php:388
-#: admin/inc/front_page.php:280 admin/inc/header.php:138
+#: admin/inc/front_page.php:281 admin/inc/header.php:138
 #: admin/inc/quicktag.php:297
 msgid "Delete?"
 msgstr "削除しますか？"
 
 #: admin/inc/admin_parts.php:88 admin/inc/footer.php:145
 #: admin/inc/footer.php:175 admin/inc/footer.php:440 admin/inc/footer.php:506
-#: admin/inc/front_page.php:447 admin/inc/front_page.php:634
+#: admin/inc/front_page.php:448 admin/inc/front_page.php:635
 #: admin/inc/header.php:151 admin/inc/header.php:173
 msgid "Delete item"
 msgstr "アイテムを削除する"
 
 #: admin/inc/admin_parts.php:89 admin/inc/footer.php:460
-#: admin/inc/front_page.php:473 admin/inc/header.php:166 functions.php:938
-#: functions.php:1007 functions/page_builder.php:645
+#: admin/inc/front_page.php:474 admin/inc/header.php:166 functions.php:864
+#: functions.php:933 functions/page_builder.php:645
 msgid "New item"
 msgstr "新しいアイテム"
 
 #: admin/inc/admin_parts.php:90 admin/inc/footer.php:514
-#: admin/inc/front_page.php:642 admin/inc/header.php:180
+#: admin/inc/front_page.php:643 admin/inc/header.php:180
 #: functions/page_builder.php:639
 msgid "Add item"
 msgstr "新しいアイテムを追加する"
 
-#: admin/inc/admin_parts.php:91 admin/inc/front_page.php:286
+#: admin/inc/admin_parts.php:91 admin/inc/front_page.php:287
 #: admin/inc/header.php:144
 msgid "Item"
 msgstr "アイテム"
@@ -447,47 +447,34 @@ msgstr "背景色無し"
 msgid "Basic setting"
 msgstr "基本設定"
 
-#: admin/inc/basic.php:117 admin/inc/basic.php:771 functions.php:807
+#: admin/inc/basic.php:117 admin/inc/basic.php:767 functions.php:733
 #: functions/seo.php:137 search.php:7 template-parts/breadcrumb.php:91
 msgid "Search result"
 msgstr "検索結果"
 
-#: admin/inc/basic.php:118 admin/inc/basic.php:126 admin/inc/basic.php:772
+#: admin/inc/basic.php:118 admin/inc/basic.php:126 admin/inc/basic.php:768
 msgid "The page you are looking for are not found"
 msgstr "お探しのページは見つかりませんでした"
 
-#: admin/inc/basic.php:121 admin/inc/basic.php:773
+#: admin/inc/basic.php:121 admin/inc/basic.php:769
 msgid "Enter search keyword"
 msgstr "キーワードを入力してください"
 
-#: admin/inc/basic.php:161 admin/inc/front_page.php:989 admin/inc/seo.php:69
+#: admin/inc/basic.php:161 admin/inc/front_page.php:991 admin/inc/seo.php:69
 msgid "treatment"
 msgstr "サービス"
 
-#: admin/inc/basic.php:168
-msgid ""
-"In order for your site to display correctly, you must first go through the "
-"<a href=\"options-reading.php\">\"Reading Settings\"</a> in WordPress. Check "
-"<a href=\"https://tcd-theme.com/2022/07/wordpress-homepage.html\" "
-"target=\"_blank\" rel=\"nofollow\">this TCD blog</a> for instructions on how "
-"to set it up."
-msgstr ""
-"サイトを正しく表示するために、最初にWordPressの<a href=\"options-reading."
-"php\">「表示設定」</a>を行ってください。設定方法は<a href=\"https://tcd-"
-"theme.com/2022/07/wordpress-homepage.html\" target=\"_blank\" "
-"rel=\"nofollow\">TCDの解説記事</a>でご覧いただけます。"
-
-#: admin/inc/basic.php:173 admin/inc/footer.php:328
-#: admin/inc/front_page.php:187 admin/inc/header.php:109
+#: admin/inc/basic.php:169 admin/inc/footer.php:328
+#: admin/inc/front_page.php:188 admin/inc/header.php:109
 #: admin/inc/options.php:433
 msgid "Logo"
 msgstr "ロゴ"
 
-#: admin/inc/basic.php:176
+#: admin/inc/basic.php:172
 msgid "Type of logo"
 msgstr "ロゴのタイプ"
 
-#: admin/inc/basic.php:192
+#: admin/inc/basic.php:188
 #, php-format
 msgid ""
 "TCD demo site use these sizes of the logo images for Retina Display.<br>PC: "
@@ -498,39 +485,39 @@ msgstr ""
 "PC：横幅%dpx、縦幅%dpx<br>\n"
 "スマホ：横幅%dpx、縦幅%dpx"
 
-#: admin/inc/basic.php:193
+#: admin/inc/basic.php:189
 msgid ""
 "In order to avoid blurring images on retina displays, it is necessary to "
 "register an image that is at least twice the size that is actually "
-"displayed. Read <a href=\"https://tcd-theme.com/2019/04/retina-display."
-"html\" target=\"_blank\">TCD article</a> for more details."
+"displayed. Read <a href=\"https://tcd-theme.com/2019/04/retina-"
+"display.html\" target=\"_blank\">TCD article</a> for more details."
 msgstr ""
 "レティナディスプレイで画像をぼやけさせないためには、実際に表示される画像サイ"
 "ズの<strong>2倍以上</strong>のサイズの画像を登録する必要があります。<br>詳し"
 "くは<a href=\"https://tcd-theme.com/2019/04/retina-display.html\" "
 "target=\"_blank\">TCDの記事</a>をご覧ください。"
 
-#: admin/inc/basic.php:196 admin/inc/front_page.php:210
+#: admin/inc/basic.php:192 admin/inc/front_page.php:211
 msgid "Use retina display image"
 msgstr "レティナディスプレイ用の画像を利用する"
 
-#: admin/inc/basic.php:199
+#: admin/inc/basic.php:195
 msgid "Header bar logo"
 msgstr "ヘッダーバーのロゴ"
 
-#: admin/inc/basic.php:218 admin/inc/basic.php:285
+#: admin/inc/basic.php:214 admin/inc/basic.php:281
 msgid "Image (mobile)"
 msgstr "画像（モバイルサイズ時）"
 
-#: admin/inc/basic.php:230
+#: admin/inc/basic.php:226
 msgid "Display icon image"
 msgstr "アイコンを表示する"
 
-#: admin/inc/basic.php:235
+#: admin/inc/basic.php:231
 msgid "Icon image"
 msgstr "アイコン用画像"
 
-#: admin/inc/basic.php:235
+#: admin/inc/basic.php:231
 msgid ""
 "Main color will be applyed for background color, so please upload "
 "transparent image."
@@ -538,22 +525,22 @@ msgstr ""
 "メインカラーが背景色として表示されますので、白抜きの透過画像をアップロードし"
 "てください。"
 
-#: admin/inc/basic.php:248
+#: admin/inc/basic.php:244
 msgid "Icon image (mobile)"
 msgstr "アイコン用画像（モバイルサイズ時）"
 
-#: admin/inc/basic.php:248
+#: admin/inc/basic.php:244
 msgid ""
 "White color will be applyed for background color, so please upload colored "
 "image."
 msgstr ""
 "白い背景の上に表示されますので、色の付いた画像をアップロードしてください。"
 
-#: admin/inc/basic.php:262
+#: admin/inc/basic.php:258
 msgid "Square logo"
 msgstr "スクエアロゴ"
 
-#: admin/inc/basic.php:267
+#: admin/inc/basic.php:263
 #, php-format
 msgid ""
 "TCD demo site use [Width: %dpx, Height: %dpx] sizes of the logo image for "
@@ -562,7 +549,7 @@ msgstr ""
 "デモサイトではレティナディスプレイ用として「横幅%dpx、縦幅%dpx」のロゴ画像を"
 "設置しています。"
 
-#: admin/inc/basic.php:268
+#: admin/inc/basic.php:264
 msgid ""
 "This logo will be displayed as follows.<br>Header before page scrolling "
 "(Front page/archive page) - It takes precedence over the header bar logo."
@@ -573,47 +560,47 @@ msgstr ""
 "り優先して表示されます。<br>\n"
 "・PCサイズ時のフッター左側"
 
-#: admin/inc/basic.php:311
+#: admin/inc/basic.php:307
 msgid "Loading screen"
 msgstr "ロード画面"
 
-#: admin/inc/basic.php:315
+#: admin/inc/basic.php:311
 msgid "Display loading screen"
 msgstr "ロード画面を表示する"
 
-#: admin/inc/basic.php:320
+#: admin/inc/basic.php:316
 msgid "You can set the load screen displayed during page transition."
 msgstr ""
 "ページ遷移時にデータ読み込み中の状態が見えないように表示させておくロード画面"
 "（読込中を示すロードアイコンを表示）の設定を行います。"
 
-#: admin/inc/basic.php:332 admin/inc/options.php:418
+#: admin/inc/basic.php:328 admin/inc/options.php:418
 msgid "Circle icon"
 msgstr "サークルアイコン"
 
-#: admin/inc/basic.php:340 admin/inc/options.php:423
+#: admin/inc/basic.php:336 admin/inc/options.php:423
 msgid "Square icon"
 msgstr "スクエアアイコン"
 
-#: admin/inc/basic.php:349 admin/inc/options.php:428
+#: admin/inc/basic.php:345 admin/inc/options.php:428
 msgid "Dot circle icon"
 msgstr "<span style=\"font-size:11px;\">ドットサークルアイコン</span>"
 
-#: admin/inc/basic.php:354 admin/inc/basic.php:374
+#: admin/inc/basic.php:350 admin/inc/basic.php:370
 msgid "Color"
 msgstr "カラー"
 
-#: admin/inc/basic.php:356 admin/inc/footer.php:232 admin/inc/footer.php:282
+#: admin/inc/basic.php:352 admin/inc/footer.php:232 admin/inc/footer.php:282
 #: admin/inc/footer.php:425 admin/inc/footer.php:491 admin/inc/header.php:388
 #: admin/inc/header.php:438
 msgid "Icon"
 msgstr "アイコン"
 
-#: admin/inc/basic.php:378
+#: admin/inc/basic.php:374
 msgid "Accent color"
 msgstr "アクセントカラー"
 
-#: admin/inc/basic.php:382
+#: admin/inc/basic.php:378
 msgid ""
 "This color will be applied to content has background color (e.g. top page "
 "content builder)"
@@ -621,107 +608,107 @@ msgstr ""
 "背景色の付いたコンテンツに反映されます<br>（例：トップページコンテンツビル"
 "ダー）"
 
-#: admin/inc/basic.php:386
+#: admin/inc/basic.php:382
 msgid "Single page text link color"
 msgstr "記事本文内のリンク文字色"
 
-#: admin/inc/basic.php:399
+#: admin/inc/basic.php:395
 msgid "Font"
 msgstr "フォント"
 
-#: admin/inc/basic.php:407
+#: admin/inc/basic.php:403
 msgid "Page header"
 msgstr "ページヘッダー"
 
-#: admin/inc/basic.php:409
+#: admin/inc/basic.php:405
 msgid "This settings will be applied to page header."
 msgstr ""
 "この設定はアーカイブページ等のヘッダーに表示されているキャッチフレーズに反映"
 "されます。"
 
-#: admin/inc/basic.php:423
+#: admin/inc/basic.php:419
 msgid "Catchphrase / Headline"
 msgstr "キャッチフレーズ / 見出し"
 
-#: admin/inc/basic.php:425
+#: admin/inc/basic.php:421
 msgid "This settings will be applied to catchphrase and headline."
 msgstr "この設定はキャッチフレーズや見出しに反映されます。"
 
-#: admin/inc/basic.php:439
+#: admin/inc/basic.php:435
 msgid "Post title"
 msgstr "記事タイトル"
 
-#: admin/inc/basic.php:441
+#: admin/inc/basic.php:437
 msgid "This settings will be applied to single page post title."
 msgstr "この設定は詳細ページの記事タイトルに反映されます。"
 
-#: admin/inc/basic.php:455
+#: admin/inc/basic.php:451
 msgid "Post content"
 msgstr "記事本文"
 
-#: admin/inc/basic.php:457
+#: admin/inc/basic.php:453
 msgid "This setting will be used in post contents and descriptions."
 msgstr "この設定は記事本文や説明文などに適用されます。"
 
-#: admin/inc/basic.php:480
+#: admin/inc/basic.php:476
 msgid "This settings will be applied to front page contents builder button."
 msgstr "この設定はトップページのコンテンツビルダーのボタンに適用されます。"
 
-#: admin/inc/basic.php:485 admin/inc/options.php:334 admin/inc/options.php:355
+#: admin/inc/basic.php:481 admin/inc/options.php:334 admin/inc/options.php:355
 #: admin/inc/quicktag.php:434
 msgid "Normal"
 msgstr "ノーマル"
 
-#: admin/inc/basic.php:486 admin/inc/options.php:356 admin/inc/quicktag.php:435
+#: admin/inc/basic.php:482 admin/inc/options.php:356 admin/inc/quicktag.php:435
 msgid "Ghost"
 msgstr "ゴースト"
 
-#: admin/inc/basic.php:487 admin/inc/options.php:357 admin/inc/quicktag.php:436
+#: admin/inc/basic.php:483 admin/inc/options.php:357 admin/inc/quicktag.php:436
 msgid "Reverse"
 msgstr "リバース"
 
-#: admin/inc/basic.php:492 admin/inc/quicktag.php:442
+#: admin/inc/basic.php:488 admin/inc/quicktag.php:442
 msgid "Type"
 msgstr "タイプ"
 
-#: admin/inc/basic.php:493 admin/inc/quicktag.php:443
+#: admin/inc/basic.php:489 admin/inc/quicktag.php:443
 #: admin/inc/quicktag.php:500
 msgid "Shape"
 msgstr "シェイプ"
 
-#: admin/inc/basic.php:494 admin/inc/quicktag.php:444
+#: admin/inc/basic.php:490 admin/inc/quicktag.php:444
 msgid "Size"
 msgstr "サイズ"
 
-#: admin/inc/basic.php:495 admin/inc/quicktag.php:445
+#: admin/inc/basic.php:491 admin/inc/quicktag.php:445
 msgid "Mouseover animation"
 msgstr "ホバーエフェクト"
 
-#: admin/inc/basic.php:496 admin/inc/quicktag.php:446
+#: admin/inc/basic.php:492 admin/inc/quicktag.php:446
 msgid "Color scheme"
 msgstr "カラー"
 
-#: admin/inc/basic.php:497 admin/inc/quicktag.php:447
+#: admin/inc/basic.php:493 admin/inc/quicktag.php:447
 msgid "Color scheme on mouseover"
 msgstr "ホバーカラー"
 
-#: admin/inc/basic.php:510
+#: admin/inc/basic.php:506
 msgid "Featured image"
 msgstr "アイキャッチ"
 
-#: admin/inc/basic.php:530
+#: admin/inc/basic.php:526
 msgid "Hover effect type"
 msgstr "ホバーエフェクトのタイプ"
 
-#: admin/inc/basic.php:532
+#: admin/inc/basic.php:528
 msgid "You can select the featured image hover effect from 4 types."
 msgstr "アイキャッチのホバーエフェクトを4タイプから選択できます。"
 
-#: admin/inc/basic.php:544 admin/inc/options.php:17 admin/inc/options.php:157
+#: admin/inc/basic.php:540 admin/inc/options.php:17 admin/inc/options.php:157
 msgid "Zoom in"
 msgstr "ズームイン"
 
-#: admin/inc/basic.php:546 admin/inc/basic.php:556
+#: admin/inc/basic.php:542 admin/inc/basic.php:552
 msgid ""
 "Please enter a value between 1 (same size) and 1.5.<br>There is no limit to "
 "the number you can enter, but we recommend a maximum of 1.5."
@@ -729,119 +716,119 @@ msgstr ""
 "1（等倍）～1.5までの数値を入力してください。<br>入力できる数値に制限はありま"
 "せんが、最大で1.5ぐらいまでを推奨します。"
 
-#: admin/inc/basic.php:549
+#: admin/inc/basic.php:545
 msgid "Magnification rate"
 msgstr "拡大率"
 
-#: admin/inc/basic.php:554 admin/inc/options.php:18 admin/inc/options.php:156
+#: admin/inc/basic.php:550 admin/inc/options.php:18 admin/inc/options.php:156
 msgid "Zoom out"
 msgstr "ズームアウト"
 
-#: admin/inc/basic.php:559
+#: admin/inc/basic.php:555
 msgid "Reduction rate"
 msgstr "縮小率"
 
-#: admin/inc/basic.php:564 admin/inc/options.php:19
+#: admin/inc/basic.php:560 admin/inc/options.php:19
 msgid "Slide"
 msgstr "スライド"
 
-#: admin/inc/basic.php:566
+#: admin/inc/basic.php:562
 msgid "Direction"
 msgstr "方向"
 
-#: admin/inc/basic.php:569 admin/inc/basic.php:583
+#: admin/inc/basic.php:565 admin/inc/basic.php:579
 msgid "Opacity of background color"
 msgstr "背景色の透過率"
 
-#: admin/inc/basic.php:579 admin/inc/options.php:20 admin/inc/options.php:373
+#: admin/inc/basic.php:575 admin/inc/options.php:20 admin/inc/options.php:373
 msgid "Fade"
 msgstr "フェード"
 
-#: admin/inc/basic.php:602
+#: admin/inc/basic.php:598
 msgid "SNS"
 msgstr "SNS"
 
-#: admin/inc/basic.php:607
+#: admin/inc/basic.php:603
 msgid "Share button"
 msgstr "シェアボタン"
 
-#: admin/inc/basic.php:611
+#: admin/inc/basic.php:607
 #, php-format
 msgid "Share button will be displayed in blog article and %s article."
 msgstr "シェアボタンはブログ記事と%s記事に表示されます。"
 
-#: admin/inc/basic.php:612
+#: admin/inc/basic.php:608
 msgid "Display position can be set from each post type."
 msgstr "表示・非表示は、各投稿タイプごとに設定可能です。"
 
-#: admin/inc/basic.php:615
+#: admin/inc/basic.php:611
 msgid "Share button design"
 msgstr "シェアボタンのデザイン"
 
-#: admin/inc/basic.php:630
+#: admin/inc/basic.php:626
 msgid "Display X button"
 msgstr "X"
 
-#: admin/inc/basic.php:631
+#: admin/inc/basic.php:627
 msgid "Display facebook like button -Button type 5 (Default button) only"
 msgstr "Facebookいいね ※ボタンタイプ5（公式ボタン）選択時のみ表示します。"
 
-#: admin/inc/basic.php:632
+#: admin/inc/basic.php:628
 msgid "Display facebook share button"
 msgstr "Facebookシェア"
 
-#: admin/inc/basic.php:633
+#: admin/inc/basic.php:629
 msgid "Display hatena button"
 msgstr "はてなブックマーク"
 
-#: admin/inc/basic.php:634
+#: admin/inc/basic.php:630
 msgid "Display pocket button"
 msgstr "Pocket"
 
-#: admin/inc/basic.php:635
+#: admin/inc/basic.php:631
 msgid "Display rss button"
 msgstr "RSS"
 
-#: admin/inc/basic.php:636
+#: admin/inc/basic.php:632
 msgid "Display feedly button"
 msgstr "Feedly"
 
-#: admin/inc/basic.php:637
+#: admin/inc/basic.php:633
 msgid "Display pinterest button"
 msgstr "Pinterest"
 
-#: admin/inc/basic.php:640
+#: admin/inc/basic.php:636
 msgid "Setting for the X button"
 msgstr "Xボタンの設定"
 
-#: admin/inc/basic.php:641
+#: admin/inc/basic.php:637
 msgid "Set of X account. (ex.tcd_jp)"
 msgstr ""
 "※Xボタンを表示する場合、Xアカウント名(@なし)を設定してください。（例："
 "tcd_jp）"
 
-#: admin/inc/basic.php:649 admin/inc/footer.php:351
+#: admin/inc/basic.php:645 admin/inc/footer.php:351
 msgid "SNS icon"
 msgstr "SNSアイコン"
 
-#: admin/inc/basic.php:652
+#: admin/inc/basic.php:648
 msgid "SNS icon design"
 msgstr "SNSアイコンのデザイン"
 
-#: admin/inc/basic.php:657
+#: admin/inc/basic.php:653
 msgid "Monochrome (TCD ver)"
 msgstr "モノクロ（TCDバージョン）"
 
-#: admin/inc/basic.php:664
+#: admin/inc/basic.php:660
 msgid "Official color"
 msgstr "公式準拠カラー"
 
-#: admin/inc/basic.php:670 admin/inc/front_page.php:396
-#: admin/inc/front_page.php:583
+#: admin/inc/basic.php:666 admin/inc/front_page.php:397
+#: admin/inc/front_page.php:584
 msgid "Link"
 msgstr "リンク"
 
-#: admin/inc/basic.php:672
+#: admin/inc/basic.php:668
 msgid ""
 "Enter url of your SNS. Please leave the field empty if you don't want to "
 "display certain sns button."
@@ -849,73 +836,73 @@ msgstr ""
 "ボタンを表示したいSNSのページURLを入力してください。<br />こちらでURLを入力し"
 "ていないものは表示されません。"
 
-#: admin/inc/basic.php:675 functions/user-profile.php:66
+#: admin/inc/basic.php:671 functions/user-profile.php:66
 msgid "Instagram URL"
 msgstr "Instagram URL"
 
-#: admin/inc/basic.php:676 functions/user-profile.php:71
+#: admin/inc/basic.php:672 functions/user-profile.php:71
 msgid "TikTok URL"
 msgstr "TikTok URL"
 
-#: admin/inc/basic.php:677 functions/user-profile.php:76
+#: admin/inc/basic.php:673 functions/user-profile.php:76
 msgid "X URL"
 msgstr "X URL"
 
-#: admin/inc/basic.php:678 functions/user-profile.php:81
+#: admin/inc/basic.php:674 functions/user-profile.php:81
 msgid "Facebook URL"
 msgstr "Facebook URL"
 
-#: admin/inc/basic.php:679 functions/user-profile.php:86
+#: admin/inc/basic.php:675 functions/user-profile.php:86
 msgid "Pinterest URL"
 msgstr "Pinterest URL"
 
-#: admin/inc/basic.php:680 functions/user-profile.php:91
+#: admin/inc/basic.php:676 functions/user-profile.php:91
 msgid "Youtube URL"
 msgstr "Youtube URL"
 
-#: admin/inc/basic.php:681
+#: admin/inc/basic.php:677
 msgid "Contact page URL (You can use mailto:)"
 msgstr "お問い合わせページのURL（mailto:も利用可）"
 
-#: admin/inc/basic.php:682
+#: admin/inc/basic.php:678
 msgid "Display RSS button"
 msgstr "RSSボタンを表示する"
 
-#: admin/inc/basic.php:687
+#: admin/inc/basic.php:683
 msgid "Left bottom on sidebar / Footer (mobile)"
 msgstr "左サイドバー下部 / フッター（モバイルサイズ時）"
 
-#: admin/inc/basic.php:703
+#: admin/inc/basic.php:699
 msgid "404 page / Search result page"
 msgstr "404・検索結果ページ"
 
-#: admin/inc/basic.php:719
+#: admin/inc/basic.php:715
 msgid "404 page"
 msgstr "404ページ"
 
-#: admin/inc/basic.php:720
+#: admin/inc/basic.php:716
 msgid "Search result page"
 msgstr "検索結果ページ"
 
-#: admin/inc/basic.php:727
+#: admin/inc/basic.php:723
 #, php-format
 msgid ""
 "You can check 404 page form <a href=\"%s\" target=\"_blank\">this page</a>."
 msgstr ""
 "404ページは、<a href=\"%s\" target=\"_blank\">こちら</a>よりご確認できます。"
 
-#: admin/inc/basic.php:731 admin/inc/basic.php:771 admin/inc/basic.php:772
-#: admin/inc/basic.php:773
+#: admin/inc/basic.php:727 admin/inc/basic.php:767 admin/inc/basic.php:768
+#: admin/inc/basic.php:769
 msgid "e.g."
 msgstr "入力例："
 
-#: admin/inc/basic.php:750 admin/inc/basic.php:791
+#: admin/inc/basic.php:746 admin/inc/basic.php:787
 msgid "Overlay color"
 msgstr "オーバーレイの色"
 
-#: admin/inc/basic.php:755 admin/inc/basic.php:796 admin/inc/blog.php:196
-#: admin/inc/blog.php:291 admin/inc/front_page.php:247
-#: admin/inc/front_page.php:389 admin/inc/front_page.php:576
+#: admin/inc/basic.php:751 admin/inc/basic.php:792 admin/inc/blog.php:196
+#: admin/inc/blog.php:291 admin/inc/front_page.php:248
+#: admin/inc/front_page.php:390 admin/inc/front_page.php:577
 #: admin/inc/news.php:188 admin/inc/news.php:293 admin/inc/treatment.php:173
 #: admin/inc/treatment.php:235 functions/page_cf.php:359
 #: functions/treatment_category.php:96
@@ -926,16 +913,16 @@ msgstr ""
 "0から0.9までの数値を入力してください。数字が小さくなるほど、より透明になりま"
 "す。"
 
-#: admin/inc/basic.php:756 admin/inc/basic.php:797 admin/inc/blog.php:197
-#: admin/inc/blog.php:292 admin/inc/front_page.php:248
-#: admin/inc/front_page.php:390 admin/inc/front_page.php:577
+#: admin/inc/basic.php:752 admin/inc/basic.php:793 admin/inc/blog.php:197
+#: admin/inc/blog.php:292 admin/inc/front_page.php:249
+#: admin/inc/front_page.php:391 admin/inc/front_page.php:578
 #: admin/inc/news.php:189 admin/inc/news.php:294 admin/inc/treatment.php:174
 #: admin/inc/treatment.php:236 functions/page_cf.php:360
 #: functions/treatment_category.php:97
 msgid "Please enter 0 if you don't want to use overlay."
 msgstr "オーバーレイを表示したくない場合は \"0\"を入力して下さい。"
 
-#: admin/inc/basic.php:767
+#: admin/inc/basic.php:763
 #, php-format
 msgid ""
 "You can check search result page form <a href=\"%s\" target=\"_blank\">this "
@@ -944,43 +931,43 @@ msgstr ""
 "検索結果ページは、<a href=\"%s\" target=\"_blank\">こちら</a>よりご確認できま"
 "す。"
 
-#: admin/inc/basic.php:773
+#: admin/inc/basic.php:769
 msgid "Placeholder for search form"
 msgstr "検索フォームのプレースホルダー"
 
-#: admin/inc/basic.php:802
+#: admin/inc/basic.php:798
 msgid "Search range"
 msgstr "検索対象"
 
-#: admin/inc/basic.php:804
+#: admin/inc/basic.php:800
 msgid ""
 "This setting will be applied to all search forms, including the search "
 "widget. "
 msgstr "この設定は検索ウィジェットを含むすべての検索フォームに反映されます。"
 
-#: admin/inc/basic.php:808 admin/inc/basic.php:809 admin/inc/basic.php:810
-#: admin/inc/basic.php:811
+#: admin/inc/basic.php:804 admin/inc/basic.php:805 admin/inc/basic.php:806
+#: admin/inc/basic.php:807
 #, php-format
 msgid "Include %s in search range"
 msgstr "%sを検索対象に含める"
 
-#: admin/inc/basic.php:808
+#: admin/inc/basic.php:804
 msgid "post"
 msgstr "投稿"
 
-#: admin/inc/basic.php:809
+#: admin/inc/basic.php:805
 msgid "pages"
 msgstr "固定ページ"
 
-#: admin/inc/basic.php:826
+#: admin/inc/basic.php:822
 msgid "Custom CSS and script"
 msgstr "カスタムCSS・スクリプト"
 
-#: admin/inc/basic.php:829 functions/custom_script.php:31
+#: admin/inc/basic.php:825 functions/custom_script.php:31
 msgid "Custom CSS"
 msgstr "カスタムCSS"
 
-#: admin/inc/basic.php:831 functions/custom_script.php:33
+#: admin/inc/basic.php:827 functions/custom_script.php:33
 msgid ""
 "This css will be displayed inside &lt;head&gt; tag.<br />You don't need to "
 "enter &lt;style&gt; tag in this field."
@@ -988,15 +975,15 @@ msgstr ""
 "以下のCSSは&lt;head&gt;タグ内に出力されます。<br />&lt;style&gt;タグを入力す"
 "る必要はございません。"
 
-#: admin/inc/basic.php:832 functions/custom_script.php:34
+#: admin/inc/basic.php:828 functions/custom_script.php:34
 msgid "Example:<br><strong>.custom_css { font-size:12px; }</strong>"
 msgstr "記入例：.custom_css { font-size:12px; }"
 
-#: admin/inc/basic.php:836 functions/custom_script.php:40
+#: admin/inc/basic.php:832 functions/custom_script.php:40
 msgid "Custom script for header"
 msgstr "ヘッダー用カスタムスクリプト"
 
-#: admin/inc/basic.php:838 functions/custom_script.php:42
+#: admin/inc/basic.php:834 functions/custom_script.php:42
 msgid ""
 "This script will be displayed inside &lt;head&gt; tag.<br>Please use this "
 "option when adding Google Analytics tracking code, etc."
@@ -1004,11 +991,11 @@ msgstr ""
 "&lt;head&gt;タグの最後に出力されます。<br>Google Analyticsのトラッキングコー"
 "ドなどを追加する際にお使いください。"
 
-#: admin/inc/basic.php:842 functions/custom_script.php:48
+#: admin/inc/basic.php:838 functions/custom_script.php:48
 msgid "Custom script for footer"
 msgstr "フッター用カスタムスクリプト"
 
-#: admin/inc/basic.php:844 functions/custom_script.php:50
+#: admin/inc/basic.php:840 functions/custom_script.php:50
 msgid ""
 "This script will be displayed before &lt;/body&gt; tag.<br>Please use this "
 "option when adding conversion analysis script. Example: An analysis script "
@@ -1053,8 +1040,8 @@ msgstr ""
 "options-reading.php\" target=\"_blank\">表示設定画面</a>より「投稿ページ」と"
 "してご登録ください。"
 
-#: admin/inc/blog.php:134 admin/inc/front_page.php:671
-#: admin/inc/front_page.php:1135 admin/inc/header.php:321
+#: admin/inc/blog.php:134 admin/inc/front_page.php:672
+#: admin/inc/front_page.php:1138 admin/inc/header.php:321
 msgid "Date"
 msgstr "日付"
 
@@ -1082,8 +1069,8 @@ msgstr ""
 "<a href=\"https://tcd-theme.com/2022/07/wordpress-homepage.html\" "
 "target=\"_blank\">設定マニュアル</a>を参考に作成と設定を行ってください。"
 
-#: admin/inc/blog.php:174 admin/inc/front_page.php:191
-#: admin/inc/front_page.php:421 admin/inc/front_page.php:608
+#: admin/inc/blog.php:174 admin/inc/front_page.php:192
+#: admin/inc/front_page.php:422 admin/inc/front_page.php:609
 #: admin/inc/news.php:166 admin/inc/treatment.php:151
 msgid "Font direction"
 msgstr "文字の方向"
@@ -1145,7 +1132,7 @@ msgstr "大バナー"
 
 #: admin/inc/blog.php:264 admin/inc/blog.php:311 admin/inc/footer.php:222
 #: admin/inc/footer.php:272 admin/inc/footer.php:419 admin/inc/footer.php:485
-#: admin/inc/front_page.php:402 admin/inc/front_page.php:589
+#: admin/inc/front_page.php:403 admin/inc/front_page.php:590
 #: admin/inc/header.php:149 admin/inc/header.php:171 admin/inc/header.php:378
 #: admin/inc/header.php:428 admin/inc/header.php:493 admin/inc/news.php:266
 #: admin/inc/news.php:313 admin/inc/treatment.php:208
@@ -1298,15 +1285,15 @@ msgstr "アイコン無し"
 #: admin/inc/footer.php:241 admin/inc/footer.php:291 admin/inc/footer.php:433
 #: admin/inc/footer.php:499 admin/inc/header.php:397 admin/inc/header.php:447
 msgid ""
-"Please enter any icon code from Google Fonts.<br><a href=\"https://fonts."
-"google.com/icons?selected=Material+Symbols+Outlined:redo:FILL@0;wght@400;"
-"GRAD@0;opsz@24\" target=\"_blank\">Click here for a list of icons from "
-"Google Fonts.</a>"
+"Please enter any icon code from Google Fonts.<br><a href=\"https://"
+"fonts.google.com/icons?"
+"selected=Material+Symbols+Outlined:redo:FILL@0;wght@400;GRAD@0;opsz@24\" "
+"target=\"_blank\">Click here for a list of icons from Google Fonts.</a>"
 msgstr ""
 "Google Fontsより任意のアイコンコードをご入力ください。<br><a href=\"https://"
-"fonts.google.com/icons?selected=Material+Symbols+Outlined:redo:FILL@0;"
-"wght@400;GRAD@0;opsz@24\" target=\"_blank\">Google Fontsのアイコン一覧はこち"
-"ら</a>"
+"fonts.google.com/icons?"
+"selected=Material+Symbols+Outlined:redo:FILL@0;wght@400;GRAD@0;opsz@24\" "
+"target=\"_blank\">Google Fontsのアイコン一覧はこちら</a>"
 
 #: admin/inc/footer.php:243 admin/inc/footer.php:293 admin/inc/footer.php:435
 #: admin/inc/footer.php:501 admin/inc/header.php:399 admin/inc/header.php:449
@@ -1468,59 +1455,59 @@ msgstr ""
 msgid "Description will be displayed here."
 msgstr "ここに説明文が表示されます。"
 
-#: admin/inc/front_page.php:149 admin/inc/header.php:95
+#: admin/inc/front_page.php:150 admin/inc/header.php:95
 #: admin/inc/treatment.php:27 admin/inc/treatment.php:29
 #: admin/inc/treatment.php:42 admin/inc/treatment.php:46
-#: admin/inc/treatment.php:83 functions.php:1000
+#: admin/inc/treatment.php:83 functions.php:926
 #: functions/treatment_category.php:23 functions/treatment_cf.php:4
 msgid "Treatment"
 msgstr "診療案内"
 
-#: admin/inc/front_page.php:157
+#: admin/inc/front_page.php:158
 msgid "Splash screen"
 msgstr "スプラッシュ画面"
 
-#: admin/inc/front_page.php:160
+#: admin/inc/front_page.php:161
 msgid "Display splash screen"
 msgstr "スプラッシュ画面を表示する"
 
-#: admin/inc/front_page.php:164
+#: admin/inc/front_page.php:165
 msgid ""
 "Splash screen will be displayed on front page.<br>When you set the number of "
 "times to display \"only once\", you can delete the cookie and check the "
-"display again.<br><a href=\"https://tcd-theme.com/2019/07/cookie-cache."
-"html\" target=\"_blank\">What is Cookie?</a>"
+"display again.<br><a href=\"https://tcd-theme.com/2019/07/cookie-"
+"cache.html\" target=\"_blank\">What is Cookie?</a>"
 msgstr ""
 "スプラッシュ画面はトップページのみに表示されます。<br>表示回数を「一度だけ」"
 "に設定した場合、Cookieを削除することで再表示してご確認いただけます。<br><a "
 "href=\"https://tcd-theme.com/2019/07/cookie-cache.html\" "
 "target=\"_blank\">Cookieとは</a>"
 
-#: admin/inc/front_page.php:169
+#: admin/inc/front_page.php:170
 msgid "Display times"
 msgstr "表示回数"
 
-#: admin/inc/front_page.php:172 admin/inc/options.php:453
+#: admin/inc/front_page.php:173 admin/inc/options.php:453
 msgid "Only once"
 msgstr "一度だけ"
 
-#: admin/inc/front_page.php:174 admin/inc/options.php:454
+#: admin/inc/front_page.php:175 admin/inc/options.php:454
 msgid "Every time"
 msgstr "毎回"
 
-#: admin/inc/front_page.php:179
+#: admin/inc/front_page.php:180
 msgid "Delete cookie"
 msgstr "Cookieを削除する"
 
-#: admin/inc/front_page.php:182
+#: admin/inc/front_page.php:183
 msgid "Content type"
 msgstr "コンテンツのタイプ"
 
-#: admin/inc/front_page.php:196
+#: admin/inc/front_page.php:197
 msgid "Logo image"
 msgstr "ロゴ画像"
 
-#: admin/inc/front_page.php:197
+#: admin/inc/front_page.php:198
 msgid ""
 "Please select \"Yes\" for the radio button below if you upload logo image "
 "for the retina display."
@@ -1528,15 +1515,15 @@ msgstr ""
 "レティナディスプレイ用画像をアップロードした場合は、「レティナディスプレイ用"
 "画像を利用する」オプションから「はい」を選択してください。"
 
-#: admin/inc/front_page.php:265
+#: admin/inc/front_page.php:266
 msgid "Header content"
 msgstr "ヘッダーコンテンツ"
 
-#: admin/inc/front_page.php:273
+#: admin/inc/front_page.php:274
 msgid "Set the background and catchphrase for the red frame area."
 msgstr "赤枠箇所の背景とキャッチフレーズを設定します。"
 
-#: admin/inc/front_page.php:274
+#: admin/inc/front_page.php:275
 msgid ""
 "Click add new item button to start this option.<br />You can change order by "
 "dragging each headline of option field."
@@ -1545,21 +1532,21 @@ msgstr ""
 "<br />各行の見出しをドラッグする事によって行を入れ替え、任意の順番で表示する"
 "事ができます。"
 
-#: admin/inc/front_page.php:289 admin/inc/front_page.php:476
+#: admin/inc/front_page.php:290 admin/inc/front_page.php:477
 msgid "Slider type"
 msgstr "スライダーのタイプ"
 
-#: admin/inc/front_page.php:309 admin/inc/front_page.php:496
+#: admin/inc/front_page.php:310 admin/inc/front_page.php:497
 #: admin/inc/options.php:195 admin/inc/options.php:212
 msgid "Video"
 msgstr "動画"
 
-#: admin/inc/front_page.php:311 admin/inc/front_page.php:498
+#: admin/inc/front_page.php:312 admin/inc/front_page.php:499
 msgid "Please upload MP4 format file."
 msgstr "MP4形式の動画ファイルをアップロードしてください。"
 
-#: admin/inc/front_page.php:312 admin/inc/front_page.php:334
-#: admin/inc/front_page.php:499 admin/inc/front_page.php:521
+#: admin/inc/front_page.php:313 admin/inc/front_page.php:335
+#: admin/inc/front_page.php:500 admin/inc/front_page.php:522
 msgid ""
 "Web browser takes few second to load the data of video so we recommend to "
 "use loading screen if you want to display video."
@@ -1568,34 +1555,34 @@ msgstr ""
 "ます。<br>動画を設置する際は、「基本設定」メニューにある「ロード画面」を表示"
 "する事をお勧めします。"
 
-#: admin/inc/front_page.php:318 admin/inc/front_page.php:505
+#: admin/inc/front_page.php:319 admin/inc/front_page.php:506
 msgid "Uploaded MP4 file"
 msgstr "アップロードされたMP4ファイル"
 
-#: admin/inc/front_page.php:323 admin/inc/front_page.php:510
+#: admin/inc/front_page.php:324 admin/inc/front_page.php:511
 msgid "Select MP4 file"
 msgstr "MP4ファイルを選択する"
 
-#: admin/inc/front_page.php:324 admin/inc/front_page.php:511
+#: admin/inc/front_page.php:325 admin/inc/front_page.php:512
 msgid "Remove MP4 file"
 msgstr "MP4ファイルを削除する"
 
-#: admin/inc/front_page.php:331 admin/inc/front_page.php:518
+#: admin/inc/front_page.php:332 admin/inc/front_page.php:519
 #: admin/inc/options.php:196 admin/inc/options.php:213
 msgid "Youtube"
 msgstr "Youtube"
 
-#: admin/inc/front_page.php:333 admin/inc/front_page.php:520
+#: admin/inc/front_page.php:334 admin/inc/front_page.php:521
 msgid "Please enter Youtube URL."
 msgstr "表示したいYoutubeの動画のURLを入力してください。"
 
-#: admin/inc/front_page.php:343 admin/inc/front_page.php:530
+#: admin/inc/front_page.php:344 admin/inc/front_page.php:531
 msgid ""
 "If the mobile device can't play video this image will be displayed instead."
 msgstr ""
 "モバイル端末が動画を再生できない場合、以下の画像が代わりに表示されます。"
 
-#: admin/inc/front_page.php:398 admin/inc/front_page.php:585
+#: admin/inc/front_page.php:399 admin/inc/front_page.php:586
 msgid ""
 "Enter URL only if you want to add a link to the item. You can use it when "
 "setting banner images, etc."
@@ -1603,46 +1590,46 @@ msgstr ""
 "背景にリンクをつけたい場合のみ、URLを入力してください。バナー画像等をセットす"
 "る際にご活用いただけます。"
 
-#: admin/inc/front_page.php:647
+#: admin/inc/front_page.php:648
 msgid "News ticker"
 msgstr "ニュースティッカー"
 
-#: admin/inc/front_page.php:655
+#: admin/inc/front_page.php:656
 msgid "Display news ticker"
 msgstr "ニュースティッカーを表示する"
 
-#: admin/inc/front_page.php:659 admin/inc/front_page.php:1123
+#: admin/inc/front_page.php:660 admin/inc/front_page.php:1126
 #: admin/inc/header.php:305 admin/inc/news.php:230
 #: widget/styled_post_list.php:138
 msgid "Post type"
 msgstr "記事のタイプ"
 
-#: admin/inc/front_page.php:668 admin/inc/front_page.php:1132
+#: admin/inc/front_page.php:669 admin/inc/front_page.php:1135
 #: admin/inc/header.php:318 widget/styled_post_list.php:199
 msgid "Post order"
 msgstr "記事の並び順"
 
-#: admin/inc/front_page.php:673 admin/inc/front_page.php:1137
+#: admin/inc/front_page.php:674 admin/inc/front_page.php:1140
 #: admin/inc/header.php:323 admin/inc/options.php:91
 #: widget/styled_post_list.php:202
 msgid "Random"
 msgstr "ランダム"
 
-#: admin/inc/front_page.php:691
+#: admin/inc/front_page.php:692
 msgid "Content builder"
 msgstr "コンテンツビルダー"
 
-#: admin/inc/front_page.php:697
+#: admin/inc/front_page.php:698
 msgid "Use content builder"
 msgstr "コンテンツビルダーを利用する"
 
-#: admin/inc/front_page.php:701
+#: admin/inc/front_page.php:702
 msgid "Use page content instead of content builder"
 msgstr ""
 "コンテンツビルダーの代わりにフロントページに設定している固定ページの本文を表"
 "示する"
 
-#: admin/inc/front_page.php:711
+#: admin/inc/front_page.php:712
 #, php-format
 msgid ""
 "Please set content from <a href=\"post.php?post=%s&action=edit\" "
@@ -1651,24 +1638,24 @@ msgstr ""
 "本文の設定は、<a href=\"post.php?post=%s&action=edit\" target=\"_blank\">フロ"
 "ントページに設定している固定ページの編集画面</a>より行ってください。"
 
-#: admin/inc/front_page.php:713 admin/inc/front_page.php:725
+#: admin/inc/front_page.php:714 admin/inc/front_page.php:726
 #: functions/page_cf.php:275
 msgid "Content width"
 msgstr "コンテンツの横幅"
 
-#: admin/inc/front_page.php:716
+#: admin/inc/front_page.php:717
 msgid "Content width type"
 msgstr "コンテンツ横幅のタイプ"
 
-#: admin/inc/front_page.php:719
+#: admin/inc/front_page.php:720
 msgid "Any width"
 msgstr "任意の横幅"
 
-#: admin/inc/front_page.php:721 admin/inc/options.php:291
+#: admin/inc/front_page.php:722 admin/inc/options.php:291
 msgid "Full screen width"
 msgstr "フル幅"
 
-#: admin/inc/front_page.php:737
+#: admin/inc/front_page.php:738
 msgid ""
 "<p>You can build contents freely with this function.</p><br /><p>STEP1: "
 "Click Add content button.<br />STEP2: Select content from dropdown menu.<br /"
@@ -1684,7 +1671,7 @@ msgstr ""
 "番を変更したい場合は、「移動する」タブをドラッグしてください。<br />コンテン"
 "ツを削除したい場合は、「削除する」タブをクリックしてください。</p>"
 
-#: admin/inc/front_page.php:739
+#: admin/inc/front_page.php:740
 msgid ""
 "For headline and description that do not have font type or font size "
 "options, please adjust all at once from the font setting section of the "
@@ -1693,75 +1680,75 @@ msgstr ""
 "フォントタイプや文字サイズオプションが無い見出しや説明文につきましては、基本"
 "設定のフォント設定欄より一括で調整してください。"
 
-#: admin/inc/front_page.php:742 admin/inc/front_page.php:953
-#: admin/inc/front_page.php:1014 admin/inc/front_page.php:1030
-#: admin/inc/front_page.php:1032 admin/inc/front_page.php:1033
-#: admin/inc/front_page.php:1034
+#: admin/inc/front_page.php:743 admin/inc/front_page.php:955
+#: admin/inc/front_page.php:1016 admin/inc/front_page.php:1032
+#: admin/inc/front_page.php:1034 admin/inc/front_page.php:1035
+#: admin/inc/front_page.php:1036
 msgid "Box content"
 msgstr "ボックスコンテンツ"
 
-#: admin/inc/front_page.php:743 admin/inc/front_page.php:954
-#: admin/inc/front_page.php:1095 admin/inc/front_page.php:1110
+#: admin/inc/front_page.php:744 admin/inc/front_page.php:956
+#: admin/inc/front_page.php:1098 admin/inc/front_page.php:1113
 msgid "Carousel"
 msgstr "カルーセル"
 
-#: admin/inc/front_page.php:754
+#: admin/inc/front_page.php:755
 msgid "Click Add content button to start content builder"
 msgstr "「コンテンツを追加」ボタンをクリックしてください"
 
-#: admin/inc/front_page.php:762 admin/inc/front_page.php:787
+#: admin/inc/front_page.php:763 admin/inc/front_page.php:788
 #: functions/page_builder.php:615 functions/page_builder.php:653
 msgid "Move"
 msgstr "移動する"
 
-#: admin/inc/front_page.php:763 admin/inc/front_page.php:788
+#: admin/inc/front_page.php:764 admin/inc/front_page.php:789
 #: functions/page_builder.php:616 functions/page_builder.php:654
 #: functions/page_builder.php:956 functions/page_builder.php:1011
 msgid "Delete"
 msgstr "削除する"
 
-#: admin/inc/front_page.php:779
+#: admin/inc/front_page.php:780
 msgid "Add content"
 msgstr "コンテンツを追加"
 
-#: admin/inc/front_page.php:952 admin/inc/front_page.php:1168
+#: admin/inc/front_page.php:954 admin/inc/front_page.php:1180
 msgid "Free space"
 msgstr "フリースペース"
 
-#: admin/inc/front_page.php:964
+#: admin/inc/front_page.php:966
 msgid "Choose the content"
 msgstr "コンテンツを選択してください"
 
-#: admin/inc/front_page.php:1063
+#: admin/inc/front_page.php:1065
 msgid "Button URL"
 msgstr "ボタンのリンク先URL"
 
-#: admin/inc/front_page.php:1072
+#: admin/inc/front_page.php:1074
 msgid ""
 "You can set design of button from basic setting menu in theme option page."
 msgstr "ボタンのデザインには基本設定の「ボタン」の設定が反映されます。"
 
-#: admin/inc/front_page.php:1113
+#: admin/inc/front_page.php:1116
 msgid "Layout"
 msgstr "レイアウト"
 
-#: admin/inc/front_page.php:1116
+#: admin/inc/front_page.php:1119
 msgid "Two column"
 msgstr "２カラム"
 
-#: admin/inc/front_page.php:1118
+#: admin/inc/front_page.php:1121
 msgid "Three column"
 msgstr "3カラム"
 
-#: admin/inc/front_page.php:1141 admin/inc/front_page.php:1189
+#: admin/inc/front_page.php:1144 admin/inc/front_page.php:1201
 msgid "Display background color"
 msgstr "背景色を表示する"
 
-#: admin/inc/front_page.php:1141 admin/inc/front_page.php:1189
+#: admin/inc/front_page.php:1144 admin/inc/front_page.php:1201
 msgid "Background color can be set from the color setting option."
 msgstr "背景色は基本設定の「カラー」より設定する事ができます。"
 
-#: admin/inc/front_page.php:1144 admin/inc/front_page.php:1192
+#: admin/inc/front_page.php:1147 admin/inc/front_page.php:1204
 #: admin/inc/options.php:317 functions/page_cf.php:215
 #: functions/page_cf.php:224 functions/page_cf.php:233
 #: functions/page_cf.php:242 functions/page_cf.php:251
@@ -1770,7 +1757,7 @@ msgstr "背景色は基本設定の「カラー」より設定する事ができ
 msgid "Display"
 msgstr "表示する"
 
-#: admin/inc/front_page.php:1146 admin/inc/front_page.php:1194
+#: admin/inc/front_page.php:1149 admin/inc/front_page.php:1206
 #: admin/inc/options.php:321 admin/inc/options.php:479
 #: functions/page_cf.php:217 functions/page_cf.php:226
 #: functions/page_cf.php:235 functions/page_cf.php:244
@@ -1779,7 +1766,27 @@ msgstr "表示する"
 msgid "Hide"
 msgstr "表示しない"
 
-#: admin/inc/front_page.php:1186
+#: admin/inc/front_page.php:1153
+msgid "Auto scroll"
+msgstr "自動スクロール"
+
+#: admin/inc/front_page.php:1156
+msgid "On"
+msgstr "有効"
+
+#: admin/inc/front_page.php:1158
+msgid "Off"
+msgstr "無効"
+
+#: admin/inc/front_page.php:1161
+msgid "Label for button linking to archive page"
+msgstr "アーカイブページへのリンクボタンのラベル"
+
+#: admin/inc/front_page.php:1161
+msgid "If you don't want to display it, leave it empty.\""
+msgstr "表示させない場合は空にして下さい"
+
+#: admin/inc/front_page.php:1198
 msgid "Other setting"
 msgstr "その他の設定"
 
@@ -1788,7 +1795,7 @@ msgstr "その他の設定"
 msgid "Header message"
 msgstr "ヘッダーメッセージ"
 
-#: admin/inc/header.php:106 functions.php:609
+#: admin/inc/header.php:106 functions.php:535
 msgid "Global menu"
 msgstr "グローバルメニュー"
 
@@ -2534,7 +2541,7 @@ msgstr ""
 msgid "Use quicktags"
 msgstr "クイックタグを使用する"
 
-#: admin/inc/quicktag.php:269 functions/custom_editor.php:157
+#: admin/inc/quicktag.php:269 functions/custom_editor.php:437
 msgid "Basic information and business day"
 msgstr "基本情報と営業日"
 
@@ -2604,8 +2611,8 @@ msgstr ""
 "い。"
 
 #: admin/inc/quicktag.php:468 admin/inc/quicktag.php:477
-#: functions/custom_editor.php:91 functions/custom_editor.php:96
-#: functions/custom_editor.php:101
+#: functions/custom_editor.php:371 functions/custom_editor.php:376
+#: functions/custom_editor.php:381
 msgid "Frame style"
 msgstr "囲み枠"
 
@@ -2623,7 +2630,7 @@ msgid ""
 "will take precedence."
 msgstr "ラベルは記事編集画面からも個別に変更可能で、そちらが優先されます。"
 
-#: admin/inc/quicktag.php:515 admin/inc/quicktag.php:523 functions.php:96
+#: admin/inc/quicktag.php:515 admin/inc/quicktag.php:523 functions.php:102
 msgid "Save"
 msgstr "保存"
 
@@ -2653,19 +2660,19 @@ msgstr "アニメーションを使う"
 msgid "Speech balloon"
 msgstr "吹き出し"
 
-#: admin/inc/quicktag.php:582 functions/custom_editor.php:133
+#: admin/inc/quicktag.php:582 functions/custom_editor.php:413
 msgid "Speech balloon left 1"
 msgstr "吹き出し左1"
 
-#: admin/inc/quicktag.php:583 functions/custom_editor.php:138
+#: admin/inc/quicktag.php:583 functions/custom_editor.php:418
 msgid "Speech balloon left 2"
 msgstr "吹き出し左2"
 
-#: admin/inc/quicktag.php:584 functions/custom_editor.php:143
+#: admin/inc/quicktag.php:584 functions/custom_editor.php:423
 msgid "Speech balloon right 1"
 msgstr "吹き出し右1"
 
-#: admin/inc/quicktag.php:585 functions/custom_editor.php:148
+#: admin/inc/quicktag.php:585 functions/custom_editor.php:428
 msgid "Speech balloon right 2"
 msgstr "吹き出し右2"
 
@@ -3012,9 +3019,9 @@ msgid ""
 "href=\"./edit-tags.php?taxonomy=treatment_category&post_type=treatment\">%s "
 "category</a> page will be displayed by list."
 msgstr ""
-"このページのメインコンテンツには、<a target=\"_blank\" href=\"./edit-tags."
-"php?taxonomy=treatment_category&post_type=treatment\">%sカテゴリー</a>で設定"
-"した内容が一覧表示されます。"
+"このページのメインコンテンツには、<a target=\"_blank\" href=\"./edit-"
+"tags.php?taxonomy=treatment_category&post_type=treatment\">%sカテゴリー</a>で"
+"設定した内容が一覧表示されます。"
 
 #: admin/theme-options.php:20 admin/theme-options.php:21
 msgid "TCD Theme"
@@ -3204,19 +3211,19 @@ msgstr ""
 "レートで、サイドのアイコンボタンや診療科目をまとめられる投稿タイプが特徴的で"
 "す。CTAを使った導線もかんたんに設置いただけます。"
 
-#: functions.php:80
+#: functions.php:86
 msgid "Cookie has been deleted"
 msgstr "Cookieは削除されました"
 
-#: functions.php:81
+#: functions.php:87
 msgid "Settings Saved Successfully"
 msgstr "データの保存が完了しました"
 
-#: functions.php:82
+#: functions.php:88
 msgid "Can not save data. Please try again"
 msgstr "データを保存する事ができませんでした。もう一度お試しください。"
 
-#: functions.php:83
+#: functions.php:89
 msgid ""
 "Your changes on the current tab have not been saved.\n"
 "To stay on the current tab so that you can save your changes, click Cancel."
@@ -3226,12 +3233,12 @@ msgstr ""
 "後に、\n"
 "青色の「設定を保存」ボタンをクリックしてデータを保存してください。"
 
-#: functions.php:84 functions/page_builder.php:956
+#: functions.php:90 functions/page_builder.php:956
 #: functions/page_builder.php:1011
 msgid "Are you sure you want to delete this content?"
 msgstr "このコンテンツを削除してもよろしいでしょうか？"
 
-#: functions.php:85
+#: functions.php:91
 msgid ""
 "<span>You can display image by content width when you displaying border "
 "around the content on LP page.</span>"
@@ -3239,31 +3246,31 @@ msgstr ""
 "<span>ランディングページ用固定ページでコンテンツに枠線を表示している際、横幅"
 "851px以上の画像を枠に合わせてワイドに表示することができます。</span>"
 
-#: functions.php:87
+#: functions.php:93
 msgid "Cookie is deleted"
 msgstr "Cookieは削除されました"
 
-#: functions.php:92
+#: functions.php:98
 msgid "Please select image"
 msgstr "画像を選択してください"
 
-#: functions.php:93
+#: functions.php:99
 msgid "Use this image"
 msgstr "この画像を利用する"
 
-#: functions.php:94
+#: functions.php:100
 msgid "Please select MP4 file"
 msgstr "MP4ファイルを選択してください"
 
-#: functions.php:95
+#: functions.php:101
 msgid "Use this MP4 file"
 msgstr "このMP4ファイルを利用する"
 
-#: functions.php:135
+#: functions.php:133
 msgid "Common widget"
 msgstr "基本ウィジェット"
 
-#: functions.php:136
+#: functions.php:134
 #, php-format
 msgid ""
 "Widgets registered in this area will be displayed in the blog and %s page in "
@@ -3272,11 +3279,11 @@ msgstr ""
 "このエリアに登録されたウィジェットは、ブログと%sに共通で反映されます。いずれ"
 "も記事本文下部のウィジェットエリアに表示されます。"
 
-#: functions.php:144
+#: functions.php:142
 msgid "Common widget (smarphone)"
 msgstr "基本ウィジェット（スマホ用）"
 
-#: functions.php:145
+#: functions.php:143
 #, php-format
 msgid ""
 "Widgets registered in this area will be displayed in the blog and %s page in "
@@ -3287,11 +3294,11 @@ msgstr ""
 "も記事本文下部のウィジェットエリアに表示されます。※スマホで閲覧時のみ他のウィ"
 "ジェットと置き換わって表示されます。"
 
-#: functions.php:153
+#: functions.php:151
 msgid "Blog page"
 msgstr "ブログページ"
 
-#: functions.php:154
+#: functions.php:152
 msgid ""
 "Widgets registered in this area will be displayed in the widget area under "
 "\"Related Posts\" at the bottom of the article. They have priority over the "
@@ -3300,11 +3307,11 @@ msgstr ""
 "このエリアに登録されたウィジェットは、ブログ記事本文下部「関連記事」の下の"
 "ウィジェットエリアに表示されます。※基本ウィジェットより優先して表示されます。"
 
-#: functions.php:162
+#: functions.php:160
 msgid "Blog page (smartphone)"
 msgstr "ブログページ（スマホ用）"
 
-#: functions.php:163
+#: functions.php:161
 msgid ""
 "Widgets registered in this area will be displayed in the widget area under "
 "\"Related Posts\" at the bottom of the article. They will be replaced by "
@@ -3314,12 +3321,12 @@ msgstr ""
 "ウィジェットエリアに表示されます。※スマホで閲覧時のみ他のウィジェットと置き換"
 "わって表示されます。"
 
-#: functions.php:171 functions/treatment_cf.php:7
+#: functions.php:169 functions/treatment_cf.php:7
 #, php-format
 msgid "%s page"
 msgstr "%sページ"
 
-#: functions.php:172
+#: functions.php:170
 #, php-format
 msgid ""
 "Widgets registered in this area will be displayed in the widget area under "
@@ -3329,12 +3336,12 @@ msgstr ""
 "このエリアに登録されたウィジェットは、%s記事本文下部「%s一覧」の下のウィ"
 "ジェットエリアに表示されます。※基本ウィジェットより優先して表示されます。"
 
-#: functions.php:180
+#: functions.php:178
 #, php-format
 msgid "%s page (smartphone)"
 msgstr "%sページ（スマホ用）"
 
-#: functions.php:181
+#: functions.php:179
 #, php-format
 msgid ""
 "Widgets registered in this area will be displayed in the widget area under "
@@ -3345,19 +3352,7 @@ msgstr ""
 "ジェットエリアに表示されます。※スマホで閲覧時のみ他のウィジェットと置き換わっ"
 "て表示されます。"
 
-#: functions.php:320
-msgid "Default style"
-msgstr "通常のスタイル"
-
-#: functions.php:321
-msgid "No border"
-msgstr "枠線無し"
-
-#: functions.php:322
-msgid "Display only serumtal border"
-msgstr "横線のみ表示する"
-
-#: functions.php:596
+#: functions.php:522
 #, php-format
 msgid ""
 "Recommend image size. Width:%1$spx, Height:%2$spx.<br>This image will be "
@@ -3366,86 +3361,86 @@ msgstr ""
 "推奨画像サイズ：横幅%1$spx、縦幅%2$spx<br>この画像は検索結果やOGPタグで利用さ"
 "れます。"
 
-#: functions.php:610
+#: functions.php:536
 msgid "Footer menu1"
 msgstr "フッターメニュー1"
 
-#: functions.php:611
+#: functions.php:537
 msgid "Footer menu2"
 msgstr "フッターメニュー2"
 
-#: functions.php:612
+#: functions.php:538
 msgid "Footer menu3"
 msgstr "フッターメニュー3"
 
-#: functions.php:613
+#: functions.php:539
 msgid "Footer menu4"
 msgstr "フッターメニュー4"
 
-#: functions.php:614
+#: functions.php:540
 msgid "Mobile size footer menu"
 msgstr "モバイルサイズ用フッターメニュー"
 
-#: functions.php:798 functions/seo.php:142 functions/seo.php:274 index.php:29
+#: functions.php:724 functions/seo.php:142 functions/seo.php:274 index.php:29
 #: template-parts/breadcrumb.php:106
 msgid "F jS, Y"
 msgstr "Y年 Fj日"
 
-#: functions.php:800 functions/seo.php:144 functions/seo.php:276 index.php:34
+#: functions.php:726 functions/seo.php:144 functions/seo.php:276 index.php:34
 #: template-parts/breadcrumb.php:108
 msgid "F, Y"
 msgstr "Y年 F"
 
-#: functions.php:802 functions/seo.php:146 functions/seo.php:278 index.php:39
+#: functions.php:728 functions/seo.php:146 functions/seo.php:278 index.php:39
 #: template-parts/breadcrumb.php:110
 msgid "Y"
 msgstr "Y年"
 
-#: functions.php:864 functions.php:866 functions.php:869
+#: functions.php:790 functions.php:792 functions.php:795
 msgid "REPLY"
 msgstr "返信"
 
-#: functions.php:871
+#: functions.php:797
 msgid "QUOTE"
 msgstr "引用"
 
-#: functions.php:872
+#: functions.php:798
 msgid "EDIT"
 msgstr "編集"
 
-#: functions.php:878
+#: functions.php:804
 msgid "Your comment is awaiting moderation."
 msgstr "このコメントは管理者の承認を待っています。"
 
-#: functions.php:935 functions.php:1004
+#: functions.php:861 functions.php:930
 msgid "Add New"
 msgstr "新しく追加"
 
-#: functions.php:936 functions.php:1005
+#: functions.php:862 functions.php:931
 msgid "Add New Item"
 msgstr "新しく追加"
 
-#: functions.php:937 functions.php:1006
+#: functions.php:863 functions.php:932
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:939 functions.php:1008
+#: functions.php:865 functions.php:934
 msgid "View Item"
 msgstr "アイテムを見る"
 
-#: functions.php:940 functions.php:1009
+#: functions.php:866 functions.php:935
 msgid "Search Items"
 msgstr "検索する"
 
-#: functions.php:941 functions.php:1010
+#: functions.php:867 functions.php:936
 msgid "Not Found"
 msgstr "見つかりませんでした"
 
-#: functions.php:942 functions.php:1011
+#: functions.php:868 functions.php:937
 msgid "Not found in trash"
 msgstr "ゴミ箱には見つかりませんでした"
 
-#: functions.php:964 functions.php:1032
+#: functions.php:890 functions.php:958
 #, php-format
 msgid "%s category"
 msgstr "%sカテゴリー"
@@ -3478,31 +3473,43 @@ msgstr "表示設定を完了する"
 msgid "Display settings have been completed."
 msgstr "表示設定が完了しました。"
 
-#: functions/custom_editor.php:39
+#: functions/custom_editor.php:140
+msgid "Default style"
+msgstr "通常のスタイル"
+
+#: functions/custom_editor.php:141
+msgid "No border"
+msgstr "枠線無し"
+
+#: functions/custom_editor.php:142
+msgid "Display only serumtal border"
+msgstr "横線のみ表示する"
+
+#: functions/custom_editor.php:319
 msgid "quicktags"
 msgstr "クイックタグ"
 
-#: functions/custom_editor.php:42
+#: functions/custom_editor.php:322
 msgid "YouTube"
 msgstr "YouTube"
 
-#: functions/custom_editor.php:43
+#: functions/custom_editor.php:323
 msgid "<div class=\"ytube\">YouTube code here</div>"
 msgstr "<div class=\"ytube\">ここにYoutubeのコードを入力してください</div>"
 
-#: functions/custom_editor.php:46
+#: functions/custom_editor.php:326
 msgid "Cardlink"
 msgstr "関連記事カードリンク"
 
-#: functions/custom_editor.php:47
+#: functions/custom_editor.php:327
 msgid "[clink url=\"Post URL to display\"]"
 msgstr "[clink url=\"ここに表示させたい記事URL\"]"
 
-#: functions/custom_editor.php:50
+#: functions/custom_editor.php:330
 msgid "2 column"
 msgstr "レイアウト2c"
 
-#: functions/custom_editor.php:51
+#: functions/custom_editor.php:331
 msgid ""
 "<div class=\"post_row\"><div class=\"post_col post_col-2\">Text and image "
 "tags to display in the left column</div><div class=\"post_col "
@@ -3513,11 +3520,11 @@ msgstr ""
 "post_col-2\">ここに右カラムに表示させたい任意のテキストや画像タグを入力しま"
 "す。</div></div>"
 
-#: functions/custom_editor.php:54
+#: functions/custom_editor.php:334
 msgid "3 column"
 msgstr "レイアウト3c"
 
-#: functions/custom_editor.php:55
+#: functions/custom_editor.php:335
 msgid ""
 "<div class=\"post_row\"><div class=\"post_col post_col-3\">Text and image "
 "tags to display in the left column</div><div class=\"post_col "
@@ -3531,68 +3538,68 @@ msgstr ""
 "す。</div><div class=\"post_col post_col-3\">ここに右カラムに表示させたい任意"
 "のテキストや画像タグを入力してください。</div></div>"
 
-#: functions/custom_editor.php:58
+#: functions/custom_editor.php:338
 msgid "Comment out"
 msgstr "コメントアウト"
 
-#: functions/custom_editor.php:63
+#: functions/custom_editor.php:343
 msgid "Styled h2 tag"
 msgstr "H2"
 
-#: functions/custom_editor.php:68
+#: functions/custom_editor.php:348
 msgid "Styled h3 tag"
 msgstr "H3"
 
-#: functions/custom_editor.php:73
+#: functions/custom_editor.php:353
 msgid "Styled h4 tag"
 msgstr "H4"
 
-#: functions/custom_editor.php:78
+#: functions/custom_editor.php:358
 msgid "Styled h5 tag"
 msgstr "H5"
 
-#: functions/custom_editor.php:83
+#: functions/custom_editor.php:363
 msgid "Styled ol"
 msgstr "番号付きリスト"
 
-#: functions/custom_editor.php:84
+#: functions/custom_editor.php:364
 msgid "List"
 msgstr "リスト"
 
-#: functions/custom_editor.php:87
+#: functions/custom_editor.php:367
 msgid "Gray background"
 msgstr "グレー背景"
 
-#: functions/custom_editor.php:88
+#: functions/custom_editor.php:368
 msgid "Enter content here"
 msgstr "ここにコンテンツを入力してください"
 
-#: functions/custom_editor.php:106 functions/custom_editor.php:107
-#: functions/custom_editor.php:110 functions/custom_editor.php:111
-#: functions/custom_editor.php:114 functions/custom_editor.php:115
+#: functions/custom_editor.php:386 functions/custom_editor.php:387
+#: functions/custom_editor.php:390 functions/custom_editor.php:391
+#: functions/custom_editor.php:394 functions/custom_editor.php:395
 #, php-format
 msgid "Button %d"
 msgstr "ボタン%d"
 
-#: functions/custom_editor.php:118 functions/custom_editor.php:123
-#: functions/custom_editor.php:128
+#: functions/custom_editor.php:398 functions/custom_editor.php:403
+#: functions/custom_editor.php:408
 #, php-format
 msgid "Underline %d"
 msgstr "アンダーライン%d"
 
-#: functions/custom_editor.php:153
+#: functions/custom_editor.php:433
 msgid "Google map"
 msgstr "Googleマップ"
 
-#: functions/custom_editor.php:154
+#: functions/custom_editor.php:434
 msgid "Enter address here"
 msgstr "ここに住所を入力してください"
 
-#: functions/custom_editor.php:161
+#: functions/custom_editor.php:441
 msgid "PC / mobile content"
 msgstr "PC/モバイル別コンテンツ"
 
-#: functions/custom_editor.php:162
+#: functions/custom_editor.php:442
 msgid ""
 "<div class='responsive_desc'>\n"
 "<div class='pc'>\n"
@@ -3612,31 +3619,31 @@ msgstr ""
 "</div>\n"
 "</div>"
 
-#: functions/custom_editor.php:165
+#: functions/custom_editor.php:445
 msgid "Tab content"
 msgstr "タブコンテンツ"
 
-#: functions/custom_editor.php:166
+#: functions/custom_editor.php:446
 msgid "Tab1 headline"
 msgstr "タブ１の見出し"
 
-#: functions/custom_editor.php:166
+#: functions/custom_editor.php:446
 msgid "Enter tab1 image url here"
 msgstr "タブ１の画像URLを入力してください"
 
-#: functions/custom_editor.php:166
+#: functions/custom_editor.php:446
 msgid "Tab2 headline"
 msgstr "タブ２の見出し"
 
-#: functions/custom_editor.php:166
+#: functions/custom_editor.php:446
 msgid "Enter tab2 image url here"
 msgstr "タブ２の画像URLを入力してください"
 
-#: functions/custom_page_link.php:19
+#: functions/custom_page_link.php:18
 msgid "Next page"
 msgstr "次のページ"
 
-#: functions/custom_page_link.php:20
+#: functions/custom_page_link.php:19
 msgid "Previous page"
 msgstr "前のページ"
 
@@ -3653,15 +3660,15 @@ msgstr "ウィジェット"
 msgid "Please set it up on the <a href='%s'>widgets pages</a>"
 msgstr "<a href='%s'>ウィジェットページ</a>で設定してください"
 
-#: functions/manual.php:11 functions/manual.php:17 functions/manual.php:38
+#: functions/manual.php:8 functions/manual.php:14 functions/manual.php:35
 msgid "TCD Manual"
 msgstr "TCDマニュアル"
 
-#: functions/manual.php:18 functions/manual.php:50
+#: functions/manual.php:15 functions/manual.php:47
 msgid "Manual Site"
 msgstr "マニュアルサイト"
 
-#: functions/manual.php:19 functions/manual.php:51
+#: functions/manual.php:16 functions/manual.php:48
 #, php-format
 msgid ""
 "The password for viewing the manual is on <a href=%s rel=\"noopener\" "
@@ -3670,41 +3677,50 @@ msgstr ""
 "マニュアルのパスワードは<a href=%s rel=“noopener” target=“_blank”>マイページ"
 "</a>をご覧ください。"
 
-#: functions/manual.php:20 functions/manual.php:52
+#: functions/manual.php:17 functions/manual.php:49
 msgid "Related Links"
 msgstr "関連記事"
 
-#: functions/manual.php:22 functions/manual.php:54
+#: functions/manual.php:19 functions/manual.php:51
 msgid "The complete collection of WordPress usage"
 msgstr "WordPress使い方大全集"
 
-#: functions/manual.php:23 functions/manual.php:55
+#: functions/manual.php:20 functions/manual.php:52
 msgid "TCD MUSEUM"
 msgstr "TCD MUSEUM：TCDテーマを使った制作事例集"
 
-#: functions/manual.php:24 functions/manual.php:56
+#: functions/manual.php:21 functions/manual.php:53
 msgid "TCD LABO"
 msgstr "TCD LABO：TCDテーマのカスタマイズ方法（上級者向け）"
 
-#: functions/manual.php:61 functions/update_notifier.php:41
+#: functions/manual.php:58
 #, php-format
 msgid "The latest version of %s is released."
 msgstr "最新版のバージョン%sがリリースされました。"
 
-#: functions/manual.php:62 functions/update_notifier.php:41
+#: functions/manual.php:59
 #, php-format
 msgid "Current version is %s. You can update to the latest version, %s."
 msgstr ""
 "現在お使いのバージョンは%sです。 最新版のバージョン%sをご利用頂けます。"
 
-#: functions/manual.php:63 functions/update_notifier.php:15
+#: functions/manual.php:60 functions/update_notifier.php:22
+#: functions/update_notifier.php:24
 msgid "Theme Update"
 msgstr "テーマ更新"
 
-#: functions/manual.php:65
+#: functions/manual.php:62 functions/update_notifier.php:125
 #, php-format
 msgid "The current version of %s is %s. This is the latest version."
 msgstr "現在お使いの%sは最新バージョンの%sです。"
+
+#: functions/manual.php:67 functions/update_notifier.php:47
+msgid ""
+"We were unable to get the latest information on the theme. Please wait some "
+"time and try again."
+msgstr ""
+"テーマの最新情報の取得ができませんでした。時間をおいてから再度お試しくださ"
+"い。"
 
 #: functions/next_prev.php:14
 msgid "Prev post"
@@ -3918,9 +3934,9 @@ msgstr "広い"
 
 #: functions/page_cf.php:308
 msgid ""
-"When you set the \"Square Logo\" in the basic settings of <a href=\"./admin."
-"php?page=theme_options\" target=\"_blank\">theme options</a>, we recommend "
-"to set the header image in page."
+"When you set the \"Square Logo\" in the basic settings of <a href=\"./"
+"admin.php?page=theme_options\" target=\"_blank\">theme options</a>, we "
+"recommend to set the header image in page."
 msgstr ""
 "<a href=\"./admin.php?page=theme_options\" target=\"_blank\">テーマオプション"
 "</a>の基本設定で「スクエアロゴ」を設定時は、ヘッダー画像を設定するのがオスス"
@@ -4160,23 +4176,19 @@ msgstr ""
 msgid "Price list"
 msgstr "料金一覧"
 
-#: functions/update_notifier.php:39
+#: functions/update_notifier.php:27 functions/update_notifier.php:100
 msgid "Theme Update Information"
 msgstr "テーマ更新情報"
 
-#: functions/update_notifier.php:44
+#: functions/update_notifier.php:134
 msgid ""
-"Note: Please be sure to backup your theme before you update to the latest "
-"version."
+"The latest version of the theme can be downloaded from <a href=\"https://"
+"tcd.style/order-history\" rel=\"noopener\" target=\"_blank\">Mypage</a>."
 msgstr ""
-"注意：最新版のテーマへアップデートする前に、必ず旧テーマファイルのバックアッ"
-"プを行ってください。"
+"最新版のテーマは<a href=\"https://tcd.style/order-history\" rel=\"noopener\" "
+"target=\"_blank\">マイページ</a>からダウンロードできます。"
 
-#: functions/update_notifier.php:45
-msgid "Download the latest theme from My Page"
-msgstr "マイページから最新版のテーマをダウンロードする"
-
-#: functions/update_notifier.php:45
+#: functions/update_notifier.php:142
 msgid ""
 "Click <a href=\"https://tcd-theme.com/2017/01/theme_update.html\" "
 "rel=\"noopener\" target=\"_blank\">here</a> to find out how to update the "
@@ -4186,7 +4198,15 @@ msgstr ""
 "theme_update.html\" rel=\"noopener\" target=\"_blank\">こちら</a>をクリックし"
 "てください。"
 
-#: functions/update_notifier.php:47
+#: functions/update_notifier.php:150
+msgid ""
+"Please be sure to back up your theme files before updating to the latest "
+"version."
+msgstr ""
+"最新版のテーマへアップデートする前に、必ずご利用中のテーマファイルのバック"
+"アップをしてください。"
+
+#: functions/update_notifier.php:156
 msgid "Changelog"
 msgstr "更新履歴"
 
@@ -4325,6 +4345,28 @@ msgstr "記事の数"
 #: widget/styled_post_list.php:201
 msgid "Post date"
 msgstr "日付"
+
+#~ msgid ""
+#~ "In order for your site to display correctly, you must first go through "
+#~ "the <a href=\"options-reading.php\">\"Reading Settings\"</a> in "
+#~ "WordPress. Check <a href=\"https://tcd-theme.com/2022/07/wordpress-"
+#~ "homepage.html\" target=\"_blank\" rel=\"nofollow\">this TCD blog</a> for "
+#~ "instructions on how to set it up."
+#~ msgstr ""
+#~ "サイトを正しく表示するために、最初にWordPressの<a href=\"options-"
+#~ "reading.php\">「表示設定」</a>を行ってください。設定方法は<a "
+#~ "href=\"https://tcd-theme.com/2022/07/wordpress-homepage.html\" "
+#~ "target=\"_blank\" rel=\"nofollow\">TCDの解説記事</a>でご覧いただけます。"
+
+#~ msgid ""
+#~ "Note: Please be sure to backup your theme before you update to the latest "
+#~ "version."
+#~ msgstr ""
+#~ "注意：最新版のテーマへアップデートする前に、必ず旧テーマファイルのバック"
+#~ "アップを行ってください。"
+
+#~ msgid "Download the latest theme from My Page"
+#~ msgstr "マイページから最新版のテーマをダウンロードする"
 
 #~ msgid "Use Twitter Cards"
 #~ msgstr "Twitter Cardsを利用する"
@@ -5139,8 +5181,8 @@ msgstr "日付"
 
 #~ msgid ""
 #~ "Company name will be displayed on the thumbnail or featured image in "
-#~ "single page. You can also use text link (EXAMPLE: &lt;a href=\"#\"&gt;"
-#~ "Company name&lt;/a&gt;)."
+#~ "single page. You can also use text link (EXAMPLE: &lt;a "
+#~ "href=\"#\"&gt;Company name&lt;/a&gt;)."
 #~ msgstr ""
 #~ "会社名は、記事のサムネイルや詳細ページのアイキャッチ上に表示されます。テキ"
 #~ "ストリンクを設定する事もできます。（ 例：&lt;a href=\"#\"&gt;会社名&lt;/"
@@ -5379,9 +5421,9 @@ msgstr "日付"
 #~ "script&gt; for javascript."
 #~ msgstr ""
 #~ "&lt;head&gt;タグ内の最後に出力されます。<br>CSSやGoogle Analyticsのトラッ"
-#~ "キングコードなどを追加する際にお使いください。<br>CSSを利用する場合は&lt;"
-#~ "style&gt; &lt;/style&gt;タグ、javascriptを利用する場合は&lt;script&gt; "
-#~ "&lt;/script&gt;タグで囲んでください。"
+#~ "キングコードなどを追加する際にお使いください。<br>CSSを利用する場合は"
+#~ "&lt;style&gt; &lt;/style&gt;タグ、javascriptを利用する場合は"
+#~ "&lt;script&gt; &lt;/script&gt;タグで囲んでください。"
 
 #~ msgid "Single page text link color on mouseover"
 #~ msgstr "カーソルを合わせた時の記事本文内のリンク文字色"
@@ -5991,6 +6033,9 @@ msgstr "日付"
 #~ msgid "serumtal scroll page"
 #~ msgstr "横スクロールページ"
 
+#~ msgid "If you don't want to display it, leave it empty."
+#~ msgstr "表示をさせない場合は空にして下さい"
+
 #~ msgid "serumtal scroll page setting"
 #~ msgstr "横スクロールページの設定"
 
@@ -6266,8 +6311,8 @@ msgstr "日付"
 #~ msgstr "ソーシャルボタンを表示する"
 
 #~ msgid ""
-#~ "You can SNS icon from basic setting menu in <a href=\"../wp-admin/admin."
-#~ "php?page=theme_options\" target=\"_blank\">theme option page</a>."
+#~ "You can SNS icon from basic setting menu in <a href=\"../wp-admin/"
+#~ "admin.php?page=theme_options\" target=\"_blank\">theme option page</a>."
 #~ msgstr ""
 #~ "各SNSアイコンの設定は、<a href=\"./admin.php?page=theme_options\"  "
 #~ "target=\"_blank\">テーマオプション画面</a>の基本設定メニューの中にある"
@@ -9252,8 +9297,8 @@ msgstr "日付"
 #~ msgstr "ユーザープロフィールを表示します。"
 
 #~ msgid ""
-#~ "Please set information from user <a target=\"_blank\" href=\"./profile."
-#~ "php\">profile page</a>."
+#~ "Please set information from user <a target=\"_blank\" href=\"./"
+#~ "profile.php\">profile page</a>."
 #~ msgstr ""
 #~ "ユーザーの情報は、<a target=\"_blank\" href=\"./profile.php\">プロフィール"
 #~ "画面</a>より設定してください。"
@@ -10627,8 +10672,8 @@ msgstr "日付"
 #~ msgstr ""
 #~ "このオプションを利用するためには、カスタムメニュー作成画面からメニューを作"
 #~ "成し、<br />カスタムメニュー作成画面の下部にある「メニューの位置」より「ド"
-#~ "ロワーメニュー」にチェックを入れてください。<br /><a href=\"./nav-menus."
-#~ "php\">カスタムメニュー作成画面はこちら</a>"
+#~ "ロワーメニュー」にチェックを入れてください。<br /><a href=\"./nav-"
+#~ "menus.php\">カスタムメニュー作成画面はこちら</a>"
 
 #~ msgid "Banner content%s setting"
 #~ msgstr "バナーコンテンツ%sの設定"
@@ -12484,8 +12529,8 @@ msgstr "日付"
 #~ "CSSを登録することで、追加CSSとして読み込ませることができ、<br />テーマファ"
 #~ "イルを直接編集することなく安全にカスタマイズを行って頂けます。<br />また、"
 #~ "こちらに登録してあるCSSはテーマのアップデート時にもリセットされることなく"
-#~ "引き継がれます。<br />記入例：.example { font-size:12px; }<br />&lt;"
-#~ "style&gt;タグは不要です。"
+#~ "引き継がれます。<br />記入例：.example { font-size:12px; }<br /"
+#~ ">&lt;style&gt;タグは不要です。"
 
 #~ msgid "Text and Image list"
 #~ msgstr "テキスト＋画像"

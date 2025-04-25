@@ -5,7 +5,7 @@ Theme URI:https://tcd-theme.com/tcd096/
 Description:WordPress theme "SERUM" is a template with the image of a dermatology clinic, featuring side icon buttons and a post type that allows you to organize the subjects of treatment. CTAs can also be easily set up.
 Author:TCD
 Author URI:https://tcd-theme.com/
-Version:2.6
+Version:2.6.1
 Text Domain:tcd-serum
 */
 
@@ -241,6 +241,7 @@ body.single-news #main_content { background:#f6f6f6; padding-top:80px; }
 .cb_box_content .headline { pointer-events:none; color:#000; display:inline-block; padding:0 30px; min-width:270px; height:80px; line-height:80px; background:#fff; text-align:center; position:relative; margin-bottom:-80px; top:-80px; left:50%; transform: translateX(-50%); font-size:22px !important; z-index:10; }
 .cb_box_content .desc { color:#000; line-height:2.4; padding:0 80px; margin-top:20px; }
 .cb_box_content .link_button { pointer-events:auto; text-align:center; margin:28px auto 0; max-width:calc(100% - 160px); display:block; }
+.cb_box_content .link_button span{ line-height: 1.5; }
 .cb_box_content .item:after { width:1px; height:100%; position:absolute; right:0; bottom:0; content:''; display:block; background:#ddd; z-index:-1; }
 .cb_box_content .item:last-of-type:after { display:none; }
 .cb_box_content .animate_background.no_link { pointer-events:none; }
@@ -254,7 +255,12 @@ body.single-news #main_content { background:#f6f6f6; padding-top:80px; }
 .cb_carousel .catch { text-align:center; line-height:1.7; margin:0 0 68px 0; }
 .cb_carousel .index_carousel { width:930px; margin:0 auto; position:relative; }
 .cb_carousel .index_carousel:after { content:''; display:block; width:1px; height:155px; background:#fff; position:absolute; right:0; bottom:0; }
+.cb_carousel .index_carousel.index_carousel__hide_arrow:after{
+  background: transparent;
+}
 .cb_carousel .index_carousel.type2:after { height:185px; }
+.cb_carousel .link_button { pointer-events:auto; text-align:center; margin:68px auto 0; max-width:calc(100% - 160px); display:block; }
+.cb_carousel .link_button span{ line-height: 1.5; }
 .index_carousel .item { position:relative; width:465px; }
 .index_carousel .animate_background { display:block; width:100% !important; height:270px !important; aspect-ratio:465/270; position:relative; z-index:1; overflow:hidden; }
 .index_carousel.type2 .animate_background { height:183px !important; }
@@ -285,6 +291,7 @@ body.hide_blog_date .index_carousel .title span { -webkit-line-clamp:3; }
 .cb_carousel.no_bg_color .index_carousel:after { background:#ddd; }
 .cb_carousel.no_bg_color .index_carousel:before { content:''; display:block; width:1px; height:155px; background:#ddd; position:absolute; left:0; bottom:0; z-index:2; }
 .cb_carousel.no_bg_color .index_carousel { border-bottom:1px solid #ddd; }
+.index_carousel__hide_arrow .splide__arrows{ display: none; }
 @media only screen and (max-width: 1350px) {
 	.cb_carousel .splide__arrow { display:none; }
 }

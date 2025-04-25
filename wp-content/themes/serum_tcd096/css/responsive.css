@@ -151,6 +151,7 @@ body.admin-bar #drawer_menu { padding-top:32px; }
 	.cb_carousel { padding:90px 0 100px; }
   .cb_carousel .index_carousel { margin:0 60px; }
 	.cb_carousel .index_carousel:after { height:130px; }
+  .cb_carousel .link_button { max-width:calc(100% - 100px);  }
 	.index_carousel .content { background:#fff; padding:17px 20px; height:125px; }
 	body.hide_blog_date .index_carousel .content { padding:35px 20px; }
 	.index_carousel .category { padding:0 15px; font-size:12px; min-width:100px; height:35px; line-height:35px; left:20px; }
@@ -165,6 +166,7 @@ body.admin-bar #drawer_menu { padding-top:32px; }
 	.cb_carousel.no_bg_color:first-child { padding-top:35px; }
   .cb_carousel .index_carousel { margin:0; }
 	.cb_carousel .catch { margin:0 0 35px 0; }
+  .cb_carousel .link_button { margin-top:32px; max-width:calc(100% - 40px);  }
 }
 
 

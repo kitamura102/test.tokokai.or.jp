@@ -1,15 +1,15 @@
-# Translation of WordPress - 6.7.x - Development - Administration - Network Admin in Japanese
-# This file is distributed under the same license as the WordPress - 6.7.x - Development - Administration - Network Admin package.
+# Translation of WordPress - 6.8.x - Development - Administration - Network Admin in Japanese
+# This file is distributed under the same license as the WordPress - 6.8.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-06-29 06:15:29+0000\n"
+"PO-Revision-Date: 2025-03-29 05:41:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/4.0.1\n"
 "Language: ja_JP\n"
-"Project-Id-Version: WordPress - 6.7.x - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 6.8.x - Development - Administration - Network Admin\n"
 
 #: wp-admin/network/upgrade.php:32
 msgid "<a href=\"https://developer.wordpress.org/advanced-administration/multisite/admin/#network-admin-updates-screen\">Documentation on Upgrade Network</a>"
@@ -106,12 +106,12 @@ msgid "You should back up your existing %1$s and %2$s files."
 msgstr "既存の %1$s と %2$s ファイルをバックアップしてください。"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:738
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:744
 msgid "Visit theme site for %s"
 msgstr "%s のテーマサイトへ移動"
 
 #. translators: %s: Theme name.
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:751
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:757
 msgid "Child theme of %s"
 msgstr "%s の子テーマ"
 
@@ -239,7 +239,7 @@ msgstr "サブドメインへのインストール"
 msgid "Sub-directory Installation"
 msgstr "サブディレクトリへのインストール"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:944
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:950
 msgid "Active Child Theme"
 msgstr "有効な子テーマ"
 
@@ -381,7 +381,7 @@ msgctxt "user"
 msgid "Mark as spam"
 msgstr "スパムとしてマーク"
 
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:744
+#: wp-admin/includes/class-wp-ms-themes-list-table.php:750
 msgid "Visit Theme Site"
 msgstr "テーマサイトを表示"
 
@@ -513,7 +513,7 @@ msgstr "スパム"
 msgid "Archived"
 msgstr "アーカイブ化"
 
-#: wp-admin/network/site-users.php:373 wp-admin/network/user-new.php:149
+#: wp-admin/network/site-users.php:376 wp-admin/network/user-new.php:149
 msgid "A password reset link will be sent to the user via email."
 msgstr "ユーザーにパスワードリセット用リンクがメールで送信されます。"
 
@@ -769,7 +769,7 @@ msgstr "サイトネットワーク管理画面へようこそ。この画面は
 msgid "Only use this screen once you have updated to a new version of WordPress through Updates/Available Updates (via the Network Administration navigation menu or the Toolbar). Clicking the Upgrade Network button will step through each site in the network, five at a time, and make sure any database updates are applied."
 msgstr "この画面は、サイトネットワーク管理メニューまたはツールバーから「更新 / 利用可能な更新」を使って新バージョンの WordPress へアップグレードした際にのみご利用ください。「サイトネットワークをアップグレード」をクリックすると、ネットワーク内の各サイトを5つずつチェックしてデータベースの更新を適用します。"
 
-#: wp-admin/network/menu.php:46 wp-admin/network/upgrade.php:16
+#: wp-admin/network/menu.php:51 wp-admin/network/upgrade.php:16
 #: wp-admin/network/upgrade.php:43 wp-admin/network/upgrade.php:145
 msgid "Upgrade Network"
 msgstr "サイトネットワークをアップグレード"
@@ -788,8 +788,8 @@ msgid "Language Settings"
 msgstr "言語の設定"
 
 #: wp-admin/network/settings.php:253
-msgid "Allow site administrators to add new users to their site via the \"Users &rarr; Add New\" page"
-msgstr "サイト管理者による「ユーザー &rarr; 新規追加」ページからのユーザー追加を許可"
+msgid "Allow site administrators to add new users to their site via the \"Users &rarr; Add User\" page"
+msgstr "サイト管理者による「ユーザー &rarr; ユーザーを追加」ページからのサイトへの新規ユーザー追加を許可"
 
 #: wp-admin/network/settings.php:58
 msgid "Super admins can no longer be added on the Options screen. You must now go to the list of existing users on Network Admin > Users and click on Username or the Edit action link below that name. This goes to an Edit User page where you can check a box to grant super admin privileges."
@@ -913,11 +913,11 @@ msgid "An Edit link to a separate Edit Site screen."
 msgstr "別のサイト編集画面への「編集」リンク。"
 
 #: wp-admin/network/sites.php:31
-msgid "Add New Site takes you to the screen for adding a new site to the network. You can search for a site by Name, ID number, or IP address. Screen Options allows you to choose how many sites to display on one page."
-msgstr "「新規追加」をクリックすると、ネットワークに新しいサイトを追加する画面へ移動します。サイト名、ID、IP アドレスのいずれかでサイトを検索できます。表示オプションを使って、1ページに表示されるサイト数を選択できます。"
+msgid "Add Site takes you to the screen for adding a new site to the network. You can search for a site by Name, ID number, or IP address. Screen Options allows you to choose how many sites to display on one page."
+msgstr "「サイトを追加」をクリックすると、ネットワークに新しいサイトを追加する画面へ移動します。サイト名、ID、IP アドレスのいずれかでサイトを検索できます。表示オプションを使って、1ページに表示されるサイト数を選択できます。"
 
-#: wp-admin/network/site-users.php:336 wp-admin/network/user-new.php:161
-msgid "Add User"
+#: wp-admin/network/settings.php:251
+msgid "Add Users"
 msgstr "ユーザーを追加"
 
 #: wp-admin/network/user-new.php:55
@@ -928,19 +928,19 @@ msgstr "ユーザーを追加できません。"
 msgid "Add User will set up a new user account on the network and send that person an email with username and password."
 msgstr "「ユーザーを追加」は、サイトネットワークにユーザーアカウントを作成し、その人にユーザー名とパスワードを知らせるメールを送信します。"
 
-#: wp-admin/network/menu.php:41
+#: wp-admin/network/menu.php:46
 msgid "Updates"
 msgstr "更新"
 
-#: wp-admin/network/menu.php:111 wp-admin/network/settings.php:21
+#: wp-admin/network/menu.php:116 wp-admin/network/settings.php:21
 msgid "Network Settings"
 msgstr "サイトネットワーク設定"
 
-#: wp-admin/network/menu.php:80
+#: wp-admin/network/menu.php:85
 msgid "Installed Themes"
 msgstr "インストールされているテーマ"
 
-#: wp-admin/network/menu.php:52
+#: wp-admin/network/menu.php:57
 msgid "All Sites"
 msgstr "すべてのサイト"
 
@@ -1043,8 +1043,8 @@ msgid "Welcome to the Network installation process!"
 msgstr "サイトネットワークのインストールプロセスへようこそ。"
 
 #: wp-admin/includes/network.php:161
-msgid "Error: The network could not be created."
-msgstr "エラー: サイトネットワークが作成できませんでした。"
+msgid "The network could not be created."
+msgstr "ネットワークを作成できませんでした。"
 
 #: wp-admin/includes/network.php:146
 msgid "Once the network is created, you may reactivate your plugins."
@@ -1358,7 +1358,9 @@ msgstr "上記メールアドレスがデータベースになければ新規ユ
 msgid "Admin Email"
 msgstr "管理者メールアドレス"
 
-#: wp-admin/network/site-new.php:299
+#: wp-admin/network/menu.php:58 wp-admin/network/site-new.php:182
+#: wp-admin/network/site-new.php:192 wp-admin/network/site-new.php:299
+#: wp-admin/network/sites.php:391
 msgid "Add Site"
 msgstr "サイトを追加"
 
@@ -1410,8 +1412,8 @@ msgstr "登録メールアドレスの制限"
 msgid "Banned Names"
 msgstr "禁止名"
 
-#: wp-admin/network/settings.php:251
-msgid "Add New Users"
+#: wp-admin/network/site-users.php:353
+msgid "Add New User"
 msgstr "新規ユーザーを追加"
 
 #: wp-admin/network/settings.php:239

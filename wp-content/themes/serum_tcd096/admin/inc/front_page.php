@@ -127,6 +127,8 @@ function add_front_page_dp_default_options( $dp_default_options ) {
             "post_type" => 'post',
             "post_order" => 'date',
             "display_bg_color" => 'show',
+            "autoplay" => 'on',
+            "button" => '',
 		),
 		array(
             "cb_content_select" => "free_space",
@@ -912,7 +914,8 @@ function add_front_page_theme_options_validate( $input ) {
         $value['layout'] = wp_filter_nohtml_kses( $value['layout'] );
 
         $value['display_bg_color'] = wp_filter_nohtml_kses( $value['display_bg_color'] );
-
+        
+        $value['autoplay'] = wp_filter_nohtml_kses( $value['autoplay'] );
       // フリースペース -----------------------------------------------------------------------
       } elseif ($value['cb_content_select'] == 'free_space') {
 
@@ -1090,6 +1093,8 @@ function the_cb_content_setting($cb_index = 'cb_cloneindex', $cb_content_select 
        if (!isset($value['layout'])) { $value['layout'] = 'type1'; }
 
        if (!isset($value['display_bg_color'])) { $value['display_bg_color'] = 'show'; }
+       if (!isset($value['autoplay'])) { $value['autoplay'] = 'on'; }
+       if (!isset($value['button'])) { $value['button'] = ''; }
 ?>
 
   <h3 class="cb_content_headline"><?php _e('Carousel', 'tcd-serum'); ?><span class="cb_content_headline_sub_title"></span></h3>
@@ -1146,8 +1151,17 @@ function the_cb_content_setting($cb_index = 'cb_cloneindex', $cb_content_select 
       <label for="carousel_display_bg_color_hide_<?php echo $cb_index; ?>"><?php _e('Hide', 'tcd-serum'); ?></label>
      </div>
     </li>
+    <li class="cf">
+     <span class="label"><?php _e('Auto scroll', 'tcd-serum');  ?></span>
+     <div class="standard_radio_button">
+      <input id="carousel_autoplay_on_<?php echo $cb_index; ?>" type="radio" name="dp_options[contents_builder][<?php echo $cb_index; ?>][autoplay]" value="on" <?php checked( $value['autoplay'], 'on' ); ?>>
+      <label for="carousel_autoplay_on_<?php echo $cb_index; ?>"><?php _e('On', 'tcd-serum'); ?></label>
+      <input id="carousel_autoplay_off_<?php echo $cb_index; ?>" type="radio" name="dp_options[contents_builder][<?php echo $cb_index; ?>][autoplay]" value="off" <?php checked( $value['autoplay'], 'off' ); ?>>
+      <label for="carousel_autoplay_off_<?php echo $cb_index; ?>"><?php _e('Off', 'tcd-serum'); ?></label>
+     </div>
+    </li>
+    <li class="cf"><span class="label"><?php _e('Label for button linking to archive page', 'tcd-serum'); ?><span class="recommend_desc"><?php _e('If you don\'t want to display it, leave it empty."', 'tcd-serum'); ?></span></span><input type="text" class="full_width" name="dp_options[contents_builder][<?php echo $cb_index; ?>][button]"value="<?php echo esc_attr( $value['button']); ?>"></li>
    </ul>
-
    </div><!-- END .cb_content_switch_target -->
 
 

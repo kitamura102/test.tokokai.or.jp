@@ -16,6 +16,8 @@ require get_template_directory() . '/functions/head.php';
 require_once ( dirname(__FILE__) . '/admin/theme-options.php' );
 $options = get_design_plus_option();
 
+// セットアップ -------------------------------------------------------------------------------
+require_once ( dirname(__FILE__) . '/functions/theme-setup.php' );
 
 // 更新通知 --------------------------------------------------------------------------------
 require_once ( dirname(__FILE__) . '/functions/update_notifier.php' );
@@ -362,7 +364,7 @@ function auto_play_movie() {
 function version_num() {
 
  if (function_exists('wp_get_theme')) {
-   $theme_data = wp_get_theme();
+   $theme_data = wp_get_theme( get_template() );
  } else {
    $theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
  };

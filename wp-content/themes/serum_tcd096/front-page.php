@@ -94,6 +94,7 @@
       }
       $post_order = $content['post_order'];
       $layout = $content['layout'];
+      $autoplay = ( isset($content['autoplay']) && $content['autoplay'] === 'off' ) ? false : true;
       if($post_type == 'news'){
         $taxonomy_name = 'news_category';
         $show_date = 'display';
@@ -103,10 +104,23 @@
       }
       $args = array( 'post_type' => $post_type, 'posts_per_page' => $post_num, 'orderby' => $post_order );
       $post_list = new wp_query($args);
+      $total_posts = $post_list->found_posts; 
+      $show_arrow = true;
+      /*** 数が少ない時は自動再生を強制的にオフにする ***/
+      if(($layout === 'type2' && (!is_mobile()) && $total_posts < 4) || $total_posts < 3 ){
+        $autoplay = false;
+        $show_arrow = false;
+      }
+      /*** ボタンのリンク先を指定 ***/
+      $button = $content['button'] ?? '';
+      $button_url = esc_url(get_permalink(get_option('page_for_posts')));
+      if(  $post_type === 'news' ){
+        $button_url =esc_url(get_post_type_archive_link('news'));
+      }
       if($post_list->have_posts()):
  ?>
 
- <div class="splide index_carousel<?php if($layout == 'type2'){ echo ' type2'; }; ?>">
+ <div class="splide index_carousel<?php if($layout == 'type2'){ echo ' type2'; }; ?> <?php if(!$show_arrow) { echo ' index_carousel__hide_arrow';}; ?>"<?php if(!$autoplay){?> data-splide='{"autoplay":false,"type":"slide"}' <?php } ?>>
   <div class="splide__arrows">
    <button class="splide__arrow splide__arrow--prev"><span>Prev</span></button>
    <button class="splide__arrow splide__arrow--next"><span>Next</span></button>
@@ -156,6 +170,12 @@
  <?php
         endif;
  ?>
+ 
+ <?php if($button){ ?>
+   <div class="link_button">
+    <a href="<?php echo $button_url; ?>" class="design_button"><span><?php echo esc_html($button); ?></span></a>
+   </div>
+  <?php }; ?>
 
 </section><!-- END .cb_carousel -->
 

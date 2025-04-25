@@ -1,95 +1,165 @@
 <?php
 /**
- * Provides a notification everytime the theme is updated
- * Original code courtesy of Joao Araujo of Unisphere Design - http://themeforest.net/user/unisphere
+ * Provides a notification everytime the theme is updated.
+ *
+ * @package TCD
  */
-function update_notifier_menu() {
 
-	// This tells the function to cache the remote call for 21600 seconds (6 hours)
-	$xml = get_latest_theme_version( 21600 );
+/**
+ * Admin menu.
+ *
+ * @return void
+ */
+function tcd_update_notifier_admin_menu() {
+	// Get xml.
+	$xml = get_tcd_update_notifier_xml();
 
-	// Get theme data from style.css (current version is what we want)
-	$theme_data = function_exists( 'wp_get_theme' ) ? wp_get_theme() : get_theme_data( TEMPLATEPATH . '/style.css' );
+	// Get theme data.
+	$theme_data = wp_get_theme( get_template() );
 
-	if ( version_compare( $theme_data['Version'], $xml->latest ) == -1 ) {
-		add_dashboard_page( $theme_data['Name'] . ' Theme Updates', __( 'Theme Update', 'tcd-serum' ) . '<span class="update-plugins count-1"><span class="update-count">1</span></span>', 'administrator', 'design-plus-updates', 'update_notifier' );
+	// Has newer version.
+	if ( $xml && version_compare( $theme_data['Version'], $xml->latest, '<' ) ) {
+		$tcd_memu_title = __( 'Theme Update', TCD_TEXTDOMAIN ) . '<span class="update-plugins count-1"><span class="update-count">1</span></span>';
+	}else{
+		$tcd_memu_title = __( 'Theme Update', TCD_TEXTDOMAIN ) . '';
 	}
+		add_dashboard_page(
+			$theme_data['Name'] . ' ' . __('Theme Update Information', TCD_TEXTDOMAIN ),
+			$tcd_memu_title,
+			'administrator',
+			'design-plus-updates',
+			'tcd_update_notifier_content'
+		);
 }
-add_action( 'admin_menu', 'update_notifier_menu' );
+add_action( 'admin_menu', 'tcd_update_notifier_admin_menu' );
 
-function update_notifier() {
+/**
+ * Render the content.
+ *
+ * @return void
+ */
+function tcd_update_notifier_content() {
+	// Get xml.
+	$xml = get_tcd_update_notifier_xml();
+	if ( ! $xml || empty( $xml->latest ) ) { ?>
+			<p style="font-size:14px;">
+			<!--テーマの最新情報の取得ができませんでした。時間をおいてから再度お試しください。-->
+			<?php _e( 'We were unable to get the latest information on the theme. Please wait some time and try again.',TCD_TEXTDOMAIN);?>
+			</p>
+		<?php
+		return;
+	}
 
-	// This tells the function to cache the remote call for 21600 seconds (6 hours)
-	$xml = get_latest_theme_version( 21600 );
-
-	// Get theme data from style.css (current version is what we want)
-	$theme_data = function_exists( 'wp_get_theme' ) ? wp_get_theme() : get_theme_data( TEMPLATEPATH . '/style.css' );
-?>
+	// Get theme data.
+	$theme_data = wp_get_theme( get_template() );
+	?>
 	<style>
-	.update-nag { display: none; }
-	#mono_info { float:left; width:400px; margin:0 20px 20px 0; border:1px solid #ccc; -moz-border-radius:5px; -khtml-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; }
-	#mono_theme_thumbnail { float:left; display:block; border:1px solid #ccc; }
-    #mono_info h3 { margin:0 0 15px 0; font-size:14px; background:#f2f2f2; padding:15px 15px 12px; -moz-border-radius:5px 5px 0 0; -khtml-border-radius:5px 5px 0 0; -webkit-border-radius:5px 5px 0 0; border-radius:5px 5px 0 0; border-bottom:1px solid #ccc; background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee)); background: -moz-linear-gradient(top, #fff, #eee); }
-    #mono_info dt { font-weight:bold; margin:0 0 2px 0; font-size:12px; }
-    #mono_info dd { margin:0 0 15px 0; font-size:12px; }
-    #mono_info dl { margin:0 15px 5px 15px; font-size:12px; }
+	.update-nag {
+		display: none;
+	}
+	.tcd-update-info {
+		background: #fff;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		float: left;
+		width: 400px;
+		margin: 0 20px 20px 0;
+	}
+	.tcd-update-info h3 {
+		background: #f2f2f2;
+		background: linear-gradient(to bottom, #fff, #eee);
+		border-bottom: 1px solid #ccc;
+		border-radius: 5px 5px 0 0;
+		font-size: 14px;
+		margin: 0 0 15px 0;
+		padding: 15px 15px 12px;
+	}
+	.tcd-update-info dl {
+		font-size: 12px;
+		margin: 0 15px 5px 15px;
+	}
+	.tcd-update-info dt {
+		font-weight: 700;
+		margin: 0 0 2px 0;
+	}
+	.tcd-update-info dd {
+		margin: 0 0 15px 0;
+	}
+	.tcd-update-theme-thumbnail {
+		border:1px solid #ccc;
+		display: block;
+		height: auto;
+		max-width: 100%;
+		width: 600px;
+	}
 	</style>
-    <div class="wrap">
-   		<div id="icon-tools" class="icon32"></div>
-   		<h2><?php echo $theme_data['Name']; ?> <?php _e( 'Theme Update Information', 'tcd-serum' ); ?></h2>
-   		<div id="message" class="updated below-h2">
-   			<p><strong><?php printf( __( 'The latest version of %s is released.', 'tcd-serum' ), esc_html( $theme_data['Name'] ) ); ?></strong> <?php printf( __( 'Current version is %s. You can update to the latest version, %s.', 'tcd-serum' ), esc_html( $theme_data['Version'] ), esc_html( $xml->latest ) ); ?></p>
-     	</div>
-     	<div id="mono_instructions">
-				<h3><?php _e( 'Note: Please be sure to backup your theme before you update to the latest version.', 'tcd-serum' ); ?></h3>
-        <p style="font-size:16px;">【 <a href="https://tcd.style/login" rel="noopener" target="_blank"><?php _e( 'Download the latest theme from My Page', 'tcd-serum' ); ?></a> 】<br /><span style="font-size:14px;"><?php _e( 'Click <a href="https://tcd-theme.com/2017/01/theme_update.html" rel="noopener" target="_blank">here</a> to find out how to update the theme.', 'tcd-serum' ); ?></span></p>
-     		<div id="mono_info">
-   				<h3><?php _e( 'Changelog', 'tcd-serum' ); ?></h3>
-   				<?php echo $xml->changelog; ?>
-      		</div>
-          	<img id="mono_theme_thumbnail" src="<?php echo get_bloginfo( 'template_url' ) . '/screenshot.png'; ?>" alt="">
-         </div>
+	<div class="wrap">
+		<div id="icon-tools" class="icon32"></div>
+		<h2>
+			<?php echo esc_html( $theme_data['Name'] ); ?>
+			<?php _e( 'Theme Update Information', TCD_TEXTDOMAIN ); ?>
+		</h2>
+		<?php 	if ( $xml && version_compare( $theme_data['Version'], $xml->latest, '<' ) ) { ?>
+		<h3> 
+				<strong>
+					<?php
+						printf(
+							/* translators: %s: Theme name. */
+							esc_html__( 'The latest version of %s is released.', TCD_TEXTDOMAIN ),
+							esc_html( $theme_data['Name'] )
+						);
+					?>
+				</strong>
+		</h3>
+			<p style="font-size:14px;">
+			<?php
+					printf(
+						esc_html__( 'Current version is %s. You can update to the latest version, %s.', TCD_TEXTDOMAIN ),
+						esc_html( $theme_data['Version'] ),
+						esc_html( $xml->latest )
+					);
+				?>	
+			</p>
+			<?php }else{ ?>
+			<p style="font-size:14px;">
+				<?php printf( __( 'The current version of %s is %s. This is the latest version.', TCD_TEXTDOMAIN ), esc_html( $theme_data['Name'] ),esc_html( $theme_data['Version'] )); ?>
+			</p>
+			<?php } ?>
+		<div class="tcd-update-instructions wp-clearfix">
+			<p style="font-size:14px;">
+				<strong>
+					<!--最新版のテーマは<a href="https://tcd.style/order-history" rel="noopener" target="_blank">マイページ</a> からダウンロードできます。-->
+					<?php
+						_e( 
+							'The latest version of the theme can be downloaded from <a href="https://tcd.style/order-history" rel="noopener" target="_blank">Mypage</a>.',
+							TCD_TEXTDOMAIN
+						);
+					?>
+				</strong>
+					<!--テーマアップデートの方法はこちらをご確認ください。-->
+					<?php
+						_e(
+							'Click <a href="https://tcd-theme.com/2017/01/theme_update.html" rel="noopener" target="_blank">here</a> to find out how to update the theme.',
+							TCD_TEXTDOMAIN
+						);
+					?>
+			</p>
+		</div>
+		<div style="font-weight: bold;font-size:15px;display: block;padding: 20px;border: 1px solid #ccc;margin-bottom: 1.5em;background-color: #fff;">
+			<!--最新版のテーマへアップデートする前に、必ずご利用中のテーマファイルのバックアップをしてください。-->
+			<?php _e( 'Please be sure to back up your theme files before updating to the latest version.',TCD_TEXTDOMAIN); ?>
+			
+		</div>
+		<div class="tcd-update-instructions wp-clearfix">
+			<div class="tcd-update-info">
+
+				<h3><!--更新履歴--><?php _e( 'Changelog', TCD_TEXTDOMAIN ); ?></h3>
+				<?php echo $xml->changelog; ?>
+			</div>
+			<img class="tcd-update-theme-thumbnail" src="<?php echo esc_url( (string) $theme_data->get_screenshot() ); ?>" alt="">
+		</div>
 	</div>
-<?php
+	<?php
 }
 
-// This function retrieves a remote xml file on my server to see if there's a new update
-// For performance reasons this function caches the xml content in the database for XX seconds ($interval variable)
-function get_latest_theme_version( $interval ) {
 
-	// remote xml file location
-    $notifier_file_url = 'http://design-plus1.com/notifier_serum.xml';
-    $db_cache_field = 'serum-contempo-notifier-cache';
-    $db_cache_field_last_updated = 'serum-contempo-notifier-last-updated';
-	$last = get_option( $db_cache_field_last_updated );
-	$now = time();
-
-	// check the cache
-	if ( ! $last || ( ( $now - $last ) > $interval ) ) {
-		// cache doesn't exist, or is old, so refresh it
-		if ( function_exists( 'curl_init' ) ) { // if cURL is available, use it...
-			$ch = curl_init( $notifier_file_url );
-			curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-			curl_setopt( $ch, CURLOPT_HEADER, 0 );
-			curl_setopt( $ch, CURLOPT_TIMEOUT, 10 );
-			$cache = curl_exec( $ch );
-			curl_close( $ch );
-		} else {
-			$cache = file_get_contents( $notifier_file_url ); // ...if not, use the common file_get_contents()
-		}
-
-		if ( $cache ) {
-			// we got good results
-			update_option( $db_cache_field, $cache );
-			update_option( $db_cache_field_last_updated, time() );
-		}
-		// read from the cache file
-		$notifier_data = get_option( $db_cache_field );
-	}
-	else {
-		// cache file is fresh enough, so read from it
-		$notifier_data = get_option( $db_cache_field );
-	}
-	$xml = simplexml_load_string( $notifier_data );
-	return $xml;
-}

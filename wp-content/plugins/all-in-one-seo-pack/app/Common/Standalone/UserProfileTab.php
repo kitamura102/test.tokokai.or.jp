@@ -59,6 +59,10 @@ class UserProfileTab {
 		}
 
 		aioseo()->core->assets->load( 'src/vue/standalone/user-profile-tab/main.js', [], $this->getVueData() );
+		// Load script again so we can add extra data to localize the strings.
+		aioseo()->core->assets->load( 'src/vue/standalone/user-profile-tab/main.js', [], [
+			'translations' => aioseo()->helpers->getJedLocaleData( 'aioseo-eeat' )
+		], 'eeat' );
 	}
 
 	/**
