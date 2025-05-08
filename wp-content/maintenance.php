@@ -23,7 +23,7 @@ header('Retry-After: 600');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="https://test.tokokai.or.jp/wp-content/uploads/2025/04/cropped-favicon-32x32.png">
     <link rel="stylesheet" href="https://test.tokokai.or.jp/wp-content/maintenance/assets/styles.css">
     <script src="https://test.tokokai.or.jp/wp-content/maintenance/assets/timer.js"></script>
     <title>予定されたメンテナンス</title>
