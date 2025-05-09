@@ -3,6 +3,8 @@
  * 基本設定
  */
 
+ use TCD\Helper\UI;
+ use TCD\Helper\Sanitization as San;
 
 // Add default values
 add_filter( 'before_getting_design_plus_option', 'add_basic_dp_default_options' );
@@ -35,17 +37,53 @@ function add_basic_dp_default_options( $dp_default_options ) {
 	$dp_default_options['bg_color'] = '#f4f1ef';
 	$dp_default_options['content_link_color'] = '#1578d6';
 
+     // フォントセット（type1, type2, type3, logo 用）
+$dp_default_options['font_list'] = [
+  1 => [ // type1
+    'type'       => 'system',
+    'weight'     => 'normal',
+    'japan'      => 'sans-serif',
+    'latin'      => 'arial',
+    'web_japan'  => 'noto_sans',
+    'web_latin'  => '',
+  ],
+  2 => [ // type2
+    'type'       => 'system',
+    'weight'     => 'normal',
+    'japan'      => 'serif',
+    'latin'      => 'times',
+    'web_japan'  => 'noto_sans',
+    'web_latin'  => '',
+  ],
+  3 => [ // type3
+    'type'       => 'system',
+    'weight'     => 'normal',
+    'japan'      => 'kyokasho',
+    'latin'      => 'palatino',
+    'web_japan'  => 'noto_sans',
+    'web_latin'  => '',
+  ],
+  'logo' => [ // ロゴ用フォント
+    'type'       => 'web',
+    'weight'     => 'bold',
+    'japan'      => 'kyokasho',
+    'latin'      => 'palatino',
+    'web_japan'  => 'noto_sans',
+    'web_latin'  => '',
+  ],
+];
+
 	// フォントの種類
-	$dp_default_options['content_font_type'] = 'type2';
+	$dp_default_options['content_font_type'] = 1;
 	$dp_default_options['content_font_size'] = '16';
 	$dp_default_options['content_font_size_sp'] = '14';
-	$dp_default_options['page_header_font_type'] = 'type2';
+	$dp_default_options['page_header_font_type'] = 1;
 	$dp_default_options['page_header_font_size'] = '34';
 	$dp_default_options['page_header_font_size_sp'] = '24';
-	$dp_default_options['catch_font_type'] = 'type2';
+	$dp_default_options['catch_font_type'] = 1;
 	$dp_default_options['catch_font_size'] = '32';
 	$dp_default_options['catch_font_size_sp'] = '20';
-	$dp_default_options['single_title_font_type'] = 'type2';
+	$dp_default_options['single_title_font_type'] = 1;
 	$dp_default_options['single_title_font_size'] = '28';
 	$dp_default_options['single_title_font_size_sp'] = '20';
 
@@ -176,7 +214,17 @@ function add_basic_tab_panel( $options ) {
 
       <h4 class="theme_option_headline2"><?php _e('Font size', 'tcd-serum');  ?></h4>
       <ul class="option_list">
-       <li class="cf"><span class="label"><?php echo tcd_admin_label('font_type'); ?></span><?php echo tcd_basic_radio_button($options, 'header_logo_font_type', $font_type_options); ?></li>
+       <li class="cf"><span class="label"><?php echo tcd_admin_label('font_type'); ?></span>
+       <?php echo UI\note(
+          [
+            sprintf(
+              __( '<a href="%s" target="_blank" rel="noopener noreferrer">Site title</a> appears as a logo.','tcd-serum' ),
+              esc_url( admin_url( '/options-general.php#blogname' ) )
+            ),
+            __( 'The fonts in the font set (for logos) are reflected.','tcd-serum' )
+          ]
+        ); ?>
+       </li>
        <li class="cf"><span class="label"><?php _e('Font size', 'tcd-serum'); ?></span><?php echo tcd_font_size_option($options, 'header_logo_font_size'); ?></li>
       </ul>
 
@@ -395,6 +443,32 @@ function add_basic_tab_panel( $options ) {
     <h3 class="theme_option_headline"><?php _e('Font', 'tcd-serum');  ?></h3>
     <div class="theme_option_field_ac_content">
 
+    <?php
+    //新フォントシステム仮実装
+    set_query_var('options', $options);
+    set_query_var('dp_default_options', $dp_default_options);
+    get_template_part('admin/font/font-basic-main-contents');
+  
+   ?>
+
+<div class="option_with_image_preview">
+      <div class="image_area">
+       <img src="<?php echo esc_url(get_template_directory_uri()); ?>/admin/img/font_image_post_content.jpg" alt="" title="" />
+      </div>
+      <div class="option_area">
+       <h4 class="theme_option_headline2"><?php _e('Base font', 'tcd-serum'); ?></h4>
+       <div class="theme_option_message2">
+        <p><?php _e( 'Set the base font for the entire site.<br>This setting will be used in post contents and descriptions.', 'tcd-serum' ); ?></p>
+       </div>
+       <ul class="option_list">
+        <li class="cf"><span class="label"><?php _e('Font type', 'tcd-serum'); ?></span>
+          <?php echo UI\font_select( 'dp_options[content_font_type]', $options['content_font_type'] ); ?>
+        </li>
+        <li class="cf"><span class="label"><?php _e('Font size', 'tcd-serum'); ?></span><?php echo tcd_font_size_option($options, 'content_font_size'); ?></li>
+       </ul>
+      </div>
+     </div>
+
      <div class="option_with_image_preview">
       <div class="image_area">
        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/admin/img/font_image_page_header.jpg" alt="" title="" />
@@ -405,7 +479,9 @@ function add_basic_tab_panel( $options ) {
         <p><?php _e('This settings will be applied to page header.', 'tcd-serum'); ?></p>
        </div>
        <ul class="option_list">
-        <li class="cf"><span class="label"><?php _e('Font type', 'tcd-serum'); ?></span><?php echo tcd_basic_radio_button($options, 'page_header_font_type', $font_type_options); ?></li>
+        <li class="cf"><span class="label"><?php _e('Font type', 'tcd-serum'); ?></span>
+          <?php echo UI\font_select( 'dp_options[page_header_font_type]', $options['page_header_font_type'] ); ?>
+        </li>
         <li class="cf"><span class="label"><?php _e('Font size', 'tcd-serum'); ?></span><?php echo tcd_font_size_option($options, 'page_header_font_size'); ?></li>
        </ul>
       </div>
@@ -421,7 +497,9 @@ function add_basic_tab_panel( $options ) {
         <p><?php _e('This settings will be applied to catchphrase and headline.', 'tcd-serum'); ?></p>
        </div>
        <ul class="option_list">
-        <li class="cf"><span class="label"><?php _e('Font type', 'tcd-serum'); ?></span><?php echo tcd_basic_radio_button($options, 'catch_font_type', $font_type_options); ?></li>
+        <li class="cf"><span class="label"><?php _e('Font type', 'tcd-serum'); ?></span>
+          <?php echo UI\font_select( 'dp_options[catch_font_type]', $options['catch_font_type'] ); ?>
+        </li>
         <li class="cf"><span class="label"><?php _e('Font size', 'tcd-serum'); ?></span><?php echo tcd_font_size_option($options, 'catch_font_size'); ?></li>
        </ul>
       </div>
@@ -437,24 +515,10 @@ function add_basic_tab_panel( $options ) {
         <p><?php _e('This settings will be applied to single page post title.', 'tcd-serum'); ?></p>
        </div>
        <ul class="option_list">
-        <li class="cf"><span class="label"><?php _e('Font type', 'tcd-serum'); ?></span><?php echo tcd_basic_radio_button($options, 'single_title_font_type', $font_type_options); ?></li>
+        <li class="cf"><span class="label"><?php _e('Font type', 'tcd-serum'); ?></span>
+          <?php echo UI\font_select( 'dp_options[single_title_font_type]', $options['single_title_font_type'] ); ?>
+        </li>
         <li class="cf"><span class="label"><?php _e('Font size', 'tcd-serum'); ?></span><?php echo tcd_font_size_option($options, 'single_title_font_size'); ?></li>
-       </ul>
-      </div>
-     </div>
-
-     <div class="option_with_image_preview">
-      <div class="image_area">
-       <img src="<?php echo esc_url(get_template_directory_uri()); ?>/admin/img/font_image_post_content.jpg" alt="" title="" />
-      </div>
-      <div class="option_area">
-       <h4 class="theme_option_headline2"><?php _e('Post content', 'tcd-serum'); ?></h4>
-       <div class="theme_option_message2">
-        <p><?php _e( 'This setting will be used in post contents and descriptions.', 'tcd-serum' ); ?></p>
-       </div>
-       <ul class="option_list">
-        <li class="cf"><span class="label"><?php _e('Font type', 'tcd-serum'); ?></span><?php echo tcd_basic_radio_button($options, 'content_font_type', $font_type_options); ?></li>
-        <li class="cf"><span class="label"><?php _e('Font size', 'tcd-serum'); ?></span><?php echo tcd_font_size_option($options, 'content_font_size'); ?></li>
        </ul>
       </div>
      </div>
@@ -860,7 +924,7 @@ function add_basic_theme_options_validate( $input ) {
 
   global $dp_default_options, $font_type_options, $hover_type_options, $hover3_direct_options, $sns_type_options, $footer_bar_icon_options, $bool_options,
          $button_type_options, $button_border_radius_options, $button_size_options, $button_animation_options,
-         $loading_type, $loading_display_page_options, $loading_display_time_options, $time_options, $logo_type_options;
+         $loading_type, $loading_display_page_options, $loading_display_time_options, $time_options, $logo_type_options,$tcd_font_manager;
 
   // 色の設定
   $input['main_color'] = sanitize_hex_color( $input['main_color'] );
@@ -868,32 +932,36 @@ function add_basic_theme_options_validate( $input ) {
   $input['content_link_color'] = sanitize_hex_color( $input['content_link_color'] );
 
 
+      // フォントリストのバリデーション
+      $input['font_list'] = San\repeater(
+        $input['font_list'],
+        function( $font_item ) use ( $tcd_font_manager ) {
+          return [
+            'type'      => San\choice( $font_item['type'] ?? 'system', [ 'system', 'web' ] ),
+            'weight'    => San\choice( $font_item['weight'] ?? 'normal', [ 'normal', 'bold' ] ),
+            'japan'     => San\choice( $font_item['japan'] ?? '', array_keys( $tcd_font_manager->system_font_japan ) ),
+            'latin'     => San\choice( $font_item['latin'] ?? '', array_keys( $tcd_font_manager->system_font_latin ) ),
+            'web_japan' => San\choice( $font_item['web_japan'] ?? '', array_merge( [ '' ], array_keys( $tcd_font_manager->web_font_japan ) ) ),
+            'web_latin' => San\choice( $font_item['web_latin'] ?? '', array_merge( [ '' ], array_keys( $tcd_font_manager->web_font_latin ) ) ),
+          ];
+        }
+      );
+
+
   // フォントの種類
-  if ( ! isset( $input['content_font_type'] ) )
-    $input['content_font_type'] = null;
-  if ( ! array_key_exists( $input['content_font_type'], $font_type_options ) )
-    $input['content_font_type'] = null;
+  $input['content_font_type'] = San\choice( $input['content_font_type'], [ '1', '2', '3' ] );
   $input['content_font_size'] = wp_filter_nohtml_kses( $input['content_font_size'] );
   $input['content_font_size_sp'] = wp_filter_nohtml_kses( $input['content_font_size_sp'] );
 
-  if ( ! isset( $input['page_header_font_type'] ) )
-    $input['page_header_font_type'] = null;
-  if ( ! array_key_exists( $input['page_header_font_type'], $font_type_options ) )
-    $input['page_header_font_type'] = null;
+  $input['page_header_font_type'] = San\choice( $input['page_header_font_type'], [ '1', '2', '3' ] );
   $input['page_header_font_size'] = wp_filter_nohtml_kses( $input['page_header_font_size'] );
   $input['page_header_font_size_sp'] = wp_filter_nohtml_kses( $input['page_header_font_size_sp'] );
 
-  if ( ! isset( $input['catch_font_type'] ) )
-    $input['catch_font_type'] = null;
-  if ( ! array_key_exists( $input['catch_font_type'], $font_type_options ) )
-    $input['catch_font_type'] = null;
+  $input['catch_font_type'] = San\choice( $input['catch_font_type'], [ '1', '2', '3' ] );
   $input['catch_font_size'] = wp_filter_nohtml_kses( $input['catch_font_size'] );
   $input['catch_font_size_sp'] = wp_filter_nohtml_kses( $input['catch_font_size_sp'] );
 
-  if ( ! isset( $input['single_title_font_type'] ) )
-    $input['single_title_font_type'] = null;
-  if ( ! array_key_exists( $input['single_title_font_type'], $font_type_options ) )
-    $input['single_title_font_type'] = null;
+  $input['single_title_font_type'] = San\choice( $input['single_title_font_type'], [ '1', '2', '3' ] );
   $input['single_title_font_size'] = wp_filter_nohtml_kses( $input['single_title_font_size'] );
   $input['single_title_font_size_sp'] = wp_filter_nohtml_kses( $input['single_title_font_size_sp'] );
 

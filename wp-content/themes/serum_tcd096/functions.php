@@ -1,8 +1,7 @@
 <?php
 
 // 言語ファイル --------------------------------------------------------------------------------
-load_textdomain('tcd-serum', dirname(__FILE__).'/languages/' . determine_locale() . '.mo');
-
+load_textdomain('tcd-serum', dirname(__FILE__).'/languages/tcd-serum-' . determine_locale() . '.mo');
 
 // テーマの説明文
 __('WordPress theme "SERUM" is a template with the image of a dermatology clinic, featuring side icon buttons and a post type that allows you to organize the subjects of treatment. CTAs can also be easily set up.', 'tcd-serum');
@@ -33,6 +32,9 @@ require_once  ( dirname(__FILE__) . '/functions/customizer.php' );
 
 // 「トップページ」と「ブログ一覧ページ」用の固定ページ作成機能の実装----------------------------------
 require_once  ( dirname(__FILE__) . '/functions/class-page-new.php' );
+
+// 新フォント機能 --------------------------------------------------------------------------------
+require_once ( dirname(__FILE__) . '/admin/font/hooks-font.php' );
 
 
 // フロントページ用スクリプト --------------------------------------------------------------
@@ -77,6 +79,7 @@ function my_admin_scripts() {
   wp_enqueue_script('media-upload');
   wp_enqueue_script('jquery-ui-resizable');//トップページヘッダーコンテンツのロゴリサイズ機能で使用
   wp_enqueue_script('ml-widget-js', get_template_directory_uri().'/widget/js/script.js', '', '1.0.5', true);
+  wp_enqueue_script('font_ui', get_template_directory_uri().'/admin/font/ui/font_ui.js', '', '1.0.4', true);
   wp_enqueue_script('jquery.cookieTab', get_template_directory_uri().'/admin/js/jquery.cookieTab.js', '', '1.0.0', true);
   wp_enqueue_script('jquery.cookie', get_template_directory_uri().'/js/jquery.cookie.min.js', '', '1.0.0', true);
   wp_enqueue_script('my_script', get_template_directory_uri().'/admin/js/my_script.js', '', '1.5.0', true);
@@ -111,6 +114,7 @@ function my_admin_styles() {
   wp_enqueue_style('jquery-ui-draggable');
   wp_enqueue_style('wp-color-picker');
   wp_enqueue_style('thickbox');
+  wp_enqueue_style('font_ui_css', get_template_directory_uri() . '/admin/font/ui/font_ui.css','','1.0.0');
   wp_enqueue_style('my_widget_css', get_template_directory_uri() . '/widget/css/style.css','','1.0.3');
   wp_enqueue_style('my_admin_css', get_template_directory_uri() .'/admin/css/my_admin.css','','1.3.1');
   wp_enqueue_style('new_ui_css', get_template_directory_uri() .'/admin/css/new_ui.css','','1.0.2');
@@ -1143,4 +1147,56 @@ function tcd_add_debug_information( $info ) {
     ];
   }
   return $info;
+}
+
+/**
+ * PWAプラグイン未インストール時のメッセージ
+ *
+ * NOTE: TCDユーザーがPWAプラグインを知る・使うための導線を作るために用意
+ */
+add_action( 'admin_notices', 'tcd_pwa_admin_notice' );
+function tcd_pwa_admin_notice(){
+  global $plugin_page;
+
+  // テーマオプションページ以外では表示しない
+  if( $plugin_page !== 'theme_options' ){
+    return;
+  }
+
+  // TCD PWA が有効化されていれば表示しない
+  if( defined( 'TCDPWA_ACTIVE' ) && TCDPWA_ACTIVE ){
+    return;
+  }
+
+  // チェックしたいプラグインのメインファイルを指定
+  $target_plugin_file = 'tcd-pwa/tcd-pwa.php';
+
+  // すべてのインストール済みプラグインを取得
+  $installed_plugins = get_plugins();
+
+  // インストール済みなら終了
+  if( isset( $installed_plugins[$target_plugin_file] ) ){
+    return;
+  }
+
+  // notice作成
+  printf(
+    '<div class="notice notice-info is-dismissible">
+      <p>%1$s</p>
+      <p>
+        <a class="button" href="%2$s" target="_blank">%3$s</a>
+        <a class="button button-primary" href="%4$s" target="_blank">%5$s</a>
+      </p>
+    </div>',
+    // TCDテーマをPWA化できるプラグイン「TCD Progressive Web Apps」を利用できます。
+    __( 'The TCD Progressive Web Apps plugin is available to convert TCD themes into PWAs.','tcd-serum' ),
+    // 解説記事URL
+    'https://tcd-theme.com/2025/05/tcd-pwa.html',
+    // 設定・使い方
+    __( 'Settings/How to use','tcd-serum' ),
+    // マイページの商品URL
+    'https://tcd.style/order-history?pname=TCD+Progressive+Web+Apps',
+    // 今すぐインストール
+    __( 'Install Now','tcd-serum' )
+  );
 }

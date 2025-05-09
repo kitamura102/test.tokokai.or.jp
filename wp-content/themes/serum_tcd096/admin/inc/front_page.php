@@ -3,6 +3,8 @@
  * トップページの設定
  */
 
+ use TCD\Helper\UI;
+ use TCD\Helper\Sanitization as San;
 
 // Add default values
 add_filter( 'before_getting_design_plus_option', 'add_front_page_dp_default_options' );
@@ -41,6 +43,7 @@ function add_front_page_dp_default_options( $dp_default_options ) {
 	$dp_default_options['splash_overlay_opacity'] = '0.3';
   $dp_default_options['splash_logo'] = '';
 	$dp_default_options['splash_logo_retina'] = 'no';
+  $dp_default_options['splash_catch_font_type'] = 1;
 	$dp_default_options['splash_catch_font_size'] = '32';
 	$dp_default_options['splash_catch_font_size_sp'] = '20';
 	$dp_default_options['splash_catch_font_color'] = '#937960';
@@ -191,6 +194,9 @@ function add_front_page_tab_panel( $options ) {
        </li>
        <li class="cf splash_type1_option"><span class="label"><?php _e('Catchphrase', 'tcd-serum'); ?></span><textarea class="full_width" cols="50" rows="2" name="dp_options[splash_catch]"><?php echo esc_textarea(  $options['splash_catch'] ); ?></textarea></li>
        <li class="cf splash_type1_option"><span class="label"><?php _e('Font direction', 'tcd-serum'); ?></span><?php echo tcd_basic_radio_button($options, 'splash_catch_direction', $font_direction_options); ?></li>
+       <li class="cf splash_type1_option"><span class="label"><?php _e('Font type', 'tcd-serum'); ?></span>
+        <?php echo UI\font_select( 'dp_options[splash_catch_font_type]', $options['splash_catch_font_type'] ); ?>
+       </li>
        <li class="cf splash_type1_option"><span class="label"><?php _e('Font size', 'tcd-serum'); ?></span><?php echo tcd_font_size_option($options, 'splash_catch_font_size'); ?></li>
        <li class="cf splash_type1_option"><span class="label"><?php _e('Font color', 'tcd-serum'); ?></span><input type="text" name="dp_options[splash_catch_font_color]" value="<?php echo esc_attr( $options['splash_catch_font_color'] ); ?>" data-default-color="#937960" class="c-color-picker"></li>
        <li class="cf splash_type2_option">
@@ -829,6 +835,7 @@ function add_front_page_theme_options_validate( $input ) {
   $input['splash_overlay_opacity'] = wp_filter_nohtml_kses( $input['splash_overlay_opacity'] );
   $input['splash_logo'] = wp_filter_nohtml_kses( $input['splash_logo'] );
   $input['splash_logo_retina'] = wp_filter_nohtml_kses( $input['splash_logo_retina'] );
+  $input['splash_catch_font_type'] = San\choice( $input['splash_catch_font_type'], [ '1', '2', '3' ] );
   $input['splash_catch_font_size'] = wp_filter_nohtml_kses( $input['splash_catch_font_size'] );
   $input['splash_catch_font_size_sp'] = wp_filter_nohtml_kses( $input['splash_catch_font_size_sp'] );
   $input['splash_catch_font_color'] = wp_filter_nohtml_kses( $input['splash_catch_font_color'] );

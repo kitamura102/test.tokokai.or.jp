@@ -5,7 +5,7 @@ Theme URI:https://tcd-theme.com/tcd096/
 Description:WordPress theme "SERUM" is a template with the image of a dermatology clinic, featuring side icon buttons and a post type that allows you to organize the subjects of treatment. CTAs can also be easily set up.
 Author:TCD
 Author URI:https://tcd-theme.com/
-Version:2.6.1
+Version:2.7
 Text Domain:tcd-serum
 */
 
@@ -189,7 +189,7 @@ body.single-news #main_content { background:#f6f6f6; padding-top:80px; }
 #news_ticker.animate { opacity:1; transition:opacity 1.4s ease 2.0s; }
 #news_ticker a { padding:0 25px 0 30px; color:#fff; font-size:14px; display:block; width:100%; height:50px; line-height:50px; display:flex; flex-wrap:nowrap; transition: opacity 0.25s ease; }
 #news_ticker a:hover { opacity:0.5; }
-#news_ticker .date { width:90px; display:block; }
+#news_ticker .date { width:90px; display:block; font-family: 'Arial';}
 #news_ticker .title { width:calc(100% - 90px); overflow:hidden; white-space:nowrap; text-overflow:ellipsis; visibility:visible; }
 
 
@@ -279,7 +279,7 @@ body.hide_blog_date .index_carousel .title a { height:auto; max-height:4.8em; }
 body.hide_blog_date .index_carousel .title span { -webkit-line-clamp:3; }
 .index_carousel.type2 .title a { height:4.8em; }
 .index_carousel.type2 .title span { -webkit-line-clamp:3; }
-.index_carousel .date { font-size:14px; color:#999; display:block; position:absolute; bottom:38px; }
+.index_carousel .date { font-size:14px; color:#999; display:block; position:absolute; bottom:38px;  font-family: 'Arial';}
 .splide__arrow { background:none; border:1px solid #998169; width:52px; height:52px; border-radius:100%; position:absolute; cursor:pointer; transition: background-color 0.25s ease, border-color 0.25s ease; }
 .splide__arrow span { display:none; }
 .splide__arrow.splide__arrow--prev { left:-82px; top:50%; transform: translateY(-50%); }
@@ -627,10 +627,10 @@ body.search-no-results #container { min-height:inherit; }
 #single_post_title { padding:45px 50px 48px; position:relative; z-index:2; background:#fff; }
 #single_post_title .title { font-size:30px; line-height:1.5; opacity:0; }
 #single_post_title .title.animate { opacity:1; transition:opacity 1.4s ease 0.3s; word-wrap:break-word; }
-#single_post_title .meta { margin:10px 0 0 0; display:flex; flex-wrap:wrap; }
+#single_post_title .meta { margin:10px 0 0 0; display:flex; flex-wrap:wrap; font-family: 'Arial';}
 #single_post_title .meta .news_category { font-size:14px; color:#999; border-left:1px solid #ddd; padding:0 0 0 10px; margin:0 0 0 12px; }
-#single_post_title .date { position:relative; color:#999; font-size:14px; margin:0; display:block; }
-#single_post_title .update { position:relative; color:#999; font-size:14px; display:block; margin:0 0 0 15px; }
+#single_post_title .date { position:relative; color:#999; font-size:14px; margin:0; display:block; font-family: 'Arial';}
+#single_post_title .update { position:relative; color:#999; font-size:14px; display:block; margin:0 0 0 15px; font-family: 'Arial';}
 #single_post_title .update:before {
   font-family:'design_plus'; content:'\e943'; font-size:14px; display:inline-block; margin:0 6px 0 0; vertical-align:-1px;
   -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
@@ -755,7 +755,7 @@ body.hide_blog_date #related_post .content { display:flex; flex-wrap:wrap; align
 #related_post .title span { display:-webkit-inline-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; }
 body.hide_blog_date #related_post .title a { height:auto; max-height:5.4em; }
 body.hide_blog_date #related_post .title span { -webkit-line-clamp:3; }
-#related_post .date { font-size:14px; color:#999; display:block; position:absolute; bottom:28px; }
+#related_post .date { font-size:14px; color:#999; display:block; position:absolute; bottom:28px; font-family: 'Arial';}
 #related_post .meta { position:absolute; bottom:28px; display:flex; flex-wrap:wrap; }
 #related_post .meta .date { position:relative; bottom:0; }
 #related_post .meta .news_category { font-size:14px; color:#999; border-left:1px solid #ddd; margin:0 0 0 10px; padding:0 0 0 10px; }

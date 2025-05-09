@@ -8,6 +8,27 @@
 <style type="text/css">
 <?php
      // フォントの設定　------------------------------------------------------------------
+     // フォントタイプの旧値（type1 など）を新値（1や2）にマッピング
+$convert_font_type = function($value) {
+  $map = [
+    'type1' => 1,
+    'type2' => 1,
+    'type3' => 2,
+    '1'     => 1,
+    '2'     => 2,
+    '3'     => 3,
+    1       => 1,
+    2       => 2,
+    3       => 3,
+  ];
+  return $map[$value] ?? 1;
+};
+
+$content_font_type = $convert_font_type($options['content_font_type'] ?? 1);
+$page_header_font_type = $convert_font_type($options['page_header_font_type'] ?? 1);
+$catch_font_type = $convert_font_type($options['catch_font_type'] ?? 1);
+$single_title_font_type = $convert_font_type($options['single_title_font_type'] ?? 1);
+$splash_catch_font_type = $convert_font_type($options['splash_catch_font_type'] ?? 1);
 ?>
 body { font-size:<?php echo esc_html($options['content_font_size']); ?>px; }
 .single_title { font-size:<?php echo esc_html($options['single_title_font_size']); ?>px; }
@@ -25,51 +46,65 @@ body { font-size:<?php echo esc_html($options['content_font_size']); ?>px; }
 }
 <?php
      // 基本のフォントタイプ
-     if($options['content_font_type'] == 'type1') {
+     if($content_font_type == 1) {
 ?>
-body, input, textarea { font-family: Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif; }
-<?php } elseif($options['content_font_type'] == 'type2') { ?>
-body, input, textarea { font-weight:500; font-family: Arial, "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif; }
-<?php } else { ?>
-body, input, textarea { font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif; }
+body, input, textarea { font-family: var(--tcd-font-type1); }
+<?php } elseif($content_font_type == 2) { ?>
+body, input, textarea { font-weight:500; font-family: var(--tcd-font-type2); }
+<?php } elseif($content_font_type == 3) { ?>
+body, input, textarea { font-family: var(--tcd-font-type3); }
 <?php }; ?>
 
 <?php
      // ページヘッダーのフォントタイプ
-     if($options['page_header_font_type'] == 'type1') {
+     if($page_header_font_type == 1 ) {
 ?>
-#page_header .catch, #page_header_small .catch { font-family: Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif; font-weight:600; }
-<?php } elseif($options['page_header_font_type'] == 'type2') { ?>
-#page_header .catch, #page_header_small .catch { font-family: Arial, "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif; font-weight:600; }
-<?php } else { ?>
-#page_header .catch, #page_header_small .catch { font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif; font-weight:600; }
+#page_header .catch, #page_header_small .catch { font-family:var(--tcd-font-type1); font-weight:600; }
+<?php } elseif($page_header_font_type == 2 ) { ?>
+#page_header .catch, #page_header_small .catch { font-family: var(--tcd-font-type2); font-weight:600; }
+<?php } elseif( $page_header_font_type == 3) { ?>
+#page_header .catch, #page_header_small .catch { font-family:var(--tcd-font-type3); font-weight:600; }
 <?php }; ?>
+
+
+<?php
+     // スプラッシュ画面のフォントタイプ
+     if($splash_catch_font_type == 1 ) {
+?>
+#splash_screen .catch { font-family:var(--tcd-font-type1); }
+<?php } elseif($splash_catch_font_type == 2 ) { ?>
+#splash_screen .catch { font-family: var(--tcd-font-type2); }
+<?php } elseif( $splash_catch_font_type == 3) { ?>
+#splash_screen .catch { font-family:var(--tcd-font-type3); }
+<?php }; ?>
+
 
 <?php
      // 見出しのフォントタイプ
-     if($options['catch_font_type'] == 'type1') {
+     if($catch_font_type == 1) {
 ?>
-.common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif; font-weight:600; }
-<?php } elseif($options['catch_font_type'] == 'type2') { ?>
-.common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: Arial, "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif; font-weight:600; }
-<?php } else { ?>
-.common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif; font-weight:600; }
+.common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: var(--tcd-font-type1); font-weight:600; }
+<?php } elseif($catch_font_type == 2) { ?>
+.common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: var(--tcd-font-type2); font-weight:600; }
+<?php } elseif( $catch_font_type == 3 ) { ?>
+.common_catch, .tcdce-body .common_catch, .cb_free_space .post_content h2:not(.styled_h2), .design_headline, .rich_font, .p-vertical { font-family: var(--tcd-font-type3); font-weight:600; }
 <?php }; ?>
 
 <?php
      // 詳細ページの記事タイトルのフォントタイプ
-     if(is_single() && $options['single_title_font_type'] == 'type1' || is_page() && $options['single_title_font_type'] == 'type1') {
+     if(is_single() && $single_title_font_type == 1 || is_page() && $single_title_font_type == 1) {
 ?>
-.single_title{ font-family: Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif; font-weight:600; }
-<?php } elseif(is_single() && $options['single_title_font_type'] == 'type2' || is_page() && $options['single_title_font_type'] == 'type2') { ?>
-.single_title { font-family: Arial, "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif; font-weight:600; }
-<?php } elseif(is_single() && $options['single_title_font_type'] == 'type3' || is_page() && $options['single_title_font_type'] == 'type3') { ?>
-.single_title { font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif; font-weight:600; }
+.single_title{ font-family: var(--tcd-font-type1); font-weight:600; }
+<?php } elseif(is_single() && $single_title_font_type == 2 || is_page() && $single_title_font_type == 2) { ?>
+.single_title { font-family: var(--tcd-font-type2); font-weight:600; }
+<?php } elseif(is_single() && $single_title_font_type == 3 || is_page() && $single_title_font_type == 3) { ?>
+.single_title { font-family: var(--tcd-font-type3); font-weight:600; }
 <?php }; ?>
-
-.rich_font_type1 { font-family: Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif; font-weight:600; }
 .rich_font_type2 { font-family: Arial, "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif; font-weight:600; }
-.rich_font_type3 { font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif; font-weight:600; }
+.rich_font_1 { font-family:var(--tcd-font-type1) !important; font-weight:600; }
+.rich_font_2 { font-family:var(--tcd-font-type2) !important; font-weight:600; }
+.rich_font_3 { font-family:var(--tcd-font-type3) !important; font-weight:600; }
+.rich_font_logo { font-family:var(--tcd-font-type-logo); font-weight: <?php echo esc_html( $options['font_list']['logo']['weight'] ?? 'bold' ); ?> !important; }
 
 <?php
      // ヘッダー -------------------------------------------------------------------------------

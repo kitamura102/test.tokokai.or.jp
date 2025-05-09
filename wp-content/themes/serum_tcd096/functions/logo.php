@@ -127,7 +127,7 @@ function header_logo2(){
    </div>
    <?php }; ?>
    <?php if( $options['header_logo_type'] == 'type1' || ($options['header_logo_type'] == 'type2' && !($logo_image1) && !($logo_image2)) || ($options['header_logo_type'] == 'type2' && !($logo_image1) && $options['header_logo_show_icon_image'] == 'no') || ($options['header_logo_type'] == 'type2' && !($logo_image1) && $options['header_logo_show_icon_image'] == 'yes' && ($logo_image2))){ ?>
-   <span class="logo_text rich_font_<?php echo esc_attr($options['header_logo_font_type']); ?>"><?php echo esc_html($title); ?></span>
+   <span class="logo_text rich_font_logo"><?php echo esc_html($title); ?></span>
    <?php }; ?>
   </a>
 </<?php $the_tag = is_front_page()&&(!$square_logo_image||($options['header_logo_type'] == 'type1'))? 'h1':'div'; echo $the_tag; ?>>
@@ -177,7 +177,7 @@ function footer_logo(){
    <img loading="lazy" class="logo_image mobile" src="<?php echo esc_attr($logo_image_mobile[0]); ?>?<?php echo esc_attr(time()); ?>" alt="<?php echo esc_attr($title); ?>" title="<?php echo esc_attr($title); ?>" width="<?php echo esc_attr($mobile_image_width); ?>" height="<?php echo esc_attr($mobile_image_height); ?>" />
    <?php }; ?>
    <?php } else { ?>
-   <span class="logo_text rich_font_<?php echo esc_attr($options['header_logo_font_type']); ?>"><?php echo esc_html($title); ?></span>
+   <span class="logo_text rich_font_logo"><?php echo esc_html($title); ?></span>
    <?php }; ?>
   </a>
  </p>
@@ -256,7 +256,7 @@ function drawer_logo(){
    </div>
    <?php }; ?>
    <?php if( $options['header_logo_type'] == 'type1' || ($options['header_logo_type'] == 'type2' && !$logo_image1 && !$logo_image2) || ($options['header_logo_type'] == 'type2' && !$logo_image1 && $options['header_logo_show_icon_image'] == 'no') || ($options['header_logo_type'] == 'type2' && !$logo_image1 && $options['header_logo_show_icon_image'] == 'yes' && $logo_image2)){ ?>
-   <span class="logo_text rich_font_<?php echo esc_attr($options['header_logo_font_type']); ?>"><?php echo esc_html($title); ?></span>
+   <span class="logo_text rich_font_logo"><?php echo esc_html($title); ?></span>
    <?php }; ?>
   </a>
  </div>
