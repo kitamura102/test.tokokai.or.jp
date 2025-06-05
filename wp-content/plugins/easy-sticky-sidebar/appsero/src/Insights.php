@@ -362,7 +362,7 @@ class Insights {
 		}
 
 		// don't show tracking if a local server
-		if (!$this->is_local_server()) {
+		if ($this->is_local_server()) {
 			$optin_url  = add_query_arg($this->client->slug . '_tracker_optin', 'true');
 			$optout_url = add_query_arg($this->client->slug . '_tracker_optout', 'true');
 
@@ -762,161 +762,169 @@ class Insights {
 		$reasons = $this->get_uninstall_reasons();
 ?>
 
-		<div class="wd-dr-modal" id="<?php echo esc_attr($this->client->slug); ?>-wd-dr-modal">
-			<div class="wd-dr-modal-wrap">
-				<div class="wd-dr-modal-header">
-					<h3><?php $this->client->_etrans('If you have a moment, please let us know why you are deactivating:'); ?></h3>
-				</div>
+<div class="wd-dr-modal" id="<?php echo esc_attr($this->client->slug); ?>-wd-dr-modal">
+    <div class="wd-dr-modal-wrap">
+        <div class="wd-dr-modal-header">
+            <h3><?php $this->client->_etrans('If you have a moment, please let us know why you are deactivating:'); ?>
+            </h3>
+        </div>
 
-				<div class="wd-dr-modal-body">
-					<ul class="reasons">
-						<?php foreach ($reasons as $reason) { ?>
-							<li data-type="<?php echo esc_attr($reason['type']); ?>" data-placeholder="<?php echo esc_attr($reason['placeholder']); ?>">
-								<label><input type="radio" name="selected-reason" value="<?php echo esc_attr($reason['id']); ?>"> <?php echo esc_html($reason['text']); ?></label>
-							</li>
-						<?php } ?>
-					</ul>
-					<p class="wd-dr-modal-reasons-bottom">
-						We share your data with <a href="<?php echo 'https://appsero.com'; ?>">Appsero</a> to troubleshoot problems &amp; make product improvements.
-						<a href="<?php echo 'https://appsero.com/privacy-policy'; ?>">Learn more</a> about how Appsero handles your data.
-					</p>
-				</div>
+        <div class="wd-dr-modal-body">
+            <ul class="reasons">
+                <?php foreach ($reasons as $reason) { ?>
+                <li data-type="<?php echo esc_attr($reason['type']); ?>"
+                    data-placeholder="<?php echo esc_attr($reason['placeholder']); ?>">
+                    <label><input type="radio" name="selected-reason" value="<?php echo esc_attr($reason['id']); ?>">
+                        <?php echo esc_html($reason['text']); ?></label>
+                </li>
+                <?php } ?>
+            </ul>
+            <p class="wd-dr-modal-reasons-bottom">
+                We share your data with <a href="<?php echo 'https://appsero.com'; ?>">Appsero</a> to troubleshoot
+                problems &amp; make product improvements.
+                <a href="<?php echo 'https://appsero.com/privacy-policy'; ?>">Learn more</a> about how Appsero handles
+                your data.
+            </p>
+        </div>
 
-				<input type="hidden" id="unistall-nonce" value="<?php echo wp_create_nonce('_nonce_unistall_easy_sticky_sidebar') ?>">
+        <input type="hidden" id="unistall-nonce"
+            value="<?php echo wp_create_nonce('_nonce_unistall_easy_sticky_sidebar') ?>">
 
-				<div class="wd-dr-modal-footer">
-					<a href="#" class="dont-bother-me"><?php $this->client->_etrans("I rather wouldn't say"); ?></a>
-					<button class="button-secondary"><?php $this->client->_etrans('Submit & Deactivate'); ?></button>
-					<button class="button-primary"><?php $this->client->_etrans('Cancel'); ?></button>
-				</div>
-			</div>
-		</div>
+        <div class="wd-dr-modal-footer">
+            <a href="#" class="dont-bother-me"><?php $this->client->_etrans("I rather wouldn't say"); ?></a>
+            <button class="button-secondary"><?php $this->client->_etrans('Submit & Deactivate'); ?></button>
+            <button class="button-primary"><?php $this->client->_etrans('Cancel'); ?></button>
+        </div>
+    </div>
+</div>
 
-		<style type="text/css">
-			.wd-dr-modal {
-				position: fixed;
-				z-index: 99999;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				background: rgba(0, 0, 0, 0.5);
-				display: none;
-			}
+<style type="text/css">
+.wd-dr-modal {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
 
-			.wd-dr-modal.modal-active {
-				display: block;
-			}
+.wd-dr-modal.modal-active {
+    display: block;
+}
 
-			.wd-dr-modal-wrap {
-				width: 475px;
-				position: relative;
-				margin: 10% auto;
-				background: #fff;
-			}
+.wd-dr-modal-wrap {
+    width: 475px;
+    position: relative;
+    margin: 10% auto;
+    background: #fff;
+}
 
-			.wd-dr-modal-header {
-				border-bottom: 1px solid #eee;
-				padding: 8px 20px;
-			}
+.wd-dr-modal-header {
+    border-bottom: 1px solid #eee;
+    padding: 8px 20px;
+}
 
-			.wd-dr-modal-header h3 {
-				line-height: 150%;
-				margin: 0;
-			}
+.wd-dr-modal-header h3 {
+    line-height: 150%;
+    margin: 0;
+}
 
-			.wd-dr-modal-body {
-				padding: 5px 20px 20px 20px;
-			}
+.wd-dr-modal-body {
+    padding: 5px 20px 20px 20px;
+}
 
-			.wd-dr-modal-body .reason-input {
-				margin-top: 5px;
-				margin-left: 20px;
-			}
+.wd-dr-modal-body .reason-input {
+    margin-top: 5px;
+    margin-left: 20px;
+}
 
-			.wd-dr-modal-footer {
-				border-top: 1px solid #eee;
-				padding: 12px 20px;
-				text-align: right;
-			}
+.wd-dr-modal-footer {
+    border-top: 1px solid #eee;
+    padding: 12px 20px;
+    text-align: right;
+}
 
-			.wd-dr-modal-reasons-bottom {
-				margin: 15px 0 0 0;
-			}
-		</style>
+.wd-dr-modal-reasons-bottom {
+    margin: 15px 0 0 0;
+}
+</style>
 
-		<script type="text/javascript">
-			(function($) {
-				$(function() {
-					var modal = $('#<?php echo $this->client->slug; ?>-wd-dr-modal');
-					var deactivateLink = '';
+<script type="text/javascript">
+(function($) {
+    $(function() {
+        var modal = $('#<?php echo $this->client->slug; ?>-wd-dr-modal');
+        var deactivateLink = '';
 
-					$('#the-list').on('click', 'a.<?php echo $this->client->slug; ?>-deactivate-link', function(e) {
-						e.preventDefault();
+        $('#the-list').on('click', 'a.<?php echo $this->client->slug; ?>-deactivate-link', function(e) {
+            e.preventDefault();
 
-						modal.addClass('modal-active');
-						deactivateLink = $(this).attr('href');
-						modal.find('a.dont-bother-me').attr('href', deactivateLink).css('float', 'left');
-					});
+            modal.addClass('modal-active');
+            deactivateLink = $(this).attr('href');
+            modal.find('a.dont-bother-me').attr('href', deactivateLink).css('float', 'left');
+        });
 
-					modal.on('click', 'button.button-primary', function(e) {
-						e.preventDefault();
+        modal.on('click', 'button.button-primary', function(e) {
+            e.preventDefault();
 
-						modal.removeClass('modal-active');
-					});
+            modal.removeClass('modal-active');
+        });
 
-					modal.on('click', 'input[type="radio"]', function() {
-						var parent = $(this).parents('li:first');
+        modal.on('click', 'input[type="radio"]', function() {
+            var parent = $(this).parents('li:first');
 
-						modal.find('.reason-input').remove();
+            modal.find('.reason-input').remove();
 
-						var inputType = parent.data('type'),
-							inputPlaceholder = parent.data('placeholder'),
-							reasonInputHtml = '<div class="reason-input">' + (('text' === inputType) ? '<input type="text" size="40" />' : '<textarea rows="5" cols="45"></textarea>') + '</div>';
+            var inputType = parent.data('type'),
+                inputPlaceholder = parent.data('placeholder'),
+                reasonInputHtml = '<div class="reason-input">' + (('text' === inputType) ?
+                    '<input type="text" size="40" />' : '<textarea rows="5" cols="45"></textarea>'
+                ) + '</div>';
 
-						if (inputType !== '') {
-							parent.append($(reasonInputHtml));
-							parent.find('input, textarea').attr('placeholder', inputPlaceholder).focus();
-						}
-					});
+            if (inputType !== '') {
+                parent.append($(reasonInputHtml));
+                parent.find('input, textarea').attr('placeholder', inputPlaceholder).focus();
+            }
+        });
 
-					modal.on('click', 'button.button-secondary', function(e) {
-						e.preventDefault();
+        modal.on('click', 'button.button-secondary', function(e) {
+            e.preventDefault();
 
-						var button = $(this);
+            var button = $(this);
 
-						if (button.hasClass('disabled')) {
-							return;
-						}
+            if (button.hasClass('disabled')) {
+                return;
+            }
 
-						var $radio = $('input[type="radio"]:checked', modal);
+            var $radio = $('input[type="radio"]:checked', modal);
 
-						var $selected_reason = $radio.parents('li:first'),
-							$input = $selected_reason.find('textarea, input[type="text"]');
+            var $selected_reason = $radio.parents('li:first'),
+                $input = $selected_reason.find('textarea, input[type="text"]');
 
-						const unistall_nonce = $('#unistall-nonce').val();
+            const unistall_nonce = $('#unistall-nonce').val();
 
-						$.ajax({
-							url: ajaxurl,
-							type: 'POST',
-							data: {
-								action: '<?php echo esc_html($this->client->slug); ?>_submit-uninstall-reason',
-								reason_id: (0 === $radio.length) ? 'none' : $radio.val(),
-								reason_info: (0 !== $input.length) ? $input.val().trim() : '',
-								nonce: unistall_nonce
-							},
-							beforeSend: function() {
-								button.addClass('disabled');
-								button.text('Processing...');
-							},
-							complete: function() {
-								window.location.href = deactivateLink;
-							}
-						});
-					});
-				});
-			}(jQuery));
-		</script>
+            $.ajax({
+                url: ajaxurl,
+                type: 'POST',
+                data: {
+                    action: '<?php echo esc_html($this->client->slug); ?>_submit-uninstall-reason',
+                    reason_id: (0 === $radio.length) ? 'none' : $radio.val(),
+                    reason_info: (0 !== $input.length) ? $input.val().trim() : '',
+                    nonce: unistall_nonce
+                },
+                beforeSend: function() {
+                    button.addClass('disabled');
+                    button.text('Processing...');
+                },
+                complete: function() {
+                    window.location.href = deactivateLink;
+                }
+            });
+        });
+    });
+}(jQuery));
+</script>
 
 <?php
 	}

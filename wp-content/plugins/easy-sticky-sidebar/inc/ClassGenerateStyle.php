@@ -7,6 +7,9 @@
  */
 class Easy_Sticky_CTA_Generate_CSS {
 
+    // Declare the property to avoid dynamic property creation deprecated warning
+    protected $item;
+
     function __construct() {
         $this->generate_css_file();
         add_action('easy_sticky_sidebar_after_save', [$this, 'generate_style'], 2);
@@ -42,31 +45,31 @@ class Easy_Sticky_CTA_Generate_CSS {
 
     public static function get_font_style($font) {
         $disable_google_font = apply_filters('easy_sticky_sidebar_disable_google_font', false);
-        if ( $disable_google_font) {
+        if ($disable_google_font) {
             return;
         }
-
+    
         @list($font_family, $font_style) = explode(':', str_replace('+', ' ', $font));
+        
         if ($font_family) {
             printf("\tfont-family: '%s';\n", esc_html($font_family));
         }
-
+    
         if (absint($font_style) > 0) {
             printf("\tfont-weight: %s;\n", absint($font_style));
         }
-
-        if (strpos($font_style, 'italic') !== false) {
+    
+        if (is_string($font_style) && strpos($font_style, 'italic') !== false) {
             print("\tfont-style: italic;\n");
         }
     }
-
+    
     public function generate_wrapper_style($sticky_cta) {
         $disable_position = apply_filters('easy_sticky_sidebar/disable_position_css', ['banner']);
         if (in_array($sticky_cta->sidebar_template, $disable_position)) {
             return;
         }
 
-        //$disable_position1 = apply_filters( 'easy_sticky_sidebar/disable_position1_css', ['tab-cta']);
         $disable_position2 = apply_filters('easy_sticky_sidebar/disable_position2_css', []);
 
         $wrapper_selector = sprintf("#easy-sticky-sidebar-%d", absint($sticky_cta->id));
@@ -79,7 +82,6 @@ class Easy_Sticky_CTA_Generate_CSS {
                 $styles .= sprintf("\t--position2_distance: %d%s;\n", $position2_distance, $unit);
             }
         }
-
 
         if (!empty($styles)) {
             printf("%s {%s}\n\n", esc_html($wrapper_selector), $styles);
@@ -214,17 +216,11 @@ class Easy_Sticky_CTA_Generate_CSS {
         $this->sidebar_image_style();
         echo "}\n\n";
 
-        printf("%s .sticky-sidebar-text {\n", $sticky_class);
+        printf("%s .sticky-sidebar-content {\n", $sticky_class);
         $this->content_style();
         echo "}\n\n";
 
-        printf("%s .sticky-sidebar-content hr {\n", $sticky_class);
-        if (!empty($this->item->line_separator_color)) {
-            printf("\tbackground-color: %s;\n", esc_attr($this->item->line_separator_color));
-        }
-        echo "}\n\n";
-
-        printf("%s .sticky-sidebar-call-to-action {\n", $sticky_class);
+        printf("%s .call-to-action {\n", $sticky_class);
         $this->call_to_action_style();
         echo "}\n\n";
     }

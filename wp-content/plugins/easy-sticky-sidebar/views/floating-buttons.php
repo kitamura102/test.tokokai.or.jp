@@ -23,10 +23,11 @@ if ($hide_text) {
 	array_push($cta_classes, 'floating-button-no-text');
 } ?>
 
-<div id="<?php echo 'easy-sticky-sidebar-' . esc_attr($ctacontent->id) ?>" class="<?php echo esc_attr(implode(' ', $cta_classes)) ?>" data-id="<?php echo esc_attr($ctacontent->id); ?>">
+<div id="<?php echo 'easy-sticky-sidebar-' . esc_attr($ctacontent->id) ?>"
+    class="<?php echo esc_attr(implode(' ', $cta_classes)) ?>" data-id="<?php echo esc_attr($ctacontent->id); ?>">
 
-	<ul class="floating-buttons-container">
-		<?php foreach ($floating_buttons as $key => $button) :
+    <ul class="floating-buttons-container">
+        <?php foreach ($floating_buttons as $key => $button) :
 			$has_link = !empty($button->url);
 			$class = $has_link ? 'has-link' : '';
 			printf('<li class="floating-button-%d %s">', esc_attr($key), esc_attr($class));
@@ -50,5 +51,5 @@ if ($hide_text) {
 
 			echo '</li>';
 		endforeach; ?>
-	</ul>
+    </ul>
 </div>

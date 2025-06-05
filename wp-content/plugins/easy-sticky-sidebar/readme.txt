@@ -1,13 +1,13 @@
 === WP CTA - Call To Action Plugin, Sticky CTA, Sticky Buttons ===
 Plugin Name: WP CTA - Create Call To Actions, Sticky CTA, Sticky Buttons and More!
-Version: 1.6.5
+Version: 1.6.9
 Author URI: https://wpctapro.com
 Contributors: wpctaplugin, blendmedia, rcwpexpert
 Tags: CTA, Call to Action, sticky cta, floating buttons, sticky buttons
 Requires at least: 4.9
 Tested up to: 6.6.1
 Requires PHP: 5.6
-Stable tag: 1.6.5
+Stable tag: 1.6.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Jetpack &#8211; WP Security, Backup, Speed, &amp; Growth - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-08 09:54:09+0000\n"
+"PO-Revision-Date: 2025-06-04 18:08:22+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,20 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: ja_JP\n"
 "Project-Id-Version: Plugins - Jetpack &#8211; WP Security, Backup, Speed, &amp; Growth - Stable (latest release)\n"
+
+#: jetpack_vendor/automattic/jetpack-search/src/inline-search/class-inline-search-correction.php:80
+msgid "Error displaying search correction"
+msgstr "検索修正の表示中にエラーが発生しました"
+
+#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:130
+#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:161
+msgctxt "menu label for form responses"
+msgid "Form Responses"
+msgstr "フォームの回答"
+
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:729
+msgid "Integration not found."
+msgstr "連携が見つかりません。"
 
 #: _inc/lib/core-api/wpcom-endpoints/class-wpcom-rest-api-v2-endpoint-block-editor-assets.php:382
 msgid "Style link tags for the block editor."
@@ -121,12 +135,12 @@ msgstr "アップロードできるファイル数の上限を超過していま
 msgid "%s requires a file to be uploaded."
 msgstr "%s にファイルをアップロードする必要があります。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:355
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:370
 msgid "Does the form response contain a file."
 msgstr "フォームのレスポンスにファイルが含まれていますか。"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:738
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:777
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:740
 msgid "Attached file"
 msgstr "添付されたファイル"
 
@@ -143,7 +157,7 @@ msgstr "この WordPress.com のメールアドレスは他のユーザーアカ
 
 #. translators: %1$s: Link to 'featured' admin tag view. %2$s: Max number of
 #. posts shown by theme in featured content area.
-#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:531
+#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:539
 msgid "Easily feature all posts with the <a href=\"%1$s\">\"featured\" tag</a> or a tag of your choice. Your theme supports up to %2$s posts in its featured content area.<br><br>Please note: The featured tag name is case sensitive."
 msgstr "<a href=\"%1$s\">「おすすめ」タグ</a>または選択したタグを使用して、すべての投稿を簡単におすすめできます。 お使いのテーマでサポートされるおすすめコンテンツエリアの投稿は最大%2$s件です。<br><br>注意: おすすめタグ名では大文字と小文字が区別されます。"
 
@@ -195,7 +209,7 @@ msgctxt "product name shown in menu"
 msgid "Subscribers"
 msgstr "購読者"
 
-#: jetpack_vendor/automattic/jetpack-stats-admin/src/class-admin-post-list-column.php:121
+#: jetpack_vendor/automattic/jetpack-stats-admin/src/class-admin-post-list-column.php:152
 msgid "Views for the last thirty days. Click for detailed stats"
 msgstr "過去30日間の表示数。 クリックして詳細な統計情報を表示"
 
@@ -265,15 +279,15 @@ msgstr "項目をフィルターするための投稿 ID。"
 msgid "Account protection"
 msgstr "アカウント保護"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:2033
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:2014
 msgid "Failed to upload file."
 msgstr "ファイルのアップロードに失敗しました。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:939
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:938
 msgid "Remove file"
 msgstr "ファイルを削除"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:934
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:933
 msgid "Uploaded"
 msgstr "アップロード済み"
 
@@ -302,59 +316,59 @@ msgstr "0バイト"
 msgid "File upload field requires Jetpack to be active."
 msgstr "ファイルアップロードフィールドでは、Jetpack が有効である必要があります。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:481
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:589
 msgid "Limit result set to all items except those of a particular parent ID."
 msgstr "特定の親 ID に属さない項目に結果を限定します。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:473
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:581
 msgid "Limit result set to items with particular parent IDs."
 msgstr "特定の親 ID に属する項目に結果を限定します。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:300
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:315
 msgid "The custom form fields and their submitted values."
 msgstr "カスタムフォームフィールドとその送信値。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:290
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:305
 msgid "The subject line of the form submission."
 msgstr "フォーム送信の件名。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:280
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:295
 msgid "The URL of the page or post where the form was submitted."
 msgstr "フォームが送信されたページまたは投稿の URL。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:270
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:285
 msgid "The title of the page or post where the form was submitted."
 msgstr "フォームが送信されたページまたは投稿のタイトル。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:260
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:275
 msgid "The IP address from which the form was submitted."
 msgstr "フォームの送信元の IP アドレス。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:250
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:265
 msgid "Whether the person consented to email marketing when submitting the form."
 msgstr "フォームの送信時にユーザーがメールマーケティングに同意したかどうか。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:240
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:255
 msgid "The URL of the avatar image for the person who submitted the form."
 msgstr "フォームを送信したユーザーのアバター画像の URL。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:230
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:245
 msgid "The website URL of the person who submitted the form."
 msgstr "フォームを送信したユーザーのサイト URL。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:220
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:235
 msgid "The email address of the person who submitted the form."
 msgstr "フォームを送信したユーザーのメールアドレス。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:210
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:225
 msgid "The name of the person who submitted the form."
 msgstr "フォームを送信したユーザーの名前。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:200
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:215
 msgid "Unique identifier for the form response."
 msgstr "フォーム回答の一意識別子。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:193
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:208
 msgid "The ID for the parent of the post. This refers to the post/page where the feedback was created."
 msgstr "親投稿の ID。 これはフィードバックが作成された投稿 / ページを指しています。"
 
@@ -534,7 +548,7 @@ msgstr "認証コードの送信に失敗しました。 もう一度お試し�
 msgid "Jetpack is not connected. Please connect and try again."
 msgstr "Jetpack が連携されていません。 連携してもう一度お試しください。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1028
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:991
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 msgid "Upload a file"
 msgstr "ファイルをアップロード"
@@ -644,7 +658,7 @@ msgstr "脆弱なテーマ: %1$s (バージョン%2$s)"
 msgid "Vulnerable plugin: %1$s (version %2$s)"
 msgstr "脆弱なプラグイン: %1$s (バージョン%2$s)"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:998
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:961
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 msgid "Number"
 msgstr "番号"
@@ -683,7 +697,6 @@ msgstr "WordPress ではさまざまなプラットフォームからメディ�
 #: jetpack_vendor/automattic/jetpack-external-media/src/features/admin/external-media-import.php:40
 #: jetpack_vendor/automattic/jetpack-external-media/src/features/admin/external-media-import.php:103
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-button/jetpack-external-media-import-button.js:1
-#: jetpack_vendor/automattic/jetpack-external-media/src/features/admin/external-media-import-button.js:13
 msgid "Import Media"
 msgstr "メディアをインポート"
 
@@ -784,7 +797,7 @@ msgstr "取得する商品スラッグのコンマ区切りリスト。"
 msgid "Error in deleting post."
 msgstr "投稿の削除中にエラーが発生しました。"
 
-#: modules/stats.php:512
+#: modules/stats.php:511
 msgid "The old Jetpack Stats has been deprecated. Please click the button to enable the new experience."
 msgstr "旧 Jetpack 統計は非推奨です。 ボタンをクリックして、新しいエクスペリエンスを有効にしてください。"
 
@@ -1060,7 +1073,7 @@ msgstr "手動"
 msgid "Auto CSS Optimization"
 msgstr "CSS の自動最適化"
 
-#: class.json-api-endpoints.php:2856
+#: class.json-api-endpoints.php:2852
 #: _inc/lib/class.core-rest-api-endpoints.php:4547
 msgid "You do not have the correct user permissions to perform this action. Please contact your site admin if you think this is a mistake."
 msgstr "この操作を行う適切なユーザー権限がありません。 これが間違いであると思われる場合、サイト管理者に連絡してください。"
@@ -1084,14 +1097,14 @@ msgstr "ブロック"
 msgid "High request capacity *"
 msgstr "リクエスト容量が大きい *"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:344
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:345
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:364
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:365
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php:293
 msgid "Hosting Features"
 msgstr "ホスティング機能"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:344
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:345
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:364
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:365
 msgid "Server Settings"
 msgstr "サーバー設定"
 
@@ -1244,36 +1257,6 @@ msgstr "自動バックアップとワンクリック復元でサイトを保護
 msgid "Keep your site free from spam and bots"
 msgstr "スパムやボットからサイトを守る"
 
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:11
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/back-up-now/index.jsx:66
-msgid "Cannot queue backups due to reaching storage limits."
-msgstr "ストレージの上限に達しているため、バックアップをキューに入れることができません。"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:11
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/back-up-now/index.jsx:61
-msgid "A backup is currently in progress."
-msgstr "現在、バックアップが進行中です。"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:11
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/back-up-now/index.jsx:60
-msgid "A backup has been queued and will start shortly."
-msgstr "バックアップがキューに入れられました。まもなく開始されます。"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:11
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/back-up-now/index.jsx:55
-msgid "Backup in progress"
-msgstr "バックアップ進行中"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:11
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/back-up-now/index.jsx:54
-msgid "Backup enqueued"
-msgstr "バックアップ待機中"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:11
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/back-up-now/index.jsx:53
-msgid "Queueing backup"
-msgstr "バックアップをキューイングしています"
-
 #: _inc/lib/class.core-rest-api-endpoints.php:2669
 msgid "Whether to show date in the email byline"
 msgstr "メールのバイラインに日付を表示するかどうか"
@@ -1305,7 +1288,7 @@ msgctxt "block style label"
 msgid "Button only"
 msgstr "ボタンのみ"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1044
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1049
 msgid "Subscription Options failed to process."
 msgstr "購読オプションを処理できませんでした。"
 
@@ -1349,7 +1332,7 @@ msgstr "Jetpack 講読オーバーレイ"
 msgid "Subscription pop-up container"
 msgstr "購読ポップアップコンテナ"
 
-#: modules/stats.php:511
+#: modules/stats.php:510
 msgid "Deprecated Jetpack Stats Experience"
 msgstr "非推奨の Jetpack 統計エクスペリエンス"
 
@@ -1404,11 +1387,11 @@ msgstr "外部ユーザー ID - Facebook などのサービスの場合"
 msgid "Keyring connection ID"
 msgstr "Keyring 接続 ID"
 
-#: extensions/blocks/subscriptions/subscriptions.php:833
+#: extensions/blocks/subscriptions/subscriptions.php:840
 msgid "Please fill in this field."
 msgstr "このフィールドに入力してください。"
 
-#: extensions/blocks/subscriptions/subscriptions.php:684
+#: extensions/blocks/subscriptions/subscriptions.php:691
 #: modules/subscriptions/views.php:710 _inc/blocks/editor-beta.js:95
 #: _inc/blocks/editor-experimental.js:78 _inc/blocks/editor.js:78
 msgid "Success! An email was just sent to confirm your subscription. Please find the email now and click 'Confirm' to start subscribing."
@@ -1423,6 +1406,11 @@ msgstr "<p style=\"margin-bottom: 0.25em;\"><strong>Jetpack はバックアッ�
 msgctxt "block keyword"
 msgid "threads"
 msgstr "スレッド"
+
+#: _inc/blocks/sharing-buttons/block.json
+msgctxt "block keyword"
+msgid "bluesky"
+msgstr "bluesky"
 
 #: _inc/blocks/donations/block.json _inc/blocks/payment-buttons/block.json
 #: _inc/blocks/payments-intro/block.json _inc/blocks/paywall/block.json
@@ -1486,6 +1474,11 @@ msgstr "最大限のセキュリティと効率を確保するため、WordPress
 #: modules/sharedaddy/sharing-sources.php:3492
 msgid "Click to share on Bluesky"
 msgstr "クリックして Bluesky で共有"
+
+#: modules/sharedaddy/sharing-sources.php:3491
+msgctxt "share to"
+msgid "Bluesky"
+msgstr "Bluesky"
 
 #: modules/sharedaddy/sharing-sources.php:3422
 msgid "Click to share on Threads"
@@ -1559,6 +1552,13 @@ msgstr "ネイティブツールを使って共有"
 #: modules/sharedaddy/sharing-sources.php:3408
 msgid "Threads"
 msgstr "Threads"
+
+#: extensions/blocks/sharing-button/class-sharing-source-block.php:998
+#: modules/sharedaddy/sharing-sources.php:3478
+#: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:18
+#: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:18
+msgid "Bluesky"
+msgstr "Bluesky"
 
 #: extensions/blocks/sharing-button/class-sharing-source-block.php:592
 msgid "Web Share"
@@ -1904,11 +1904,11 @@ msgstr "イベントフィード URL がこのウィジェットに正しく設�
 msgid "In relation to"
 msgstr "関連理由"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:381
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:401
 msgid "GitHub Deployments"
 msgstr "GitHub デプロイメント"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:368
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:388
 msgid "Available Tools"
 msgstr "利用可能なツール"
 
@@ -1924,7 +1924,7 @@ msgstr "重複しているコメントが見つかりました。同じコメン
 msgid "Product rating"
 msgstr "商品の評価"
 
-#: extensions/blocks/subscriptions/subscriptions.php:832
+#: extensions/blocks/subscriptions/subscriptions.php:839
 msgid "You're logged in with this email"
 msgstr "このメールアドレスでログインしています"
 
@@ -2103,31 +2103,31 @@ msgstr "データベースに保存されているものと比較する URL シ�
 
 #. translators: date format. DD is the day of the month, MM the month, and YYYY
 #. the year (e.g., 2023-12-31).
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:1108
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:1107
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
 msgid "YYYY-MM-DD"
 msgstr "YYYY-MM-DD"
 
 #. translators: date format. DD is the day of the month, MM the month, and YYYY
 #. the year (e.g., 31/12/2023).
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:1104
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:1103
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:9
 msgid "DD/MM/YYYY"
 msgstr "DD/MM/YYYY"
 
 #. translators: date format. DD is the day of the month, MM the month, and YYYY
 #. the year (e.g., 12/31/2023).
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:1100
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:1099
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:7
 msgid "MM/DD/YYYY"
 msgstr "MM/DD/YYYY"
 
 #. translators: %s: email address
-#: extensions/blocks/subscriptions/subscriptions.php:1259
+#: extensions/blocks/subscriptions/subscriptions.php:1295
 msgid "Head to your inbox and confirm your email address %s."
 msgstr "受信トレイに移動してメールアドレス %s を確認してください。"
 
-#: extensions/blocks/subscriptions/subscriptions.php:1256
+#: extensions/blocks/subscriptions/subscriptions.php:1292
 msgid "Confirm your subscription to continue reading"
 msgstr "サブスクリプションを確認して購読を継続"
 
@@ -2376,6 +2376,7 @@ msgid "Import a CSV file of your existing subscribers to be sent your Newsletter
 msgstr "ニュースレターを送信する既存購読者の CSV ファイルをインポートします。"
 
 #: jetpack_vendor/automattic/jetpack-my-jetpack/src/products/class-creator.php:128
+#: _inc/build/newsletter-widget.js:6
 msgid "Import subscribers"
 msgstr "購読者をインポート"
 
@@ -2468,7 +2469,7 @@ msgid "WPCOM\\Jetpack_AI\\Usage\\Helper class not found."
 msgstr "WPCOM\\Jetpack_AI\\Usage\\Helper クラスが見つかりません。"
 
 #. translators: %1$s is the site address
-#: modules/subscriptions/views.php:1054
+#: modules/subscriptions/views.php:1055
 msgid "Cool, you are now subscribed to %1$s and will receive an email notification when a new post is published."
 msgstr "%1$s の購読をスタートしました。新しい投稿が公開されるとメールで通知が届きます。"
 
@@ -2476,10 +2477,11 @@ msgstr "%1$s の購読をスタートしました。新しい投稿が公開さ�
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:280
 #: _inc/blocks/editor-beta.js:130 _inc/blocks/editor-experimental.js:113
 #: _inc/blocks/editor-no-post-editor.js:54 _inc/blocks/editor.js:113
+#: _inc/build/newsletter-widget.js:6
 msgid "Monetize"
 msgstr "収益化"
 
-#: extensions/blocks/subscriptions/subscriptions.php:1182
+#: extensions/blocks/subscriptions/subscriptions.php:1190
 msgid "Switch accounts"
 msgstr "アカウントを切り替え"
 
@@ -2569,16 +2571,16 @@ msgstr "指定したファイルのアップロードテストに失敗しまし
 msgid "IP address `%1$s` just failed is_usable_domain check as it is in the private network."
 msgstr "IP アドレスの「%1$s」はプライベートネットワーク上にあるため、is_usable_domain チェックでエラーが発生しました。"
 
-#: extensions/blocks/subscriptions/subscriptions.php:1162
+#: extensions/blocks/subscriptions/subscriptions.php:1169
 msgid "Upgrade to get access to the rest of this post and other exclusive content."
 msgstr "アップグレードすると、この投稿の続きとその他の限定コンテンツにアクセスできます。"
 
-#: extensions/blocks/subscriptions/subscriptions.php:1156
+#: extensions/blocks/subscriptions/subscriptions.php:1162
 msgid "Upgrade to continue reading"
 msgstr "続きを読むにはアップグレードしてください"
 
 #: extensions/blocks/blogroll/blogroll-item/blogroll-item.php:71
-#: extensions/blocks/subscriptions/subscriptions.php:679
+#: extensions/blocks/subscriptions/subscriptions.php:686
 msgid "Subscribed"
 msgstr "登録済み"
 
@@ -2598,17 +2600,17 @@ msgstr "今すぐ購読し、続きを読んで、すべてのアーカイブに
 
 #. translators: %s: number of folks following the blog, thousands(K) with one
 #. decimal. i.e. 1.1
-#: modules/memberships/class-jetpack-memberships.php:1002
+#: modules/memberships/class-jetpack-memberships.php:1016
 msgid "Join %sK other subscribers"
 msgstr "%s000人の購読者に加わりましょう"
 
 #. translators: %s: number of folks following the blog, millions(M) with one
 #. decimal. i.e. 1.1
-#: modules/memberships/class-jetpack-memberships.php:998
+#: modules/memberships/class-jetpack-memberships.php:1012
 msgid "Join %sM other subscribers"
 msgstr "%s00万人の購読者に加わりましょう"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:375
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:395
 msgid "Site Monitoring"
 msgstr "サイトの監視"
 
@@ -2617,11 +2619,11 @@ msgstr "サイトの監視"
 msgid "My Mailboxes"
 msgstr "マイメールボックス"
 
-#: extensions/blocks/subscriptions/subscriptions.php:1187
+#: extensions/blocks/subscriptions/subscriptions.php:1195
 msgid "Already a subscriber?"
 msgstr "すでに購読していますか ?"
 
-#: extensions/blocks/subscriptions/subscriptions.php:1187
+#: extensions/blocks/subscriptions/subscriptions.php:1195
 msgid "Already a paid subscriber?"
 msgstr "すでに有料購読者ですか ?"
 
@@ -3710,25 +3712,26 @@ msgstr "URL シークレットが存在しません。"
 msgid "Lead Capture Form"
 msgstr "リードキャプチャーフォーム"
 
-#: extensions/blocks/subscriptions/subscriptions.php:680
-#: extensions/blocks/subscriptions/subscriptions.php:1290
+#: extensions/blocks/subscriptions/subscriptions.php:687
+#: extensions/blocks/subscriptions/subscriptions.php:1332
 msgid "Upgrade subscription"
 msgstr "購読をアップグレード"
 
-#: extensions/blocks/subscriptions/subscriptions.php:1288
+#: extensions/blocks/subscriptions/subscriptions.php:1331
 msgid "You're currently a free subscriber. Upgrade your subscription to get access to the rest of this post and other paid-subscriber only content."
 msgstr "現在、無料購読者です。 購読をアップグレードして、この投稿の続きとその他の購読者限定コンテンツにアクセスしましょう。"
 
 #. translators: %s is the name of the site.
-#: extensions/blocks/subscriptions/subscriptions.php:1165
+#: extensions/blocks/subscriptions/subscriptions.php:1173
 msgid "Subscribe to get access to the rest of this post and other subscriber-only content."
 msgstr "購読して、この投稿の続きとその他の購読者限定コンテンツにアクセスしましょう。"
 
-#: extensions/blocks/subscriptions/subscriptions.php:1163
+#: extensions/blocks/subscriptions/subscriptions.php:1170
+#: extensions/blocks/subscriptions/subscriptions.php:1336
 msgid "Become a paid subscriber to get access to the rest of this post and other exclusive content."
 msgstr "有料購読者になると、この投稿の続きとその他の限定コンテンツにアクセスできます。"
 
-#: extensions/blocks/subscriptions/subscriptions.php:1157
+#: extensions/blocks/subscriptions/subscriptions.php:1163
 msgid "Subscribe to continue reading"
 msgstr "購読して続きを読む"
 
@@ -3779,37 +3782,6 @@ msgstr "%1$s の共有サービスは終了したか、共有ボタンへの対�
 msgctxt "Module Name"
 msgid "Newsletter"
 msgstr "メールマガジン"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:25
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-video-section/index.jsx:50
-msgid "Take a walkthrough of VaultPress Backup"
-msgstr "VaultPress バックアップのチュートリアルを見る"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:13
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-promotion/index.jsx:32
-msgid "Backups of all WooCommerce customer and order data"
-msgstr "WooCommerce の顧客と注文のデータをすべてバックアップ"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:13
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-promotion/index.jsx:30
-msgid "Easy to use; no developer required"
-msgstr "使い方は簡単。開発者は不要"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:13
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-promotion/index.jsx:26
-msgid "Easy one-click restores from desktop or mobile"
-msgstr "ワンクリックでデスクトップまたはモバイルから簡単に復元"
-
-#. translators: %s is the amount of storage.
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:13
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-promotion/index.jsx:22
-msgid "Automated real-time backups with %s of storage"
-msgstr "%s のストレージの自動リアルタイムバックアップ"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:11
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-promotion/index.jsx:13
-msgid "VaultPress Backup is the most proven WordPress backup plugin with 270 million site backups over the last ten years."
-msgstr "VaultPress バックアップは過去10年間で2億7,000万件のサイトバックアップを行った、実績の高い WordPress のバックアッププラグインです。"
 
 #: _inc/lib/core-api/wpcom-endpoints/class-wpcom-rest-api-v2-endpoint-send-email-preview.php:126
 msgid "Could not create subscriber."
@@ -3863,41 +3835,13 @@ msgstr "Jetpack Blaze ダッシュボードを正しく機能させるには、J
 msgid "The block will not be shown to your site visitors until a Tock business name is set."
 msgstr "Tock ビジネス名が設定されるまで、ブロックはサイト訪問者に表示されません。"
 
-#: class.jetpack-gutenberg.php:1282
+#: class.jetpack-gutenberg.php:1292
 msgid "This block is no longer supported. Its contents will no longer be displayed to your visitors and as such this block should be removed."
 msgstr "このブロックのサポートは終了しました。 このコンテンツは訪問者に表示されなくなるため、このブロックを削除する必要があります。"
 
 #: extensions/blocks/blogroll/blogroll.php:81
 msgid "Site Recommendations"
 msgstr "サイトのおすすめ"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:18
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-storage-space/storage-help-popover/index.jsx:109
-msgid "Add more storage"
-msgstr "ストレージを追加する"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:18
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-storage-space/storage-help-popover/index.jsx:92
-msgid "If you need more backup days, try <link>reducing the backup size</link> or adding more storage."
-msgstr "バックアップの日数が足りない場合は、<link>バックアップサイズを小さくするか</link>、ストレージを追加してみてください。"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:18
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-storage-space/storage-help-popover/index.jsx:76
-msgid "Backup archive size"
-msgstr "バックアップアーカイブのサイズ"
-
-#. translators: %d: is number of days of the forecast
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:18
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-storage-space/storage-help-popover/index.jsx:50
-msgid "Based on the current size of your site, Jetpack will save <strong>%d day of full backup</strong>."
-msgid_plural "Based on the current size of your site, Jetpack will save <strong>%d days of full backups</strong>."
-msgstr[0] "サイトの現在のサイズに基づいて Jetpack が<strong>%d日分の完全なバックアップ</strong>を保存します。"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:25
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-video-section/index.jsx:33
-#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:6
-msgid "Unavailable in <a>Offline Mode</a>"
-msgstr "<a>オフラインモード</a>ではご利用いただけません"
 
 #: _inc/lib/core-api/wpcom-endpoints/publicize-connection-test-results.php:71
 msgid "Jetpack Social connection error code"
@@ -4079,23 +4023,23 @@ msgid "Move important styling information to the start of the page, which helps 
 msgstr "重要なスタイル情報をページの先頭に移動します。これにより、ページにコンテンツがより早く表示されるようになり、ユーザーはページ全体が読み込まれるまで待つ必要がなくなります。 通常、クリティカル CSS と呼ばれます。"
 
 #. translators: Placeholder is the URL of the page where a form was submitted.
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1638
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1607
 msgid "Source URL: %1$s"
 msgstr "ソース URL: %1$s"
 
 #. translators: Placeholder is the IP address of the person who submitted a
 #. form.
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1631
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1600
 msgid "IP Address: %1$s"
 msgstr "IP アドレス: %1$s"
 
 #. translators: Placeholder is the date and time when a form was submitted.
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1624
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1593
 msgid "Time: %1$s"
 msgstr "時間: %1$s"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:1256
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:6
 msgctxt "noun"
 msgid "Trash"
 msgstr "ゴミ箱"
@@ -4111,7 +4055,7 @@ msgstr "ゴミ箱"
 msgid "HTTP %d while communicating with WordPress.com"
 msgstr "WordPress. com との通信中に HTTP %d が発生しました"
 
-#: jetpack_vendor/automattic/jetpack-boost-speed-score/src/class-speed-score.php:136
+#: jetpack_vendor/automattic/jetpack-boost-speed-score/src/class-speed-score.php:137
 msgid "The url parameter is required"
 msgstr "URL 変数は必須です"
 
@@ -4260,12 +4204,12 @@ msgstr "グローバル IP 許可リストを保護"
 msgid "Protect IP allow list"
 msgstr "IP 許可リストを保護"
 
-#: modules/stats.php:1117
+#: modules/stats.php:1100
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:101
 msgid "View detailed stats"
 msgstr "詳細な統計情報を表示"
 
-#: modules/stats.php:1114
+#: modules/stats.php:1097
 msgid "Highlights"
 msgstr "ハイライト"
 
@@ -4304,15 +4248,15 @@ msgstr "ソーシャル画像を生成する際に使用する背景画像の UR
 msgid "The text to be used to generate the image."
 msgstr "画像を生成するために使用するテキスト。"
 
-#: jetpack_vendor/automattic/jetpack-publicize/src/social-image-generator/class-rest-settings-controller.php:129
+#: jetpack_vendor/automattic/jetpack-publicize/src/social-image-generator/class-rest-settings-controller.php:141
 msgid "The default settings for a new generated image."
 msgstr "新規に生成される画像のデフォルト設定。"
 
-#: jetpack_vendor/automattic/jetpack-publicize/src/social-image-generator/class-rest-settings-controller.php:124
+#: jetpack_vendor/automattic/jetpack-publicize/src/social-image-generator/class-rest-settings-controller.php:131
 msgid "Whether or not Social Image Generator is enabled."
 msgstr "ソーシャル画像生成機能が有効かどうか。"
 
-#: jetpack_vendor/automattic/jetpack-publicize/src/social-image-generator/class-rest-settings-controller.php:104
+#: jetpack_vendor/automattic/jetpack-publicize/src/social-image-generator/class-rest-settings-controller.php:111
 #: jetpack_vendor/automattic/jetpack-publicize/src/social-image-generator/class-rest-token-controller.php:71
 msgid "Sorry, you are not allowed to access this endpoint."
 msgstr "このエンドポイントにアクセスする権限がありません。"
@@ -4346,8 +4290,8 @@ msgstr "添付ファイルの固有の識別子。"
 msgid "Classic"
 msgstr "クラシック"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:503
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:514
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:611
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:622
 msgid "Bad request"
 msgstr "不正なリクエスト"
 
@@ -4355,8 +4299,10 @@ msgstr "不正なリクエスト"
 msgid "Something went wrong. Please try again."
 msgstr "エラーが発生しました。 もう一度お試しください。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1956
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:3
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:2002
+#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:179
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:6
 msgid "Jetpack Forms"
 msgstr "Jetpack フォーム"
 
@@ -4458,11 +4404,11 @@ msgstr "エラー。 ご使用になったメールアドレスでサブスク�
 msgid "Oops! The email you used is invalid. Please try again."
 msgstr "エラー。 ご使用になったメールアドレスが無効です。 もう一度お試しください。"
 
-#: modules/stats.php:517
+#: modules/stats.php:516
 msgid "Learn about Stats"
 msgstr "統計の詳細を見る"
 
-#: modules/stats.php:515
+#: modules/stats.php:514
 msgid "Switch to new Stats"
 msgstr "新しい統計に切り替え"
 
@@ -4508,13 +4454,12 @@ msgstr "タームの Jetpack インポート一意識別子。"
 msgid "The parent category slug."
 msgstr "親カテゴリーのスラッグ。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:114
-#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:127
+#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:148
 msgctxt "post type name shown in menu"
 msgid "Feedback"
 msgstr "フィードバック"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1777
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1794
 msgid "Response Date"
 msgstr "返信日"
 
@@ -4526,43 +4471,11 @@ msgstr "全員"
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-admin-menu.php:395
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:303
 #: jetpack_vendor/automattic/jetpack-my-jetpack/src/products/class-creator.php:206
-#: modules/subscriptions/newsletter-widget/class-jetpack-newsletter-dashboard-widget.php:103
+#: modules/subscriptions/newsletter-widget/class-jetpack-newsletter-dashboard-widget.php:104
 #: _inc/blocks/editor-beta.js:97 _inc/blocks/editor-experimental.js:80
 #: _inc/blocks/editor.js:80 _inc/build/admin.js:79 _inc/build/admin.js:90
 msgid "Newsletter"
 msgstr "ニュースレター"
-
-#. translators: %s: Number of days of backups saved.
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:19
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-storage-space/storage-usage-details/index.jsx:32
-msgid "<a>%s days of backups saved</a>"
-msgstr "<a>%s日分のバックアップを保存しました</a>"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:18
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-storage-space/storage-usage-details/index.jsx:29
-msgid "<a>1 day of backups saved</a>"
-msgstr "<a>1日分のバックアップを保存しました</a>"
-
-#. translators: %1$s: Storage unit, <Price>: Additional charge.
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:15
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-storage-space/storage-addon-upsell-prompt/index.jsx:42
-msgid "Add %1$s additional storage for <Price />/month, billed monthly"
-msgstr "<Price />/月 (月額請求) で%1$s のストレージを追加"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:13
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-storage-space/index.jsx:90
-msgid "Cloud storage space"
-msgstr "クラウドストレージ容量"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:13
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-storage-space/index.jsx:87
-msgid "Cloud storage is almost full"
-msgstr "クラウドストレージの残り容量がわずかです"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:13
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-storage-space/index.jsx:83
-msgid "Cloud storage full"
-msgstr "クラウドストレージの残り容量がなくなりました"
 
 #. translators: %s: The template type.
 #: _inc/lib/core-api/wpcom-endpoints/class-wpcom-rest-api-v2-endpoint-template-loader.php:82
@@ -4594,23 +4507,23 @@ msgstr "このサイトの Jetpack AI ヘルプにアクセスする権限があ
 msgid "Reading"
 msgstr "読み込み中"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1019
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:982
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 msgid "Choose one option"
 msgstr "オプションを1つ選択してください"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1016
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:979
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 msgid "Choose several options"
 msgstr "オプションからいくつか選択してください"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1778
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1795
 msgctxt "noun"
 msgid "Consent"
 msgstr "承諾"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1779
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1796
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:14
 msgid "IP Address"
 msgstr "IP アドレス"
 
@@ -4632,7 +4545,7 @@ msgid "#%d (no title)"
 msgstr "#%d (タイトルなし)"
 
 #. translators: %s is the permalink url to the current post.
-#: extensions/blocks/subscriptions/subscriptions.php:933
+#: extensions/blocks/subscriptions/subscriptions.php:940
 msgid "<p><a href='%s'>View post</a> to subscribe to site newsletter.</p>"
 msgstr "<p><a href='%s'>投稿を表示</a>して、サイトのニュースレターを購読します。</p>"
 
@@ -4651,7 +4564,7 @@ msgid "You must specify a URL to an iCalendar feed in the shortcode. This notice
 msgstr "ショートコードに iCalendar のフィードの URL を指定する必要があります。 この通知は管理者のみに表示されます。"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:293
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:14
 msgid "Export your data into a Google Sheets file."
 msgstr "Google スプレッドシートファイルにデータをエクスポートします。"
 
@@ -4668,17 +4581,17 @@ msgid "Download your form response data via CSV file."
 msgstr "フォーム回答データを CSV ファイル形式でダウンロードします。"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:235
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:14
 msgid "CSV File"
 msgstr "CSV ファイル"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:128
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 msgid "Choose your favorite file format or export destination:"
 msgstr "お気に入りのファイル形式かエクスポート先を選択:"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:127
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 msgid "Export your Form Responses"
 msgstr "フォームの回答をエクスポート"
 
@@ -4704,16 +4617,6 @@ msgstr "「%s」を Tumblr と WordPress.com の読者にアピールします�
 msgctxt "Jetpack product name"
 msgid "Security"
 msgstr "Security"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:10
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:11
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:25
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/Admin/no-backup-capabilities.js:79
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-connection-screen/index.js:52
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-video-section/index.jsx:60
-#: _inc/build/admin.js:95
-msgid "Get VaultPress Backup"
-msgstr "VaultPress バックアップを利用"
 
 #: _inc/lib/class.core-rest-api-endpoints.php:2953
 msgid "Preview the new Jetpack Stats experience (Experimental)."
@@ -4764,12 +4667,12 @@ msgstr "有効な URL を入力してください - https://www.example.com"
 msgid "%s: Please enter a valid URL - https://www.example.com"
 msgstr "%s: 有効な URL を入力してください - https://www.example.com"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1206
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1219
 msgid "All sources"
 msgstr "すべてのソース"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:840
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:155
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:853
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:156
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
 msgid "Your message has been sent"
@@ -4793,8 +4696,8 @@ msgstr "応答データ"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:624
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:773
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1776
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1793
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:14
 msgid "Source"
 msgstr "ソース"
 
@@ -4815,7 +4718,7 @@ msgctxt "product name shown in menu"
 msgid "Stats"
 msgstr "統計情報"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:990
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:991
 msgid "Blog"
 msgstr "ブログ"
 
@@ -4836,13 +4739,9 @@ msgstr "VaultPress バックアップ、スキャン、Akismet アンチスパ�
 #: modules/scan/class-admin-sidebar-link.php:96
 #: modules/scan/class-admin-sidebar-link.php:97
 #: modules/stats/class-jetpack-stats-upgrade-nudges.php:421
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:8
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:7
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:9
 #: jetpack_vendor/automattic/jetpack-backup/build/index.js:10
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:11
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/Admin/index.js:82
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/Admin/index.js:407
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/Admin/no-backup-capabilities.js:87
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-connection-screen/index.js:56
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:17
 #: _inc/build/admin.js:12 _inc/build/admin.js:21 _inc/build/admin.js:68
 #: _inc/build/admin.js:69 _inc/build/admin.js:70 _inc/build/admin.js:90
@@ -4872,7 +4771,7 @@ msgstr "Jetpack VaultPress バックアップ"
 msgid "Forms"
 msgstr "フォーム"
 
-#: class-jetpack-stats-dashboard-widget.php:65 modules/stats.php:491
+#: class-jetpack-stats-dashboard-widget.php:65 modules/stats.php:490
 #: _inc/lib/core-api/class.jetpack-core-api-site-endpoints.php:164
 #: _inc/build/admin.js:36 _inc/build/admin.js:70
 msgid "Jetpack Stats"
@@ -4888,8 +4787,8 @@ msgstr "サービスからサイト情報を取得できませんでした"
 
 #: jetpack_vendor/automattic/jetpack-my-jetpack/src/products/class-boost.php:187
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:9
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:5
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:6
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:5
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:6
 msgid "Included"
 msgstr "同梱"
@@ -4925,7 +4824,7 @@ msgid "You currently have %1$d share remaining. <a href=\"%2$s\" target=\"_blank
 msgid_plural "You currently have %1$d shares remaining. <a href=\"%2$s\" target=\"_blank\">Upgrade</a> to get more."
 msgstr[0] "現在、%1$d個の共有が残っています。 さらに増やすには<a href=\"%2$s\" target=\"_blank\">アップグレード</a>してください。"
 
-#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:1344
+#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:1349
 msgid "Leave a comment"
 msgstr "コメントを残す"
 
@@ -5049,15 +4948,15 @@ msgstr "VideoPress"
 msgid "Open when user submits the form (recommended)"
 msgstr "ユーザーがフォームを送信したときに開く (おすすめ)"
 
-#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:96
+#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:106
 msgid "Setting not updated."
 msgstr "設定は更新されていません。"
 
-#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:88
+#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:98
 msgid "Connect your site to use Jetpack Search."
 msgstr "サイトに接続して、Jetpack 検索を使用します。"
 
-#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:85
+#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:95
 msgid "Jetpack Search can not be used in offline mode."
 msgstr "Jetpack 検索はオフラインモードでは使用できません。"
 
@@ -5115,7 +5014,9 @@ msgstr "Google スライド"
 
 #: extensions/blocks/google-docs-embed/google-docs-embed.php:85
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:288
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:14
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:15
 #: _inc/blocks/editor-beta.js:38
 msgid "Google Sheets"
 msgstr "Google スプレッドシート"
@@ -5179,6 +5080,7 @@ msgstr "Jetpack ファイアウォールは、悪意のあるリクエストか�
 
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-p2-admin-menu.php:149
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:6
 msgid "Integrations"
 msgstr "連携"
 
@@ -5195,7 +5097,7 @@ msgid "You cannot view this video."
 msgstr "この動画は表示できません。"
 
 #. translators: Both %1$s and %2$s is site address
-#: modules/subscriptions/views.php:1051
+#: modules/subscriptions/views.php:1052
 msgid ""
 "Howdy,\n"
 "You recently subscribed to <a href='%1$s'>%2$s</a> and we need to verify the email you provided. Once you confirm below, you'll be able to receive and read new posts.\n"
@@ -5207,12 +5109,12 @@ msgstr ""
 "\n"
 "このメッセージに心当たりがない場合は無視してください。今後送信されることはありません。"
 
-#: extensions/blocks/sharing-button/class-sharing-source-block.php:439
+#: extensions/blocks/sharing-button/class-sharing-source-block.php:438
 #: modules/sharedaddy/sharing-sources.php:1049
 msgid "If you're having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself."
 msgstr "メールでの共有に問題がある場合、お使いのブラウザーにメールアドレスが設定されていない可能性があります。 新しいメールアドレスの作成が必要になることがあります。"
 
-#: extensions/blocks/sharing-button/class-sharing-source-block.php:438
+#: extensions/blocks/sharing-button/class-sharing-source-block.php:437
 #: modules/sharedaddy/sharing-sources.php:1048
 msgid "Do you have email set up?"
 msgstr "メールの設定は完了していますか ?"
@@ -5308,28 +5210,6 @@ msgstr "Jetpack による高品質な広告を許可することで、収益を�
 #: jetpack_vendor/automattic/jetpack-wordads/src/dashboard/components/dashboard/index.jsx:66
 msgid "WordAds"
 msgstr "WordAds"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:10
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:13
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/Admin/no-backup-capabilities.js:73
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-promotion/index.jsx:29
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:43
-msgid "Best-in-class support"
-msgstr "優れたサポート"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:10
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:13
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/Admin/no-backup-capabilities.js:72
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-promotion/index.jsx:28
-msgid "Global server infrastructure"
-msgstr "グローバルサーバーインフラストラクチャー"
-
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:10
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:13
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/Admin/no-backup-capabilities.js:71
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-promotion/index.jsx:27
-msgid "Complete list of all site changes"
-msgstr "すべてのサイト変更の完全なリスト"
 
 #: jetpack_vendor/automattic/jetpack-videopress/src/class-wpcom-rest-api-v2-endpoint-videopress.php:89
 msgid "How to determine if the video should be public or private"
@@ -5461,7 +5341,6 @@ msgstr "Jetpack ブロック"
 #: jetpack_vendor/automattic/jetpack-external-media/src/features/admin/external-media-import.php:118
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/index.js:76
 msgid "Openverse"
 msgstr "Openverse"
 
@@ -5546,14 +5425,14 @@ msgstr "Jetpack ダッシュボード"
 msgid "The upload handler cannot upload files"
 msgstr "アップロードハンドラーでファイルをアップロードできません"
 
-#: extensions/blocks/subscriptions/subscriptions.php:677
+#: extensions/blocks/subscriptions/subscriptions.php:684
 #: _inc/blocks/editor-beta.js:95 _inc/blocks/editor-beta.js:96
 #: _inc/blocks/editor-experimental.js:78 _inc/blocks/editor-experimental.js:79
 #: _inc/blocks/editor.js:78 _inc/blocks/editor.js:79
 msgid "Type your email…"
 msgstr "メールアドレスを入力..."
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:349
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:350
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:21
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:13
 msgid "Go back"
@@ -5587,22 +5466,22 @@ msgid "Real-time cloud backups with 10GB storage"
 msgstr "10GB のストレージでリアルタイムのクラウドバックアップを実現"
 
 #: jetpack_vendor/automattic/jetpack-my-jetpack/src/products/class-search.php:142
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:34
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:33
 msgid "Spelling correction"
 msgstr "スペル修正"
 
 #: jetpack_vendor/automattic/jetpack-my-jetpack/src/products/class-search.php:141
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:34
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:33
 msgid "Supports 38 languages"
 msgstr "38言語をサポート"
 
 #: jetpack_vendor/automattic/jetpack-my-jetpack/src/products/class-search.php:140
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:34
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:33
 msgid "Powerful filtering"
 msgstr "優れたフィルター機能"
 
 #: jetpack_vendor/automattic/jetpack-my-jetpack/src/products/class-search.php:139
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:34
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:33
 msgid "Instant search and indexing"
 msgstr "クイック検索とインデックス付け"
 
@@ -5658,7 +5537,7 @@ msgstr "WordPress.com から製品リストを取得できません"
 msgid "Method '%s' not implemented. Must be overridden in subclass."
 msgstr "メソッド「%s」は実装されていません。 サブクラスで上書きする必要があります。"
 
-#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:136
+#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:146
 msgid "Your plan does not support Instant Search."
 msgstr "ご利用のプランはクイック検索をサポートしていません。"
 
@@ -5821,21 +5700,21 @@ msgstr "完全同期に含まれるべきデータモジュール"
 msgid "Sync has been aborted because the IXR client is missing."
 msgstr "IXR クライアントが見つからないため、同期が中止されました。"
 
-#: jetpack_vendor/automattic/jetpack-search/src/class-rest-controller.php:299
+#: jetpack_vendor/automattic/jetpack-search/src/class-rest-controller.php:309
 msgid "The arguments passed in are invalid."
 msgstr "渡された引数は無効です。"
 
 #. translators: %s are the setting name that not updated.
-#: jetpack_vendor/automattic/jetpack-search/src/class-rest-controller.php:276
+#: jetpack_vendor/automattic/jetpack-search/src/class-rest-controller.php:281
 #: jetpack_vendor/automattic/jetpack-wordads/src/class-rest-controller.php:105
 msgid "Some settings ( %s ) not updated."
 msgstr "一部の設定 (%s) が更新されていません。"
 
-#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:133
+#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:143
 msgid "Search module needs to be activated before enabling instant search."
 msgstr "クイック検索を有効化する前に検索モジュールを有効化する必要があります。"
 
-#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:91
+#: jetpack_vendor/automattic/jetpack-search/src/class-module-control.php:101
 msgid "Your plan does not support Jetpack Search."
 msgstr "ご利用のプランは Jetpack 検索をサポートしていません。"
 
@@ -6099,7 +5978,7 @@ msgstr "textdomain のエイリアスは %1$s フックの前に登録する必�
 msgid "Script \"%s\" depends on wp-i18n but does not specify \"textdomain\""
 msgstr "スクリプト \"%s\" には wp-i18n が必要ですが、\"textdomain\" を指定しません"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:987
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:988
 #: modules/related-posts/jetpack-related-posts.php:386
 #: _inc/build/widget-visibility/editor/index.js:1
 msgid "Author"
@@ -6372,7 +6251,7 @@ msgid "Secure and speed up your site for free with Jetpack's powerful WordPress 
 msgstr "Jetpack の強力な WordPress ツールで、サイトを無料で保護し、スピードアップしましょう。"
 
 #: extensions/blocks/like/like.php:113
-#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:7
+#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:6
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:31
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:14
 #: jetpack_vendor/automattic/jetpack-search/build/instant-search/jp-search.chunk-main-payload.js:3
@@ -6389,15 +6268,15 @@ msgid "Loading…"
 msgstr "読み込み中…"
 
 #: _inc/lib/admin-pages/class.jetpack-admin-page.php:351
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:5
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
 #: jetpack_vendor/automattic/jetpack-connection/dist/identity-crisis.js:1
-#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:3
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:3
+#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:2
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:9
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:2
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:2
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:5
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:5
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:6
 #: jetpack_vendor/automattic/jetpack-wordads/build/dashboard/jp-wordads-dashboard.js:3
 #: _inc/blocks/editor-beta.js:22 _inc/blocks/editor-experimental.js:22
@@ -6436,7 +6315,7 @@ msgid "Hulu no longer allows embedding content."
 msgstr "Hulu でコンテンツの埋め込みができなくなりました。"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard-view-switch.php:62
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:6
 msgid "Inbox"
 msgstr "受信箱"
 
@@ -6559,22 +6438,23 @@ msgstr "写真のコメント表示を切り替え"
 msgid "Toggle photo metadata visibility"
 msgstr "写真のメタデータ表示を切り替え"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:212
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:213
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:214
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:215
 msgid "No responses found"
 msgstr "回答が見つかりませんでした"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:211
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:213
 msgid "Search Responses"
 msgstr "回答を検索"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:209
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:210
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:577
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:578
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:269
-#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:113
-#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:126
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:211
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:212
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:583
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:584
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:270
+#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:129
+#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:147
+#: jetpack_vendor/automattic/jetpack-forms/src/dashboard/class-dashboard.php:160
 msgid "Form Responses"
 msgstr "フォームの回答"
 
@@ -6594,7 +6474,7 @@ msgstr "表示するものがまだありません"
 msgid "The content of your latest posts page is automatically generated and cannot be edited."
 msgstr "最新の投稿ページのコンテンツは自動的に生成され、編集することはできません。"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:331
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:351
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php:222
 msgid "Emails"
 msgstr "メール"
@@ -6619,13 +6499,14 @@ msgid "Expanded (shows images)"
 msgstr "展開表示 (画像を提示)"
 
 #: class.jetpack-admin.php:138 class.jetpack-admin.php:141
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:127
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php:254
 #: jetpack_vendor/automattic/jetpack-masterbar/src/nudges/additional-css/class-css-customizer-nudge.php:124
 msgid "Additional CSS"
 msgstr "追加 CSS"
 
 #. translators: placeholder is an a href for a support site.
-#: modules/stats.php:1207
+#: modules/stats.php:1190
 msgid "We were unable to get your stats just now. Please reload this page to try again. If this error persists, please contact %1$s. In your report, please include the information below."
 msgstr "統計情報を取得できません。 このページを再読み込みして再試行してください。 エラーが解決しない場合は、%1$s にご連絡ください。 レポートには以下の情報を含めてください。"
 
@@ -6742,7 +6623,7 @@ msgstr "ログイン"
 
 #. translators: %1$1 and %2$s are the opening and closing a tags creating a
 #. link to the Jetpack dashboard.
-#: modules/widgets/class-jetpack-instagram-widget.php:399
+#: modules/widgets/class-jetpack-instagram-widget.php:400
 msgid "In order to use this widget you need to %1$scomplete your Jetpack connection%2$s by authorizing your user."
 msgstr "このウィジェットを使用するには、ユーザーを認証して %1$sJetpack 接続を完了する%2$s必要があります。"
 
@@ -6750,7 +6631,7 @@ msgstr "このウィジェットを使用するには、ユーザーを認証し
 msgid "WP Admin"
 msgstr "WP 管理画面"
 
-#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:740
+#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:745
 msgid "Invalid Cloudflare Analytics ID"
 msgstr "無効な Cloudflare Analytics ID です"
 
@@ -6833,7 +6714,8 @@ msgstr "一般"
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:352
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:1383
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:284
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:14
 msgid "Export"
 msgstr "エクスポート"
 
@@ -6846,7 +6728,7 @@ msgid "Tools"
 msgstr "ツール"
 
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:218
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:23
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:26
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:184
 msgid "Appearance"
 msgstr "外観"
@@ -6874,7 +6756,7 @@ msgstr "ユーザー"
 msgid "Activity Log"
 msgstr "アクティビティログ"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:289
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:309
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php:181
 msgid "Hourly views"
 msgstr "ページビュー (1時間あたり)"
@@ -6886,7 +6768,7 @@ msgstr "ページビュー (1時間あたり)"
 msgid "Private"
 msgstr "非公開"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:213
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:233
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php:131
 msgid "Add New Site"
 msgstr "サイトを追加"
@@ -6993,8 +6875,7 @@ msgid "Automatically clear spam from comments and forms."
 msgstr "コメントやフォームからスパムを自動的に削除します。"
 
 #: modules/stats/class-jetpack-stats-upgrade-nudges.php:420
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:25
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/backup-video-section/index.jsx:53
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:24
 #: _inc/build/admin.js:62
 msgid "Save every change and get back online quickly with one-click restores."
 msgstr "すべての変更を保存し、ワンクリックの復元機能で素早くオンラインに戻しましょう。"
@@ -7063,17 +6944,17 @@ msgstr "Jetpack と接続していません。 チェックするブログのト
 msgid "Choose an amount"
 msgstr "金額を選択"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1025
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:988
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 msgid "Consent"
 msgstr "承諾"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:518
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:521
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 msgid "Can we send you an email from time to time?"
 msgstr "適宜メールでご連絡することを承諾いただけますか ?"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:514
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:517
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 msgid "By submitting your information, you're giving us permission to email you. You may unsubscribe at any time."
 msgstr "情報を送信すると、メールの受信を承諾したことになります。 登録はいつでも解除できます。"
@@ -7206,48 +7087,48 @@ msgstr "プライバシー設定"
 msgid "Report this ad"
 msgstr "この広告を報告"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:596
+#: modules/widgets/class-jetpack-instagram-widget.php:597
 msgid "New images may take up to 15 minutes to show up on your site."
 msgstr "新しい画像がサイトに表示されるまで最大15秒かかることがあります。"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:588
+#: modules/widgets/class-jetpack-instagram-widget.php:589
 msgid "Number of columns:"
 msgstr "カラムの数:"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:577
+#: modules/widgets/class-jetpack-instagram-widget.php:578
 msgid "Number to display:"
 msgstr "表示する数:"
 
 #. translators: %1$s is the URL of the connected Instagram account, %2$s is the
 #. username of the connected Instagram account, %3$s is the URL to disconnect
 #. the account.
-#: modules/widgets/class-jetpack-instagram-widget.php:554
+#: modules/widgets/class-jetpack-instagram-widget.php:555
 msgid "<strong>Connected Instagram Account</strong><br /> <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"%1$s\">%2$s</a> | <a href=\"%3$s\">remove</a>"
 msgstr "<strong>接続済みの Instagram アカウント</strong><br /> <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"%1$s\">%2$s</a> | <a href=\"%3$s\">削除</a>"
 
 #. translators: %s is a link to log in to Instagram
-#: modules/widgets/class-jetpack-instagram-widget.php:514
+#: modules/widgets/class-jetpack-instagram-widget.php:515
 msgid "Having trouble? Try <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">logging into the correct account</a> on Instagram.com first."
 msgstr "お困りですか ? まずは Instagram.com で<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">正しいアカウントにログイン</a>してください。"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:503
+#: modules/widgets/class-jetpack-instagram-widget.php:504
 msgid "Connect Instagram Account"
 msgstr "Instagram アクセスを認証"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:499
-#: modules/widgets/class-jetpack-instagram-widget.php:547
+#: modules/widgets/class-jetpack-instagram-widget.php:500
+#: modules/widgets/class-jetpack-instagram-widget.php:548
 msgid "Instagram is currently experiencing connectivity issues, please try again later to connect."
 msgstr "現在、Instagram で接続に関する問題が発生しています。しばらくしてからもう一度お試しください。"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:441
+#: modules/widgets/class-jetpack-instagram-widget.php:442
 msgid "<strong>Important: You must first click Publish to activate this widget <em>before</em> connecting your account.</strong> After saving the widget, click the button below to connect your Instagram account."
 msgstr "<strong>重要 : アカウントを連携する<em>前に</em>、[公開] をクリックしてこのウィジェットを有効にする必要があります。</strong>ウィジェットを保存した後に、下のボタンをクリックして Instagram アカウントと連携します。"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:435
+#: modules/widgets/class-jetpack-instagram-widget.php:436
 msgid "In order to continue using this widget you must reconnect to Instagram."
 msgstr "このウィジェットを引き続き使用するには、Instagram と再度連携する必要があります。"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:417
+#: modules/widgets/class-jetpack-instagram-widget.php:418
 msgid "Missing or invalid security nonce."
 msgstr "セキュリティ nonce 値が存在しないか、無効です。"
 
@@ -7290,51 +7171,51 @@ msgstr "最新の Instagram の写真を表示"
 msgid "Instagram"
 msgstr "Instagram"
 
-#: modules/widgets/twitter-timeline.php:582
+#: modules/widgets/twitter-timeline.php:583
 msgid "Color scheme:"
 msgstr "配色:"
 
-#: modules/widgets/twitter-timeline.php:569
+#: modules/widgets/twitter-timeline.php:570
 msgid "Border color (in hex format):"
 msgstr "枠線の色 (hex 値):"
 
-#: modules/widgets/twitter-timeline.php:552
+#: modules/widgets/twitter-timeline.php:553
 msgid "Show scrollbar"
 msgstr "スクロールバーを表示"
 
-#: modules/widgets/twitter-timeline.php:540
+#: modules/widgets/twitter-timeline.php:541
 msgid "Show borders"
 msgstr "枠線を表示"
 
-#: modules/widgets/twitter-timeline.php:529
+#: modules/widgets/twitter-timeline.php:530
 msgid "Show footer"
 msgstr "フッターを表示"
 
-#: modules/widgets/twitter-timeline.php:518
+#: modules/widgets/twitter-timeline.php:519
 msgid "Show header"
 msgstr "ヘッダーを表示"
 
-#: modules/widgets/twitter-timeline.php:493
+#: modules/widgets/twitter-timeline.php:494
 msgid "Maximum width (in pixels; 220 to 1200):"
 msgstr "最大幅 (220～1200 px):"
 
-#: modules/widgets/twitter-timeline.php:480
+#: modules/widgets/twitter-timeline.php:481
 msgid "Number of tweets in the timeline (1 to 20):"
 msgstr "タイムライン内のツイート数 (1～20):"
 
-#: modules/widgets/twitter-timeline.php:467
+#: modules/widgets/twitter-timeline.php:468
 msgid "Height (in pixels; at least 200):"
 msgstr "高さ (ピクセル単位、200 px 以上):"
 
-#: modules/widgets/twitter-timeline.php:459
+#: modules/widgets/twitter-timeline.php:460
 msgid "Fixed"
 msgstr "固定"
 
-#: modules/widgets/twitter-timeline.php:446
+#: modules/widgets/twitter-timeline.php:447
 msgid "Dynamic"
 msgstr "ダイナミック"
 
-#: modules/widgets/twitter-timeline.php:433
+#: modules/widgets/twitter-timeline.php:434
 msgid "Number of tweets shown:"
 msgstr "表示されるツイート数 : "
 
@@ -7351,7 +7232,7 @@ msgstr "新しいページを読み込んでいます"
 msgid "Excluded Post Types"
 msgstr "除外した投稿タイプ"
 
-#: modules/sharedaddy/sharing-service.php:1166
+#: modules/sharedaddy/sharing-service.php:1170
 msgid "Customize buttons"
 msgstr "ボタンをカスタマイズする"
 
@@ -7397,33 +7278,37 @@ msgstr "Jetpack はオフラインモードではありません。"
 #: jetpack_vendor/automattic/jetpack-external-media/src/features/admin/external-media-import.php:113
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/index.js:70
 msgid "Pexels free photos"
 msgstr "Pexels の無料画像"
 
 #: jetpack_vendor/automattic/jetpack-external-media/src/features/admin/external-media-import.php:108
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/google-photos/google-photos-picker-button.js:33
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/index.js:64
 msgid "Google Photos"
 msgstr "Google フォト"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:576
+#: modules/widgets/class-jetpack-instagram-widget.php:577
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/google-photos/filter-option.js:111
 msgid "Images"
 msgstr "画像"
 
+#. translators: %s: Original search term the user entered
+#. translators: %s: Search query.
+#: jetpack_vendor/automattic/jetpack-search/src/inline-search/class-inline-search-correction.php:177
+#: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:21
+#: jetpack_vendor/automattic/jetpack-search/build/instant-search/jp-search.chunk-main-payload.js:10
+msgid "No results for \"%s\""
+msgstr "「%s」の結果はありません。"
+
 #: modules/sharedaddy/sharing-sources.php:1454
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:3
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:8
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:2
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:2
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:3
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:12
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:3
 #: jetpack_vendor/automattic/jetpack-search/build/instant-search/jp-search.chunk-main-payload.js:1
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:5
 #: jetpack_vendor/automattic/jetpack-wordads/build/dashboard/jp-wordads-dashboard.js:2
@@ -7432,13 +7317,13 @@ msgid "Post"
 msgstr "投稿"
 
 #: modules/infinite-scroll/infinity.php:2028
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:3
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:8
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:2
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:2
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:3
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:12
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:3
 #: jetpack_vendor/automattic/jetpack-search/build/instant-search/jp-search.chunk-main-payload.js:1
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:5
 #: jetpack_vendor/automattic/jetpack-wordads/build/dashboard/jp-wordads-dashboard.js:2
@@ -7664,7 +7549,6 @@ msgstr "お待ちください"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-util.php:121
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:12
 msgid "Feedback Form"
 msgstr "フィードバックフォーム"
 
@@ -7675,7 +7559,6 @@ msgstr "予約フォーム"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-util.php:90
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:12
 msgid "Registration Form"
 msgstr "登録フォーム"
 
@@ -7747,11 +7630,11 @@ msgstr "Instagram の最新の投稿ブロックでエラーが発生しまし�
 msgid "Rating: %1$s out of %2$s."
 msgstr "評価 :%1$s/%2$s。"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:474
+#: modules/widgets/class-jetpack-instagram-widget.php:475
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:153
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:11
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:11
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:13
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:12
 #: _inc/blocks/editor-beta.js:39 _inc/blocks/editor-experimental.js:32
 #: _inc/blocks/editor-no-post-editor.js:17 _inc/blocks/editor.js:32
 msgid "Connecting…"
@@ -7856,7 +7739,7 @@ msgstr "関連性の高い結果を表示するクイック検索と強力なフ
 msgid "Instant search and filtering to help visitors quickly find relevant answers and explore your site."
 msgstr "クイック検索とフィルター機能により、訪問者はすぐに関連する回答を見つけ、サイトの閲覧を続けることができます。"
 
-#: modules/widgets/facebook-likebox.php:350
+#: modules/widgets/facebook-likebox.php:351
 msgid "Use Small Header"
 msgstr "小さいヘッダーを使用"
 
@@ -8165,12 +8048,12 @@ msgstr "次のスライド"
 msgid "The site is not currently connected, so nothing to do!"
 msgstr "このサイトは現在接続されていないため、操作を行うことができません。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:156
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:157
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
 msgid "Thank you for your submission!"
 msgstr "お申し込みいただきありがとうございます。"
 
-#: modules/widgets/facebook-likebox.php:333
+#: modules/widgets/facebook-likebox.php:334
 msgid "Show Timeline"
 msgstr "タイムラインを表示"
 
@@ -8240,7 +8123,7 @@ msgid "People subscribed to your updates through Jetpack"
 msgstr "Jetpack で更新を購読した人の数"
 
 #: extensions/blocks/subscriptions/subscriptions.php:264
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:127
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:147
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:252
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php:279
 #: jetpack_vendor/automattic/jetpack-subscribers-dashboard/src/class-dashboard.php:73
@@ -8294,7 +8177,7 @@ msgstr "無効なユーザー ID です。"
 msgid "Include a small chart in your admin bar with a 48-hour traffic snapshot."
 msgstr "48時間分のトラフィックのスナップショットを反映した小さいグラフを管理バーに組み込みます。"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:265
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:285
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:205
 #: modules/scan/class-admin-sidebar-link.php:73
 #: modules/scan/class-admin-sidebar-link.php:74
@@ -8394,7 +8277,6 @@ msgid "Plugin icon"
 msgstr "プラグインアイコン"
 
 #: _inc/lib/admin-pages/class.jetpack-admin-page.php:363
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:3
 msgid "About"
 msgstr "このサイトについて"
 
@@ -8804,20 +8686,20 @@ msgstr "他にも以下の問題が見つかりました。"
 #: _inc/lib/debugger/class-jetpack-cxn-test-base.php:458
 #: _inc/lib/debugger/class-jetpack-debug-data.php:116
 #: _inc/lib/debugger/debug-functions.php:103
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:3
 #: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:5
-#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:3
+#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:2
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:3
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:7
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:9
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:18
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:2
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:2
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:3
 #: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:5
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:3
 #: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:5
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:5
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:6
 #: jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/index.js:3
@@ -9022,6 +8904,7 @@ msgid "We’re a distributed company with over %1$s Automatticians in more than 
 msgstr "Automattic は、%2$sか国以上に住みながら%3$s個以上の異なる言語を話す社員%1$s人超を抱える分散型企業です。私たちが共有する目標はパブリッシングの民主化です。これにより、収入、性別、政治的信条、言語、世界のどこに住んでいるかに関係なく、誰もが自分のストーリーを世に出せるようになってほしいと思っています。"
 
 #: _inc/lib/admin-pages/class-jetpack-about-page.php:148
+#: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:23
 msgid "Learn more about us"
 msgstr "会社情報"
 
@@ -9040,11 +8923,11 @@ msgstr "Jetpack ダッシュボードに戻る"
 #: _inc/lib/admin-pages/class-jetpack-about-page.php:45
 #: _inc/lib/admin-pages/class-jetpack-about-page.php:97
 #: _inc/lib/admin-pages/class.jetpack-admin-page.php:362
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:5
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:3
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:9
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:5
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:5
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:6
 #: jetpack_vendor/automattic/jetpack-wordads/build/dashboard/jp-wordads-dashboard.js:3
 #: _inc/build/admin.js:7
@@ -9278,11 +9161,11 @@ msgstr "カードを閉じることができません"
 msgid "Are sharing buttons enabled?"
 msgstr "共有ボタンは有効になっていますか ?"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1022
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:985
 msgid "Select one"
 msgstr "一つ選択"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1010
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:973
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
 msgid "Phone"
@@ -9403,28 +9286,28 @@ msgid_plural "%1$s posts published by %2$l in the year %3$s"
 msgstr[0] "%2$lは %3$sに %1$s 件の投稿を公開しました"
 
 #. translators: %s: Number of followers.
-#: modules/subscriptions/views.php:791
+#: modules/subscriptions/views.php:792
 msgid "Show total number of followers? (%s follower)"
 msgid_plural "Show total number of followers? (%s followers)"
 msgstr[0] "フォロワーの総数を表示しますか ?(%s 人)"
 
-#: modules/subscriptions/views.php:778
+#: modules/subscriptions/views.php:779
 msgid "Follow Button Text:"
 msgstr "フォローボタンのテキスト:"
 
-#: modules/subscriptions/views.php:770
+#: modules/subscriptions/views.php:771
 msgid "Optional text to display to non-WordPress.com users:"
 msgstr "WordPress.com ユーザー以外の人に表示するテキスト (オプション):"
 
-#: modules/subscriptions/views.php:762
+#: modules/subscriptions/views.php:763
 msgid "Optional text to display to logged in WordPress.com users:"
 msgstr "ログイン中の WordPress.com ユーザーに表示するテキスト (オプション):"
 
-#: modules/subscriptions/views.php:754
+#: modules/subscriptions/views.php:755
 msgid "Widget title for followers:"
 msgstr "フォロワーに表示するウィジェット名:"
 
-#: modules/subscriptions/views.php:746
+#: modules/subscriptions/views.php:747
 msgid "Widget title for non-followers:"
 msgstr "フォローしていない人向けのウィジェットタイトル:"
 
@@ -9511,7 +9394,7 @@ msgstr "統計情報の取得中に問題が発生しました。後ほど、も
 msgid "The following settings will impact all related posts on your site, except for those you created via the block editor:"
 msgstr "次の設定は、ブロックエディターを介して作成された投稿を除き、サイトへの関連投稿すべてに適用されます。"
 
-#: modules/shortcodes/crowdsignal.php:340
+#: modules/shortcodes/crowdsignal.php:347
 msgid "Take Our Poll"
 msgstr "投票に参加してください"
 
@@ -9531,11 +9414,11 @@ msgstr "Google Video の埋め込みサービスは利用できなくなりま�
 msgid "The Digg API was shut down in 2014."
 msgstr "Digg API は2014年に廃止されました。"
 
-#: modules/shortcodes/gist.php:138
+#: modules/shortcodes/gist.php:145
 msgid "The Gist ID you provided is not valid. Please try a different one."
 msgstr "入力した Gist ID が間違っています。別の Gist ID をお試しください。"
 
-#: modules/shortcodes/gist.php:126
+#: modules/shortcodes/gist.php:133
 msgid "Please specify a Gist URL or ID."
 msgstr "Gist の URL または ID を指定してください。"
 
@@ -9654,7 +9537,7 @@ msgstr "選択部分を編集"
 msgid "Looks like you don't have any products. You can create one using the Add New button below."
 msgstr "商品がないようです。下の「新規追加」ボタンを使用して作成できます。"
 
-#: modules/widgets/class-jetpack-instagram-widget.php:572
+#: modules/widgets/class-jetpack-instagram-widget.php:573
 #: modules/widgets/simple-payments/form.php:14
 msgid "Widget Title"
 msgstr "ウィジェット名"
@@ -9872,8 +9755,8 @@ msgid "Privacy Policy Link"
 msgstr "個人情報保護方針へのリンク"
 
 #. translators: %d: Post ID.
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1511
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1527
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1528
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1544
 msgid "Feedback ID %d could not be removed at this time."
 msgstr "この時点では、フィードバック ID %d を削除できませんでした。"
 
@@ -9898,7 +9781,7 @@ msgstr "UTC%s"
 msgid "Social Media Icons (Deprecated)"
 msgstr "SNS アイコン (非推奨)"
 
-#: modules/widgets/social-icons.php:800
+#: modules/widgets/social-icons.php:790
 msgid "RSS Feed"
 msgstr "RSS フィード"
 
@@ -9947,32 +9830,34 @@ msgstr "投稿が公開されました。購読者にメールが送信されま
 
 #. translators: %1$s is a comma-separated list of services and accounts. Ex.
 #. Facebook (@jetpack)
-#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1466
+#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1470
 msgid "Project published and sharing project on %1$s."
 msgstr "プロジェクトが公開されました。プロジェクトは %1$s で共有されています。"
 
 #. translators: %1$s is a comma-separated list of services and accounts. Ex.
 #. Facebook (@jetpack)
-#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1458
+#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1462
 msgid "Post published, sending emails to subscribers and sharing post on %1$s."
 msgstr "投稿が公開されたので、購読者にメールが送信されます。投稿は %1$s で共有されています。"
 
 #. translators: %1$s is a comma-separated list of services and accounts. Ex.
 #. Facebook (@jetpack)
-#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1449
+#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1453
 msgid "Post published and sharing on %1$s."
 msgstr "投稿が公開されて、%1$s で共有されています。"
 
 #. translators: Service name is %1$s, and account name is %2$s.
-#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1441
+#. translators: 1: Tab label, 2: Count
+#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1445
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:6
 msgid "%1$s (%2$s)"
 msgstr "%1$s (%2$s)"
 
-#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1417
+#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1421
 msgid "View project"
 msgstr "プロジェクトを表示"
 
-#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1414
+#: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-base.php:1418
 #: modules/subscriptions.php:252
 msgid "View post"
 msgstr "投稿を表示"
@@ -10071,52 +9956,52 @@ msgstr "セーフモード中にプランを準備することはできません
 msgid "Unknown Plugin Update Failure"
 msgstr "理由不明なプラグインの更新失敗"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1076
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1077
 msgid "Maximum number of filters (1-50):"
 msgstr "フィルターの最大数 (1-50):"
 
 #. translators: %1$s is the taxonomy name, %2s is the name of its type to help
 #. distinguish between several taxonomies with the same name, e.g. category and
 #. tag.
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1013
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1014
 msgctxt "A label for a taxonomy selector option"
 msgid "%1$s (%2$s)"
 msgstr "%1$s (%2$s)"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:853
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:854
 msgid "Why aren't my filters appearing?"
 msgstr "フィルターが表示されない場合"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:847
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:905
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:848
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:906
 msgid "Adding filters requires JavaScript!"
 msgstr "フィルターの追加には JavaScript が必要です。"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:842
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:897
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:843
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:898
 msgid "Add a filter"
 msgstr "フィルターを追加"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:816
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:817
 msgid "Default sort order:"
 msgstr "デフォルトソート順:"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:800
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:801
 msgid "Post types to search (minimum of 1):"
 msgstr "検索する投稿タイプ (1個以上):"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:795
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:796
 msgid "Show sort selection dropdown"
 msgstr "ソート選択ドロップダウンを表示"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:763
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:877
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:764
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:878
 msgid "Title (optional):"
 msgstr "タイトル (オプション):"
 
 #: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:386
 #: _inc/lib/admin-pages/class.jetpack-settings-page.php:136
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:23
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:26
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:180
 #: _inc/blocks/editor-beta.js:31 _inc/blocks/editor-experimental.js:31
 #: _inc/blocks/editor.js:31
@@ -10137,7 +10022,7 @@ msgstr "新しいものから表示"
 
 #: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:192
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:21
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:12
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:11
 #: jetpack_vendor/automattic/jetpack-search/build/instant-search/jp-search.js:1
 msgid "Relevance"
 msgstr "関連性"
@@ -10195,153 +10080,12 @@ msgstr "このサイトにプラグインをインストールする権限があ
 msgid "You are not allowed to activate plugins on this site."
 msgstr "このサイトでプラグインを有効化する権限がありません。"
 
-#. translators: Comment moderation notification email subject. 1: Site name, 2:
-#. Post title
-#: _inc/lib/functions.wp-notify.php:399
-msgid "[%1$s] Please moderate: \"%2$s\""
-msgstr "[%1$s] モデレートしてください: \"%2$s\""
-
-#. translators: Comment moderation. 1: Number of comments awaiting approval
-#: _inc/lib/functions.wp-notify.php:386
-msgid "Currently %s comment is waiting for approval. Please visit the moderation panel:"
-msgid_plural "Currently %s comments are waiting for approval. Please visit the moderation panel:"
-msgstr[0] "現在%s件のコメントが承認待ちです。コメントモデレーション画面を開いてください:"
-
-#. translators: Comment moderation. 1: Comment action URL
-#: _inc/lib/functions.wp-notify.php:352
-msgid "Approve it: %s"
-msgstr "承認する: %s"
-
-#. translators: 1: Post title
-#: _inc/lib/functions.wp-notify.php:319
-msgid "A new comment on the post \"%s\" is waiting for your approval"
-msgstr "投稿「%s」への新しいコメントが承認待ちです"
-
-#: _inc/lib/functions.wp-notify.php:315
-msgid "Pingback excerpt: "
-msgstr "ピンバック抜粋:"
-
-#. translators: 1: Post title
-#: _inc/lib/functions.wp-notify.php:309
-msgid "A new pingback on the post \"%s\" is waiting for your approval"
-msgstr "投稿「%s」への新しいピンバックが承認待ちです"
-
-#: _inc/lib/functions.wp-notify.php:305
-msgid "Trackback excerpt: "
-msgstr "トラックバック抜粋:"
-
-#. translators: 1: Post title
-#: _inc/lib/functions.wp-notify.php:299
-msgid "A new trackback on the post \"%s\" is waiting for your approval"
-msgstr "投稿「%s」への新しいトラックバックが承認待ちです"
-
-#. translators: Placeholder is the edit URL
-#. translators: Comment moderation. 1: Comment action URL
-#: _inc/lib/functions.wp-notify.php:183 _inc/lib/functions.wp-notify.php:378
-msgid "Spam it: %s"
-msgstr "スパムとしてマークする: %s"
-
-#. translators: Placeholder is the edit URL
-#. translators: Comment moderation. 1: Comment action URL
-#: _inc/lib/functions.wp-notify.php:175 _inc/lib/functions.wp-notify.php:369
-msgid "Delete it: %s"
-msgstr "削除する: %s"
-
-#. translators: Placeholder is the edit URL
-#. translators: Comment moderation. 1: Comment action URL
-#: _inc/lib/functions.wp-notify.php:167 _inc/lib/functions.wp-notify.php:361
-msgid "Trash it: %s"
-msgstr "ゴミ箱に移動する: %s"
-
-#. translators: %s: URL
-#: _inc/lib/functions.wp-notify.php:152
-msgid "Permalink: %s"
-msgstr "パーマリンク: %s"
-
-#. translators: 1: blog name, 2: post title
-#: _inc/lib/functions.wp-notify.php:137
-msgid "[%1$s] Comment: \"%2$s\""
-msgstr "[%1$s] コメント: \"%2$s\""
-
-#: _inc/lib/functions.wp-notify.php:135
-msgid "You can see all comments on this post here:"
-msgstr "この投稿へのすべてのコメントはこちらです:"
-
-#. translators: %s: Email address
-#. translators: 1: Comment author URL
-#: _inc/lib/functions.wp-notify.php:130 _inc/lib/functions.wp-notify.php:324
-msgid "Email: %s"
-msgstr "メール: %s"
-
-#. translators: 1: comment author, 2: comment author's IP address, 3: comment
-#. author's hostname
-#. translators: 1: Comment author name, 2: comment author's IP address, 3:
-#. comment author's hostname
-#: _inc/lib/functions.wp-notify.php:128 _inc/lib/functions.wp-notify.php:322
-msgid "Author: %1$s (IP address: %2$s, %3$s)"
-msgstr "投稿者: %1$s (IP アドレス: %2$s, %3$s)"
-
-#. translators: 1: Post title
-#: _inc/lib/functions.wp-notify.php:126
-msgid "New comment on your post \"%s\""
-msgstr "投稿「%s」に新しいコメントがありました"
-
-#. translators: 1: blog name, 2: post title
-#: _inc/lib/functions.wp-notify.php:122
-msgid "[%1$s] Pingback: \"%2$s\""
-msgstr "[%1$s] ピンバック: \"%2$s\""
-
-#: _inc/lib/functions.wp-notify.php:120
-msgid "You can see all pingbacks on this post here:"
-msgstr "この投稿へのすべてのピンバックはこちらです:"
-
-#. translators: 1: Post title
-#: _inc/lib/functions.wp-notify.php:113
-msgid "New pingback on your post \"%s\""
-msgstr "投稿「%s」に新しいピンバックがありました"
-
-#. translators: 1: blog name, 2: post title
-#: _inc/lib/functions.wp-notify.php:109
-msgid "[%1$s] Trackback: \"%2$s\""
-msgstr "[%1$s] トラックバック: \"%2$s\""
-
-#: _inc/lib/functions.wp-notify.php:107
-msgid "You can see all trackbacks on this post here:"
-msgstr "この投稿へのすべてのトラックバックはこちらで表示できます:"
-
-#. translators: %s: Comment Content
-#. translators: 1: Comment text
-#: _inc/lib/functions.wp-notify.php:106 _inc/lib/functions.wp-notify.php:119
-#: _inc/lib/functions.wp-notify.php:134 _inc/lib/functions.wp-notify.php:328
-msgid "Comment: %s"
-msgstr "コメント: %s"
-
-#. translators: %s: Site URL
-#. translators: 1: Trackback/pingback/comment author URL
-#: _inc/lib/functions.wp-notify.php:104 _inc/lib/functions.wp-notify.php:117
-#: _inc/lib/functions.wp-notify.php:132 _inc/lib/functions.wp-notify.php:304
-#: _inc/lib/functions.wp-notify.php:314 _inc/lib/functions.wp-notify.php:326
-msgid "URL: %s"
-msgstr "URL: %s"
-
-#. translators: 1: Trackback/pingback website name, 2: website IP address, 3:
-#. website hostname
-#: _inc/lib/functions.wp-notify.php:102 _inc/lib/functions.wp-notify.php:115
-#: _inc/lib/functions.wp-notify.php:302 _inc/lib/functions.wp-notify.php:312
-msgid "Website: %1$s (IP address: %2$s, %3$s)"
-msgstr "サイト: %1$s (IP アドレス: %2$s, %3$s)"
-
-#. translators: 1: Post title
-#: _inc/lib/functions.wp-notify.php:100
-msgid "New trackback on your post \"%s\""
-msgstr "投稿「%s」に新しいトラックバックがありました"
-
 #: _inc/lib/class.core-rest-api-endpoints.php:3063
 msgid "Primary language for the site."
 msgstr "このサイトの主言語。"
 
 #: views/admin/must-connect-main-blog.php:21
-#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:6
+#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:5
 #: _inc/build/admin.js:37 _inc/build/admin.js:64
 msgid "Set up Jetpack"
 msgstr "Jetpack を設定"
@@ -10376,58 +10120,58 @@ msgstr "キャッシュとの一致"
 #: jetpack_vendor/automattic/jetpack-search/src/dashboard/class-dashboard.php:100
 #: jetpack_vendor/automattic/jetpack-search/src/dashboard/class-dashboard.php:111
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:10
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:12
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:20
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:19
 #: _inc/build/admin.js:70
 msgid "Jetpack Search"
 msgstr "Jetpack Search"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:939
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1091
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:938
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1092
 #: modules/widgets/social-icons.php:407
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:166
 msgid "Remove"
 msgstr "削除"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1049
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1050
 msgid "Choose an interval:"
 msgstr "間隔を選択してください:"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1041
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1042
 msgid "Modified GMT"
 msgstr "更新日 (GMT)"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1038
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1039
 msgid "Modified"
 msgstr "最終編集"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1035
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1036
 msgid "Date GMT"
 msgstr "日付 (GMT)"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1029
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1030
 msgid "Choose a field:"
 msgstr "フィールドを選択してください:"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1003
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1004
 msgid "Choose a taxonomy:"
 msgstr "タクソノミーを選択してください:"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:983
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:984
 msgid "Post Type"
 msgstr "投稿タイプ"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:980
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:981
 #: _inc/build/widget-visibility/editor/index.js:1
 msgid "Taxonomy"
 msgstr "タクソノミー"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:977
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:978
 msgid "Filter Type:"
 msgstr "フィルタータイプ:"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:782
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:783
 msgid "Show search box"
 msgstr "検索ボックスを表示する"
 
@@ -10517,27 +10261,27 @@ msgstr "%s の接続をテスト中"
 msgid "Checking status for %s"
 msgstr "%s のステータスを確認中"
 
-#: modules/widgets/milestone/class-milestone-widget.php:644
+#: modules/widgets/milestone/class-milestone-widget.php:645
 msgctxt "Milestone widget: mode in which the date unit is set to hours"
 msgid "Hours"
 msgstr "時間"
 
-#: modules/widgets/milestone/class-milestone-widget.php:643
+#: modules/widgets/milestone/class-milestone-widget.php:644
 msgctxt "Milestone widget: mode in which the date unit is set to days"
 msgid "Days"
 msgstr "日"
 
-#: modules/widgets/milestone/class-milestone-widget.php:642
+#: modules/widgets/milestone/class-milestone-widget.php:643
 msgctxt "Milestone widget: mode in which the date unit is set to months"
 msgid "Months"
 msgstr "月"
 
-#: modules/widgets/milestone/class-milestone-widget.php:641
+#: modules/widgets/milestone/class-milestone-widget.php:642
 msgctxt "Milestone widget: mode in which the date unit is set to years"
 msgid "Years"
 msgstr "年"
 
-#: modules/widgets/milestone/class-milestone-widget.php:640
+#: modules/widgets/milestone/class-milestone-widget.php:641
 msgctxt "Milestone widget: mode in which the date unit is determined automatically"
 msgid "Automatic"
 msgstr "自動"
@@ -10660,20 +10404,20 @@ msgstr "ギャラリーのタイプ。"
 msgid "The requested widget was not found."
 msgstr "リクエストされたウィジェットは見つかりませんでした。"
 
-#: modules/widgets/milestone/class-milestone-widget.php:746
+#: modules/widgets/milestone/class-milestone-widget.php:747
 msgid "Milestone Reached Message"
 msgstr "マイルストーン到達メッセージ"
 
-#: modules/widgets/milestone/class-milestone-widget.php:740
+#: modules/widgets/milestone/class-milestone-widget.php:741
 msgid "Since your milestone"
 msgstr "マイルストーンから"
 
-#: modules/widgets/milestone/class-milestone-widget.php:728
+#: modules/widgets/milestone/class-milestone-widget.php:729
 msgid "Until your milestone"
 msgstr "マイルストーンまで"
 
-#: modules/widgets/milestone/class-milestone-widget.php:699
-#: modules/widgets/milestone/class-milestone-widget.php:702
+#: modules/widgets/milestone/class-milestone-widget.php:700
+#: modules/widgets/milestone/class-milestone-widget.php:703
 msgid "Time Unit"
 msgstr "時間単位"
 
@@ -10929,7 +10673,7 @@ msgstr "サイトの機能を正常に受信しました。"
 #: jetpack_vendor/automattic/jetpack-publicize/src/class-rest-controller.php:470
 #: jetpack_vendor/automattic/jetpack-videopress/src/class-plan.php:80
 #: jetpack_vendor/automattic/jetpack-videopress/src/class-plan.php:176
-#: _inc/lib/class-jetpack-ai-helper.php:456
+#: _inc/lib/class-jetpack-ai-helper.php:465
 #: _inc/lib/class.core-rest-api-endpoints.php:946
 #: _inc/lib/class.core-rest-api-endpoints.php:990
 #: _inc/lib/class.core-rest-api-endpoints.php:1122
@@ -10937,7 +10681,7 @@ msgstr "サイトの機能を正常に受信しました。"
 msgid "Unable to fetch the requested data."
 msgstr "リクエストされたデータを取得できません。"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1645
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1650
 msgid "Could not connect to VaultPress."
 msgstr "VaultPress に接続できませんでした。"
 
@@ -10963,12 +10707,12 @@ msgstr "投稿の下に2つ目の広告を表示しますか ?"
 
 #. translators: %s is an HTML link to the website of an internet campaign
 #. called the "Internet Defense League"
-#: modules/widgets/internet-defense-league.php:132
+#: modules/widgets/internet-defense-league.php:133
 msgctxt "the Internet Defense League"
 msgid "Learn more about the %s"
 msgstr "%s についてさらに詳しく"
 
-#: modules/widgets/internet-defense-league.php:120
+#: modules/widgets/internet-defense-league.php:121
 msgid "Which badge would you like to display?"
 msgstr "どのバッジを表示しますか ?"
 
@@ -11090,11 +10834,11 @@ msgstr "訪問者に対して購読フォームをポップアップ表示する
 msgid "MailChimp Subscriber Popup"
 msgstr "MailChimp 購読者のポップアップ"
 
-#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:600
+#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:608
 msgid "Also display tagged posts outside the Featured Content area."
 msgstr "また、おすすめコンテンツエリア外にタグ付き投稿を表示できます。"
 
-#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:590
+#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:598
 msgid "Do not display tag in post details and tag clouds."
 msgstr "投稿詳細とタグクラウドにタグを表示しない。"
 
@@ -11175,22 +10919,25 @@ msgstr "訪問者が WordPress.com または Facebook のアカウントを使�
 msgid "Log out"
 msgstr "ログアウト"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:317
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:337
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php:217
 msgid "Domains"
 msgstr "ドメイン"
 
 #: modules/memberships/class-jetpack-memberships.php:282
+#: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:31
 msgid "Plan"
-msgstr "プラン"
+msgid_plural "Plans"
+msgstr[0] "プラン"
 
 #: jetpack_vendor/automattic/jetpack-masterbar/src/inline-help/inline-help-template.php:14
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:3
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:8
+#: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:23
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:2
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:2
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:3
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:3
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:5
 #: jetpack_vendor/automattic/jetpack-wordads/build/dashboard/jp-wordads-dashboard.js:2
 #: _inc/build/admin.js:6
@@ -11202,7 +10949,7 @@ msgid "Manage Purchases"
 msgstr "購入を管理"
 
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-admin-menu.php:338
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:134
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:154
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:260
 #: _inc/blocks/editor-beta.js:38 _inc/blocks/editor-experimental.js:31
 #: _inc/blocks/editor-no-post-editor.js:16 _inc/blocks/editor.js:31
@@ -11237,23 +10984,23 @@ msgstr "WordPress.com との接続で問題があります。"
 #. Translators: the first variable is a module option or slug, or setting. The
 #. second is the error message .
 #: jetpack_vendor/automattic/jetpack-publicize/src/class-publicize-ui.php:417
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1088
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1093
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:930
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:935
 msgid "Akismet is not installed or active"
 msgstr "Akismet がインストールされていないか、無効になっています"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:927
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:932
 msgid "Invalid Akismet key"
 msgstr "Akismet キーが無効です"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:924
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:929
 msgid "Invalid Akismet user"
 msgstr "Akismet ユーザーが無効です"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:921
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:926
 msgid "Akismet user status doesn't allow to update the key"
 msgstr "Akismet ユーザーのステータスではキーの更新が許可されていません"
 
@@ -11274,23 +11021,23 @@ msgstr "static.html の取得でエラーが発生しました。次を実行し
 #: jetpack_vendor/automattic/jetpack-my-jetpack/src/products/class-jetpack-ai.php:279
 #: jetpack_vendor/automattic/jetpack-my-jetpack/src/products/class-jetpack-ai.php:288
 #: jetpack_vendor/automattic/jetpack-my-jetpack/src/products/class-stats.php:132
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:11
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:34
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:10
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:33
 msgid "Priority support"
 msgstr "優先サポート"
 
 #: _inc/lib/admin-pages/class.jetpack-admin-page.php:388
 #: _inc/lib/admin-pages/class.jetpack-admin-page.php:391
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:3
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:5
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:2
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:2
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
 #: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:3
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:6
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:9
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:3
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:5
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:3
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:5
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:2
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:2
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:4
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:6
 #: jetpack_vendor/automattic/jetpack-wordads/build/dashboard/jp-wordads-dashboard.js:2
@@ -11345,7 +11092,7 @@ msgstr "SVG アイコンのファイル名を決めてください。"
 msgid "Please define default parameters in the form of an array."
 msgstr "配列形式におけるデフォルトパラメーターを設定してください。"
 
-#: jetpack_vendor/automattic/jetpack-stats-admin/src/class-admin-post-list-column.php:80
+#: jetpack_vendor/automattic/jetpack-stats-admin/src/class-admin-post-list-column.php:88
 msgid "No stats"
 msgstr "統計情報なし"
 
@@ -11365,7 +11112,6 @@ msgstr "サブサイトを登録するにはサイト ID を指定する必要�
 #: _inc/lib/admin-pages/class.jetpack-settings-page.php:111
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/google-photos/google-photos-media.js:131
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:17
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:31
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:16
@@ -11471,37 +11217,35 @@ msgstr "iCalendar フィードから今後のイベントを表示します。"
 msgid "Upcoming Events"
 msgstr "今後のイベント"
 
-#: modules/widgets/milestone/class-milestone-widget.php:691
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: modules/widgets/milestone/class-milestone-widget.php:692
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 msgid "Minutes"
 msgstr "分"
 
-#: modules/widgets/milestone/class-milestone-widget.php:688
+#: modules/widgets/milestone/class-milestone-widget.php:689
 msgid "Hour"
 msgstr "時"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1055
-#: modules/widgets/milestone/class-milestone-widget.php:681
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1056
+#: modules/widgets/milestone/class-milestone-widget.php:682
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/google-photos/filter-option.js:73
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 #: _inc/blocks/editor-beta.js:130 _inc/blocks/editor-experimental.js:113
 #: _inc/blocks/editor.js:113
 msgid "Year"
 msgstr "年"
 
-#: modules/widgets/milestone/class-milestone-widget.php:678
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: modules/widgets/milestone/class-milestone-widget.php:679
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 msgid "Day"
 msgstr "日"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1052
-#: modules/widgets/milestone/class-milestone-widget.php:661
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1053
+#: modules/widgets/milestone/class-milestone-widget.php:662
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/google-photos/filter-option.js:64
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 #: _inc/blocks/editor-beta.js:130 _inc/blocks/editor-experimental.js:113
 #: _inc/blocks/editor.js:113
 msgid "Month"
@@ -11531,11 +11275,11 @@ msgstr "マイルストーン"
 msgid "Display a countdown to a certain date."
 msgstr "指定した日時までのカウントダウンを表示。"
 
-#: modules/widgets/image-widget.php:274
+#: modules/widgets/image-widget.php:275
 msgid "Height in pixels:"
 msgstr "高さ (ピクセル):"
 
-#: modules/widgets/image-widget.php:271
+#: modules/widgets/image-widget.php:272
 msgid "Width in pixels:"
 msgstr "幅 (ピクセル):"
 
@@ -11556,7 +11300,7 @@ msgstr "翻訳"
 msgid "Provide your readers with the option to translate your site into their preferred language."
 msgstr "選択した言語でサイトを翻訳するオプションを読者に提供します。"
 
-#: modules/widgets/facebook-likebox.php:297 _inc/blocks/editor-beta.js:41
+#: modules/widgets/facebook-likebox.php:298 _inc/blocks/editor-beta.js:41
 #: _inc/blocks/editor-experimental.js:34
 #: _inc/blocks/editor-no-post-editor.js:17 _inc/blocks/editor.js:34
 msgid "Height in pixels"
@@ -11564,19 +11308,19 @@ msgstr "ピクセル値での高さ"
 
 #. translators: %s is the maximum pixel width
 #. translators: %s is the maximum pixel height
-#: modules/widgets/facebook-likebox.php:286
-#: modules/widgets/facebook-likebox.php:312
+#: modules/widgets/facebook-likebox.php:287
+#: modules/widgets/facebook-likebox.php:313
 msgid "Maximum: %s"
 msgstr "最大: %s"
 
 #. translators: %s is the minimum pixel width
 #. translators: %s is the minimum pixel height
-#: modules/widgets/facebook-likebox.php:278
-#: modules/widgets/facebook-likebox.php:304
+#: modules/widgets/facebook-likebox.php:279
+#: modules/widgets/facebook-likebox.php:305
 msgid "Minimum: %s"
 msgstr "最小: %s"
 
-#: modules/widgets/facebook-likebox.php:271
+#: modules/widgets/facebook-likebox.php:272
 msgid "Width in pixels"
 msgstr "幅 (px)"
 
@@ -11601,23 +11345,23 @@ msgstr "ブログ統計情報"
 msgid "Show a hit counter for your blog."
 msgstr "ブログのアクセスカウンターを表示"
 
-#: modules/widgets/authors.php:267
+#: modules/widgets/authors.php:268
 msgid "No Avatars"
 msgstr "アバター画像なし"
 
-#: modules/widgets/authors.php:263
+#: modules/widgets/authors.php:264
 msgid "Avatar Size (px):"
 msgstr "アバター画像サイズ (ピクセル):"
 
-#: modules/widgets/authors.php:258
+#: modules/widgets/authors.php:259
 msgid "(at most 10)"
 msgstr "(最大10)"
 
-#: modules/widgets/authors.php:256
+#: modules/widgets/authors.php:257
 msgid "Number of posts to show for each author:"
 msgstr "投稿者ごとに表示する投稿数:"
 
-#: modules/widgets/authors.php:251
+#: modules/widgets/authors.php:252
 msgid "Display all authors (including those who have not written any posts)"
 msgstr "すべての投稿者を表示 (まだ投稿がない人も含む)"
 
@@ -11803,13 +11547,13 @@ msgstr "単一の投稿ビューに移動し、カスタマイズオプション
 
 #: modules/related-posts/class.related-posts-customize.php:255
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:4
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:187
 msgid "List"
 msgstr "リスト"
 
 #: modules/related-posts/class.related-posts-customize.php:254
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:187
 msgid "Grid"
 msgstr "グリッド"
@@ -12171,8 +11915,8 @@ msgctxt "Module Name"
 msgid "SEO Tools"
 msgstr "SEO ツール"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:567
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:588
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:675
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-endpoint.php:696
 msgid "Sorry, you cannot view this resource."
 msgstr "このリソースを表示することはできません。"
 
@@ -12190,18 +11934,18 @@ msgstr "テーマダウンロードのファイルを作成中に問題が発生
 msgid "This theme does not exist"
 msgstr "このテーマは存在しません"
 
-#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:962
+#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:967
 msgid "Invalid SEO title format."
 msgstr "無効な SEO タイトル形式です。"
 
-#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:943
+#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:948
 msgid "Invalid SEO meta description value."
 msgstr "無効な SEO メタ情報の値です。"
 
-#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:939
-#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:958
+#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:944
+#: json-endpoints/class.wpcom-json-api-site-settings-endpoint.php:963
 #: json-endpoints/class.wpcom-json-api-update-post-endpoint.php:756
-#: json-endpoints/class.wpcom-json-api-update-post-v1-1-endpoint.php:835
+#: json-endpoints/class.wpcom-json-api-update-post-v1-1-endpoint.php:836
 #: json-endpoints/class.wpcom-json-api-update-post-v1-2-endpoint.php:840
 msgid "SEO tools are not enabled for this site."
 msgstr "SEO ツールは、このサイトでは使用できません。"
@@ -12230,12 +11974,12 @@ msgstr "URL は `%1$s` に設定されていますが、WordPress.com 連携で�
 
 #. Translators: the plural variable is a comma-separated list. Example: dog,
 #. cat, bird.
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1078
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1083
 msgid "Invalid option: %s."
 msgid_plural "Invalid options: %s."
 msgstr[0] "無効なオプション: %s"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:596
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:601
 msgid "The requested Jetpack data updates were successful."
 msgstr "要求された Jetpack データの更新に成功しました。"
 
@@ -12530,53 +12274,53 @@ msgid "Feature Info"
 msgstr "機能情報"
 
 #. translators: placeholder is a unit of time (1 hour, 5 days, ...)
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1665
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1670
 msgid "Your site was successfully backed up %s ago."
 msgstr "サイトは %s 前に正常にバックアップされました。"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1654
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1659
 msgid "VaultPress is active and will back up your site soon."
 msgstr "VaultPress は有効で、まもなくサイトのバックアップを実行します。"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1635
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1640
 msgid "You need to register for VaultPress."
 msgstr "VaultPress に登録する必要があります。"
 
 #. translators: %1$s is a comma separated list of services, and %2$s is a
 #. single service name like Google, Bing, Pinterest, etc.
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1598
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1603
 msgid "Your site is verified with %1$s and %2$s."
 msgstr "サイトは %1$s および %2$s によって検証されました。"
 
 #. translators: %s is a service name like Google, Bing, Pinterest, etc.
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1586
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1591
 msgid "Your site is verified with %s."
 msgstr "サイトは %s によって検証されました。"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1546
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1577
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1551
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1582
 msgid "Site not verified with any service."
 msgstr "サイトは、いずれのサービスによっても検証されていません。"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1360
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1410
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1365
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1415
 msgid "Invalid Akismet key. Please contact support."
 msgstr "Akismet キーが無効です。サポートにご連絡ください。"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:895
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1385
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:900
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1390
 msgid "Please activate Akismet."
 msgstr "Akismet を有効化してください。"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:889
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1381
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:894
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1386
 msgid "Please install Akismet."
 msgstr "Akismet をインストールしてください。"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1311
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1497
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1534
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1625
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1316
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1502
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1539
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:1630
 msgid "The requested Jetpack module is not active."
 msgstr "リクエストされた Jetpack モジュールは無効です。"
 
@@ -12592,12 +12336,12 @@ msgstr "メールアドレスによる投稿を再生成できません。後ほ
 msgid "Unable to create the Post by Email address. Please try again later."
 msgstr "メールアドレスによる投稿を作成できません。後ほど、もう一度お試しください。"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:564
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:569
 msgid "Missing options."
 msgstr "オプションが不足しています。"
 
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:545
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:672
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:550
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:677
 msgid "The requested Jetpack module is inactive."
 msgstr "リクエストされた Jetpack モジュールは無効です。"
 
@@ -12651,8 +12395,8 @@ msgstr "リクエストされた Jetpack モジュールは有効化されまし
 #: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:139
 #: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:253
 #: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:421
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:541
-#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:662
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:546
+#: _inc/lib/core-api/class.jetpack-core-api-module-endpoints.php:667
 msgid "The requested Jetpack module was not found."
 msgstr "リクエストされた Jetpack モジュールは見つかりませんでした。"
 
@@ -12861,6 +12605,8 @@ msgid "Disabled"
 msgstr "無効"
 
 #: _inc/lib/class.core-rest-api-endpoints.php:2409
+#: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 msgid "Enabled"
 msgstr "有効"
 
@@ -12970,11 +12716,11 @@ msgid "Copied!"
 msgstr "コピーしました。"
 
 #: _inc/lib/admin-pages/class.jetpack-admin-page.php:369
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:5
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:3
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:9
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:5
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:5
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:6
 #: jetpack_vendor/automattic/jetpack-wordads/build/dashboard/jp-wordads-dashboard.js:3
 #: _inc/build/admin.js:7
@@ -12982,11 +12728,11 @@ msgid "WordPress.com Terms of Service"
 msgstr "WordPress.com 利用規約"
 
 #: _inc/lib/admin-pages/class.jetpack-admin-page.php:365
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:5
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:3
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:9
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:5
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:5
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:6
 #: jetpack_vendor/automattic/jetpack-wordads/build/dashboard/jp-wordads-dashboard.js:3
 #: _inc/build/admin.js:7
@@ -13023,7 +12769,7 @@ msgid "Performance"
 msgstr "パフォーマンス"
 
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-admin-menu.php:421
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:258
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:278
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:200
 msgid "Backup"
 msgstr "バックアップ"
@@ -13031,7 +12777,7 @@ msgstr "バックアップ"
 #: jetpack_vendor/automattic/jetpack-blaze/src/class-dashboard.php:110
 #: jetpack_vendor/automattic/jetpack-stats-admin/src/class-dashboard.php:90
 #: jetpack_vendor/automattic/jetpack-stats-admin/src/class-wp-dashboard-odyssey-widget.php:33
-#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:6
+#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:5
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:4
 msgid "Loading"
 msgstr "読み込み中"
@@ -13474,8 +13220,8 @@ msgid "Theme"
 msgstr "テーマ"
 
 #: modules/related-posts/class.related-posts-customize.php:250
-#: modules/widgets/class-jetpack-instagram-widget.php:587
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:23
+#: modules/widgets/class-jetpack-instagram-widget.php:588
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:26
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:180
 msgid "Layout"
 msgstr "レイアウト"
@@ -13616,11 +13362,11 @@ msgstr "有効化済み"
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:2
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:7
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:13
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:11
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:13
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:15
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:12
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:39
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:10
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:12
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:14
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:38
 #: _inc/blocks/editor-beta.js:9 _inc/blocks/editor-beta.js:31
 #: _inc/blocks/editor-beta.js:39 _inc/blocks/editor-beta.js:42
 #: _inc/blocks/editor-experimental.js:9 _inc/blocks/editor-experimental.js:31
@@ -13676,15 +13422,15 @@ msgstr "WordPress.com または Jetpack プラグインを有効化した外部�
 msgid "Display WordPress Posts"
 msgstr "WordPress 投稿を表示"
 
-#: modules/widgets/twitter-timeline.php:563
+#: modules/widgets/twitter-timeline.php:564
 msgid "Transparent background"
 msgstr "透明の背景"
 
-#: modules/widgets/twitter-timeline.php:506
+#: modules/widgets/twitter-timeline.php:507
 msgid "Layout options:"
 msgstr "レイアウトオプション:"
 
-#: modules/widgets/twitter-timeline.php:363
+#: modules/widgets/twitter-timeline.php:364
 msgid "Follow me on Twitter"
 msgstr "Twitter でフォロー"
 
@@ -13738,7 +13484,7 @@ msgstr "もっともよく読まれている投稿や固定ページを表示"
 msgid "Top Posts &amp; Pages"
 msgstr "人気の投稿とページ"
 
-#: modules/widgets/twitter-timeline.php:394
+#: modules/widgets/twitter-timeline.php:395
 msgid "Twitter username:"
 msgstr "Twitter ユーザー名:"
 
@@ -13833,8 +13579,7 @@ msgid "Posts & Comments"
 msgstr "投稿・コメント"
 
 #: modules/widgets/rsslinks-widget.php:143
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:10
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/Backups.js:264
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:9
 #: _inc/build/admin.js:20 _inc/build/admin.js:64 _inc/build/admin.js:126
 msgid "Posts"
 msgstr "投稿"
@@ -13847,49 +13592,49 @@ msgstr "RSS リンク"
 msgid "Links to your blog's RSS feeds"
 msgstr "ブログ RSS フィードへのリンク"
 
-#: modules/widgets/image-widget.php:283
+#: modules/widgets/image-widget.php:284
 msgid "Open link in a new window/tab"
 msgstr "リンクを新ウィンドウまたはタブで開く"
 
-#: modules/widgets/image-widget.php:278
+#: modules/widgets/image-widget.php:279
 msgid "Link URL (when the image is clicked):"
 msgstr "リンク URL (画像クリック時):"
 
-#: modules/widgets/image-widget.php:277
+#: modules/widgets/image-widget.php:278
 msgid "If empty, we will attempt to determine the image size."
 msgstr "空欄の場合、画像サイズを検出するよう試みます。"
 
-#: modules/widgets/image-widget.php:260
+#: modules/widgets/image-widget.php:261
 msgid "Image Alignment:"
 msgstr "画像の位置:"
 
-#: modules/widgets/image-widget.php:258 _inc/blocks/editor-beta.js:29
+#: modules/widgets/image-widget.php:259 _inc/blocks/editor-beta.js:29
 #: _inc/blocks/editor-experimental.js:29 _inc/blocks/editor.js:29
 msgid "Right"
 msgstr "右"
 
-#: modules/widgets/image-widget.php:257
+#: modules/widgets/image-widget.php:258
 msgid "Center"
 msgstr "中央"
 
-#: modules/widgets/image-widget.php:256 _inc/blocks/editor-beta.js:29
+#: modules/widgets/image-widget.php:257 _inc/blocks/editor-beta.js:29
 #: _inc/blocks/editor-experimental.js:29 _inc/blocks/editor.js:29
 msgid "Left"
 msgstr "左"
 
-#: modules/widgets/image-widget.php:250
+#: modules/widgets/image-widget.php:251
 msgid "Caption:"
 msgstr "キャプション:"
 
-#: modules/widgets/image-widget.php:247
+#: modules/widgets/image-widget.php:248
 msgid "Image title:"
 msgstr "画像タイトル:"
 
-#: modules/widgets/image-widget.php:244
+#: modules/widgets/image-widget.php:245
 msgid "Alternate text:"
 msgstr "代替テキスト:"
 
-#: modules/widgets/image-widget.php:241
+#: modules/widgets/image-widget.php:242
 msgid "Image URL:"
 msgstr "画像 URL:"
 
@@ -13903,45 +13648,45 @@ msgstr "サイドバーに画像を表示"
 msgid "Image"
 msgstr "画像"
 
-#: modules/widgets/gravatar-profile.php:391
+#: modules/widgets/gravatar-profile.php:392
 msgid "What's a Gravatar?"
 msgstr "Gravatar って何 ?"
 
-#: modules/widgets/gravatar-profile.php:391
+#: modules/widgets/gravatar-profile.php:392
 msgid "Edit Your Profile"
 msgstr "プロフィールの編集"
 
-#: modules/widgets/gravatar-profile.php:391
+#: modules/widgets/gravatar-profile.php:392
 msgid "Opens in new window"
 msgstr "新しいウィンドウで開く"
 
-#: modules/widgets/gravatar-profile.php:387
+#: modules/widgets/gravatar-profile.php:388
 msgid "Links to services that you use across the web."
 msgstr "使用している Web サービスへのリンク。"
 
-#: modules/widgets/gravatar-profile.php:385
+#: modules/widgets/gravatar-profile.php:386
 msgid "Show Account Links"
 msgstr "アカウントのリンクを表示"
 
-#: modules/widgets/gravatar-profile.php:378
+#: modules/widgets/gravatar-profile.php:379
 msgid "Links to your websites, blogs, or any other sites that help describe who you are."
 msgstr "あなたのウェブサイト、ブログ、その他あなたが誰なのかが分かるようなサイトへのリンク。"
 
-#: modules/widgets/gravatar-profile.php:376
+#: modules/widgets/gravatar-profile.php:377
 msgid "Show Personal Links"
 msgstr "パーソナルリンクを表示"
 
-#: modules/widgets/gravatar-profile.php:368
+#: modules/widgets/gravatar-profile.php:369
 msgid "Custom Email Address"
 msgstr "カスタムメールアドレス"
 
-#: modules/widgets/gravatar-profile.php:356 _inc/blocks/editor-beta.js:97
+#: modules/widgets/gravatar-profile.php:357 _inc/blocks/editor-beta.js:97
 #: _inc/blocks/editor-experimental.js:80
 #: _inc/blocks/editor-no-post-editor.js:30 _inc/blocks/editor.js:80
 msgid "Custom"
 msgstr "カスタム"
 
-#: modules/widgets/gravatar-profile.php:350
+#: modules/widgets/gravatar-profile.php:351
 msgid "Select a user or pick \"custom\" and enter a custom email address."
 msgstr "ユーザーを選択するか、「カスタム」を選んでメールアドレスを入力します。"
 
@@ -13981,16 +13726,16 @@ msgstr "Gravatar ミニプロフィールを表示"
 msgid "Gravatar Profile"
 msgstr "Gravatar プロフィール"
 
-#: modules/widgets/goodreads.php:225
+#: modules/widgets/goodreads.php:226
 msgid "Shelf:"
 msgstr "Shelf:"
 
-#: modules/widgets/goodreads.php:220
+#: modules/widgets/goodreads.php:221
 msgid "Invalid User ID, please verify and re-enter your Goodreads numeric user ID."
 msgstr "無効なユーザー ID です。Goodreads 数字ユーザー ID を確認し、再入力してください。"
 
 #. translators: %s: support article URL for Goodreads widget.
-#: modules/widgets/goodreads.php:209
+#: modules/widgets/goodreads.php:210
 msgid "Goodreads numeric user ID <a href=\"%s\" target=\"_blank\">(instructions)</a>:"
 msgstr "Goodreads 数字ユーザーID <a href=\"%s\" target=\"_blank\">(詳細)</a>:"
 
@@ -14024,23 +13769,23 @@ msgstr "Goodreads の本を表示"
 msgid "Goodreads"
 msgstr "Goodreads"
 
-#: modules/widgets/gallery.php:415 _inc/blocks/editor-beta.js:97
+#: modules/widgets/gallery.php:416 _inc/blocks/editor-beta.js:97
 #: _inc/blocks/editor-experimental.js:80
 #: _inc/blocks/editor-no-post-editor.js:30 _inc/blocks/editor.js:80
 msgid "Media File"
 msgstr "メディアファイル"
 
-#: modules/widgets/gallery.php:414 _inc/blocks/editor-beta.js:97
+#: modules/widgets/gallery.php:415 _inc/blocks/editor-beta.js:97
 #: _inc/blocks/editor-experimental.js:80
 #: _inc/blocks/editor-no-post-editor.js:30 _inc/blocks/editor.js:80
 msgid "Attachment Page"
 msgstr "添付ファイルのページ"
 
-#: modules/widgets/gallery.php:413
+#: modules/widgets/gallery.php:414
 msgid "Carousel"
 msgstr "カルーセル"
 
-#: modules/widgets/gallery.php:406
+#: modules/widgets/gallery.php:407
 msgid "Tiles"
 msgstr "タイル"
 
@@ -14068,27 +13813,27 @@ msgstr "画像を選択"
 msgid "Images:"
 msgstr "画像:"
 
-#: modules/widgets/facebook-likebox.php:342
+#: modules/widgets/facebook-likebox.php:343
 msgid "Show Cover Photo"
 msgstr "カバーフォトを表示"
 
-#: modules/widgets/facebook-likebox.php:335
+#: modules/widgets/facebook-likebox.php:336
 msgid "Show Page Posts."
 msgstr "ページを表示。"
 
-#: modules/widgets/facebook-likebox.php:326
+#: modules/widgets/facebook-likebox.php:327
 msgid "Show profile photos in the plugin."
 msgstr "プラグインにプロフィール写真を表示する。"
 
-#: modules/widgets/facebook-likebox.php:324
+#: modules/widgets/facebook-likebox.php:325
 msgid "Show Faces"
 msgstr "顔写真を表示"
 
-#: modules/widgets/facebook-likebox.php:265
+#: modules/widgets/facebook-likebox.php:266
 msgid "The widget only works with Facebook Pages."
 msgstr "このウィジェットは Facebook ページのみに対応しています。"
 
-#: modules/widgets/facebook-likebox.php:262
+#: modules/widgets/facebook-likebox.php:263
 msgid "Facebook Page URL"
 msgstr "Facebook ページ URL"
 
@@ -14113,15 +13858,15 @@ msgstr "地図を表示"
 msgid "Address:"
 msgstr "住所:"
 
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1063
-#: modules/widgets/authors.php:244 modules/widgets/blog-stats.php:113
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1064
+#: modules/widgets/authors.php:245 modules/widgets/blog-stats.php:113
 #: modules/widgets/contact-info.php:264 modules/widgets/flickr/form.php:14
 #: modules/widgets/gallery/templates/form.php:13
-#: modules/widgets/goodreads.php:202 modules/widgets/google-translate.php:193
+#: modules/widgets/goodreads.php:203 modules/widgets/google-translate.php:194
 #: modules/widgets/my-community.php:97 modules/widgets/rsslinks-widget.php:138
 #: modules/widgets/social-icons.php:307
 #: modules/widgets/social-media-icons.php:258 modules/widgets/top-posts.php:144
-#: modules/widgets/twitter-timeline.php:420
+#: modules/widgets/twitter-timeline.php:421
 #: modules/widgets/upcoming-events.php:75
 #: modules/widgets/wordpress-post-widget/class.jetpack-display-posts-widget-base.php:236
 msgid "Title:"
@@ -14216,18 +13961,16 @@ msgid "Author"
 msgstr "投稿者"
 
 #: modules/widget-visibility/widget-conditions.php:571
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:3
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/google-photos/filter-option.js:27
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/google-photos/filter-view.js:7
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:8
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:85
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:2
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:2
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:3
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:12
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:3
 #: jetpack_vendor/automattic/jetpack-search/build/instant-search/jp-search.chunk-main-payload.js:1
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:5
 #: jetpack_vendor/automattic/jetpack-wordads/build/dashboard/jp-wordads-dashboard.js:2
@@ -14437,11 +14180,11 @@ msgstr "すべてのギャラリー画像をモザイク形式で表示する。
 msgid "Tiled Columns"
 msgstr "タイルカラム"
 
-#: modules/tiled-gallery/tiled-gallery.php:330 modules/widgets/gallery.php:408
+#: modules/tiled-gallery/tiled-gallery.php:330 modules/widgets/gallery.php:409
 msgid "Circles"
 msgstr "丸型"
 
-#: modules/tiled-gallery/tiled-gallery.php:329 modules/widgets/gallery.php:407
+#: modules/tiled-gallery/tiled-gallery.php:329 modules/widgets/gallery.php:408
 msgid "Square Tiles"
 msgstr "正方形タイル"
 
@@ -14490,48 +14233,50 @@ msgid "Add logo"
 msgstr "ロゴを追加"
 
 #. translators: %s: Link to the Featured Content settings in the Customizer.
-#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:635
+#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:643
 msgid "The settings for Featured Content have <a href=\"%s\">moved to Appearance &rarr; Customize</a>."
 msgstr "おすすめコンテンツの設定は「<a href=\"%s\">外観 &rarr; カスタマイズ</a>」に移動しました。"
 
-#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:581
+#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:589
 msgid "Tag name"
 msgstr "タグ名"
 
-#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:512
-#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:527
+#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:520
+#: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-featured-content.php:535
 msgid "Featured Content"
 msgstr "注目コンテンツ"
 
 #. translators: %s: Number of subscribers.
-#: modules/subscriptions/views.php:847
+#: modules/subscriptions/views.php:848
 msgid "Show total number of subscribers? (%s subscriber)"
 msgid_plural "Show total number of subscribers? (%s subscribers)"
 msgstr[0] "合計購読者数を表示しますか？ (現在%s名)"
 
-#: modules/subscriptions/views.php:834
+#: modules/subscriptions/views.php:835
 msgid "Success Message Text:"
 msgstr "成功メッセージテキスト:"
 
-#: modules/subscriptions/views.php:826
+#: modules/subscriptions/views.php:827
 msgid "Subscribe Button:"
 msgstr "購読ボタン"
 
-#: modules/subscriptions/views.php:818
+#: modules/subscriptions/views.php:819
 msgid "Subscribe Placeholder:"
 msgstr "購読のプレースホルダー:"
 
-#: modules/subscriptions/views.php:810
+#: modules/subscriptions/views.php:811
 msgid "Optional text to display to your readers:"
 msgstr "読者に表示するテキスト (オプション)。"
 
-#: modules/subscriptions/views.php:802 modules/widgets/image-widget.php:238
+#: modules/subscriptions/views.php:803 modules/widgets/image-widget.php:239
 msgid "Widget title:"
 msgstr "ウィジェット名:"
 
 #: extensions/blocks/blogroll/blogroll-item/blogroll-item.php:58
 #: extensions/blocks/premium-content/_inc/legacy-buttons.php:55
-#: extensions/blocks/subscriptions/subscriptions.php:678
+#: extensions/blocks/subscriptions/subscriptions.php:685
+#: extensions/blocks/subscriptions/subscriptions.php:1329
+#: extensions/blocks/subscriptions/subscriptions.php:1337
 #: modules/subscriptions/views.php:709
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
 #: _inc/blocks/editor-beta.js:57 _inc/blocks/editor-beta.js:95
@@ -14556,7 +14301,7 @@ msgstr "メールアドレス"
 
 #. translators: %s: number of folks following the blog
 #. translators: Placeholder is a number of subscribers.
-#: modules/memberships/class-jetpack-memberships.php:1006
+#: modules/memberships/class-jetpack-memberships.php:1020
 #: _inc/blocks/editor-beta.js:97 _inc/blocks/editor-experimental.js:80
 #: _inc/blocks/editor.js:80
 msgid "Join %s other subscriber"
@@ -14583,7 +14328,7 @@ msgstr "新しい投稿をメールで受け取る"
 msgid "Notify me of follow-up comments by email."
 msgstr "新しいコメントをメールで通知"
 
-#: modules/subscriptions/views.php:1052
+#: modules/subscriptions/views.php:1053
 msgid ""
 "Howdy.\n"
 "\n"
@@ -14631,33 +14376,33 @@ msgstr "購読者に送信しない"
 msgid "Jetpack Subscriptions:"
 msgstr "Jetpack 購読:"
 
-#: modules/stats.php:1196
+#: modules/stats.php:1179
 msgid "We were unable to get your stats just now. Please reload this page to try again."
 msgstr "統計情報を現在取得できません。このページをリロードしてもう一度お試しください。"
 
-#: modules/stats.php:1156
+#: modules/stats.php:1139
 msgid "Top Searches"
 msgstr "人気検索キーワード"
 
-#: modules/stats.php:1128 modules/stats.php:1160
+#: modules/stats.php:1111 modules/stats.php:1143
 msgid "Sorry, nothing to report."
 msgstr "報告する内容がありません。"
 
-#: modules/stats.php:1124
+#: modules/stats.php:1107
 msgid "Top Posts"
 msgstr "人気記事"
 
 #. Translators: Stats dashboard widget Post list with view count: "Post Title 1
 #. View (or Views if plural)".
-#: modules/stats.php:1141
+#: modules/stats.php:1124
 msgid "%1$s %2$s View"
 msgid_plural "%1$s %2$s Views"
 msgstr[0] "%1$s %2$s 表示"
 
 #: extensions/blocks/blogroll/blogroll-item/blogroll-item.php:59
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:152
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:153
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:119
-#: modules/stats.php:1011 modules/videopress/class.videopress-player.php:317
+#: modules/stats.php:994 modules/videopress/class.videopress-player.php:317
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
 #: _inc/blocks/ai-chat/view.js:2 _inc/blocks/editor-beta.js:22
 #: _inc/blocks/editor-beta.js:103 _inc/blocks/editor-experimental.js:22
@@ -14668,63 +14413,63 @@ msgstr[0] "%1$s %2$s 表示"
 msgid "Submit"
 msgstr "送信"
 
-#: modules/stats.php:983
+#: modules/stats.php:966
 msgid "Show top search terms over"
 msgstr "以下の期間の人気検索キーワードを表示:"
 
-#: modules/stats.php:970
+#: modules/stats.php:953
 msgid "Show top posts over"
 msgstr "以下の期間の人気記事を表示:"
 
-#: modules/stats.php:957
+#: modules/stats.php:940
 msgid "Chart stats by"
 msgstr "統計情報グラフ期間:"
 
-#: modules/stats.php:905
+#: modules/stats.php:888
 msgid "the past year"
 msgstr "去年"
 
-#: modules/stats.php:904
+#: modules/stats.php:887
 msgid "the past quarter"
 msgstr "現四半期"
 
-#: modules/stats.php:903
+#: modules/stats.php:886
 msgid "the past month"
 msgstr "過去1ヶ月間"
 
-#: modules/stats.php:902
+#: modules/stats.php:885
 msgid "the past week"
 msgstr "過去1週間"
 
-#: modules/stats.php:901
+#: modules/stats.php:884
 msgid "the past day"
 msgstr "過去1日"
 
-#: modules/stats.php:898
+#: modules/stats.php:881
 msgid "month"
 msgstr "月"
 
-#: modules/stats.php:897
+#: modules/stats.php:880
 msgid "week"
 msgstr "週"
 
 #: jetpack_vendor/automattic/jetpack-videopress/src/class-stats.php:140
-#: modules/stats.php:896
+#: modules/stats.php:879
 msgid "day"
 msgstr "日"
 
-#: modules/stats.php:815
+#: modules/stats.php:814
 msgid "Views over 48 hours. Click for more Jetpack Stats."
 msgstr "48時間にわたり表示します。 クリックすると他の Jetpack 統計情報が表示されます。"
 
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-admin-menu.php:131
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:280
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:295
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:300
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:315
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php:175
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-wpcom-admin-menu.php:186
-#: jetpack_vendor/automattic/jetpack-stats-admin/src/class-admin-post-list-column.php:172
+#: jetpack_vendor/automattic/jetpack-stats-admin/src/class-admin-post-list-column.php:203
 #: jetpack_vendor/automattic/jetpack-stats-admin/src/class-dashboard.php:59
-#: modules/stats.php:248 modules/stats.php:253 modules/stats.php:814
+#: modules/stats.php:247 modules/stats.php:252 modules/stats.php:813
 msgid "Stats"
 msgstr "統計情報"
 
@@ -14772,15 +14517,15 @@ msgstr "スライドショーには JavaScript が必要です。"
 msgid "Click to view slideshow."
 msgstr "クリックしてスライドショーを表示"
 
-#: modules/shortcodes/slideshow.php:74 modules/widgets/gallery.php:409
+#: modules/shortcodes/slideshow.php:74 modules/widgets/gallery.php:410
 #: _inc/blocks/editor-beta.js:92 _inc/blocks/editor-experimental.js:75
 #: _inc/blocks/editor-no-post-editor.js:29 _inc/blocks/editor.js:75
 msgid "Slideshow"
 msgstr "スライドショー"
 
-#: modules/widgets/milestone/class-milestone-widget.php:686
+#: modules/widgets/milestone/class-milestone-widget.php:687
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:16
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:16
 msgid "Time"
@@ -14795,7 +14540,7 @@ msgid "This slideshow could not be started. Try refreshing the page or viewing i
 msgstr "スライドショーを開始できませんでした。ページを再読み込みするか、他のブラウザでお試しください。"
 
 #: modules/shortcodes/crowdsignal.php:192
-#: modules/shortcodes/crowdsignal.php:493
+#: modules/shortcodes/crowdsignal.php:500
 msgid "Take Our Survey"
 msgstr "アンケートに回答"
 
@@ -15024,7 +14769,7 @@ msgctxt "share to"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: extensions/blocks/sharing-button/class-sharing-source-block.php:533
+#: extensions/blocks/sharing-button/class-sharing-source-block.php:532
 #: extensions/blocks/sharing-button/sharing-button.php:311
 #: modules/sharedaddy/sharing-sources.php:1893
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:15
@@ -15078,8 +14823,8 @@ msgstr "メールアドレス"
 #: modules/wordads/php/class-wordads-california-privacy.php:263
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:11
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:11
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:12
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:15
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:184
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:17
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:18
@@ -15098,7 +14843,7 @@ msgstr "メールアドレス"
 msgid "Close"
 msgstr "閉じる"
 
-#: extensions/blocks/sharing-button/class-sharing-source-block.php:399
+#: extensions/blocks/sharing-button/class-sharing-source-block.php:398
 #: modules/sharedaddy/sharing-sources.php:977
 msgctxt "as sharing source"
 msgid "Email"
@@ -15114,7 +14859,7 @@ msgstr " (新しいウィンドウで開きます)"
 #. translators: option to share the content - a verb.
 #: extensions/blocks/sharing-button/components/class-jetpack-mastodon-modal.php:190
 #: modules/sharedaddy/services/class-jetpack-mastodon-modal.php:188
-#: modules/sharedaddy/sharing-service.php:1150
+#: modules/sharedaddy/sharing-service.php:1154
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:16
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:31
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:57
@@ -15129,7 +14874,7 @@ msgstr " (新しいウィンドウで開きます)"
 msgid "Share"
 msgstr "シェア"
 
-#: modules/sharedaddy/sharing-service.php:1148
+#: modules/sharedaddy/sharing-service.php:1152
 #: modules/sharedaddy/sharing.php:511 modules/sharedaddy/sharing.php:548
 msgid "More"
 msgstr "その他"
@@ -15147,7 +14892,7 @@ msgstr "高度な設定です。 このオプションがチェックされて�
 msgid "Disable CSS and JS"
 msgstr "CSS と JavaScript を無効化"
 
-#: extensions/blocks/sharing-button/class-sharing-source-block.php:453
+#: extensions/blocks/sharing-button/class-sharing-source-block.php:452
 #: modules/sharedaddy/sharing-sources.php:1064
 msgid "Shared Post"
 msgstr "共有投稿"
@@ -15239,16 +14984,15 @@ msgstr "カスタムメッセージ:"
 #: class.jetpack-network-sites-list-table.php:161
 #: extensions/blocks/premium-content/premium-content.php:112
 #: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/class-social-links.php:139
-#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:6
+#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:5
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:17
-#: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:18
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:31
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:11
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:13
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:11
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:13
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:13
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:15
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:12
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:14
 #: jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/index.js:9
 #: _inc/blocks/editor-beta.js:136 _inc/blocks/editor-experimental.js:119
 #: _inc/blocks/editor-no-post-editor.js:54 _inc/blocks/editor.js:119
@@ -15259,7 +15003,7 @@ msgstr "連携"
 
 #: class.jetpack-network-sites-list-table.php:140
 #: class.jetpack-network-sites-list-table.php:162
-#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:7
+#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:6
 #: _inc/build/admin.js:52
 msgid "Disconnect"
 msgstr "接続解除"
@@ -15323,7 +15067,7 @@ msgid "To use Jetpack Social, you'll need to link your %s account to your WordPr
 msgstr "Jetpack ソーシャルを使うには、以下のリンクから %s アカウントを WordPress.com アカウントに連携する必要があります。"
 
 #. translators: %s is the name of the site
-#: enhanced-open-graph.php:153
+#: enhanced-open-graph.php:155
 msgid "Video on %s"
 msgstr "%s の動画"
 
@@ -15396,7 +15140,7 @@ msgstr "<strong>数学の問題に対する解答が正しくありません。<
 #: modules/widgets/simple-payments/form.php:210
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:16
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:16
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:17
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:16
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:10
 #: jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/index.js:9
 #: _inc/blocks/editor-beta.js:116 _inc/blocks/editor-experimental.js:99
@@ -15459,13 +15203,13 @@ msgstr "メールアドレス"
 msgid "Last Modified"
 msgstr "最終更新日"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1775
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1792
 #: jetpack_vendor/automattic/jetpack-videopress/src/class-admin-ui.php:396
 #: modules/sitemaps/sitemap-stylist.php:446
 #: modules/sitemaps/sitemap-stylist.php:590
-#: modules/widgets/facebook-likebox.php:255
-#: modules/widgets/gravatar-profile.php:344
-#: modules/widgets/milestone/class-milestone-widget.php:649
+#: modules/widgets/facebook-likebox.php:256
+#: modules/widgets/gravatar-profile.php:345
+#: modules/widgets/milestone/class-milestone-widget.php:650
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:85
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:13
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:15
@@ -15491,15 +15235,13 @@ msgid "Receive Monitor Email Notifications."
 msgstr "モニターメール通知を受信する。"
 
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:219
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:10
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/Backups.js:285
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:9
 msgid "Themes"
 msgstr "テーマ"
 
-#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:160
+#: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-atomic-admin-menu.php:180
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:235
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:10
-#: jetpack_vendor/automattic/jetpack-backup/src/js/components/Backups.js:278
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:9
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:105
 #: _inc/build/admin.js:20
 msgid "Plugins"
@@ -15736,7 +15478,7 @@ msgstr "アイキャッチ画像"
 #. translators: Date and time
 #. Translators: %1$s is the date, %2$s is the time.
 #: _inc/lib/icalendar-reader.php:1002
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:12
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:15
 msgid "%1$s at %2$s"
 msgstr "%1$s %2$s"
 
@@ -15919,7 +15661,7 @@ msgstr "ページ上部へ戻る"
 
 #: modules/infinite-scroll/infinity.php:863
 #: modules/theme-tools/compat/twentynineteen.php:158
-#: modules/theme-tools/compat/twentytwenty.php:240
+#: modules/theme-tools/compat/twentytwenty.php:241
 msgid "Older posts"
 msgstr "過去の投稿"
 
@@ -16311,7 +16053,7 @@ msgstr "新規行"
 
 #: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/custom-post-types/class-nova-restaurant.php:1297
 #: modules/sitemaps/sitemap-stylist.php:448
-#: modules/widgets/milestone/class-milestone-widget.php:654
+#: modules/widgets/milestone/class-milestone-widget.php:655
 #: modules/widgets/simple-payments/form.php:130
 #: _inc/lib/icalendar-reader.php:926
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:85
@@ -16356,7 +16098,7 @@ msgid "Save New Order"
 msgstr "新しい順序を保存"
 
 #: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/custom-post-types/class-nova-restaurant.php:686
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:23
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:26
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:180
 #: _inc/blocks/editor-beta.js:31 _inc/blocks/editor-experimental.js:31
 #: _inc/blocks/editor.js:31
@@ -16660,7 +16402,7 @@ msgstr "カスタムフィールドを更新しました。"
 msgid "Add New"
 msgstr "新規追加"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:933
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-field.php:932
 msgid "Uploading..."
 msgstr "アップロード中…"
 
@@ -16668,7 +16410,7 @@ msgstr "アップロード中…"
 msgid "Show more"
 msgstr "もっと見る"
 
-#: modules/widgets/image-widget.php:255 _inc/blocks/editor-beta.js:97
+#: modules/widgets/image-widget.php:256 _inc/blocks/editor-beta.js:97
 #: _inc/blocks/editor-experimental.js:80
 #: _inc/blocks/editor-no-post-editor.js:30 _inc/blocks/editor.js:80
 msgid "None"
@@ -16677,9 +16419,9 @@ msgstr "なし"
 #: extensions/blocks/blogroll/blogroll-item/blogroll-item.php:60
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:317
 #: modules/widgets/simple-payments/form.php:211
-#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:7
+#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:6
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:165
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:4
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:7
@@ -16687,9 +16429,9 @@ msgstr "なし"
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:4
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:7
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:16
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:11
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:13
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:17
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:10
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:12
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:16
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:13
 #: jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/index.js:9
 #: jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/index.js:10
@@ -16800,7 +16542,7 @@ msgstr "オプション"
 msgid "Textarea"
 msgstr "テキストエリア"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:992
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:955
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:245
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-form-view.php:235
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
@@ -16988,7 +16730,7 @@ msgstr "名前"
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:4
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:4
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:11
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:10
 msgid "Yes"
 msgstr "はい"
 
@@ -17008,54 +16750,53 @@ msgstr "%s は必須項目です"
 msgid "%s requires a valid email address"
 msgstr "「%s」欄には正しいメールアドレスが必要です。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1619
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1588
 msgid "Sent by an unverified visitor to your site."
 msgstr "認証されていないサイト訪問者から送信されました。"
 
 #. translators: the name of the site.
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1615
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1584
 msgid "Sent by a verified %s user."
 msgstr "認証済みの %s ユーザーから送信されました。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:331
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:332
 msgid "Error!"
 msgstr "エラー。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:182
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:183
 msgid "Subject"
 msgstr "件名"
 
 #. translators: the blog name and post title.
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:99
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:100
 msgctxt "%1$s = blog name, %2$s = post title"
 msgid "%1$s %2$s"
 msgstr "%1$s %2$s"
 
 #. translators: the blog name (and post name, if applicable).
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:109
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:110
 msgctxt "%1$s = blog name"
 msgid "%1$s Sidebar"
 msgstr "%1$s サイドバー"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:2255
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:2300
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-form-view.php:71
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-util.php:50
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:12
 msgid "Contact Form"
 msgstr "お問い合わせフォーム"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:223
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:14
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:13
 msgid "Download"
 msgstr "ダウンロード"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1151
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1164
 msgid "Feedback discarded."
 msgstr "フィードバックを削除しました。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:832
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:845
 #: _inc/lib/core-api/wpcom-endpoints/class-wpcom-rest-api-v2-endpoint-external-media.php:499
 #: _inc/lib/core-api/wpcom-endpoints/class-wpcom-rest-api-v2-endpoint-instagram-gallery.php:121
 #: _inc/blocks/editor-beta.js:39 _inc/blocks/editor-experimental.js:32
@@ -17064,7 +16805,7 @@ msgid "An error occurred. Please try again later."
 msgstr "エラーが発生しました。後ほどもう一度お試しください。"
 
 #. translators: The spam count.
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:254
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:257
 msgid "Spam <span class=\"count\">(%s)</span>"
 msgid_plural "Spam <span class=\"count\">(%s)</span>"
 msgstr[0] "スパム <span class=\"count\">(%s)</span>"
@@ -17075,7 +16816,7 @@ msgstr "スパムチェック"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:909
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:1271
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:6
 msgid "Spam"
 msgstr "スパム"
 
@@ -17097,7 +16838,7 @@ msgid "You are not allowed to move this item out of the Trash."
 msgstr "この項目をゴミ箱から移動する権限がありません。"
 
 #. translators: the time of the form submission.
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1502
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1471
 msgctxt "{$date_format} \\a\\t {$time_format}"
 msgid "%1$s \\a\\t %2$s"
 msgstr "%1$s%2$s"
@@ -17116,7 +16857,7 @@ msgid "Delete this item permanently"
 msgstr "この項目を完全に削除する"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:896
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:6
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:9
 msgid "Restore"
 msgstr "復元"
 
@@ -17125,25 +16866,24 @@ msgid "Restore this item from the Trash"
 msgstr "この項目をゴミ箱から復元する"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:625
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1007
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:970
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:254
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:994
-#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1032
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:995
+#: jetpack_vendor/automattic/jetpack-search/src/widgets/class-search-widget.php:1033
 #: modules/related-posts/jetpack-related-posts.php:378
-#: modules/widgets/milestone/class-milestone-widget.php:659
+#: modules/widgets/milestone/class-milestone-widget.php:660
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/google-photos/filter-view.js:8
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:9
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:12
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 #: _inc/build/admin.js:126 _inc/build/widget-visibility/editor/index.js:1
 msgid "Date"
 msgstr "日付"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:186
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1013
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:187
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:976
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:117
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:1
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
@@ -17153,7 +16893,7 @@ msgid "Message"
 msgstr "メッセージ"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:623
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:9
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:12
 msgid "From"
 msgstr "送信元"
 
@@ -17182,7 +16922,7 @@ msgstr "スパムとしてマーク"
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:481
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:902
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-admin.php:927
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:8
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:11
 msgid "Delete Permanently"
 msgstr "完全に削除する"
 
@@ -17255,7 +16995,7 @@ msgstr "透明"
 
 #: jetpack_vendor/automattic/jetpack-search/src/customizer/class-customizer.php:70
 #: modules/comments/admin.php:76 modules/widgets/eu-cookie-law/form.php:256
-#: modules/widgets/twitter-timeline.php:593
+#: modules/widgets/twitter-timeline.php:594
 #: _inc/lib/class.core-rest-api-endpoints.php:2302
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:12
 msgid "Dark"
@@ -17263,7 +17003,7 @@ msgstr "ダーク"
 
 #: jetpack_vendor/automattic/jetpack-search/src/customizer/class-customizer.php:69
 #: modules/comments/admin.php:75 modules/widgets/eu-cookie-law/form.php:245
-#: modules/widgets/twitter-timeline.php:590
+#: modules/widgets/twitter-timeline.php:591
 #: _inc/lib/class.core-rest-api-endpoints.php:2301
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:12
 msgid "Light"
@@ -17353,8 +17093,8 @@ msgstr "Nonce 認証に失敗しました。"
 msgid "Missing attachment ID."
 msgstr "添付ファイル ID がありません。"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:178
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1004
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:179
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:967
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:116
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:248
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-form-view.php:237
@@ -17363,8 +17103,8 @@ msgstr "添付ファイル ID がありません。"
 msgid "Website"
 msgstr "サイト"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:177
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:1001
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:178
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:964
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:115
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:247
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-form-view.php:232
@@ -17672,7 +17412,7 @@ msgid "Autosave encountered an unexpected error"
 msgstr "自動保存の際に予期しないエラーが発生しました。"
 
 #: functions.opengraph.php:197 _inc/lib/class-jetpack-podcast-helper.php:461
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:180
 msgid "(no title)"
 msgstr "(タイトルなし)"
@@ -17680,7 +17420,6 @@ msgstr "(タイトルなし)"
 #: class-jetpack-gallery-settings.php:108
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/google-photos/filter-option.js:117
 msgid "Type"
 msgstr "タイプ"
 
@@ -17807,7 +17546,7 @@ msgstr "準備ができました。今後、<a href=\"%s\" target=\"_blank\">wor
 msgid "Connect to WordPress.com"
 msgstr "WordPress.com と連携"
 
-#: modules/stats.php:1210
+#: modules/stats.php:1193
 msgid "Jetpack Support"
 msgstr "Jetpack サポート"
 
@@ -17900,10 +17639,9 @@ msgstr "編集"
 
 #: class.jetpack-network-sites-list-table.php:28
 #: jetpack_vendor/automattic/jetpack-connection/src/class-users-connection-admin.php:81
-#: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-jetpack-sidebar.js:15
 #: jetpack_vendor/automattic/jetpack-publicize/build/editor-social-sidebar.js:15
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:17
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:16
 #: _inc/build/admin.js:82
 msgid "Connected"
 msgstr "連携済み"
@@ -17928,6 +17666,7 @@ msgstr "モジュールが見つかりませんでした"
 #: jetpack_vendor/automattic/jetpack-jitm/src/class-jitm.php:203
 #: _inc/lib/admin-pages/class-jetpack-about-page.php:367
 #: jetpack_vendor/automattic/jetpack-forms/dist/blocks/editor.js:11
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:15
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:17
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:31
@@ -17938,7 +17677,7 @@ msgstr "有効化"
 #: class.jetpack-modules-list-table.php:131
 #: class.jetpack-modules-list-table.php:281
 #: class.jetpack-modules-list-table.php:388
-#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:7
+#: jetpack_vendor/automattic/jetpack-connection/dist/jetpack-connection.js:6
 msgid "Deactivate"
 msgstr "無効化"
 
@@ -17948,8 +17687,8 @@ msgstr "モジュールを検索 …"
 
 #: class.jetpack-modules-list-table.php:268
 #: jetpack_vendor/automattic/jetpack-classic-theme-helper/src/custom-post-types/class-nova-restaurant.php:1284
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:176
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:995
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:177
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form.php:958
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:114
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-editor-view.php:246
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-form-view.php:233
@@ -18233,7 +17972,7 @@ msgid "Jetpack is not currently connected to WordPress.com"
 msgstr "現在 Jetpack は WordPress.com アカウントと連携されていません"
 
 #: class.jetpack-admin.php:321 modules/plugin-search.php:243
-#: modules/plugin-search.php:601 modules/stats.php:500 modules/stats.php:1014
+#: modules/plugin-search.php:601 modules/stats.php:499 modules/stats.php:997
 msgid "Configure"
 msgstr "設定"
 
@@ -18243,7 +17982,7 @@ msgstr "人気"
 
 #: _inc/lib/admin-pages/class.jetpack-settings-page.php:151
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:21
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:12
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:11
 #: jetpack_vendor/automattic/jetpack-search/build/instant-search/jp-search.js:1
 msgid "Newest"
 msgstr "最新"
@@ -18273,20 +18012,19 @@ msgstr "有効"
 #: _inc/lib/admin-pages/class.jetpack-settings-page.php:120
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/sources/google-photos/filter-option.js:110
+#: _inc/build/newsletter-widget.js:10
 msgid "All"
 msgstr "すべて"
 
 #: jetpack_vendor/automattic/jetpack-search/src/customberg/class-customberg.php:70
-#: jetpack_vendor/automattic/jetpack-search/src/instant-search/class-instant-search.php:623
+#: jetpack_vendor/automattic/jetpack-search/src/instant-search/class-instant-search.php:627
 #: modules/stats/class-jetpack-stats-upgrade-nudges.php:467
 #: _inc/lib/admin-pages/class.jetpack-settings-page.php:110
 #: _inc/lib/core-api/class.jetpack-core-api-site-endpoints.php:289
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-editor/jetpack-external-media-editor.js:59
 #: jetpack_vendor/automattic/jetpack-external-media/src/build/jetpack-external-media-import-page/jetpack-external-media-import-page.js:59
-#: jetpack_vendor/automattic/jetpack-external-media/src/shared/media-search/index.js:8
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:19
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:23
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:22
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:26
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:174
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:180
 #: jetpack_vendor/automattic/jetpack-search/build/customberg/jp-search-configure.js:16
@@ -18308,11 +18046,11 @@ msgstr "Jetpack 設定"
 msgid "My Jetpack"
 msgstr "My Jetpack"
 
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:566
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:567
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1354
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1372
-#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1442
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:571
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:572
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1371
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1389
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:1459
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-form-view.php:208
 #: jetpack_vendor/automattic/jetpack-masterbar/src/admin-menu/class-jetpack-admin-menu.php:159
 #: _inc/blocks/editor-beta.js:22 _inc/blocks/editor-experimental.js:22
@@ -18368,15 +18106,16 @@ msgstr "設定"
 #: _inc/lib/debugger/class-jetpack-cxn-test-base.php:426
 #: _inc/lib/debugger/class-jetpack-debug-data.php:108
 #: _inc/lib/debugger/debug-functions.php:87
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:2
-#: jetpack_vendor/automattic/jetpack-backup/build/index.js:5
-#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:3
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:1
+#: jetpack_vendor/automattic/jetpack-backup/build/index.js:4
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:2
+#: jetpack_vendor/automattic/jetpack-forms/dist/dashboard/jetpack-forms-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:5
 #: jetpack_vendor/automattic/jetpack-my-jetpack/build/index.js:9
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:2
-#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:5
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:2
-#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:5
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:1
+#: jetpack_vendor/automattic/jetpack-publicize/build/social-admin-page.js:4
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:1
+#: jetpack_vendor/automattic/jetpack-search/build/dashboard/jp-search-dashboard.js:4
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:3
 #: jetpack_vendor/automattic/jetpack-videopress/build/admin/index.js:6
 #: jetpack_vendor/automattic/jetpack-wordads/build/dashboard/jp-wordads-dashboard.js:1

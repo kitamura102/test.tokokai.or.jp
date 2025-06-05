@@ -67,7 +67,7 @@ class SSuprydpStickySidebarOptions {
 
         if ($wpdb->delete($wpdb->sticky_cta, array('ID' => $get_data['id']), array('%d'))) {
             $wpdb->delete($wpdb->sticky_cta_options, array('sticky_cta_id' => $get_data['id']), array('%d'));
-            exit(wp_safe_redirect('/wp-admin/admin.php?page=easy-sticky-sidebars'));
+            exit(wp_safe_redirect(site_url('/wp-admin/admin.php?page=easy-sticky-sidebars')));
         }
     }
 
@@ -148,17 +148,18 @@ class SSuprydpStickySidebarOptions {
         // Start output buffering
         ob_start();
         ?>
-        <div class="wrap">
-            <h1><?php esc_html_e('How to use Wordpress CTA', 'easy-sticky-sidebar'); ?></h1>
-            <p style="font-size: 25px;"><?php esc_html_e('Please click on the button below to view our help page', 'easy-sticky-sidebar'); ?></p>
-            <button id="cta-button" class="button button-primary"><?php echo esc_html($button_text); ?></button>
-        </div>
-        <script type="text/javascript">
-            document.getElementById("cta-button").addEventListener("click", function() {
-                window.open("<?php echo esc_url($page_url); ?>", "_blank");
-            });
-        </script>
-        <?php
+<div class="wrap">
+    <h1><?php esc_html_e('How to use Wordpress CTA', 'easy-sticky-sidebar'); ?></h1>
+    <p style="font-size: 25px;">
+        <?php esc_html_e('Please click on the button below to view our help page', 'easy-sticky-sidebar'); ?></p>
+    <button id="cta-button" class="button button-primary"><?php echo esc_html($button_text); ?></button>
+</div>
+<script type="text/javascript">
+document.getElementById("cta-button").addEventListener("click", function() {
+    window.open("<?php echo esc_url($page_url); ?>", "_blank");
+});
+</script>
+<?php
         // End output buffering and output everything
         $output = ob_get_clean();
         echo $output;
@@ -229,13 +230,13 @@ class SSuprydpStickySidebarOptions {
         if ($wordpress_cta_page === false) {
             return;
         } ?>
-        <div id="wordpress-cta-pro-feature-popup" class="wordpress-cta-popup">
-            <div class="popup-content">
-                <?php wordpress_cta_pro_get_block(); ?>
-                <span class="close"></span>
-            </div>
-        </div>
-    <?php
+<div id="wordpress-cta-pro-feature-popup" class="wordpress-cta-popup">
+    <div class="popup-content">
+        <?php wordpress_cta_pro_get_block(); ?>
+        <span class="close"></span>
+    </div>
+</div>
+<?php
     }
 
     /**
@@ -247,19 +248,21 @@ class SSuprydpStickySidebarOptions {
         if ($wordpress_cta_page === false) {
             return;
         } ?>
-        <div id="wordpress-cta-popup-load-design" class="wordpress-cta-popup">
-            <div class="popup-content">
-                <?php _e('Do you want to replace this style?', 'easy-sticky-sidebar'); ?>
+<div id="wordpress-cta-popup-load-design" class="wordpress-cta-popup">
+    <div class="popup-content">
+        <?php _e('Do you want to replace this style?', 'easy-sticky-sidebar'); ?>
 
-                <footer>
-                    <a class="button btn-wordpress-cta-primary" href="#load-style"><?php _e('Load Styles', 'easy-sticky-sidebar') ?></a>
-                    <a class="button btn-wordpress-cta-primary" href="#load-style-content"><?php _e('Load Styles and Content', 'easy-sticky-sidebar') ?></a>
-                    <a class="button btn-cancel" href="#"><?php _e('Cancel', 'easy-sticky-sidebar') ?></a>
-                </footer>
-                <span class="close"></span>
-            </div>
-        </div>
-    <?php
+        <footer>
+            <a class="button btn-wordpress-cta-primary"
+                href="#load-style"><?php _e('Load Styles', 'easy-sticky-sidebar') ?></a>
+            <a class="button btn-wordpress-cta-primary"
+                href="#load-style-content"><?php _e('Load Styles and Content', 'easy-sticky-sidebar') ?></a>
+            <a class="button btn-cancel" href="#"><?php _e('Cancel', 'easy-sticky-sidebar') ?></a>
+        </footer>
+        <span class="close"></span>
+    </div>
+</div>
+<?php
     }
 
     /**
@@ -274,22 +277,22 @@ class SSuprydpStickySidebarOptions {
 
         $post_data = wp_parse_args($settings, array('disable_google_font' => 'no')); ?>
 
-        <div class="wrap wrap-easy-sticky-sidebar">
-            <?php easy_sticky_sidebar_get_header();  ?>
-            <hr class="wp-header-end">
+<div class="wrap wrap-easy-sticky-sidebar">
+    <?php easy_sticky_sidebar_get_header();  ?>
+    <hr class="wp-header-end">
 
-            <div class="easy-sticky-sidebar-container">
-                <div id="SSuprydp_builder_form">
-                    <div class="SSuprydp_col_2 SSuprydp-form-col">
-                        <form id="SSuprydp_form" method="post">
-                            <?php wp_nonce_field('_nonce_easy_sticky_sidebar_settings'); ?>
-                            <?php do_action('easy_sticky_sidebar_settings', $post_data) ?>
-                            <?php submit_button() ?>
-                        </form>
-                    </div>
-                </div>
+    <div class="easy-sticky-sidebar-container">
+        <div id="SSuprydp_builder_form">
+            <div class="SSuprydp_col_2 SSuprydp-form-col">
+                <form id="SSuprydp_form" method="post">
+                    <?php wp_nonce_field('_nonce_easy_sticky_sidebar_settings'); ?>
+                    <?php do_action('easy_sticky_sidebar_settings', $post_data) ?>
+                    <?php submit_button() ?>
+                </form>
             </div>
         </div>
+    </div>
+</div>
 
 <?php
     }

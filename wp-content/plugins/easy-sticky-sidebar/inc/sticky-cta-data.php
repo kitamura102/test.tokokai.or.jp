@@ -126,7 +126,22 @@ class WP_Sticky_CTA_Data {
 
         unset($this->sticky_data);
     }
-
+    public function to_array_without_id() {
+        $data = [];
+    
+        // Get all dynamic properties
+        if (isset($this->dynamic_properties) && is_array($this->dynamic_properties)) {
+            $data = $this->dynamic_properties;
+        }
+    
+        // Remove 'id' if it exists
+        if (isset($data['id'])) {
+            unset($data['id']);
+        }
+    
+        return $data;
+    }
+    
     /**
      * handle data for getting item
      * @package sticky-sidebar
@@ -173,14 +188,34 @@ class WP_Sticky_CTA_Data {
         if (absint($this->sticky_data->id) == 0) {
             return;
         }
-
+    
         global $wpdb;
-
-        $options = $wpdb->get_results($wpdb->prepare("SELECT * FROM {$wpdb->prefix}sticky_cta_options WHERE sticky_cta_id = %d", $this->sticky_data->id));
+    
+        $options = $wpdb->get_results(
+            $wpdb->prepare("SELECT * FROM {$wpdb->prefix}sticky_cta_options WHERE sticky_cta_id = %d", $this->sticky_data->id)
+        );
+    
+        // Skip setting properties that are protected
+        $protected_props = ['id'];
+    
         foreach ($options as $option) {
-            $this->sticky_data->{$option->option_name} = maybe_unserialize($option->option_value);
+            $option_name = $option->option_name;
+    
+            // Skip protected properties
+            if (in_array($option_name, $protected_props, true)) {
+                continue;
+            }
+    
+            // Only assign if the name is safe and doesn't start with a null character
+            if (strpos($option_name, "\0") === false) {
+                $this->sticky_data->{$option_name} = maybe_unserialize($option->option_value);
+            }
         }
     }
+    public function reset_id() {
+        $this->id = 0;
+    }
+    
 
      /**
      * Get calculated CTR
