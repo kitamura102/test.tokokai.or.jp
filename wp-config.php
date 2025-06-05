@@ -96,5 +96,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
 
+/** ↓↓↓ 2025/6/5 マルチサイト化のため設定を追加 ↓↓↓ **/
+define('WP_ALLOW_MULTISITE', true);
+define( 'MULTISITE', true );
+define( 'SUBDOMAIN_INSTALL', false );
+define( 'DOMAIN_CURRENT_SITE', 'test.tokokai.or.jp' );
+define( 'PATH_CURRENT_SITE', '/' );
+define( 'SITE_ID_CURRENT_SITE', 1 );
+define( 'BLOG_ID_CURRENT_SITE', 1 );
+/** ↑↑↑ 2025/6/5 マルチサイト化のため設定を追加 ↑↑↑ **/
+
+
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';

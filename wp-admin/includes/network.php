@@ -52,6 +52,11 @@ function allow_subdomain_install() {
  * @return bool Whether subdirectory installation is allowed
  */
 function allow_subdirectory_install() {
+
+/* ↓↓↓2025/6/5 マルチサイト化のため設定を追加 ↓↓↓*/
+	return true;
+/* ↑↑↑2025/6/5 マルチサイト化のため設定を追加 ↑↑↑*/
+
 	global $wpdb;
 
 	/**
