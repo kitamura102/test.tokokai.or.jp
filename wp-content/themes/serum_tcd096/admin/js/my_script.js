@@ -604,7 +604,10 @@ jQuery(document).ready(function($){
   }).trigger('change');
 
   // ブロックエディタ用
-  if(wp.data !== undefined ){
+   if ( typeof wp !== 'undefined' && wp.data &&  typeof wp.data.select
+=== 'function' && wp.data.select('core/editor') && typeof
+wp.data.select('core/editor').getEditedPostAttribute === 'function' )
+{
     const { select, subscribe } = wp.data;
     class PageTemplateSwitcher {
       constructor() {
@@ -717,7 +720,14 @@ jQuery(document).ready(function($){
       ui.item.toggleClass("active");
       ui.item.find('textarea').each(function () {
         if (window.tinymce) {
-          tinymce.execCommand('mceAddEditor', true, $(this).attr('id'));
+          const editorId = $(this).attr('id');
+          if (!tinymce.get(editorId)) {
+            tinymce.execCommand('mceAddEditor', true, editorId);
+            
+            setTimeout(() => {
+              $(this).closest('.html-active').find('.wp-switch-editor.switch-html').trigger('click');
+            }, 100);
+          }
         }
      });
     },
@@ -962,18 +972,32 @@ jQuery(document).ready(function($){
 
   // コンテンツビルダー ソータブル
   $('.contents_builder').sortable({
+    placeholder: "sortable-placeholder",
     handle: '.cb_move',
-    stop: function (e, ui) {
-      ui.item.toggleClass('active');
-      if (window.tinymce) {
-        ui.item.find('textarea.wp-editor-area').each(function () {
+    start: function(e, ui){
+      ui.item.find('textarea').each(function () {
+        if (window.tinymce) {
           tinymce.execCommand('mceRemoveEditor', false, $(this).attr('id'));
-          tinymce.execCommand('mceAddEditor', true, $(this).attr('id'));
-        });
-      }
-    }
+        }
+      });
+    },
+    stop: function (e, ui) {
+      ui.item.find('textarea').each(function () {
+        if (window.tinymce) {
+          const editorId = $(this).attr('id');
+          if (!tinymce.get(editorId)) {
+            tinymce.execCommand('mceAddEditor', true, editorId);
+            setTimeout(() => {
+              $(this).closest('.html-active').find('.wp-switch-editor.switch-html').trigger('click');
+            }, 100);
+          }
+        }
+      });
+    },
+    distance: 5,
+    forceHelperSize: true,
+    forcePlaceholderSize: true
   });
-
 
   // コンテンツビルダー クローンインデックス
   var clone_next = 1;
@@ -1248,7 +1272,14 @@ jQuery(document).ready(function($){
           //ui.item.toggleClass("active");
           ui.item.find('textarea').each(function () {
             if (window.tinymce) {
-              tinymce.execCommand('mceAddEditor', true, $(this).attr('id'));
+              const editorId = $(this).attr('id');
+              if (!tinymce.get(editorId)) {
+                tinymce.execCommand('mceAddEditor', true, editorId);
+                
+                setTimeout(() => {
+                  $(this).closest('.html-active').find('.wp-switch-editor.switch-html').trigger('click');
+                }, 100);
+              }
             }
           });
         },

@@ -922,7 +922,7 @@ function add_front_page_theme_options_validate( $input ) {
 
         $value['display_bg_color'] = wp_filter_nohtml_kses( $value['display_bg_color'] );
         
-        $value['autoplay'] = wp_filter_nohtml_kses( $value['autoplay'] );
+        $value['autoplay'] = isset($value['autoplay']) ? wp_filter_nohtml_kses( $value['autoplay'] ) : 'off';
       // フリースペース -----------------------------------------------------------------------
       } elseif ($value['cb_content_select'] == 'free_space') {
 
