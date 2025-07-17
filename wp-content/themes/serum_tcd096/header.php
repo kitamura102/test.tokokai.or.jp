@@ -17,6 +17,10 @@
 <?php wp_head(); ?>
 </head>
 <body id="body" <?php body_class(); ?>>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+
 <div id="js-body-start"></div>
 
 <?php
@@ -73,8 +77,17 @@
  <a id="drawer_menu_button" href="#"><span></span><span></span><span></span></a>
  <nav id="global_menu">
   <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'global-menu' , 'container' => '' ) ); ?>
- </nav>
+   </nav>]
+<!-- フォントサイズ変更ボタン -->
+<div class="btn_wrap">
+	<span>文字サイズ変更</span>
+	<button id="font-middle" class="sizeBtn is_active" type="button">標準</button>
+	<button id="font-large" class="sizeBtn" type="button">大</button>
+</div>
  <?php }; ?>
+
+
+
  <?php
       // 検索フォーム --------------------------------------------------------------------
       if( $options['show_header_search'] == 'display') {

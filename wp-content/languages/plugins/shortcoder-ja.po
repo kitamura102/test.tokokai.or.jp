@@ -1,0 +1,487 @@
+# Translation of Plugins - Shortcoder — Create Shortcodes for Anything - Stable (latest release) in Japanese
+# This file is distributed under the same license as the Plugins - Shortcoder — Create Shortcodes for Anything - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-06-21 12:01:36+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: ja_JP\n"
+"Project-Id-Version: Plugins - Shortcoder — Create Shortcodes for Anything - Stable (latest release)\n"
+
+#: admin/admin.php:95
+msgid "Add New Tag"
+msgstr "新規タグを追加"
+
+#: admin/admin.php:100
+msgid "Add or remove tags"
+msgstr "タグの追加もしくは削除"
+
+#: admin/admin.php:91
+msgid "All Tags"
+msgstr "すべてのタグ"
+
+#: admin/admin.php:101
+msgid "Choose from the most used"
+msgstr "よく使われている項目から選択"
+
+#: admin/edit.php:196 admin/settings.php:55
+msgid "Code editor"
+msgstr "コードエディター"
+
+#: admin/edit.php:39 admin/insert.php:79 admin/manage.php:40
+msgid "Copy"
+msgstr "コピー"
+
+#: admin/edit.php:311
+msgid "Custom Fields"
+msgstr "カスタムフィールド"
+
+#: shortcoder.php:396
+msgid "Day"
+msgstr "日"
+
+#: admin/edit.php:33 admin/edit.php:75
+msgid "Display name"
+msgstr "表示名"
+
+#: admin/admin.php:253
+msgid "Documentation"
+msgstr "ドキュメンテーション"
+
+#: admin/admin.php:248 admin/admin.php:256
+msgid "Export"
+msgstr "エクスポート"
+
+#: admin/admin.php:48
+msgid "Featured Image"
+msgstr "アイキャッチ画像"
+
+#: admin/admin.php:249 admin/admin.php:260
+msgid "Import"
+msgstr "インポート"
+
+#: admin/insert.php:80
+msgid "Insert"
+msgstr "挿入"
+
+#: shortcoder.php:400
+msgid "Month"
+msgstr "月"
+
+#: admin/admin.php:94
+msgid "New Tag Name"
+msgstr "新規タグ名"
+
+#: admin/admin.php:105
+msgid "No tags"
+msgstr "タグなし"
+
+#: admin/admin.php:104
+msgid "Not Found"
+msgstr "見つかりません"
+
+#: admin/admin.php:46
+msgid "Not found"
+msgstr "見つかりません"
+
+#: admin/admin.php:47
+msgid "Not found in Trash"
+msgstr "ゴミ箱内に見つかりません"
+
+#: admin/admin.php:92
+msgid "Parent Tag"
+msgstr "親タグ"
+
+#: admin/admin.php:93
+msgid "Parent Tag:"
+msgstr "親タグ:"
+
+#: admin/admin.php:102
+msgid "Popular Tags"
+msgstr "人気のタグ"
+
+#: shortcoder.php:374
+msgid "Post author"
+msgstr "投稿者"
+
+#: shortcoder.php:375
+msgid "Post date"
+msgstr "投稿日"
+
+#: admin/admin.php:50
+msgid "Remove featured image"
+msgstr "アイキャッチ画像を削除"
+
+#: admin/admin.php:103
+msgid "Search Tags"
+msgstr "タグを検索"
+
+#: admin/admin.php:99
+msgid "Separate tags with commas"
+msgstr "タグが複数ある場合はコンマで区切ってください"
+
+#: admin/admin.php:49
+msgid "Set featured image"
+msgstr "アイキャッチ画像を設定"
+
+#: admin/admin.php:33 admin/admin.php:60 admin/manage.php:24
+msgid "Shortcode"
+msgstr "ショートコード"
+
+#: shortcoder.php:382
+msgid "Site URL"
+msgstr "サイト URL"
+
+#: admin/admin.php:90
+msgid "Tags"
+msgstr "タグ"
+
+#: admin/admin.php:106
+msgid "Tags list"
+msgstr "タグリスト"
+
+#: admin/admin.php:107
+msgid "Tags list navigation"
+msgstr "タグリストナビゲーション"
+
+#: admin/admin.php:97
+msgid "Update Tag"
+msgstr "タグを更新"
+
+#: admin/admin.php:51
+msgid "Use as featured image"
+msgstr "アイキャッチ画像として使用"
+
+#: admin/admin.php:98
+msgid "View Tag"
+msgstr "タグを表示"
+
+#: admin/edit.php:195 admin/settings.php:54
+msgid "Visual editor"
+msgstr "ビジュアルエディター"
+
+#: shortcoder.php:383
+msgid "WordPress URL"
+msgstr "WordPress URL"
+
+#: shortcoder.php:385
+msgid "WordPress version"
+msgstr "WordPress バージョン"
+
+#: shortcoder.php:404
+msgid "Year"
+msgstr "年"
+
+#: admin/admin.php:88
+msgctxt "Taxonomy General Name"
+msgid "Tags"
+msgstr "タグ"
+
+#: admin/admin.php:89
+msgctxt "Taxonomy Singular Name"
+msgid "Tag"
+msgstr "タグ"
+
+#: admin/edit.php:202
+msgid "Switch editor"
+msgstr "エディターを切り替え"
+
+#: admin/admin.php:96
+msgid "Edit Tag"
+msgstr "タグを編集"
+
+#: admin/admin.php:37
+msgid "All Shortcodes"
+msgstr "すべてのショートコード"
+
+#: shortcoder.php:387
+msgid "Active theme's directory"
+msgstr "現在有効なテーマのディレクトリ"
+
+#: shortcoder.php:386
+msgid "Active theme's stylesheet URL"
+msgstr "現在有効なテーマのスタイルシート URL"
+
+#: shortcoder.php:388
+msgid "Atom feed URL"
+msgstr "Atom フィード URL"
+
+#: admin/insert.php:87
+msgid "Available parameters"
+msgstr "利用可能なパラメータ"
+
+#: admin/edit.php:300
+msgid "Custom parameter"
+msgstr "カスタムパラメータ"
+
+#: shortcoder.php:393
+msgid "Date parameters"
+msgstr "日付パラメータ"
+
+#: shortcoder.php:397
+msgid "Day - leading zeros"
+msgstr "日 - 先頭にゼロを含む"
+
+#: shortcoder.php:399
+msgid "Day - words - full form"
+msgstr "日 - 文字 - 完全形"
+
+#: shortcoder.php:398
+msgid "Day - words - short form"
+msgstr "日 - 文字 - 短縮形"
+
+#: admin/edit.php:305 admin/edit.php:316
+msgid "Default value"
+msgstr "デフォルト値"
+
+#: admin/edit.php:99
+msgid "Disable shortcode for administrators"
+msgstr "管理者用ショートコードを無効化"
+
+#: admin/admin.php:41
+msgid "Edit Shortcode"
+msgstr "ショートコードを編集"
+
+#: admin/edit.php:314
+msgid "Enter custom field name"
+msgstr "カスタムフィールド名を入力"
+
+#: admin/edit.php:303
+msgid "Enter custom parameter name"
+msgstr "カスタムパラメータ名を入力"
+
+#: admin/edit.php:32
+msgid "Enter shortcode name"
+msgstr "ショートコード名を入力"
+
+#: admin/admin.php:56
+msgid "Filter shortcodes list"
+msgstr "ショートコード一覧を絞り込む"
+
+#: admin/admin.php:257
+msgid "Go to export page"
+msgstr "エクスポートページへ"
+
+#: admin/admin.php:261
+msgid "Go to import page"
+msgstr "インポートページへ"
+
+#: admin/admin.php:250 admin/admin.php:264
+msgid "Import from other sources"
+msgstr "他のソースからインポート"
+
+#: admin/edit.php:318
+msgid "Insert custom field"
+msgstr "カスタムフィールドを挿入"
+
+#: admin/admin.php:52
+msgid "Insert into shortcode"
+msgstr "ショートコードに挿入"
+
+#: admin/insert.php:110
+msgid "Insert shortcode"
+msgstr "ショートコードを挿入"
+
+#: admin/edit.php:222
+msgid "Insert shortcode parameters"
+msgstr "ショートコードのパラメータを挿入"
+
+#: admin/tools.php:83
+msgid "Insert shortcode to editor"
+msgstr "エディターにショートコードを挿入"
+
+#: shortcoder.php:401
+msgid "Month - leading zeros"
+msgstr "月 - 先頭にゼロあり"
+
+#: shortcoder.php:403
+msgid "Month - words - full form"
+msgstr "月 - 文字 - 完全形"
+
+#: shortcoder.php:402
+msgid "Month - words - short form"
+msgstr "月 - 文字 - 短縮形"
+
+#: admin/edit.php:79
+msgid "Name of the shortcode to display when it is listed"
+msgstr "掲載時に表示するショートコード名"
+
+#: admin/edit.php:32
+msgid "Name of the shortcode. Allowed characters are alphabets, numbers, hyphens and underscore."
+msgstr "ショートコードの名前。使用できる文字は、アルファベット、数字、ハイフン、アンダースコアです。"
+
+#: admin/admin.php:40
+msgid "New Shortcode"
+msgstr "ショートコードを新規作成"
+
+#: admin/insert.php:106
+msgid "No parameters present in this shortcode"
+msgstr "このショートコードにはパラメータが存在しません"
+
+#: admin/insert.php:120
+msgid "No shortcodes match search term !"
+msgstr "検索キーワードと一致するショートコードはありません。"
+
+#: admin/admin.php:265
+msgid "Open documentation"
+msgstr "ドキュメントを開く"
+
+#: admin/admin.php:36
+msgid "Parent Shortcode:"
+msgstr "親ショートコード:"
+
+#: shortcoder.php:371
+msgid "Post ID"
+msgstr "投稿 ID"
+
+#: admin/admin.php:31
+msgctxt "Post Type Singular Name"
+msgid "Shortcode"
+msgstr "ショートコード"
+
+#: shortcoder.php:377
+msgid "Post comments count"
+msgstr "投稿コメント数"
+
+#: shortcoder.php:372
+msgid "Post featured image URL"
+msgstr "投稿アイキャッチ画像の URL"
+
+#: shortcoder.php:376
+msgid "Post modified date"
+msgstr "投稿更新日"
+
+#: shortcoder.php:389
+msgid "RSS 2.0 feed URL"
+msgstr "RSS 2.0 フィード URL"
+
+#: admin/admin.php:45
+msgid "Search Shortcode"
+msgstr "ショートコードを検索"
+
+#: admin/edit.php:106
+msgid "Select to disable the shortcode from executing for administrators."
+msgstr "管理者がショートコードを実行できないようにするには選択してください。"
+
+#: shortcoder.php:369
+msgid "Short URL of the post/location"
+msgstr "投稿/位置のショート URL"
+
+#: admin/admin.php:34
+msgid "Shortcode Archives"
+msgstr "ショートコードのアーカイブ"
+
+#: admin/admin.php:35
+msgid "Shortcode Attributes"
+msgstr "ショートコード属性"
+
+#: shortcoder.php:409 shortcoder.php:412
+msgid "Shortcode enclosed content"
+msgstr "ショートコードに含まれるコンテンツ"
+
+#: admin/edit.php:53
+msgid "Shortcode settings"
+msgstr "ショートコード設定"
+
+#: admin/admin.php:54
+msgid "Shortcodes list"
+msgstr "ショートコード一覧"
+
+#: admin/admin.php:55
+msgid "Shortcodes list navigation"
+msgstr "ショートコード一覧ナビゲーション"
+
+#: shortcoder.php:384
+msgid "Site character set"
+msgstr "サイトの文字セット"
+
+#: shortcoder.php:381
+msgid "Site description"
+msgstr "サイト説明文"
+
+#: shortcoder.php:380
+msgid "Site title"
+msgstr "サイトタイトル"
+
+#: admin/edit.php:194 admin/settings.php:53
+msgid "Text editor"
+msgstr "テキストエディター"
+
+#: shortcoder.php:368
+msgid "Title of the post/location"
+msgstr "投稿のタイトル/位置"
+
+#: shortcoder.php:367
+msgid "URL of the post/location"
+msgstr "投稿/位置の URL"
+
+#: admin/admin.php:53
+msgid "Uploaded to this shortcode"
+msgstr "このショートコードにアップロード"
+
+#: admin/admin.php:43
+msgid "View Shortcode"
+msgstr "ショートコードを表示"
+
+#: admin/admin.php:44
+msgid "View Shortcodes"
+msgstr "ショートコードを表示"
+
+#: shortcoder.php:364
+msgid "WordPress information"
+msgstr "WordPress 情報"
+
+#: shortcoder.php:405
+msgid "Year - 2 digit"
+msgstr "年 - 2桁"
+
+#: admin/edit.php:37
+msgid "Your shortcode"
+msgstr "作成したショートコード"
+
+#. Plugin URI of the plugin
+#: shortcoder.php
+msgid "https://www.aakashweb.com/wordpress-plugins/shortcoder/"
+msgstr "https://www.aakashweb.com/wordpress-plugins/shortcoder/"
+
+#: shortcoder.php:373
+msgid "Post excerpt"
+msgstr "投稿の抜粋"
+
+#: admin/edit.php:109
+msgid "Execute shortcode on devices"
+msgstr "端末上でショートコードを実行"
+
+#. Author of the plugin
+#: shortcoder.php
+msgid "Aakash Chakravarthy"
+msgstr "Aakash Chakravarthy"
+
+#. Plugin Name of the plugin
+#: shortcoder.php admin/admin.php:32
+msgid "Shortcoder"
+msgstr "Shortcoder"
+
+#: admin/admin.php:42
+msgid "Update Shortcode"
+msgstr "ショートコードを更新"
+
+#: admin/admin.php:38 admin/admin.php:39
+msgid "Create shortcode"
+msgstr "ショートコードを作成"
+
+#: admin/insert.php:16
+msgid "Create Shortcode"
+msgstr "ショートコードを作成"
+
+#. Author URI of the plugin
+#: shortcoder.php
+msgid "https://www.aakashweb.com/"
+msgstr "https://www.aakashweb.com/"
+
+#: admin/edit.php:89
+msgid "Temporarily disable shortcode"
+msgstr "ショートコードを一時的に無効化"
