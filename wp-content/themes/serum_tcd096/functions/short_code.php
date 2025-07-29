@@ -308,7 +308,7 @@ function tcd_schedule( $atts) {
 
   if($options['schedule_info']){
     $html .= "<div class='info'>\n";
-    $html .= apply_filters('the_content', $options['schedule_info'] );
+    $html .= wpautop( apply_filters('the_content', $options['schedule_info']) );
     $html .= "</div>\n";
   }
 

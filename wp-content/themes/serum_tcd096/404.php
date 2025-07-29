@@ -9,7 +9,7 @@
  <div class="content">
   <h2 class="catch common_catch"><?php if($options['page_404_catch']){ echo nl2br(esc_html($options['page_404_catch'])); } else { echo '404 NOT FOUND'; }; ?></h2>
   <?php if ($options['page_404_desc']) { ?>
-  <p class="desc"><?php echo wp_kses_post(nl2br($options['page_404_desc'])); ?></p>
+  <div class="desc item"><?php echo apply_filters('the_content', $options['page_404_desc'] ); ?></div>
   <?php } ?>
  </div>
 

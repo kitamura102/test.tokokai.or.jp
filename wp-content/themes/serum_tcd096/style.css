@@ -5,7 +5,7 @@ Theme URI:https://tcd-theme.com/tcd096/
 Description:WordPress theme "SERUM" is a template with the image of a dermatology clinic, featuring side icon buttons and a post type that allows you to organize the subjects of treatment. CTAs can also be easily set up.
 Author:TCD
 Author URI:https://tcd-theme.com/
-Version:2.7.2
+Version:2.8
 Text Domain:tcd-serum
 */
 
@@ -799,7 +799,7 @@ img.single_banner_image { max-width:100%; height:auto; display:block; margin:0 a
 　ページ上部　ヘッダー
 ---------------------------------------------------------------------- */
 body.admin-bar #header { top:32px; }
-#header { z-index:100; position:absolute; top:0px; left:0px; width:100%; height:80px; background:#fff; display:flex; flex-wrap:wrap; justify-content:flex-end; }
+#header { z-index:1000; position:absolute; top:0px; left:0px; width:100%; height:80px; background:#fff; display:flex; flex-wrap:wrap; justify-content:flex-end; }
 body.header_hidden #header { transform: translate3d(0,-100%,0); transition: transform 0.25s ease; }
 body.hide_page_header_bar #header { background:transparent !important; position:absolute !important; }
 body.hide_page_header_bar.open_header #header:after { display:none; }
@@ -1599,18 +1599,21 @@ body.error404 #footer_top_wrap, body.error404 #footer_address, body.error404 #co
     { display:none; }
 body.error404 #footer, body.search-no-results #footer { border:none; }
 body.error404 #container, body.search-no-results #container { min-height:inherit; }
-#page_404_header { width:100%; height:calc(100vh - 80px); height:calc(100dvh - 80px); position:relative; background:#f4f1ef; }
+#page_404_header { width:100%; min-height:calc(100vh - 80px); min-height:calc(100dvh - 80px); position:relative; background:#f4f1ef;
+display: flex; justify-content: center; align-items: center; }
 @media screen and (max-width:1221px) {
-  #page_404_header { height:calc(100vh - 60px); height:calc(100dvh - 60px); }
+  #page_404_header { min-height:calc(100vh - 60px); min-height:calc(100dvh - 60px); }
 }
-#page_404_header .content {
-  position:absolute; z-index:3; text-align:center; width:100%; padding:0 50px; color:#fff;
-  left:50%; top:50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
-  -webkit-box-sizing:border-box; box-sizing:border-box;
-}
+#page_404_header .content { z-index:100; width:100%; padding-block: 150px !important; text-align: center;}
+
 #page_404_header.no_bg_image .content { color:#000; }
 #page_404_header .catch { line-height:1.4; }
-#page_404_header .desc { line-height:2; margin:15px 0 0 0; }
+#page_404_header .desc { text-align: center;margin: 0 auto 50px;line-height: 2.6;width: 800px; margin-top: 15px !important;}
+
+@media screen and (max-width:1221px) {
+  #page_404_header .desc { padding: 0 20px; margin: 0 auto 35px; line-height: 2; width: auto;}
+}
+
 #page_404_header .overlay { width:100%; height:100%; position:absolute; z-index:2; }
 #page_404_header .bg_image { width:100%; height:100%; position:absolute; z-index:1; }
 
@@ -2193,4 +2196,24 @@ font-size: smaller;
   .qt_google_map { height:320px; }
   .qt_google_map .qt_googlemap_embed { height:320px; }
   .qt_google_map .pb_googlemap_custom-overlay-inner { transform:scale(0.8); left:-50px; top:-80px; }
+}
+
+#page_404_header .tcdce-box {
+  text-align: left;
+}
+
+#page_404_header .custom_ul li {
+    text-align: left;
+}
+
+#page_404_header .custom_ol li {
+    text-align: left;
+}
+
+#page_404_header .tcdce-sb-content {
+    text-align: left;
+}
+
+#page_404_header .tcdce-button {
+  text-decoration: none !important;
 }

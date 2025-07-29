@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Jetpack &#8211; WP Security, Backup, Speed, &amp; Growth - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-07-09 09:54:08+0000\n"
+"PO-Revision-Date: 2025-07-23 09:54:09+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -403,6 +403,11 @@ msgstr "ソーシャル画像生成機能のデフォルト画像 ID。"
 msgctxt "menu label for form responses"
 msgid "Form Responses"
 msgstr "フォームの回答"
+
+#. translators: %1$s is a link to the Jetpack Forms page.
+#: jetpack_vendor/automattic/jetpack-forms/src/contact-form/templates/email-response.php:61
+msgid "Powered by %1$s"
+msgstr "%1$s 提供"
 
 #: jetpack_vendor/automattic/jetpack-forms/src/contact-form/class-contact-form-plugin.php:2526
 msgid "You do not have permission to create pages"

@@ -103,7 +103,7 @@
   <h2 class="catch common_catch"><?php echo nl2br(esc_html($options['search_result_headline'])); ?></h2>
   <?php } ?>
   <?php if ($options['search_result_desc']) { ?>
-  <p class="desc"><?php if(empty($_GET['s'])){ echo __( 'Search keyword is blank.', 'tcd-serum' ); } else { echo wp_kses_post(nl2br($options['search_result_desc'])); }; ?></p>
+  <div class="desc"><?php if(empty($_GET['s'])){ echo __( 'Search keyword is blank.', 'tcd-genesis' ); } else { echo apply_filters('the_content', $options['search_result_desc'] );  }; ?></div>
   <?php } ?>
   <div class="search_form">
    <form role="search" method="get" action="<?php echo esc_url(home_url()); ?>">
