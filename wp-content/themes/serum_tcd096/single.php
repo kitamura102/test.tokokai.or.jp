@@ -120,6 +120,8 @@
           $insta = $user_data->instagram_url;
           $pinterest = $user_data->pinterest_url;
           $youtube = $user_data->youtube_url;
+          $line = $user_data->line_url;
+          $note = $user_data->note_url;
           $contact = $user_data->contact_url;
           $author_url = get_author_posts_url($author_id);
           $user_url = $user_data->user_url;
@@ -133,15 +135,17 @@
       <?php if($desc) { ?>
       <p class="desc"><span><?php echo esc_html($desc); ?></span></p>
       <?php }; ?>
-      <?php if($facebook || $twitter || $insta || $pinterest || $youtube || $contact || $user_url || $tiktok) { ?>
+      <?php if($facebook || $twitter || $insta || $pinterest || $youtube || $contact || $user_url || $tiktok || $line || $note) { ?>
       <ul id="author_sns" class="sns_button_list clearfix color_<?php echo esc_attr($options['sns_button_color_type']); ?>">
        <?php if($user_url) { ?><li class="user_url"><a href="<?php echo esc_url($user_url); ?>" target="_blank"><span><?php echo esc_url($user_url); ?></span></a></li><?php }; ?>
+       <?php if($line) { ?><li class="line"><a href="<?php echo esc_url($line); ?>" rel="nofollow" target="_blank" title="LINE"><span>LINE</span></a></li><?php }; ?>
        <?php if($insta) { ?><li class="insta"><a href="<?php echo esc_url($insta); ?>" rel="nofollow" target="_blank" title="Instagram"><span>Instagram</span></a></li><?php }; ?>
        <?php if($tiktok) { ?><li class="tiktok"><a href="<?php echo esc_url($tiktok); ?>" rel="nofollow" target="_blank" title="TikTok"><span>TikTok</span></a></li><?php }; ?>
        <?php if($twitter) { ?><li class="twitter"><a href="<?php echo esc_url($twitter); ?>" rel="nofollow" target="_blank" title="X"><span>X</span></a></li><?php }; ?>
        <?php if($facebook) { ?><li class="facebook"><a href="<?php echo esc_url($facebook); ?>" rel="nofollow" target="_blank" title="Facebook"><span>Facebook</span></a></li><?php }; ?>
        <?php if($pinterest) { ?><li class="pinterest"><a href="<?php echo esc_url($pinterest); ?>" rel="nofollow" target="_blank" title="Pinterest"><span>Pinterest</span></a></li><?php }; ?>
        <?php if($youtube) { ?><li class="youtube"><a href="<?php echo esc_url($youtube); ?>" rel="nofollow" target="_blank" title="Youtube"><span>Youtube</span></a></li><?php }; ?>
+       <?php if($note) { ?><li class="note"><a href="<?php echo esc_url($note); ?>" rel="nofollow" target="_blank" title="note"><span>note</span></a></li><?php }; ?>
        <?php if($contact) { ?><li class="contact"><a href="<?php echo esc_url($contact); ?>" rel="nofollow" target="_blank" title="Contact"><span>Contact</span></a></li><?php }; ?>
       </ul>
       <?php }; ?>

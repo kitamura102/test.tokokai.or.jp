@@ -63,6 +63,11 @@ function add_tcd_profile_fields( $user ) {
    </div>
   </div><!-- END input_field -->
 
+  <h4 class="headline"><?php _e( 'LINE URL', 'tcd-serum' ); ?></h4>
+  <div class="input_field">
+   <input type="text" name="line_url" value="<?php echo esc_attr( get_the_author_meta( 'line_url', $user->ID ) ); ?>" class="regular-text" />
+  </div><!-- END input_field -->
+
   <h4 class="headline"><?php _e( 'Instagram URL', 'tcd-serum' ); ?></h4>
   <div class="input_field">
    <input type="text" name="instagram_url" value="<?php echo esc_attr( get_the_author_meta( 'instagram_url', $user->ID ) ); ?>" class="regular-text" />
@@ -91,6 +96,11 @@ function add_tcd_profile_fields( $user ) {
   <h4 class="headline"><?php _e( 'Youtube URL', 'tcd-serum' ); ?></h4>
   <div class="input_field">
    <input type="text" name="youtube_url" value="<?php echo esc_attr( get_the_author_meta( 'youtube_url', $user->ID ) ); ?>" class="regular-text" />
+  </div><!-- END input_field -->
+
+  <h4 class="headline"><?php _e( 'note URL', 'tcd-serum' ); ?></h4>
+  <div class="input_field">
+   <input type="text" name="note_url" value="<?php echo esc_attr( get_the_author_meta( 'note_url', $user->ID ) ); ?>" class="regular-text" />
   </div><!-- END input_field -->
 
   <h4 class="headline"><?php _e( 'Contact page URL<br>(You can use mailto:)', 'tcd-serum' ); ?></h4>
@@ -135,6 +145,8 @@ function update_tcdw_profile_fields( $user_id ) {
 			'instagram_url' => $_POST['instagram_url'],
 			'pinterest_url' => $_POST['pinterest_url'],
 			'youtube_url' => $_POST['youtube_url'],
+			'line_url' => $_POST['line_url'],
+			'note_url' => $_POST['note_url'],
 			'contact_url' => $_POST['contact_url'],
 			'show_author' => $_POST['show_author'],
 			'user_position' => $_POST['user_position'],

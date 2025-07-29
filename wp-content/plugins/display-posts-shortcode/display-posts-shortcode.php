@@ -607,8 +607,9 @@ function be_display_posts_shortcode( $atts ) {
 		 * @param array    $original_atts Original attributes passed to the shortcode.
 		 */
 		$class  = array_map( 'sanitize_html_class', apply_filters( 'display_posts_shortcode_post_class', $class, $post, $dps_listing, $original_atts ) );
+		/*202507 お知らせ一覧表示のため改修*/
 		//$output = '<' . $inner_wrapper . ' class="' . implode( ' ', $class ) . '">' . $image . $title . $date . $author . $category_display_text . $excerpt . $content . '</' . $inner_wrapper . '>';
-			$output = '<' . $inner_wrapper . ' class="' . implode( ' ', $class ) . '">' .$date  . $image . $title . $author . $category_display_text . $excerpt . $content . '</' . $inner_wrapper . '>';
+			$output = '<' . $inner_wrapper . ' class="' . implode( ' ', $class ) . '">' . $date . $image . $title . $author . $category_display_text . $excerpt . $content . '</' . $inner_wrapper . '>';
 
 		/**
 		 * Filter the HTML markup for output via the shortcode.

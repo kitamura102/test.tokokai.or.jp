@@ -130,6 +130,8 @@ $dp_default_options['font_list'] = [
 	$dp_default_options['show_sns_share_feedly'] = 1;
 	$dp_default_options['show_sns_share_rss'] = 1;
 	$dp_default_options['show_sns_share_pinterest'] = 1;
+  $dp_default_options['show_sns_share_line'] = 1;
+  $dp_default_options['show_sns_share_note'] = 1;
 	$dp_default_options['twitter_info'] = '';
 
   // ソーシャルボタン
@@ -142,6 +144,8 @@ $dp_default_options['font_list'] = [
 	$dp_default_options['sns_button_contact_url'] = '';
 	$dp_default_options['sns_button_show_rss'] = 1;
 	$dp_default_options['sns_button_tiktok_url'] = '';
+  $dp_default_options['sns_button_line_url'] = '';
+  $dp_default_options['sns_button_note_url'] = '';
 
 	$dp_default_options['show_sns_footer'] = 'display';
 
@@ -691,10 +695,11 @@ function add_basic_tab_panel( $options ) {
         <li><label><input name="dp_options[show_sns_share_fblike]" type="checkbox" value="1" <?php checked( '1', $options['show_sns_share_fblike'] ); ?> /> <?php _e('Display facebook like button -Button type 5 (Default button) only', 'tcd-serum');  ?></label></li>
         <li><label><input name="dp_options[show_sns_share_fbshare]" type="checkbox" value="1" <?php checked( '1', $options['show_sns_share_fbshare'] ); ?> /> <?php _e('Display facebook share button', 'tcd-serum');  ?></label></li>
         <li><label><input name="dp_options[show_sns_share_hatena]" type="checkbox" value="1" <?php checked( '1', $options['show_sns_share_hatena'] ); ?> /> <?php _e('Display hatena button', 'tcd-serum');  ?></label></li>
-        <li><label><input name="dp_options[show_sns_share_pocket]" type="checkbox" value="1" <?php checked( '1', $options['show_sns_share_pocket'] ); ?> /> <?php _e('Display pocket button', 'tcd-serum');  ?></label></li>
+        <li><label><input name="dp_options[show_sns_share_line]" type="checkbox" value="1" <?php checked( '1', $options['show_sns_share_line'] ); ?> /> <?php _e('Display LINE button', 'tcd-serum');  ?></label></li>
         <li><label><input name="dp_options[show_sns_share_rss]" type="checkbox" value="1" <?php checked( '1', $options['show_sns_share_rss'] ); ?> /> <?php _e('Display rss button', 'tcd-serum');  ?></label></li>
         <li><label><input name="dp_options[show_sns_share_feedly]" type="checkbox" value="1" <?php checked( '1', $options['show_sns_share_feedly'] ); ?> /> <?php _e('Display feedly button', 'tcd-serum');  ?></label></li>
         <li><label><input name="dp_options[show_sns_share_pinterest]" type="checkbox" value="1" <?php checked( '1', $options['show_sns_share_pinterest'] ); ?> /> <?php _e('Display pinterest button', 'tcd-serum');  ?></label></li>
+        <li><label><input name="dp_options[show_sns_share_note]" type="checkbox" value="1" <?php checked( '1', $options['show_sns_share_note'] ); ?> /> <?php _e('Display note button', 'tcd-serum');  ?></label></li>
        </ul>
 
        <h4 class="theme_option_headline2"><?php _e('Setting for the X button', 'tcd-serum');  ?></h4>
@@ -732,12 +737,14 @@ function add_basic_tab_panel( $options ) {
         <p><?php _e('Enter url of your SNS. Please leave the field empty if you don\'t want to display certain sns button.', 'tcd-serum');  ?></p>
        </div>
        <ul class="option_list">
+        <li class="cf"><span class="label"><?php _e('LINE URL', 'tcd-serum'); ?></span><input class="full_width" type="text" name="dp_options[sns_button_line_url]" value="<?php echo esc_attr( $options['sns_button_line_url'] ); ?>"></li>
         <li class="cf"><span class="label"><?php _e('Instagram URL', 'tcd-serum'); ?></span><input class="full_width" type="text" name="dp_options[sns_button_instagram_url]" value="<?php echo esc_attr( $options['sns_button_instagram_url'] ); ?>"></li>
         <li class="cf"><span class="label"><?php _e('TikTok URL', 'tcd-serum'); ?></span><input class="full_width" type="text" name="dp_options[sns_button_tiktok_url]" value="<?php echo esc_attr( $options['sns_button_tiktok_url'] ); ?>"></li>
         <li class="cf"><span class="label"><?php _e('X URL', 'tcd-serum'); ?></span><input class="full_width" type="text" name="dp_options[sns_button_twitter_url]" value="<?php echo esc_attr( $options['sns_button_twitter_url'] ); ?>"></li>
         <li class="cf"><span class="label"><?php _e('Facebook URL', 'tcd-serum'); ?></span><input class="full_width" type="text" name="dp_options[sns_button_facebook_url]" value="<?php echo esc_attr( $options['sns_button_facebook_url'] ); ?>"></li>
         <li class="cf"><span class="label"><?php _e('Pinterest URL', 'tcd-serum'); ?></span><input class="full_width" type="text" name="dp_options[sns_button_pinterest_url]" value="<?php echo esc_attr( $options['sns_button_pinterest_url'] ); ?>"></li>
         <li class="cf"><span class="label"><?php _e('Youtube URL', 'tcd-serum'); ?></span><input class="full_width" type="text" name="dp_options[sns_button_youtube_url]" value="<?php echo esc_attr( $options['sns_button_youtube_url'] ); ?>"></li>
+        <li class="cf"><span class="label"><?php _e('note URL', 'tcd-serum'); ?></span><input class="full_width" type="text" name="dp_options[sns_button_note_url]" value="<?php echo esc_attr( $options['sns_button_note_url'] ); ?>"></li>
         <li class="cf"><span class="label"><?php _e('Contact page URL (You can use mailto:)', 'tcd-serum'); ?></span><input class="full_width" type="text" name="dp_options[sns_button_contact_url]" value="<?php echo esc_attr( $options['sns_button_contact_url'] ); ?>"></li>
         <li class="cf"><span class="label"><?php _e('Display RSS button', 'tcd-serum'); ?></span><input name="dp_options[sns_button_show_rss]" type="checkbox" value="1" <?php checked( '1', $options['sns_button_show_rss'] ); ?> /></li>
        </ul>
@@ -1020,6 +1027,8 @@ function add_basic_theme_options_validate( $input ) {
   $input['show_sns_share_rss'] = ! empty( $input['show_sns_share_rss'] ) ? 1 : 0;
   $input['show_sns_share_pinterest'] = ! empty( $input['show_sns_share_pinterest'] ) ? 1 : 0;
   $input['twitter_info'] = wp_filter_nohtml_kses( $input['twitter_info'] );
+  $input['show_sns_share_line'] = ! empty( $input['show_sns_share_line'] ) ? 1 : 0;
+  $input['show_sns_share_note'] = ! empty( $input['show_sns_share_note'] ) ? 1 : 0;
 
 
   // ソーシャルボタン
@@ -1032,6 +1041,8 @@ function add_basic_theme_options_validate( $input ) {
   $input['sns_button_contact_url'] = wp_filter_nohtml_kses( $input['sns_button_contact_url'] );
   $input['sns_button_show_rss'] = ! empty( $input['sns_button_show_rss'] ) ? 1 : 0;
   $input['sns_button_tiktok_url'] = wp_filter_nohtml_kses( $input['sns_button_tiktok_url'] );
+  $input['sns_button_line_url'] = wp_filter_nohtml_kses( $input['sns_button_line_url'] );
+  $input['sns_button_note_url'] = wp_filter_nohtml_kses( $input['sns_button_note_url'] );
 
   $input['show_sns_footer'] = wp_filter_nohtml_kses( $input['show_sns_footer'] );
 

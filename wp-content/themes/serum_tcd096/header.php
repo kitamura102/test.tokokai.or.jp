@@ -20,6 +20,146 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script src="/js/jquery.cookie.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+$(function() {
+  $('.tab').on('click', function() {
+    $('.tab, .panel').removeClass('active');
+ 
+    $(this).addClass('active');
+    
+    var index = $('.tab').index(this);
+    $('.panel').eq(index).addClass('active');
+  });
+});
+</script>
+
+
+<script>
+$(function () {
+  /* -------------------------
+  // 背景色変更
+  -------------------------- */
+  let bg = $.cookie('bgColor');
+  // cookieに値が保存されていた場合
+  if (bg) {
+    $('.bgBtn').removeClass('is_active');
+    if (bg == 'bg-white') { 
+      bgWhite();
+    } else if (bg == 'bg-blue') { 
+      bgBlue();
+    } else if (bg == 'bg-black') { 
+      bgBlack();
+    }
+  }
+
+  $('.bgBtn').click(function () {
+    $.cookie('bgColor', this.id, { expires: 7, path:'/' });
+    $('.bgBtn').removeClass('is_active');
+    if (this.id == 'bg-white') {
+      bgWhite();
+    } else if (this.id == 'bg-blue') { 
+      bgBlue();
+    } else if (this.id == 'bg-black') { 
+      bgBlack();
+    }
+  });
+
+  //背景色：白
+  function bgWhite(){
+    $('#bg-white').addClass('is_active');
+    $('html').css('background', 'white'); //背景(白）
+    $('html').css('color', 'black'); //文字色(黒）
+    $(':root').css({
+      "--to-white": 'black',
+      "--pink-to-yellow": '#ff82a5',
+      "--to-bgColor": 'white'
+    });
+  }
+  //背景色：青
+  function bgBlue(){
+    $('#bg-blue').addClass('is_active');
+    $('html').css('background', 'blue'); //背景(青）
+    $('html').css('color', 'white'); //文字色(白）
+    $(':root').css({
+      "--to-white": 'white',
+      "--pink-to-yellow": 'yellow',
+      "--to-bgColor": 'blue'
+    });
+  }
+  //背景色：黒
+  function bgBlack(){
+    $('#bg-black').addClass('is_active');
+    $('html').css('background', 'black'); //背景(黒）
+    $('html').css('color', 'white'); //文字色(白）
+    $(':root').css({
+      "--to-white": 'white',
+      "--pink-to-yellow": 'yellow',
+      "--to-bgColor": 'black'
+    });
+  }
+
+
+  /* -------------------------
+  // 文字サイズ変更
+  -------------------------- */
+  let size = $.cookie('fontSize');
+
+  // cookieに値が保存されていた場合
+  if (size) {
+    $('.sizeBtn').removeClass('is_active');
+    if (size == 'font-small') {
+      fontSmall();
+    } else if (size == 'font-middle') {
+      fontMiddle();
+    } else if (size == 'font-large') {
+      fontLarge();
+    }
+  }
+  
+  $('.sizeBtn').click(function () {
+    $.cookie('fontSize', this.id, { expires: 7, path:'/' });
+    $('.sizeBtn').removeClass('is_active');
+    if (this.id == 'font-small') {
+      fontSmall();
+    } else if (this.id == 'font-middle') {
+      fontMiddle();
+    } else if (this.id == 'font-large') {
+      fontLarge();
+    }
+  });
+
+  //文字サイズ：小
+  function fontSmall(){
+    $('#font-small').addClass('is_active');
+    if(window.matchMedia("(max-width: 768px)").matches){
+      $('body').css('font-size', '1.3rem');
+    }else{ 
+      $('body').css('font-size', '1.4rem');
+    }
+  }
+  //文字サイズ：中
+  function fontMiddle(){
+    $('#font-middle').addClass('is_active');
+    if(window.matchMedia("(max-width: 768px)").matches){
+      $('body').css('font-size', '1.4rem');
+    }else{ 
+      $('body').css('font-size', '1.6rem');
+    }
+  }
+  //文字サイズ：大
+  function fontLarge(){
+    $('#font-large').addClass('is_active');
+    if(window.matchMedia("(max-width: 768px)").matches){
+      $('body').css('font-size', '1.6rem');
+    }else{ 
+      $('body').css('font-size', '1.8rem');
+    }
+  }
+});
+
+</script>
+
 
 <div id="js-body-start"></div>
 
@@ -77,14 +217,15 @@
  <a id="drawer_menu_button" href="#"><span></span><span></span><span></span></a>
  <nav id="global_menu">
   <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'global-menu' , 'container' => '' ) ); ?>
-   </nav>]
+   </nav>
 <!-- フォントサイズ変更ボタン -->
 <div class="btn_wrap">
-	<span>文字サイズ変更</span>
-	<button id="font-middle" class="sizeBtn is_active" type="button">標準</button>
-	<button id="font-large" class="sizeBtn" type="button">大</button>
+	<button type="button"  class="sizeBtn is_active" id="font-large">文字を拡大</button>
+	<!-- <button class="size-button active" data-font="12">文字を拡大</button>-->
 </div>
+
  <?php }; ?>
+ 
 
 
 

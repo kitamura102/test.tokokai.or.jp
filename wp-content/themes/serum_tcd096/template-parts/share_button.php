@@ -37,11 +37,16 @@
 
   </li>
   <?php }; ?>
-  <?php if ( $options['show_sns_share_pocket'] ) { ?>
+  <?php /*if ( $options['show_sns_share_pocket'] ) { ?>
   <li class="pocket_button">
    <div class="socialbutton pocket-button">
     <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
    </div>
+  </li>
+  <?php };*/ ?>
+  <?php if ( $options['show_sns_share_line'] ) { ?>
+  <li class="line_button">
+   <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="<?php the_permalink();?>" data-color="default" data-size="small" data-count="false" data-ver="3" style="display: none;"></div>
   </li>
   <?php }; ?>
   <?php if ( $options['show_sns_share_feedly'] ) { ?>
@@ -52,6 +57,12 @@
   <?php if ( $options['show_sns_share_pinterest'] ) { ?>
   <li class="pinterest_button">
    <a data-pin-do="buttonPin" data-pin-color="red" data-pin-count="beside" href="https://www.pinterest.com/pin/create/button/?url=<?php echo $url_encode ?>&media=<?php echo $pinterestimage[0]; ?>&description=<?php echo $title_encode ?>"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a>
+  </li>
+  <?php }; ?>
+  <?php if ( $options['show_sns_share_note'] ) { ?>
+  <li class="note_button">
+   <a href="https://note.com/intent/social_button" class="note-social-button" data-url="<?php echo get_permalink( $post->ID ); ?>"></a>
+   <script async src="https://cdn.st-note.com/js/social_button.min.js"></script>
   </li>
   <?php }; ?>
  </ul>
@@ -77,9 +88,14 @@
    <a href="//b.hatena.ne.jp/add?mode=confirm&url=<?php echo $url_encode ?>"<?php if(!is_mobile()){ ?> onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=510');return false;"<?php }; ?>><span class="label">Hatena</span></a>
   </li>
   <?php }; ?>
-  <?php if ( $options['show_sns_share_pocket'] ) { ?>
+  <?php /*if ( $options['show_sns_share_pocket'] ) { ?>
   <li class="pocket_button">
    <a href="//getpocket.com/edit?url=<?php echo $url_encode;?>&title=<?php echo $title_encode;?>"><span class="label">Pocket</span></a>
+  </li>
+  <?php };*/ ?>
+  <?php if ( $options['show_sns_share_line'] ) { ?>
+  <li class="line_button">
+   <a aria-label="Lline" href="http://line.me/R/msg/text/?<?php echo $title_encode; ?><?php echo $url_encode; ?>"><span class="label">Line</span></a>
   </li>
   <?php }; ?>
   <?php if ( $options['show_sns_share_rss'] ) { ?>
@@ -95,6 +111,11 @@
   <?php if ( $options['show_sns_share_pinterest'] ) { ?>
   <li class="pinterest_button">
    <a rel="nofollow" href="https://www.pinterest.com/pin/create/button/?url=<?php echo $url_encode; ?>&media=<?php echo $pinterestimage[0]; ?>&description=<?php echo $title_encode ?>" data-pin-do="buttonPin" data-pin-custom="true"><span class="label">Pin&nbsp;it</span></a>
+  </li>
+  <?php }; ?>
+  <?php if ( $options['show_sns_share_note'] ) { ?>
+  <li class="note_button">
+   <a href="https://note.com/intent/post?url=<?php echo $url_encode; ?>"><span class="label">note</span></a>
   </li>
   <?php }; ?>
  </ul>

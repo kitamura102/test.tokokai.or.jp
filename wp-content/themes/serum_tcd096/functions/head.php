@@ -240,6 +240,14 @@ a { color:#000; }
 #side_icon_button a, #footer_icon_banner a:before, .icon_button .google_icon, #footer_sns.color_type1 li a:before, #bread_crumb, #bread_crumb li.last, #related_post .headline, .news_category_button li.current a, .schedule_content table, #comments .headline, .splide__arrow:before, #treatment_list .header .catch, #page_contents .content_header .common_catch, #post_pagination p,
   #global_menu > ul > li.current-menu-item > a, .megamenu_a .category_list li.active a, #global_menu > ul > li.active_megamenu_button > a, .faq_list .title.active, .page_navi span.current, #drawer_icon_button a, #drawer_icon_button a:before, #drawer_icon_button .item.long a, .doctor_meta .item.name a:hover
 { color:<?php echo esc_html($main_color); ?>; }
+#footer_sns.color_type1 li.note a:before{ background-color:<?php echo esc_html($main_color); ?>; }
+<?php if($options['sns_button_color_type'] == 'type2'){ ?>
+#footer_sns.color_type2 li.note a:before, .sns_button_list.color_type2 li.note a:before {
+  background-image: url(<?php echo get_template_directory_uri(); ?>/img/common/note.svg);
+  -webkit-mask-image:none;
+  background-color: unset;
+}
+<?php }; ?>
 
 .cardlink .title a:hover { color:<?php echo esc_html($hover_color); ?> !important; }
 

@@ -2,6 +2,7 @@
 if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly 
 }
+
 if ( $ctacontent->SSuprydp_button_option_color) {
 	$button_color = sanitize_hex_color($ctacontent->SSuprydp_button_option_color);
 }
@@ -13,7 +14,7 @@ if ( $ctacontent->SSuprydp_button_option_backg_color) {
 if ( $ctacontent->SSuprydp_content_option_color) {
 	$content_color = sanitize_hex_color($ctacontent->SSuprydp_content_option_color);
 }
-
+$contents_background_color = '';
 if ( $ctacontent->content_background_color) {
 	$contents_background_color = sanitize_hex_color($ctacontent->content_background_color);
 }
@@ -21,7 +22,7 @@ if ( $ctacontent->content_background_color) {
 if ( $ctacontent->SSuprydp_action_option_color) {
 	$link_color = sanitize_hex_color($ctacontent->SSuprydp_action_option_color);
 }
-
+$links_text_background = '';
 if ( $ctacontent->link_text_background) {
 	$links_text_background = sanitize_hex_color($ctacontent->link_text_background);
 }
@@ -65,21 +66,32 @@ if ( $ctacontent->call_to_action_padding ) {
     $padding_css = "14px 24px";
 }
 
+
 $btn_letter_spacing = '';
 if($ctacontent->call_to_action_letter_spacing){
 	$btn_letter_spacing = $ctacontent->call_to_action_letter_spacing ? intval($ctacontent->call_to_action_letter_spacing) : 0;
 }
 
-ob_start(); ?>
 
-<div id="<?php echo esc_attr('easy-sticky-sidebar-' . $ctacontent->id); ?>"
+$horizontal_vertical_position = $ctacontent->dynamic_properties['horizontal_vertical_position'];
+$position_style = '';
+if($ctacontent->SSuprydp_cta_position == 'left' || $ctacontent->SSuprydp_cta_position == 'right'){
+    if ($horizontal_vertical_position === 'top') {
+        $position_style = 'top: 0; transform: none;';    
+    } elseif ($horizontal_vertical_position === 'bottom') {
+        $position_style = 'bottom: 0; transform: none; top: unset;';
+    }
+}
+
+?>
+<div id="<?php echo esc_attr('easy-sticky-sidebar-' . $ctacontent->id); ?>" style="<?php echo $position_style;   ?>"
     class="<?php echo esc_attr(implode(' ', $cta_classes)); ?>" data-id="<?php echo esc_attr($ctacontent->id); ?>">
 
     <div class="sticky-sidebar-button" style="background-color:<?php echo esc_attr($button_background_color); ?>">
         <div style="color: <?php echo esc_attr($button_color); ?>;">
             <?php do_action('easy_sticky_sidebar_sticky_cta_button', $ctacontent); ?>
         </div>
-        <?php
+        <?php      
 		if (function_exists('wordpress_cta_pro_get_close_button')) {
 			wordpress_cta_pro_get_close_button($ctacontent);
 		}
