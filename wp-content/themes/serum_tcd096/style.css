@@ -5,7 +5,7 @@ Theme URI:https://tcd-theme.com/tcd096/
 Description:WordPress theme "SERUM" is a template with the image of a dermatology clinic, featuring side icon buttons and a post type that allows you to organize the subjects of treatment. CTAs can also be easily set up.
 Author:TCD
 Author URI:https://tcd-theme.com/
-Version:2.8
+Version:2.8.1
 Text Domain:tcd-serum
 */
 
@@ -818,7 +818,6 @@ body.hide_page_header.hide_page_header_bar #header:after { display:none; }
   100%{ transform: translate3d(0,-100%,0); }
 }
 
-
 /* ロゴ */
 @media screen and (min-width:801px) {
   body.no_header_logo_image #header_logo{ display:none; }
@@ -826,7 +825,7 @@ body.hide_page_header.hide_page_header_bar #header:after { display:none; }
 @media screen and (max-width:800px) {
   body.no_header_logo_image_mobile #header_logo{ display:none; }
 }
-#header_logo { width:210px; height:210px; background:#fff; position:absolute; left:0; top:0; display:inline-block; z-index:200; }
+#header_logo { width:210px; height:210px; background:#fff; position:absolute; left:0; top:0; display:inline-block; z-index:2000; }
 #header_logo img { display:block; transition: opacity 0.3s ease-in-out; max-width:100%; height:auto; }
 #header_logo img.mobile { display:none; }
 #header_logo a { width:210px; height:210px; display:block; padding:20px; aspect-ratio:1/1; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; transition:opacity 1.4s ease 0.5s; }
