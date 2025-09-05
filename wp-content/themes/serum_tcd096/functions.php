@@ -36,6 +36,9 @@ require_once  ( dirname(__FILE__) . '/functions/class-page-new.php' );
 // 新フォント機能 --------------------------------------------------------------------------------
 require_once ( dirname(__FILE__) . '/admin/font/hooks-font.php' );
 
+// TCDクラシックエディタのインストールを促す告知機能----------------------------------
+require_once get_template_directory() . '/functions/class-plugin-installer.php';
+
 
 // フロントページ用スクリプト --------------------------------------------------------------
 function front_page_scripts(){
