@@ -3,8 +3,8 @@ Contributors: aioseo, smub, benjaminprojas
 Tags: SEO, Google Search Console, XML Sitemap, meta description, schema
 Tested up to: 6.8
 Requires at least: 5.4
-Requires PHP: 7.1
-Stable tag: 4.8.5
+Requires PHP: 7.2
+Stable tag: 4.8.7
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -51,6 +51,9 @@ Automate internal links between your pages using our smart [internal linking alg
 
 * **Local Business SEO**
 Improve your local SEO presence with local business schema, support for multiple local store locations, business opening hours, Google Maps integration, contact info (business email, business phone, business address, etc), and more with our [Local SEO module](https://aioseo.com/features/local-seo/?utm_source=wprepo&utm_medium=link&utm_campaign=liteplugin 'Local SEO').
+
+* **Site Audit**
+Get a detailed report of SEO issues for all posts and terms on your site, discover why these issues are important and how you can fix them.
 
 * **SEO Revisions**
 Keep a [historical record of SEO changes](https://aioseo.com/seo-revisions/?utm_source=wprepo&utm_medium=link&utm_campaign=liteplugin 'SEO Revisions'), monitor the impact of changes, and restore previous versions in one click.
@@ -231,6 +234,38 @@ AIOSEO&reg; is a registered trademark of Semper Plugins LLC. When writing about 
 
 == Changelog ==
 
+**New in Version 4.8.7**
+
+* Updated: Hardened API routes to prevent unauthorized access.
+* Updated: Added support for tracking breadcrumb setting changes in SEO Revisions.
+* Updated: Added support for WooCommerce GTIN field to Product schema.
+* Updated: Added support for .avif images to Image Sitemap and Image SEO addon.
+* Updated: Review limit for Product schema can now be modified via a new filter hook.
+* Updated: Use site URL instead of home URL for llms.txt to handle WP installs in subdirectories.
+* Updated: Remove all user meta when AIOSEO is uninstalled.
+* Updated: Improved performance of Cornerstone Content filtering.
+* Fixed: Product shipping details schema clearing cart content in rare case where logged-in user adds a product to the cart and then edits a product in the admin panel.
+* Fixed: ProfilePage schema sometimes invalid due to incorrect author URL.
+* Fixed: Hide AIOSEO custom link fields inside the Edit Link modal in WPBakery visual builder to prevent plugin conflict.
+* Fixed: AIOSEO Settings not successfully saving before post is published in WPBakery visual builder.
+* Fixed: The SEO title and description were not persisting if the post content is too large.
+* Fixed: Theme conflict with Neve where the EDD Checkout block does not show if Run Shortcodes is enabled.
+* Fixed: Breadcrumb block not updating when changing the post title.
+* Fixed: If WooCommerce brand is selected as primary category, it is now correctly used in the URL.
+* Fixed: Headline Analyzer layout breaks when entering very long headlines.
+
+**New in Version 4.8.6.1**
+
+* Updated: Prevent potential plugin conflicts due to the loading of dependencies multiple times.
+* Updated: Local SEO render options for Opening Hours are now hidden when feature is disabled.
+* Fixed: Loading spinner for SEO Revisions in sidebar menu not aligned.
+
+**New in Version 4.8.6**
+
+* New: Site Audit - Get a detailed report of SEO issues for all posts and terms on your site, discover why these issues are important and how you can fix them. 🔨
+* Fixed: Multisite subsite requests to Search Statistics server sometimes fail due to missing license.
+* Fixed: Rare PHP error when breadcrumbs cannot be determined for non-standard pages.
+
 **New in Version 4.8.5**
 
 * Updated: Author SEO (E-E-A-T) addon and Writing Assistant data are now fully removed when uninstalling the plugin.
@@ -313,15 +348,6 @@ AIOSEO&reg; is a registered trademark of Semper Plugins LLC. When writing about 
 * Fixed: PHP notice in Author SEO (E-E-A-T) addon due to translations loaded too early.
 * Fixed: SEO Site Score widget sometimes not displaying results.
 
-**New in Version 4.8.2**
-
-* New: Index Status Report - Quickly identify which posts are indexed by Google and why others aren’t—with granular details on crawl status, fetch results, robots.txt and structured data.
-* Updated: Improved Table of Contents block rendering performance.
-* Updated: Hardened limit and order clauses in database queries.
-* Fixed: WP 6.8 deprecation warning for default Table of Contents and FAQ block styles.
-* Fixed: Potential page freeze issue when converting Table of Contents block from Group to Columns via block toolbar.
-* Fixed: Console error in Table of Contents block when switching between Visual and Code Editor in Block Editor.
-
 **See our [changelog on aioseo.com](https://aioseo.com/changelog/?utm_source=wprepo&utm_medium=link&utm_campaign=aioseo) for previous releases.**
 
 == Frequently Asked Questions ==
@@ -403,6 +429,6 @@ Additionally, AIOSEO can also provide you with data on the most frequently used 
 
 == Upgrade Notice ==
 
-= 4.8.5 =
+= 4.8.7 =
 
 This update adds major improvements and bug fixes.

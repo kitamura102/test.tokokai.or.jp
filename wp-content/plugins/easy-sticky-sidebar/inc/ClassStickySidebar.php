@@ -412,7 +412,8 @@ class SSuprydpStickySidebar
 
 		wp_enqueue_script('SSuprydp_admin_script', EASY_STICKY_SIDEBAR_PLUGIN_URL . '/assets/js/sticky-sidebar-admin.js', ['wp-color-picker', 'jquery-cookie'], EASY_STICKY_SIDEBAR_VERSION, true);
 		wp_localize_script('SSuprydp_admin_script', 'sticky_sidebar', [
-			'ajax_url' => admin_url('admin-ajax.php')
+			'ajax_url' => admin_url('admin-ajax.php'),
+			'nonce' => wp_create_nonce('easy_sticky_sidebar_nonce')
 		]);
 
 		wp_enqueue_script('SSuprydp_popper', EASY_STICKY_SIDEBAR_PLUGIN_URL . '/assets/js/popper.min.js', [], EASY_STICKY_SIDEBAR_VERSION);
@@ -441,7 +442,7 @@ class SSuprydpStickySidebar
 			$SSuprydp_development = $sticky_data->SSuprydp_development;
 
 
-			$dataview['cta_classes'] = ['easy-sticky-sidebar', 'easy-sticky-sidebar-' . $sticky_data->id, $sticky_data->sidebar_template];
+			$dataview['cta_classes'] = ['easy-sticky-sidebar', 'easy-sticky-sidebar-' . $sticky_data->__get('id'), $sticky_data->sidebar_template];
 			$dataview['cta_classes'][] = 'easy-sticky-sidebar-' . $sticky_data->sidebar_template;
 
 			if ($sticky_data->sidebar_template === 'sticky-cta') {

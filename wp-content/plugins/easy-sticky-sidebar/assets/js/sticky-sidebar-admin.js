@@ -267,6 +267,7 @@ jQuery(document).ready(function ($) {
                 action: "change_sticky_sidebar_name",
                 sticky: $(this).data("sticky"),
                 name: $(this).val(),
+                nonce: sticky_sidebar.nonce,
             });
         }, 300)
 
@@ -309,6 +310,7 @@ jQuery(document).ready(function ($) {
             action: "update_cta_status",
             sticky_id,
             status: status_item.data("status"),
+            nonce: sticky_sidebar.nonce,
         };
 
         $.post("/wp-admin/admin-ajax.php", data, function (response) {

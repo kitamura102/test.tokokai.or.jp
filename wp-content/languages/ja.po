@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.8.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-07-11 12:59:20+0000\n"
+"PO-Revision-Date: 2025-08-13 14:20:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -436,7 +436,7 @@ msgstr "画像を追加"
 
 #: wp-includes/customize/class-wp-customize-header-image-control.php:249
 msgid "Add Header Image"
-msgstr "ヘッダー画像の追加"
+msgstr "ヘッダー画像を追加"
 
 #: wp-includes/class-wp-xmlrpc-server.php:5054
 #: wp-includes/class-wp-xmlrpc-server.php:6587
@@ -454,11 +454,11 @@ msgstr "無効な URL パターンコンテキスト %s。"
 
 #: wp-includes/class-wp-taxonomy.php:627 wp-includes/taxonomy.php:236
 msgid "Add Category"
-msgstr "カテゴリーの追加"
+msgstr "カテゴリーを追加"
 
 #: wp-includes/class-wp-taxonomy.php:627
 msgid "Add Tag"
-msgstr "タグの追加"
+msgstr "タグを追加"
 
 #. translators: %s: forbidden eagerness value
 #: wp-includes/class-wp-speculation-rules.php:198
@@ -5205,7 +5205,7 @@ msgstr "パターンリスト"
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:527
 #: wp-admin/includes/class-wp-ms-users-list-table.php:243
 msgid "Select %s"
-msgstr "%sを選択"
+msgstr "%s を選択"
 
 #: wp-includes/js/dist/block-editor.js:41987
 #: wp-includes/js/dist/block-library.js:41556 wp-admin/edit-form-blocks.php:257
@@ -8123,7 +8123,7 @@ msgstr "投稿フィード"
 
 #: wp-includes/script-loader.php:1015
 msgid "Unexpected response from the server. The file may have been uploaded successfully. Check in the Media Library or reload the page."
-msgstr "サーバーから予期しないレスポンスがありました。ファイルは正しくアップロードされているかもしれません。メディアライブラリもしくはページをリロードして確認してください。"
+msgstr "サーバーから予期しないレスポンスがありました。ファイルは正しくアップロードされているかもしれません。メディアライブラリまたはページをリロードして確認してください。"
 
 #: wp-login.php:755
 msgid "Remind me later"
@@ -13292,7 +13292,7 @@ msgstr "%s は禁止されています"
 
 #: wp-includes/customize/class-wp-customize-partial.php:226
 msgid "Partial render must echo the content or return the content string (or array), but not both."
-msgstr "部分描画はコンテンツを出力するか、コンテンツの文字列 (もしくは配列) を返さなければなりませんが、両方ではいけません。"
+msgstr "部分描画はコンテンツを出力するか、コンテンツの文字列 (または配列) を返さなければなりませんが、両方ではいけません。"
 
 #: wp-includes/comment.php:1268
 msgid "<strong>Error:</strong> Your comment is too long."
@@ -15253,7 +15253,7 @@ msgstr "アップローダーを閉じる"
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-editor.php:1926
 msgid "Search or use up and down arrow keys to select an item."
-msgstr "検索もしくは上下矢印キーを使って項目を選択してください。"
+msgstr "検索または上下矢印キーを使って項目を選択してください。"
 
 #: wp-includes/class-wp-editor.php:1390
 msgid "Read more..."
@@ -17225,7 +17225,7 @@ msgstr "不正なタクソノミーです。"
 
 #: wp-includes/widgets/class-wp-widget-links.php:147
 msgid "Select Link Category:"
-msgstr "リンクカテゴリーの選択:"
+msgstr "リンクカテゴリーを選択:"
 
 #: wp-includes/class-wp-xmlrpc-server.php:582 wp-admin/includes/file.php:54
 #: wp-admin/includes/file.php:62
@@ -19371,7 +19371,7 @@ msgstr "フルスクリーン"
 #: wp-includes/js/dist/block-editor.js:23928
 #: wp-includes/js/dist/block-editor.js:71464
 msgid "Remove link"
-msgstr "リンクの削除"
+msgstr "リンクを削除"
 
 #: wp-includes/class-wp-editor.php:1267 wp-includes/script-loader.php:803
 #: wp-includes/js/dist/block-editor.js:71164
@@ -20872,7 +20872,7 @@ msgstr "追加"
 
 #: wp-includes/class-wp-taxonomy.php:630
 msgid "Add or remove tags"
-msgstr "タグの追加もしくは削除"
+msgstr "タグを追加または削除"
 
 #: wp-includes/media.php:4968 wp-includes/script-loader.php:1267
 #: wp-login.php:738 wp-includes/js/dist/edit-site.js:14782

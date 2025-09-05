@@ -82,12 +82,23 @@ if($ctacontent->SSuprydp_cta_position == 'left' || $ctacontent->SSuprydp_cta_pos
         $position_style = 'bottom: 0; transform: none; top: unset;';
     }
 }
+$button_alignment = $ctacontent->dynamic_properties['button_alignment'];
+if($button_alignment == 'start'){
+    $button_alignment_style = 'text-align:start;';
+}
+elseif($button_alignment == 'center'){
+    $button_alignment_style = 'text-align:center;';
+}
+else{
+    $button_alignment_style = 'text-align:end;';
+}
 
 ?>
 <div id="<?php echo esc_attr('easy-sticky-sidebar-' . $ctacontent->id); ?>" style="<?php echo $position_style;   ?>"
     class="<?php echo esc_attr(implode(' ', $cta_classes)); ?>" data-id="<?php echo esc_attr($ctacontent->id); ?>">
 
-    <div class="sticky-sidebar-button" style="background-color:<?php echo esc_attr($button_background_color); ?>">
+    <div class="sticky-sidebar-button"
+        style="background-color:<?php echo esc_attr($button_background_color); ?>; <?php echo $button_alignment_style; ?>">
         <div style="color: <?php echo esc_attr($button_color); ?>;">
             <?php do_action('easy_sticky_sidebar_sticky_cta_button', $ctacontent); ?>
         </div>

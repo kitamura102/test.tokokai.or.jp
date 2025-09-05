@@ -83,11 +83,8 @@ class SSuprydpStickySidebarOptions {
         $sidebar_list_menu = add_submenu_page('easy-sticky-sidebars', 'WP CTA Dashboard', 'WP CTA Dashboard', 'manage_options', 'easy-sticky-sidebars', apply_filters('sticky_sidebar_main_menu', [$sidebars, 'output']));
         add_action("load-$sidebar_list_menu", [$sidebars, 'screen_option']);
 
-        global $wpdb;
-        $cta = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->sticky_cta");
-        if ($cta < 3 || has_wordpress_cta_pro()) {
-            add_submenu_page('easy-sticky-sidebars', 'Add New', 'Add New', 'manage_options', 'add-easy-sticky-sidebar', [$this, 'add_new_cta_page']);
-        }
+        // Allow unlimited CTAs - removed restriction
+        add_submenu_page('easy-sticky-sidebars', 'Add New', 'Add New', 'manage_options', 'add-easy-sticky-sidebar', [$this, 'add_new_cta_page']);
 
         $this->export_import = require_once EASY_STICKY_SIDEBAR_PLUGIN_DIR . '/inc/import-export.php';
         add_submenu_page('easy-sticky-sidebars', esc_html__('Import/Export', 'easy-sticky-sidebar'), esc_html__('Import/Export', 'easy-sticky-sidebar'), 'manage_options', 'easy-sticky-sidebar-import-export', [$this->export_import, 'output']);
@@ -182,7 +179,7 @@ document.getElementById("cta-button").addEventListener("click", function() {
         $stickycta = new WP_Sticky_CTA_Data($record);
 
         $data['stickycta'] = $stickycta;
-        $data['sticky_id'] = $stickycta->id ? $stickycta->id : 0;
+        $data['sticky_id'] = $stickycta->__get('id') ? $stickycta->__get('id') : 0;
 
         $data['editor_current_tab'] = 'sticky-sidebar-template';
         if ($stickycta->cta_editor_current_tab && WP_DEBUG) {

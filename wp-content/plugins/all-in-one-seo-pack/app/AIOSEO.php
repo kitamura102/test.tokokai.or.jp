@@ -153,8 +153,7 @@ namespace AIOSEO\Plugin {
 			$dependencies = [
 				'/vendor/autoload.php'                                      => true,
 				'/vendor/woocommerce/action-scheduler/action-scheduler.php' => true,
-				'/vendor/jwhennessey/phpinsight/autoload.php'               => false,
-				'/vendor_prefixed/monolog/monolog/src/Monolog/Logger.php'   => false
+				'/vendor/jwhennessey/phpinsight/autoload.php'               => false
 			];
 
 			foreach ( $dependencies as $path => $shouldRequire ) {
@@ -333,6 +332,7 @@ namespace AIOSEO\Plugin {
 			$this->crawlCleanup       = new Common\QueryArgs\CrawlCleanup();
 			$this->searchCleanup      = new Common\SearchCleanup\SearchCleanup();
 			$this->emailReports       = new Common\EmailReports\EmailReports();
+			$this->seoAnalysis        = $this->pro ? new Pro\SeoAnalysis\SeoAnalysis() : new Common\SeoAnalysis\SeoAnalysis();
 			$this->thirdParty         = new Common\ThirdParty\ThirdParty();
 			$this->writingAssistant   = new Common\WritingAssistant\WritingAssistant();
 			$this->llms               = new Common\Llms\Llms();

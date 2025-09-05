@@ -355,7 +355,7 @@ trait WpContext {
 		$this->originalPost  = is_a( $post, 'WP_Post' ) ? $this->deepClone( $post ) : null;
 
 		// The order of the function calls below is intentional and should NOT change.
-		$postContent = do_blocks( $postContent );
+		$postContent = $this->doBlocks( $postContent );
 		$postContent = wpautop( $postContent );
 		$postContent = $this->doShortcodes( $postContent );
 
@@ -1027,7 +1027,7 @@ trait WpContext {
 	 */
 	public function isBlockTheme() {
 		if ( function_exists( 'wp_is_block_theme' ) ) {
-			return wp_is_block_theme(); // phpcs:ignore AIOSEO.WpFunctionUse.NewFunctions.wp_is_block_themeFound
+			return wp_is_block_theme(); // phpcs:ignore AIOSEO.WpFunctionUse.NewFunctions.wp_is_block_themeFound, @wp-since ignore
 		}
 
 		return false;
