@@ -3,8 +3,8 @@ Contributors: wpshopmart
 Donate link: https://wpshopmart.com/plugins/tabs-pro-plugin/
 Tags: tab, tabs, responsive tabs,, wordpress tabs, wp tabs
 Requires at least: 5.0
-Tested up to: 6.7.1
-Stable tag: 2.4.7
+Tested up to: 6.8.3
+Stable tag: 2.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -159,6 +159,9 @@ Please use WordPress support forum to ask any query regarding any issue.
 
 
 == Changelog ==
+
+= 2.4.8 = 
+* Compatible with wordpress version 6.8.3
 
 = 2.4.7 = 
 * Compatible with wordpress version 6.7.1

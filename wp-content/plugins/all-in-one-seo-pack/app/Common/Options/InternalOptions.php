@@ -75,9 +75,10 @@ class InternalOptions {
 				]
 			],
 			'ai'                => [
-				'accessToken'        => [ 'type' => 'string', 'default' => '' ],
-				'isTrialAccessToken' => [ 'type' => 'boolean', 'default' => false ],
-				'credits'            => [
+				'accessToken'         => [ 'type' => 'string', 'default' => '' ],
+				'isTrialAccessToken'  => [ 'type' => 'boolean', 'default' => false ],
+				'isManuallyConnected' => [ 'type' => 'boolean', 'default' => false ],
+				'credits'             => [
 					'total'     => [ 'type' => 'number', 'default' => 0 ],
 					'remaining' => [ 'type' => 'number', 'default' => 0 ],
 					'orders'    => [ 'type' => 'array', 'default' => [] ],
@@ -86,7 +87,8 @@ class InternalOptions {
 						'remaining' => [ 'type' => 'number', 'default' => 0 ],
 						'expires'   => [ 'type' => 'number', 'default' => 0 ]
 					]
-				]
+				],
+				'costPerFeature'      => [ 'type' => 'array', 'default' => [] ]
 			]
 		],
 		'integrations' => [
@@ -96,9 +98,6 @@ class InternalOptions {
 				'expires'      => [ 'type' => 'string' ],
 				'refreshToken' => [ 'type' => 'string' ]
 			]
-		],
-		'database'     => [
-			'installedTables' => [ 'type' => 'string' ]
 		]
 		// phpcs:enable WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound
 	];

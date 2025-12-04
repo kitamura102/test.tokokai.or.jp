@@ -61,6 +61,11 @@ function front_page_scripts(){
   wp_enqueue_script( 'tcd_cookie', get_template_directory_uri() . '/js/tcd_cookie.js', array(), version_num(), true );
   wp_enqueue_script( 'header_fix', get_template_directory_uri() . '/js/header_fix.js', array(),version_num() );
 
+  add_action( 'wp_enqueue_scripts', function(){
+    wp_enqueue_script( 'jquery-3.6.0.min', get_template_directory_uri() . '/js/jquery-3.6.0.min.js' );
+  } );
+  
+  
   if(!is_mobile()) {
     wp_enqueue_style( 'simplebar', get_template_directory_uri() . '/js/simplebar.css', array('main-style'),version_num() );
     wp_enqueue_script( 'simplebar.min', get_template_directory_uri() . '/js/simplebar.min.js', array(), version_num(), true );
@@ -1203,3 +1208,16 @@ function tcd_pwa_admin_notice(){
     __( 'Install Now','tcd-serum' )
   );
 }
+
+//Snow Monkey Formsスパム対策
+add_filter( 'snow_monkey_forms/administrator_mailer/skip', function( $skip, $responser, $setting ) {
+    // メッセージフィールドの値を取得
+    $message = $responser->get( 'message' ); // 対象の項目の name（名称） を指定
+
+    // メッセージに日本語が含まれていない場合、送信をスキップ（防止）
+    if ( ! preg_match( '/[一-龠]+|[ぁ-ん]+|[ァ-ヴー]/u', $message ) ) {
+        $skip = true;
+    }
+
+    return $skip;
+}, 10, 3 );

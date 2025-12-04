@@ -94,7 +94,7 @@
       } elseif(is_home()) {
  ?>
  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="home"><a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>"><span itemprop="name"><?php _e('Home', 'tcd-serum'); ?></span></a><meta itemprop="position" content="1"></li>
- <li class="last" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name"><?php echo esc_html($blog_label); ?></span><meta itemprop="position" content="2"></li>
+ <li class="last" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">osお知らせ</span><meta itemprop="position" content="2"></li>
  <?php
       // Category, Tag , Archive page -----------------------
       } elseif(is_category() || is_tag() || is_day() || is_month() || is_year() || is_author()) {
@@ -116,7 +116,7 @@
         };
  ?>
  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="home"><a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>"><span itemprop="name"><?php _e('Home', 'tcd-serum'); ?></span></a><meta itemprop="position" content="1"></li>
- <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>"><span itemprop="name"><?php echo esc_html($blog_label); ?></span></a><meta itemprop="position" content="2"></li>
+ <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>"><span itemprop="name">お知らせ</span></a><meta itemprop="position" content="2"></li>
  <li class="last" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name"><?php echo esc_html($title); ?></span><meta itemprop="position" content="3"></li>
  <?php
       //  Page -----------------------
@@ -148,7 +148,7 @@
       $category = get_the_category();
  ?>
  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="home"><a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>"><span itemprop="name"><?php _e('Home', 'tcd-serum'); ?></span></a><meta itemprop="position" content="1"></li>
- <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>"><span itemprop="name"><?php echo esc_html($blog_label); ?></span></a><meta itemprop="position" content="2"></li>
+ <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>"><span itemprop="name">お知らせ</span></a><meta itemprop="position" content="2"></li>
  <?php if($category) { ?>
  <li class="category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
   <?php

@@ -99,10 +99,12 @@ msgstr ""
 msgid "Basic"
 msgstr "基本"
 
+#: 20250911 変更
 #: admin/inc/admin_parts.php:26 admin/inc/admin_parts.php:112
 #: admin/inc/blog.php:40 functions.php:833 functions/class-page-new.php:218
 msgid "Blog"
-msgstr "ブログ"
+#: msgstr "ブログ"
+msgstr "お知らせ"
 
 #: admin/inc/admin_parts.php:27 admin/inc/admin_parts.php:114
 #: admin/inc/basic.php:160 admin/inc/front_page.php:149
@@ -1881,10 +1883,12 @@ msgstr ""
 msgid "%s carousel"
 msgstr "%sカルーセル"
 
+#: 20250911 変更
 #: admin/inc/header.php:197
 #, php-format
 msgid "%s post"
-msgstr "%s記事"
+#: msgstr "%s記事"
+msgstr "%sお知らせ"
 
 #: admin/inc/header.php:206 admin/inc/header.php:224
 msgid "Menu type setting"
@@ -3134,15 +3138,17 @@ msgstr "サンプルメニュー"
 msgid "ALL"
 msgstr "全て"
 
+#: 20250911 変更
 #: archive-news.php:123 author.php:127 index.php:136
 #: taxonomy-news_category.php:114 widget/styled_post_list.php:102
 msgid "There is no registered post."
-msgstr "登録されている記事はございません。"
+#: msgstr "登録されている記事はございません。"
+msgstr ""
 
 #: author.php:10 functions/seo.php:152 template-parts/breadcrumb.php:115
 #, php-format
 msgid "%s blog list"
-msgstr "%sのブログ一覧"
+msgstr "%sのお知らせ一覧"
 
 #: comments.php:10
 msgid "Comment"

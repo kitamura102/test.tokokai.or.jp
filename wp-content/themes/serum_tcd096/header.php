@@ -17,6 +17,7 @@
 <?php wp_head(); ?>
 </head>
 <body id="body" <?php body_class(); ?>>
+
 <div id="js-body-start"></div>
 
 <?php

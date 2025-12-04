@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the WordPress - 6.8.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-04 04:20:28+0000\n"
+"PO-Revision-Date: 2025-11-12 12:31:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.1\n"
+"X-Generator: GlotPress/4.0.3\n"
 "Language: ja_JP\n"
 "Project-Id-Version: WordPress - 6.8.x - Development - Administration\n"
 
@@ -37,7 +37,7 @@ msgctxt "default GMT offset or timezone string"
 msgid "0"
 msgstr "Asia/Tokyo"
 
-#: wp-admin/about.php:118
+#: wp-admin/about.php:138
 msgid "Speculative loading speeds up navigation by preloading links before users navigate to them, bcrypt hashing strengthens password security automatically, and database optimizations improve performance."
 msgstr "投機読み込みは、ユーザーがリンク先に移動する前にリンクを先読みすることでナビゲーションを高速化します。bcrypt ハッシュはパスワードのセキュリティを自動的に強化し、データベースの最適化はパフォーマンスを向上します。"
 
@@ -220,68 +220,68 @@ msgstr "マイナーリリースリーダー"
 msgid "Release Coordination"
 msgstr "リリース調整"
 
-#: wp-admin/about.php:219
+#: wp-admin/about.php:239
 msgid "WordPress 6.8 packs a wide range of performance fixes and enhancements to speed up everything from editing to browsing. Beyond speculative loading, WordPress 6.8 pays special attention to the block editor, block type registration, and query caching. Plus, imagine never waiting longer than 50 milliseconds—for any interaction. In WordPress 6.8, the Interactivity API takes a first step toward that goal."
 msgstr "WordPress 6.8には、編集から閲覧まですべてを高速化するための幅広いパフォーマンス修正と機能強化が含まれています。投機読み込み以外にも、WordPress 6.8ではブロックエディター、ブロックタイプの登録、クエリキャッシュに特に注意を払っています。さらに、あらゆるインタラクションに50ミリ秒以上待たされることがなくなることを想像してみてください。WordPress 6.8では、Interactivity API がその目標に向けた第一歩を踏み出します。"
 
-#: wp-admin/about.php:206
+#: wp-admin/about.php:226
 msgid "Work continues on optimizing cache key generation in the <code>WP_Query</code> class. The goal is, as ever, to boost your site&#8217;s performance, in this case by taking some more of the load off your database. This is especially good if you get a lot of traffic."
 msgstr "<code>WP_Query</code> クラスにおけるキャッシュキー生成最適化の作業は続いています。ゴールはこれまで通り、サイトのパフォーマンスの向上で、このバージョンではデータベースの負荷を軽減しました。これは特に多くのトラフィックがある場合に有効です。"
 
-#: wp-admin/about.php:205
+#: wp-admin/about.php:225
 msgid "Take a load off the database"
 msgstr "データベースの負荷を軽減"
 
-#: wp-admin/about.php:197
+#: wp-admin/about.php:217
 msgid "100+ accessibility fixes and enhancements touch a broad spectrum of the WordPress experience. This release includes fixes to every bundled theme, improvements to the navigation menu management, the customizer, and simplified labeling. The Block Editor has over 70 improvements to blocks, DataViews, and to its overall user experience."
 msgstr "WordPress 体験の幅広い領域において、100件以上のアクセシビリティに関する修正と機能強化が行われました。このリリースには、すべてのバンドルテーマの修正、ナビゲーションメニュー管理やカスタマイザーの改善、ラベルの簡素化が含まれています。ブロックエディターでは、ブロック、データビュー、そして全体的なユーザー体験に対して70件以上の改善が行われました。"
 
-#: wp-admin/about.php:183
+#: wp-admin/about.php:203
 msgid "Now passwords are harder to crack with bcrypt hashing, which takes a lot more computing power to break. This strengthens overall security, as do other encryption improvements across WordPress. You don&#8217;t need to do anything—everything updates automatically."
 msgstr "パスワードは、解読により多くの計算能力を必要とする bcrypt ハッシュによって解読が困難になりました。これにより、WordPress 全体の他の暗号化の改善と同様に、全体的なセキュリティが強化されます。何もする必要はありません。すべてが自動的に更新されます。"
 
-#: wp-admin/about.php:182
+#: wp-admin/about.php:202
 msgid "Stronger password security with bcrypt"
 msgstr "bcrypt によるパスワードセキュリティの強化"
 
-#: wp-admin/about.php:166
+#: wp-admin/about.php:186
 msgid "In WordPress 6.8, pages load faster than ever. When you or your user hovers over or clicks a link, WordPress may preload the next page, for a smoother, near-instant experience. The system balances speed and efficiency, and you can control how it works, with a plugin or your own code. This feature only works in modern browsers—older ones will simply ignore it without any impact."
 msgstr "WordPress 6.8ではこれまで以上にページの読み込みが速くなりました。ユーザーがリンクにホバーしたり、クリックしたりすると、WordPress は次のページを先読みし、よりスムーズでほぼ瞬時の体験を提供します。システムはスピードと効率のバランスを取り、プラグインや独自のコードはその動作を制御できます。この機能は最新のブラウザでのみ動作しますが、古いブラウザでも単純に無視されるだけで問題は発生しません。"
 
-#: wp-admin/about.php:165
+#: wp-admin/about.php:185
 msgid "Near-instant page loads, thanks to Speculative Loading"
 msgstr "投機読み込みによる、ほぼ瞬時のページ読み込み"
 
-#: wp-admin/about.php:159
+#: wp-admin/about.php:179
 msgid "Easier ways to see your options in Data Views, and you can exclude sticky posts from the Query Loop. Plus, you&#8217;ll find lots of little improvements in the editor that smooth your way through everything you build."
 msgstr "データビューでオプションを確認する方法がより簡単になり、クエリループから固定投稿を除外できるようになりました。さらに、エディターには、構築するすべての作業をスムーズにする小さな改善点が多数あります。"
 
-#: wp-admin/about.php:138
+#: wp-admin/about.php:158
 msgid "Plus, now you can see it in Classic themes that have editor-styles or a theme.json file. Find the Style Book under Appearance > Design and use it to preview your theme&#8217;s evolution, as you edit CSS or make changes in the Customizer."
 msgstr "さらに、editor-styles をサポートするか、theme.json ファイルを持つクラシックテーマでも表示されます。「外観」 > 「デザイン」の下にあるスタイルブックを使用して、CSS の編集やカスタマイザーで加えた変更などテーマの変化をプレビューできます。"
 
 #. translators: %s is a direct link to the Style Book.
-#: wp-admin/about.php:134
+#: wp-admin/about.php:154
 msgid "Plus, now you can see it in Classic themes that have editor-styles or a theme.json file. Find <a href=\"%s\">the Style Book</a> under Appearance > Design and use it to preview your theme&#8217;s evolution, as you edit CSS or make changes in the Customizer."
 msgstr "さらに、editor-styles をサポートするか、theme.json ファイルを持つクラシックテーマでも表示されます。「外観」 > 「デザイン」の下にある<a href=\"%s\">スタイルブック</a>を使用して、CSS の編集やカスタマイザーで加えた変更などテーマの変化をプレビューできます。"
 
-#: wp-admin/about.php:126
+#: wp-admin/about.php:146
 msgid "The Style Book has a new, structured layout and clearer labels, to make it even easier to edit colors, typography—almost all your site styles—in one place."
 msgstr "スタイルブックには、新しい構造化されたレイアウトとわかりやすいラベルが採用されました。色やタイポグラフィなどサイトのほぼすべてのスタイルを1か所で簡単に編集できます。"
 
-#: wp-admin/about.php:124
+#: wp-admin/about.php:144
 msgid "The Style Book gets a cleaner look—and a few new tricks"
 msgstr "スタイルブックがよりすっきりと、そしていくつかの新しいトリックが追加されました"
 
-#: wp-admin/about.php:117
+#: wp-admin/about.php:137
 msgid "The Style Book now has a structured layout and works with Classic themes, giving you more control over global styles."
 msgstr "スタイルブックは構造化されたレイアウトを持ち、クラシックテーマと動作し、より自由にグローバルスタイルを制御できます。"
 
-#: wp-admin/about.php:116
+#: wp-admin/about.php:136
 msgid "WordPress 6.8 polishes and refines the tools you use every day, making your site faster, more secure, and easier to manage."
 msgstr "WordPress 6.8は日々使用するツールを改良し、サイトの速度、セキュリティ、管理をさらに向上しました。"
 
-#: wp-admin/about.php:115
+#: wp-admin/about.php:135
 msgid "A release polished to a high sheen."
 msgstr "輝くまでに磨き上げられたリリース。"
 
@@ -384,12 +384,12 @@ msgid "Skip to Editor"
 msgstr "エディターへ移動"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:314
+#: wp-admin/about.php:334
 msgid "WordPress %s Field Guide"
 msgstr "WordPress %s フィールドガイド"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:287
+#: wp-admin/about.php:307
 msgid "WordPress %s Release Notes"
 msgstr "WordPress %s リリースノート"
 
@@ -548,20 +548,20 @@ msgstr "プラグイン作成者の方は詳細について、<a href=\"https://
 msgid "If you are a plugin author, you can learn more about <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">how to add the Personal Data Eraser to a plugin</a>."
 msgstr "プラグイン作成者の方は詳細について、<a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">プラグインに個人データ消去ツールを追加する方法</a>をご覧ください。"
 
-#: wp-admin/about.php:240
+#: wp-admin/about.php:260
 msgid "See everything new"
 msgstr "すべての新情報を見る"
 
-#: wp-admin/about.php:240
+#: wp-admin/about.php:260
 msgid "https://wordpress.org/download/releases/6-8/"
 msgstr "https://wordpress.org/download/releases/6-8/"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:232
+#: wp-admin/about.php:252
 msgid "For a comprehensive overview of all the new features and enhancements in WordPress %s, please visit the feature-showcase website."
 msgstr "WordPress %sのすべての新機能と拡張に関する包括的な紹介については、機能ショーケースのサイトをご覧ください。"
 
-#: wp-admin/about.php:226
+#: wp-admin/about.php:246
 msgid "And much more"
 msgstr "などなど"
 
@@ -703,11 +703,11 @@ msgstr "今すぐインストール"
 msgid "Created by a worldwide team of passionate individuals"
 msgstr "情熱のある人々からなる世界中のチームによって作成されました"
 
-#: wp-admin/about.php:196
+#: wp-admin/about.php:216
 msgid "Accessibility improvements"
 msgstr "アクセシビリティの改善"
 
-#: wp-admin/about.php:218
+#: wp-admin/about.php:238
 msgid "Performance updates"
 msgstr "パフォーマンスの改善"
 
@@ -771,12 +771,12 @@ msgid "When using Bulk Edit, you can change the metadata (categories, author, et
 msgstr "「一括操作」を使うと、選択したすべての投稿のメタデータ (カテゴリーや投稿者など) を変更できます。選択したグループから投稿を除くには、「一括操作」エリアに表示されるタイトル横の %s<span class=\"screen-reader-text\">削除</span> ボタンをクリックしてください。"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:297
+#: wp-admin/about.php:317
 msgid "Read the WordPress %s Release Notes for information on installation, enhancements, fixed issues, release contributors, learning resources, and the list of file changes."
 msgstr "WordPress %s リリースノートをお読みください。インストール、機能拡張、修正された問題、リリースの貢献者、学習リソース、変更されたファイルのリストに関する情報が記載されています。"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:324
+#: wp-admin/about.php:344
 msgid "Explore the WordPress %s Field Guide. Learn about the changes in this release with detailed developer notes to help you build with WordPress."
 msgstr "WordPress %s フィールドガイドをご覧ください。このリリースの変更について、WordPress での構築に役立つ詳細な開発者向けノートを学習できます。"
 
@@ -797,7 +797,7 @@ msgid "Your WordPress version is %1$s, however the new plugin version requires %
 msgstr "お使いの WordPress のバージョンは%1$sですが、新しいプラグインには%2$sが必要です。"
 
 #. translators: %s: WordPress version.
-#: wp-admin/about.php:79 wp-admin/about.php:104
+#: wp-admin/about.php:74 wp-admin/about.php:99 wp-admin/about.php:124
 msgid "https://wordpress.org/support/wordpress-version/version-%s/"
 msgstr "https://wordpress.org/support/wordpress-version/version-%s/"
 
@@ -1264,7 +1264,7 @@ msgid "Be the future of WordPress"
 msgstr "WordPressの未来を築こう"
 
 #. translators: 1: Learn WordPress link, 2: Workshops link.
-#: wp-admin/about.php:265
+#: wp-admin/about.php:285
 msgid "<a href=\"%1$s\">Learn WordPress</a> is a free resource for new and experienced WordPress users. Learn is stocked with how-to videos on using various features in WordPress, <a href=\"%2$s\">interactive workshops</a> for exploring topics in-depth, and lesson plans for diving deep into specific areas of WordPress."
 msgstr "<a href=\"%1$s\">Learn WordPress</a> は WordPress の初心者と経験者、両者のための無料リソースです。Learn には、WordPress の様々な機能を使用するためのハウツー動画、トピックを深く掘り下げる<a href=\"%2$s\">対話型ワークショップ</a>、WordPress の特定の領域を深く探るレッスンプランが用意されています。"
 
@@ -1410,12 +1410,12 @@ msgid "<a href=\"https://wordpress.org/documentation/article/customizer/\">Docum
 msgstr "<a href=\"https://wordpress.org/documentation/article/customizer/\">カスタマイザーの解説</a>"
 
 #. translators: The localized WordPress download URL.
-#: wp-admin/about.php:405
+#: wp-admin/about.php:425
 msgid "https://wordpress.org/download/"
 msgstr "http://ja.wordpress.org/download/"
 
 #. translators: %s: The major version of WordPress for this branch.
-#: wp-admin/about.php:402
+#: wp-admin/about.php:422
 msgid "This is the final release of WordPress %s"
 msgstr "これは WordPress %s の最新リリースです"
 
@@ -1737,12 +1737,12 @@ msgid "Reach out to WordPress Core developers to ensure you'll never have this p
 msgstr "この問題が再発しないようにするためには、WordPress コア開発者にご連絡ください。"
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:399
+#: wp-admin/about.php:419
 msgid "Important! Your version of WordPress (%1$s) will stop receiving security updates in the near future. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "重要: お使いの WordPress バージョン (%1$s) では、近い将来にセキュリティアップデートの受信が終了します。サイトを安全に保つため、<a href=\"%2$s\">最新バージョンの WordPress に更新</a>してください。"
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:396
+#: wp-admin/about.php:416
 msgid "Important! Your version of WordPress (%1$s) is no longer supported, you will not receive any security updates for your website. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "重要: お使いの WordPress バージョン (%1$s) はサポートされなくなったため、サイトでセキュリティ更新プログラムを受け取ることができません。サイトを安全に保つため、<a href=\"%2$s\">最新バージョンの WordPress に更新</a>してください。"
 
@@ -1752,7 +1752,7 @@ msgid "https://make.wordpress.org/core/wordpress-%s-field-guide/"
 msgstr "https://make.wordpress.org/core/wordpress-%s-field-guide/"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:256
+#: wp-admin/about.php:276
 msgid "Learn more about WordPress %s"
 msgstr "WordPress %sの詳細"
 
@@ -2653,7 +2653,7 @@ msgstr "アプリケーションパスワードを追加"
 msgid "Required to create an Application Password, but not to update the user."
 msgstr "アプリケーションパスワードの作成に必要ですが、ユーザーの更新には不要です。"
 
-#: wp-admin/about.php:340
+#: wp-admin/about.php:360
 msgid "Go to Updates"
 msgstr "更新へ移動"
 
@@ -2821,7 +2821,7 @@ msgstr "%1$s のサイトヘルスチェックは %2$s に置き換わりまし�
 
 #: wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php:139
 msgid "Erase personal data"
-msgstr "個人データの消去"
+msgstr "個人データを消去"
 
 #. translators: 1: Theme name, 2: Current version number, 3: New version
 #. number.
@@ -7642,7 +7642,7 @@ msgstr "リリース補佐"
 msgid "Release Design Lead"
 msgstr "リリースデザインリード"
 
-#: wp-admin/about.php:158
+#: wp-admin/about.php:178
 msgid "Editor improvements"
 msgstr "エディターの改善"
 
@@ -8079,7 +8079,7 @@ msgid "(Currently set to: %s)"
 msgstr "(現在の設定: %s)"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:370
+#: wp-admin/about.php:390
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>バージョン %s</strong> ではセキュリティ問題1件に対応しました。"
 
@@ -8092,15 +8092,15 @@ msgstr "https://ja.gravatar.com/"
 msgid "Profile Picture"
 msgstr "プロフィール写真"
 
-#: wp-admin/about.php:59 wp-admin/about.php:367
+#: wp-admin/about.php:59 wp-admin/about.php:387
 msgid "Maintenance and Security Releases"
 msgstr "メンテナンスとセキュリティのリリース"
 
-#: wp-admin/about.php:364
+#: wp-admin/about.php:384
 msgid "Security Releases"
 msgstr "セキュリティリリース"
 
-#: wp-admin/about.php:361
+#: wp-admin/about.php:381
 msgid "Maintenance Releases"
 msgstr "メンテナンスリリース"
 
@@ -8905,7 +8905,7 @@ msgstr "これらのプラグインはネットワークの他のサイトで有
 
 #: wp-admin/plugins.php:357
 msgid "Delete Plugins"
-msgstr "プラグインの削除"
+msgstr "プラグインを削除"
 
 #: wp-admin/edit.php:373
 msgid "1 page not updated, somebody is editing it."
@@ -10770,7 +10770,7 @@ msgstr "切り抜かず、このまま画像を公開する"
 #: wp-admin/includes/class-custom-background.php:363
 #: wp-admin/includes/class-custom-image-header.php:684
 msgid "Choose Image"
-msgstr "画像の選択"
+msgstr "画像を選択"
 
 #: wp-admin/includes/class-custom-background.php:360
 #: wp-admin/includes/class-custom-image-header.php:680
@@ -10807,10 +10807,6 @@ msgstr "プレビューとインストール"
 #: wp-admin/theme-install.php:129
 msgid "Once you have generated a list of themes, you can preview and install any of them. Click on the thumbnail of the theme you are interested in previewing. It will open up in a full-screen Preview page to give you a better idea of how that theme will look."
 msgstr "テーマのリストが生成されると、プレビューとインストールができるようになります。プレビューで興味を持ったテーマのサムネイルをクリックしてみてください。フルスクリーンのプレビューページが表示され、そのテーマがどのように見えるかよく分かります。"
-
-#: wp-admin/includes/media.php:3066
-msgid "You are using the browser&#8217;s built-in file uploader. The WordPress uploader includes multiple file selection and drag and drop capability. <a href=\"#\">Switch to the multi-file uploader</a>."
-msgstr "現在ブラウザー付随のアップローダーを使用しています。WordPress アップローダーは複数ファイル選択やドラッグ & ドロップにも対応しています。<a href=\"#\">マルチファイルアップローダーもご利用ください</a>。"
 
 #: wp-admin/tools.php:50
 msgid "The Categories and Tags Converter link on this screen will take you to the Import screen, where that Converter is one of the plugins you can install. Once that plugin is installed, the Activate Plugin &amp; Run Importer link will take you to a screen where you can choose to convert tags into categories or vice versa."
@@ -11368,44 +11364,46 @@ msgstr "サイトを見るときにツールバーを表示する"
 
 #. translators: %s: HelpHub URL.
 #. translators: %s: Documentation URL.
-#: wp-admin/about.php:76 wp-admin/about.php:101 wp-admin/about.php:393
+#: wp-admin/about.php:71 wp-admin/about.php:96 wp-admin/about.php:121
+#: wp-admin/about.php:413
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "詳しくは<a href=\"%s\">リリースノート</a>をご覧ください。"
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:387
+#: wp-admin/about.php:407
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "<strong>バージョン %1$s</strong> はいくつかのセキュリティ問題に対応し、%2$s個のバグを修正しました。"
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:381
+#: wp-admin/about.php:401
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "<strong>バージョン %1$s</strong> はセキュリティ問題に対応し、%2$s個のバグを修正しました。"
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs.
-#: wp-admin/about.php:64 wp-admin/about.php:89 wp-admin/about.php:375
+#: wp-admin/about.php:84 wp-admin/about.php:109 wp-admin/about.php:395
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>バージョン %1$s</strong> では%2$s個のバグを修正しました。"
 
+#. translators: %s: WordPress version.
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:372
+#: wp-admin/about.php:64 wp-admin/about.php:392
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "<strong>バージョン %s</strong> では複数のセキュリティ問題に対応しました。"
 
-#: wp-admin/about.php:366
+#: wp-admin/about.php:386
 msgid "Maintenance and Security Release"
 msgstr "メンテナンスとセキュリティのリリース"
 
-#: wp-admin/about.php:363
+#: wp-admin/about.php:383
 msgid "Security Release"
 msgstr "セキュリティリリース"
 
-#: wp-admin/about.php:360
+#: wp-admin/about.php:380
 msgid "Maintenance Release"
 msgstr "メンテナンスリリース"
 
@@ -11678,13 +11676,17 @@ msgstr "<strong>編集</strong>をクリックするとその投稿の編集画�
 msgid "Because this is a multisite installation, you may add accounts that already exist on the Network by specifying a username or email, and defining a role. For more options, such as specifying a password, you have to be a Network Administrator and use the hover link under an existing user&#8217;s name to Edit the user profile under Network Admin > All Users."
 msgstr "このサイトはマルチサイトインストールのため、サイトネットワーク上にすでに存在するアカウントのユーザー名またはメールアドレスを指定し、権限グループを選択して追加することができます。パスワードを設定するといった追加オプションを使うには、「ネットワーク管理 > ユーザー一覧」ページで、サイトネットワーク管理者として既存のユーザーの名前をマウスオーバーしたときに表示される「編集」リンクを使う必要があります。"
 
-#: wp-admin/about.php:347
+#: wp-admin/about.php:367
 msgid "Go to Dashboard &rarr; Home"
 msgstr "ダッシュボード &rarr; ホームへ移動"
 
-#: wp-admin/about.php:340
+#: wp-admin/about.php:360
 msgid "Go to Dashboard &rarr; Updates"
 msgstr "ダッシュボード &rarr; 更新へ移動"
+
+#: wp-admin/includes/media.php:3066
+msgid "You are using the browser&#8217;s built-in file uploader. The WordPress uploader includes multiple file selection and drag and drop capability. <a href=\"#\">Switch to the multi-file uploader</a>."
+msgstr "現在ブラウザー付随のアップローダーを使用しています。WordPress アップローダーは複数ファイル選択やドラッグ & ドロップにも対応しています。<a href=\"#\">マルチファイルアップローダーもご利用ください</a>。"
 
 #: wp-admin/user-edit.php:217
 msgid "Profile updated."
@@ -12451,10 +12453,6 @@ msgstr "フィルターを適用"
 #: wp-admin/includes/theme.php:338
 msgid "Editor Style"
 msgstr "エディタースタイル"
-
-#: wp-admin/users.php:235
-msgid "Sorry, you are not allowed to edit users."
-msgstr "ユーザーを編集する権限がありません。"
 
 #: wp-admin/includes/file.php:2560
 msgid "To perform the requested action, WordPress needs to access your web server."
@@ -13374,7 +13372,7 @@ msgstr "WordPress の更新"
 msgid "Edit menu item"
 msgstr "メニュー項目を編集"
 
-#: wp-admin/about.php:347
+#: wp-admin/about.php:367
 msgid "Go to Dashboard"
 msgstr "ダッシュボードへ移動"
 
@@ -13579,7 +13577,7 @@ msgstr "削除できるユーザーが選択されていません。"
 
 #: wp-admin/users.php:340
 msgid "Delete Users"
-msgstr "ユーザーの削除"
+msgstr "ユーザーを削除"
 
 #: wp-admin/user-new.php:486 wp-admin/user-new.php:653
 msgid "Skip Confirmation Email"

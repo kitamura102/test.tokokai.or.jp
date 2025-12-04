@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - List category posts - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-09-20 13:21:57+0000\n"
+"PO-Revision-Date: 2025-08-30 07:44:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -183,9 +183,12 @@ msgid ""
 "      or <a href='http://www.amazon.com/registry/wishlist/1LVYAOJAZQOI0/ref=cm_wl_rlist_go_o'\n"
 "      rel='nofollow'>comic books</a> :)."
 msgstr ""
-"このプラグインが役に立ったようでしたら、ぜひ\n"
+"プラグインが役に立った場合は、\n"
 "      <a href='http://picandocodigo.net/programacion/wordpress/list-category-posts-wordpress-plugin-english/'\n"
-"      title='Donate via PayPal' rel='nofollow'>PayPal で寄付</a>するか、<a href='http://www.amazon.com/gp/registry/wishlist/2HU1JYOF7DX5Q/ref=wl_web' title='Amazon Wishlist' rel='nofollow'>書籍</a>や<a href='http://www.amazon.com/registry/wishlist/1LVYAOJAZQOI0/ref=cm_wl_rlist_go_o' rel='nofollow'>コミック本</a>などの私の Amazon Wishlist をご覧ください 🙂"
+"      title='Donate via PayPal' rel='nofollow'>PayPal で寄付</a>するか、私の Amazon ウィッシュリストにアクセスして、<a href='http://www.amazon.com/gp/registry/wishlist/2HU1JYOF7DX5Q/ref=wl_web'\n"
+"      title='Amazon Wishlist' rel='nofollow'>書籍</a>\n"
+"      または <a href='http://www.amazon.com/registry/wishlist/1LVYAOJAZQOI0/ref=cm_wl_rlist_go_o'\n"
+"      rel='nofollow'>コミック本</a>を探してください。"
 
 #: include/lcp-options.php:134
 msgid ""

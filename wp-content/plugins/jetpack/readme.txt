@@ -1,10 +1,10 @@
 === Jetpack - WP Security, Backup, Speed, & Growth ===
 Contributors: automattic, adamkheckler, adrianmoldovanwp, aduth, akirk, allendav, alternatekev, andy, annamcphee, annezazu, apeatling, arcangelini, arsihasi, azaozz, barry, batmoo, beaulebens, bindlegirl, biskobe, bjorsch, blobaugh, brbrr, brileyhooper, cainm, cena, cfinke, cgastrell, chaselivingston, chellycat, clickysteve, csonnek, danielbachhuber, daniloercoli, davoraltman, delawski, designsimply, dkmyta, dllh, drawmyface, dsmart, dun2mis, dzver, ebinnion, egregor, eliorivero, enej, eoigal, erania-pinnera, ethitter, fgiannar, gcorne, georgestephanis, gibrown, goldsounds, hew, hugobaeta, hypertextranch, iammattthomas, iandunn, joen, jblz, jeffgolenski, jeherve, jenhooks, jenia, jessefriedman, jgs, jkudish, jmdodd, joanrho, johnjamesjacoby, jshreve, kbrownkd, keoshi, koke, kraftbj, lancewillett, leogermani, lhkowalski, lschuyler, macmanx, martinremy, matt, mattwiebe, matveb, maverick3x6, mcsf, mdawaffe, mdbitz, MichaelArestad, migueluy, miguelxavierpenha, mikeyarce, mkaz, nancythanki, nickmomrik, njweller, nunyvega, obenland, oskosk, pento, professor44, rachelsquirrel, rdcoll, renatoagds, retrofox, richardmtl, richardmuscat, robertbpugh, roccotripaldi, ryancowles, samhotchkiss, samiff, scarstocea, scottsweb, sdixon194, sdquirk, sermitr, simison, stephdau, thehenridev, tmoorewp, tyxla, Viper007Bond, westi, williamvianas, wpkaren, yoavf, zinigor
 Tags: Security, backup, malware, scan, performance
-Stable tag: 15.0
+Stable tag: 15.3
 Requires at least: 6.7
 Requires PHP: 7.2
-Tested up to: 6.8
+Tested up to: 6.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -326,51 +326,46 @@ Jetpack Backup can do a full website migration to a new host, migrate theme file
 
 
 == Changelog ==
-### 15.0 - 2025-09-04
+### 15.3 - 2025-12-03
+
 #### Enhancements
-- Add LaTeX block (Beta) to render mathematical formula.
-- Blocks: Update JavaScript to be non-render blocking.
-- Carousel: Fix crashes on large galleries and reduce server requests by preloading only adjacent images instead of all at once.
-- Disallow inserting Simple Payments block via inserter.
-- Enable Settings > Sharing WP Admin page and ensure all relevant links point to this page.
-- Forms: Add MailPoet integration.
-- Forms: Add new Time field.
-- Forms: Add `has_field_type` method to Feedback.
-- Forms: Defer JavaScript loading for more responsive page loading.
-- Forms: Improve the checkbox style.
-- Forms: Preserve HTML IDs when processing feedback.
-- Forms: Save feedback entries in a new format.
-- Forms: Show trash action alongside view action in inbox.
-- Related Posts block: Update placeholder text for the site editor, and update the demo date.
-- Remove CRM installation nudge for Complete plan users
-- Shortcodes: Update embed reversal code to only run when content is inserted in the admin.
-- Site Accelerator: Ignore images from openlibrary.org.
-- Sitemaps: Add filter to allow suspending object cache addition during generation.
-- Social: Add font option for Social Image Generator.
-- Subscription block: Defer JavaScript loading.
+- Forms: Add browser info to the form response email notification.
+- Forms: Add form response webhook support.
+- Forms: Add integrations to dashboard mobile menu.
+- Forms: Add keyboard navigation to go through reponses quickly.
+- Forms: Add WordPress Abilities API integration for form submissions management and integrations access.
+- Forms: Change integrations modal width.
+- Forms: Improve MailPoet subscriber handling.
+- Forms: Improve name variation handling.
+- Forms: Remove related-posts from API calls.
+- Forms: Update dashboard header buttons.
+- Forms: Use core WP colors for basic primitive components such as buttons at Forms dashboard.
+- Forms: Use first/last name for author.
+- Premium Content Block: Added email rendering callback.
+- Social: Improve auto-share UI in the editor by streamlining the notices and descriptions.
+- Social: Improve the sidebar by making titles more descriptive and combining sections.
+- Social: Update the connections list in the editor to a vertical toggle list with labels and icons.
 
 #### Improved compatibility
-- Open Graph Meta tags: Add new filter allowing one to define a custom site representative image.
+- Replace icons removed from @wordpress/icons with alternatives.
 
 #### Bug fixes
-- Carousel: Improve image size processing to return higher quality images in additional situations.
-- Crowdsignal: Improve escaping.
-- Forms: Fix default checkboxes styles, and allow for "browser" styles as a choice.
-- Forms: Fix error wrapper when placing button inside a group block.
-- Forms: Fix phone validation for responses.
-- Forms: Improve checkbox validation for older checkboxes.
-- Forms: Show the form variation picker if you only have the submit button.
-- Image CDN: Prevent errors attempting to filter null.
-- Improve escaping for recurring payment buttons.
-- Infinite Scroll: Prevent PHP warnings in various edge cases.
-- My Jetpack: Fix multisite availability check for restricted products and modules.
-- Prevent PHP fatals when handling unexpected data types.
-- Search: Ensure images are loaded efficiently when on https sites.
-- SEO settings: Update the default Open Graph image tag to match the one in use on the site.
-- Shortcodes: Improve embed detection.
-- Sitemaps: Fix PHP warning during generation if there are no posts or pages on the website.
-- Social: Allow default image to be cleared.
-- Social: Fix image generator token reset on save resulting in font not being saved.
+- Cookies & Consents Banner Widget: ensure form headings are properly displayed.
+- Fix a compatibility bug with the Gutenberg plugin.
+- Forms: Do not link to empty source link.
+- Forms: Ensure we show duplicate form field values on export.
+- Forms: Fix integrations modal flash.
+- Forms: Fix name variation isActive setting.
+- Forms: Fix the flickering between the sidebar loading on different browser widths.
+- Forms: Reject form submissions when the parent post/page with the form has been deleted or is no longer published.
+- Forms: Remove clashing between meta dn field names on export.
+- GifBlock: Ensure url is not reset when publishing post.
+- Google Docs: Ensure that slides/sheets embeds render on the front-end.
+- GSheets embed: Give time for the iframe to finish before showing an error.
+- My Jetpack: Fix expiring renewal prompt to show all products.
+- Remove `getIconColor` functions for block icons.
+- Restrict inline file preview to only image formats and PDFs, force download for other file types for security.
+- Social: Fix connection icon not reflecting the change when profile picture is updated.
 
 --------
 

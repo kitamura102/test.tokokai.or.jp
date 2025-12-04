@@ -120,7 +120,10 @@ class VueSettings {
 			'queryArgLogs'                 => true,
 			'aiContentSettings'            => true,
 			'writingAssistantSettings'     => true,
-			'writingAssistantCta'          => true
+			'writingAssistantCta'          => true,
+			'llmsSitemap'                  => true,
+			'llmsSitemapAdvancedSettings'  => true,
+			'redirectLogsSettings'         => true,
 		],
 		'toggledRadio'    => [
 			'breadcrumbsShowMoreSeparators' => false,

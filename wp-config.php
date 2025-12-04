@@ -38,6 +38,9 @@ define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+/*20251027 追加*/
+define( 'WP_MEMORY_LIMIT', '256M' );
+
 /**#@+
  * Authentication unique keys and salts.
  *
@@ -99,7 +102,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /** ↓↓↓ 2025/6/5 マルチサイト化のため設定を追加 ↓↓↓ **/
-define('WP_ALLOW_MULTISITE', true);
+/*define('WP_ALLOW_MULTISITE', true);*/
 define( 'MULTISITE', true );
 define( 'SUBDOMAIN_INSTALL', false );
 define( 'DOMAIN_CURRENT_SITE', 'test.tokokai.or.jp' );

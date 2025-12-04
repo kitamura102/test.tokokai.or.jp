@@ -143,7 +143,8 @@ body.single-news #main_content { background:#f6f6f6; padding-top:80px; }
 #header_slider .item > a { width:100%; height:100%; position:relative; overflow:hidden; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; }
 
 #header_slider .catch { padding:110px 100px 100px; color:#fff; text-align:center; z-index:3; line-height:1.7; }
-#header_slider .catch.direction_type2 { writing-mode:vertical-rl; display:inline-block; text-align:left; }
+/*#header_slider .catch.direction_type2 { writing-mode:vertical-rl; display:inline-block; text-align:left; }*/
+#header_slider .catch.direction_type2 { display:inline-block; text-align:left; }
 #header_slider .common_catch span { display:block; position:relative; transition: transform 1.8s ease, opacity 1.8s ease; transform: translate3d(0,30px,0); opacity:0; }
 #header_slider .common_catch span.animate { transform: translate3d(0,0,0); opacity:1; }
 
@@ -356,7 +357,7 @@ body.page_width_small .cb_free_space .post_content { width:750px; margin-left:au
 #page_header { width:calc(100% + 2px); margin:0 -1px; height:400px; position:relative; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; }
 #page_header.type2 { height:730px; }
 #page_header .catch { max-height:100%; padding:0; color:#fff; text-align:center; z-index:3; line-height:1.6; }
-#page_header .catch.direction_type2 { writing-mode:vertical-rl; display:inline-block; text-align:left; }
+#page_header .catch.direction_type2 { writing-mode:horizontal-tb; display:inline-block; text-align:left; }
 #page_header .catch span { display:block; position:relative; transition: transform 1.8s ease, opacity 1.8s ease; transform: translate3d(0,30px,0); opacity:0; }
 #page_header .catch span.animate { transform: translate3d(0,0,0); opacity:1; }
 #page_header .overlay { width:100%; height:100%; position:absolute; top:0px; left:0px; z-index:2; }
@@ -825,10 +826,11 @@ body.hide_page_header.hide_page_header_bar #header:after { display:none; }
 @media screen and (max-width:800px) {
   body.no_header_logo_image_mobile #header_logo{ display:none; }
 }
-#header_logo { width:210px; height:210px; background:#fff; position:absolute; left:0; top:0; display:inline-block; z-index:2000; }
+#header_logo { width:210px; height:210px; position:absolute; left:0; top:0; display:inline-block; z-index:2000; }
 #header_logo img { display:block; transition: opacity 0.3s ease-in-out; max-width:100%; height:auto; }
 #header_logo img.mobile { display:none; }
-#header_logo a { width:210px; height:210px; display:block; padding:20px; aspect-ratio:1/1; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; transition:opacity 1.4s ease 0.5s; }
+/*#header_logo a { width:210px; height:210px; display:block; padding:20px; aspect-ratio:1/1; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; transition:opacity 1.4s ease 0.5s; }*/
+#header_logo a {padding:20px; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; transition:opacity 1.4s ease 0.5s;}
 #header_logo a:hover img { opacity:0.5; }
 #header_logo a .logo_text { font-weight:500; line-height:1.4; }
 #header_logo a:hover .logo_text { }
@@ -957,8 +959,8 @@ body.hide_page_header_bar.close_header #side_icon_button { top:-80px !important;
   100%{ transform: translate3d(0,-100%,0); opacity:0; }
 }
 #side_icon_button .item { width:81px; height:80px; }
-#side_icon_button a { color:#937960; width:100%; height:100%; display:block; position:relative; border-bottom:1px solid #ddd; display:flex; flex-wrap:wrap; flex-direction:column; justify-content:center; align-items:center; }
-#side_icon_button a.no_icon { background:#937960; border-color:#937960; color:#fff !important; }
+#side_icon_button a { color:#289e74; width:100%; height:100%; display:block; position:relative; border-bottom:1px solid #ddd; display:flex; flex-wrap:wrap; flex-direction:column; justify-content:center; align-items:center; }
+#side_icon_button a.no_icon { /*background:#289e74; border-color:#289e74; */color:#fff !important; }
 #side_icon_button .item:first-of-type a { border-top:1px solid #ddd; }
 #side_icon_button a:hover span, #side_icon_button a:hover:before { opacity:0.5; }
 #side_icon_button a.no_icon:hover span, #side_icon_button a.no_icon:hover:before { opacity:1; }

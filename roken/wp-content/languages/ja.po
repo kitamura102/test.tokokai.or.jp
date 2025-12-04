@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the WordPress - 6.8.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-07-11 12:59:20+0000\n"
+"PO-Revision-Date: 2025-11-12 12:44:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.1\n"
+"X-Generator: GlotPress/4.0.3\n"
 "Language: ja_JP\n"
 "Project-Id-Version: WordPress - 6.8.x - Development\n"
 
@@ -286,6 +286,11 @@ msgstr "1月"
 msgid "Uncategorized"
 msgstr "未分類"
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:223
+#: wp-admin/users.php:235
+msgid "Sorry, you are not allowed to edit users."
+msgstr "ユーザーを編集する権限がありません。"
+
 #: wp-includes/blocks/query/block.json
 msgctxt "block keyword"
 msgid "custom post types"
@@ -363,7 +368,7 @@ msgstr "デフォルトテンプレートタイプのリスト。"
 msgid "Templates based on theme files can't have revisions."
 msgstr "テーマファイルに基づくテンプレートにはリビジョンを設定できません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3076
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3082
 msgid "Whether to ignore sticky posts or not."
 msgstr "固定表示投稿を無視するかどうか。"
 
@@ -436,7 +441,7 @@ msgstr "画像を追加"
 
 #: wp-includes/customize/class-wp-customize-header-image-control.php:249
 msgid "Add Header Image"
-msgstr "ヘッダー画像の追加"
+msgstr "ヘッダー画像を追加"
 
 #: wp-includes/class-wp-xmlrpc-server.php:5054
 #: wp-includes/class-wp-xmlrpc-server.php:6587
@@ -454,11 +459,11 @@ msgstr "無効な URL パターンコンテキスト %s。"
 
 #: wp-includes/class-wp-taxonomy.php:627 wp-includes/taxonomy.php:236
 msgid "Add Category"
-msgstr "カテゴリーの追加"
+msgstr "カテゴリーを追加"
 
 #: wp-includes/class-wp-taxonomy.php:627
 msgid "Add Tag"
-msgstr "タグの追加"
+msgstr "タグを追加"
 
 #. translators: %s: forbidden eagerness value
 #: wp-includes/class-wp-speculation-rules.php:198
@@ -636,11 +641,11 @@ msgctxt "Name for the Code editor tab (formerly Text)"
 msgid "Code"
 msgstr "コード"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1276
+#: wp-includes/class-wp-customize-nav-menus.php:1282
 msgid "The link text cannot be empty."
 msgstr "リンクテキストを空にすることはできません。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1271
+#: wp-includes/class-wp-customize-nav-menus.php:1277
 #: wp-admin/includes/nav-menu.php:354
 msgid "Please provide a valid link."
 msgstr "有効なリンクを入力してください。"
@@ -792,11 +797,11 @@ msgstr "ターム一覧"
 msgid "Plugin that registered the template."
 msgstr "テンプレートを登録したプラグイン。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3084
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3090
 msgid "Limit result set to items assigned one or more given formats."
 msgstr "1つ以上のフォーマットが割り当てられた項目に結果セットを限定します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2978
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2984
 msgid "How to interpret the search input."
 msgstr "検索入力を解釈する方法です。"
 
@@ -931,7 +936,7 @@ msgstr "テーマのテンプレートディレクトリの URI。このテー�
 msgid "The uri for the theme's stylesheet directory."
 msgstr "テーマのスタイルシートディレクトリの URI。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2452
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2458
 msgid "An array of the class names for the post container element."
 msgstr "投稿コンテナ要素のクラス名の配列。"
 
@@ -1073,7 +1078,7 @@ msgstr "%1$s フィルターは0より大きい整数値を返す必要があり
 
 #. translators: 1: Item name, 2: Item type, 3: Item index, 4: Total items, 5:
 #. Item parent, 6: Item depth.
-#: wp-includes/class-wp-customize-nav-menus.php:570 wp-admin/nav-menus.php:588
+#: wp-includes/class-wp-customize-nav-menus.php:576 wp-admin/nav-menus.php:588
 msgid "Edit %1$s (%2$s, sub-item %3$d of %4$d under %5$s, level %6$d)"
 msgstr "%1$s を編集 (%2$s、%5$s 下のサブ項目 %3$d / %4$d、レベル %6$d)"
 
@@ -1081,7 +1086,7 @@ msgstr "%1$s を編集 (%2$s、%5$s 下のサブ項目 %3$d / %4$d、レベル %
 #. Item parent.
 #. translators: 1: Title of a menu item, 2: Type of a menu item, 3, Item index,
 #. 4, Total items, 5: Item parent.
-#: wp-includes/class-wp-customize-nav-menus.php:568
+#: wp-includes/class-wp-customize-nav-menus.php:574
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:88
 #: wp-admin/nav-menus.php:586
 msgid "Edit %1$s (%2$s, sub-item %3$d of %4$d under %5$s)"
@@ -1090,7 +1095,7 @@ msgstr "%1$s を編集 (%2$s、%5$s 下のサブ項目 %3$d / %4$d)"
 #. translators: 1: Item name, 2: Item type, 3: Item index, 4: Total items.
 #. translators: 1: Title of a menu item, 2: Type of a menu item. 3: Item index,
 #. 4: Total items.
-#: wp-includes/class-wp-customize-nav-menus.php:566
+#: wp-includes/class-wp-customize-nav-menus.php:572
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:83
 #: wp-admin/nav-menus.php:584
 msgid "Edit %1$s (%2$s, %3$d of %4$d)"
@@ -2480,8 +2485,8 @@ msgstr "https://ja.wordpress.org/support/article/resetting-your-password/"
 msgid "https://wordpress.org/documentation/article/site-editor/"
 msgstr "https://ja.wordpress.org/support/article/site-editor/"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3040
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1654
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3046
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1660
 msgid "Array of column names to be searched."
 msgstr "検索する列名の配列。"
 
@@ -3677,11 +3682,11 @@ msgstr "テンプレートパーツエリア"
 msgid "The server cannot process the image. This can happen if the server is busy or does not have enough resources to complete the task. Uploading a smaller image may help. Suggested maximum size is 2560 pixels."
 msgstr "サーバーが画像を処理できません。このエラーは、サーバーが忙しいか、タスクを完了するために十分なリソースがない場合に発生します。小さな画像をアップロードすれば解決するかもしれません。推奨する最大サイズは2560ピクセルです。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1644
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1650
 msgid "Limit result set to users who have published posts."
 msgstr "投稿を公開したユーザーに結果を限定する。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1628
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1634
 msgid "Limit result set to users matching at least one specific capability provided. Accepts csv list or single capability."
 msgstr "提供された少なくとも一つ以上の特定の権限に一致するユーザーに結果セットを限定します。csv ファイルのリスト、あるいは一つの権限も可能です。"
 
@@ -4534,23 +4539,23 @@ msgctxt "block keyword"
 msgid "link"
 msgstr "リンク"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2405
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2411
 msgid "An alphanumeric identifier for the post unique to its type."
 msgstr "そのタイプに特有な、投稿の英数字識別子。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2398
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2404
 msgid "The date the post was last modified, as GMT."
 msgstr "投稿の最終更新日 (GMT)。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2391
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2397
 msgid "The date the post was last modified, in the site's timezone."
 msgstr "投稿の最終更新日 (サイトのタイムゾーン)。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2364
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2370
 msgid "GUID for the post, as it exists in the database."
 msgstr "データベースに存在する形態の、投稿の GUID。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2346
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2352
 msgid "The date the post was published, in the site's timezone."
 msgstr "投稿の公開日 (サイトのタイムゾーン)。"
 
@@ -5205,7 +5210,7 @@ msgstr "パターンリスト"
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:527
 #: wp-admin/includes/class-wp-ms-users-list-table.php:243
 msgid "Select %s"
-msgstr "%sを選択"
+msgstr "%s を選択"
 
 #: wp-includes/js/dist/block-editor.js:41987
 #: wp-includes/js/dist/block-library.js:41556 wp-admin/edit-form-blocks.php:257
@@ -5410,7 +5415,7 @@ msgstr "ウィジェットの現在のインスタンス設定。"
 msgid "The widget type id."
 msgstr "ウィジェットタイプ ID。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1597
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1603
 msgid "Sort collection by user attribute."
 msgstr "ユーザーの属性でコレクションを並べ替えます。"
 
@@ -5556,35 +5561,35 @@ msgstr "リビジョンの投稿者 ID。"
 msgid "Unique identifier for the revision."
 msgstr "リビジョンの固有識別子。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3299
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3305
 msgid "Whether items must be assigned all or any of the specified terms."
 msgstr "特定のタームのすべてに項目を割り当てるか、一部に割り当てるか。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:349
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2996
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3002
 msgid "Sort collection by post attribute."
 msgstr "投稿の属性でコレクションを並べ替えます。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2650
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2656
 msgid "The order of the post in relation to other posts."
 msgstr "他の投稿との関連による、投稿の順番。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2526
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2532
 msgid "The title for the post."
 msgstr "投稿のタイトル。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2422
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2428
 msgid "Type of post."
 msgstr "投稿タイプ。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2384
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2390
 msgid "URL to the post."
 msgstr "投稿の URL。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:505
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:293
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:118
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2378
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2384
 msgid "Unique identifier for the post."
 msgstr "投稿の一意識別子。"
 
@@ -6286,39 +6291,39 @@ msgid "Sorry, you are not allowed to list application passwords for this user."
 msgstr "このユーザーのアプリケーションパスワードを一覧表示する権限がありません。"
 
 #. translators: %s: Taxonomy name.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3293
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3299
 msgid "Limit result set to items with specific terms assigned in the %s taxonomy."
 msgstr "「%s」タクソノミーに割り当てられた特定のタームを持つ項目に結果を限定します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3280
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3286
 msgid "Whether to include child terms in the terms limiting the result set."
 msgstr "結果を限定したタームに子タームを含めるかどうか。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3272
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3278
 msgid "Term IDs."
 msgstr "ターム ID。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3268
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3274
 msgid "Perform an advanced term query."
 msgstr "高度なタームクエリーを実行します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3267
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3273
 msgid "Term ID Taxonomy Query"
 msgstr "ターム ID タクソノミークエリー"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3260
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3266
 msgid "Match terms with the listed IDs."
 msgstr "リストした ID と合致するターム。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3259
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3265
 msgid "Term ID List"
 msgstr "ターム ID 一覧"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2947
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2953
 msgid "Limit response to posts modified before a given ISO8601 compliant date."
 msgstr "入力された ISO8601 準拠の日付より前に更新された投稿にレスポンスを限定します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2916
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2922
 msgid "Limit response to posts modified after a given ISO8601 compliant date."
 msgstr "入力された ISO8601 準拠の日付より後に更新された投稿にレスポンスを限定します。"
 
@@ -6706,7 +6711,7 @@ msgid "This theme does not work with your versions of WordPress and PHP."
 msgstr "このテーマは現在使用中の WordPress と PHP のバージョンでは動作しません。"
 
 #. translators: %s: register_rest_field
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2757
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2763
 msgid "Please use %s to add new schema properties."
 msgstr "新しいスキーマプロパティを追加するには %s を使用してください。"
 
@@ -7147,7 +7152,7 @@ msgstr "ブロック名 (namespace/block-name 形式)。"
 msgid "Sorry, you are not allowed to browse the block directory."
 msgstr "ブロックディレクトリの表示権限がありません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1318
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1324
 msgid "This username is invalid because it uses illegal characters. Please enter a valid username."
 msgstr "このユーザー名は使用できない文字を含んでいるため無効です。有効なユーザー名を入力してください。"
 
@@ -7786,13 +7791,13 @@ msgstr "%s への返信"
 msgid "HTTP redirect status code must be a redirection code, 3xx."
 msgstr "HTTPのリダイレクトステータスは 3xx のリダイレクトコードでなければいけません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3250
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3256
 msgid "Limit result set based on relationship between multiple taxonomies."
 msgstr "結果セットを複数のタクソノミー間の関係に基づいて限定します。"
 
 #. translators: 1: The taxonomy name, 2: The property name, either 'rest_base'
 #. or 'name', 3: The conflicting value.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2703
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2709
 msgid "The \"%1$s\" taxonomy \"%2$s\" property (%3$s) conflicts with an existing property on the REST API Posts Controller. Specify a custom \"rest_base\" when registering the taxonomy to avoid this error."
 msgstr "\"%1$s\" タクソノミーの \"%2$s\" プロパティー (%3$s) は REST API Posts Controller の既存のプロパティーと衝突します。エラーを避けるため、タクソノミーを登録する際にカスタム rest_base を指定してください。"
 
@@ -8123,7 +8128,7 @@ msgstr "投稿フィード"
 
 #: wp-includes/script-loader.php:1015
 msgid "Unexpected response from the server. The file may have been uploaded successfully. Check in the Media Library or reload the page."
-msgstr "サーバーから予期しないレスポンスがありました。ファイルは正しくアップロードされているかもしれません。メディアライブラリもしくはページをリロードして確認してください。"
+msgstr "サーバーから予期しないレスポンスがありました。ファイルは正しくアップロードされているかもしれません。メディアライブラリまたはページをリロードして確認してください。"
 
 #: wp-login.php:755
 msgid "Remind me later"
@@ -9016,19 +9021,19 @@ msgstr "内部検索ハンドラエラー。"
 msgid "REST search handlers must extend the %s class."
 msgstr "REST 検索ハンドラは %s クラスを継承しなければなりません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2801
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2807
 msgid "The current user can post unfiltered HTML markup and JavaScript."
 msgstr "現在のユーザーはフィルタリングされていない HTML マークアップと JavaScript を投稿できます。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2571
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2577
 msgid "Version of the content block format used by the post."
 msgstr "投稿が使用するコンテンツブロック形式のバージョン。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2445
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2451
 msgid "Slug automatically generated from the post title."
 msgstr "投稿のタイトルから自動生成されたスラッグ。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2438
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2444
 msgid "Permalink template for the post."
 msgstr "投稿のパーマリンクテンプレート。"
 
@@ -9134,24 +9139,24 @@ msgid "[%1$s] Action Confirmed: %2$s"
 msgstr "[%1$s] 操作を確認しました: %2$s"
 
 #. translators: %s: Taxonomy name.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2855
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2861
 msgid "The current user can create terms in the %s taxonomy."
 msgstr "現在のユーザーは %s タクソノミーの項目を作成できます。"
 
 #. translators: %s: Taxonomy name.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2853
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2859
 msgid "The current user can assign terms in the %s taxonomy."
 msgstr "現在のユーザーは項目を %s タクソノミーに割り当てられます。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2834
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2840
 msgid "The current user can change the author on this post."
 msgstr "現在のユーザーはこの投稿の投稿者を変更できます。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2818
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2824
 msgid "The current user can sticky this post."
 msgstr "現在のユーザーはこの投稿を先頭固定表示できます。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2785
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2791
 msgid "The current user can publish this post."
 msgstr "現在のユーザーはこの投稿を公開できます。"
 
@@ -9492,7 +9497,7 @@ msgstr "コメント投稿者"
 msgid "WordPress Comments"
 msgstr "WordPress コメント"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1636
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1642
 msgid "Limit result set to users who are considered authors."
 msgstr "投稿者とみなされるユーザーに結果を限定する。"
 
@@ -9586,7 +9591,7 @@ msgctxt "tags"
 msgid "Most Used"
 msgstr "よく使うもの"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1114
+#: wp-includes/class-wp-customize-nav-menus.php:1120
 msgid "Click &#8220;Next&#8221; to start adding links to your new menu."
 msgstr "「次へ」をクリックして、新しいメニューにリンクを追加してください。"
 
@@ -9682,15 +9687,15 @@ msgctxt "menu locations"
 msgid "Where do you want this menu to appear?"
 msgstr "このメニューをどこに表示しますか ?"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1128
+#: wp-includes/class-wp-customize-nav-menus.php:1134
 msgid "You&#8217;ll create a menu, assign it a location, and add menu items like links to pages and categories. If your theme has multiple menu areas, you might need to create more than one."
 msgstr "メニューを作成し、表示位置を割り当て、固定ページやカテゴリーへのリンクなどのメニュー項目を追加します。テーマに複数のメニューエリアが含まれる場合は、複数個のメニューを作成する必要があるかもしれません。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1125
+#: wp-includes/class-wp-customize-nav-menus.php:1131
 msgid "It does not look like your site has any menus yet. Want to build one? Click the button to start."
 msgstr "サイトにメニューがありません。メニューを作成する場合はボタンをクリックしてください。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:702
+#: wp-includes/class-wp-customize-nav-menus.php:708
 msgctxt "menu locations"
 msgid "View All Locations"
 msgstr "すべての位置を表示"
@@ -9703,7 +9708,7 @@ msgstr "新しいテーマのプレビュー中に、ウィジェットやメニ
 msgid "Looking for a theme? You can search or browse the WordPress.org theme directory, install and preview themes, then activate them right here."
 msgstr "テーマをお探しですか ? WordPress.org テーマディレクトリを検索し、テーマをインストールし、プレビューし、そのまま有効化することができます。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:702
+#: wp-includes/class-wp-customize-nav-menus.php:708
 msgctxt "menu locations"
 msgid "View Location"
 msgstr "すべての位置を表示"
@@ -9714,7 +9719,7 @@ msgstr "すべての位置を表示"
 msgid "No themes found. Try a different search."
 msgstr "テーマが見つかりませんでした。他の検索をお試しください。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:688
+#: wp-includes/class-wp-customize-nav-menus.php:694
 msgid "Your theme can display menus in one location. Select which menu you would like to use."
 msgstr "お使いのテーマは1つのメニューに対応しています。使用したいメニューを選択してください。"
 
@@ -10281,7 +10286,7 @@ msgstr "WordPress.org テーマを探す"
 msgid "Install &amp; Preview"
 msgstr "インストールしてプレビュー"
 
-#: wp-includes/customize/class-wp-customize-nav-menu-item-setting.php:730
+#: wp-includes/customize/class-wp-customize-nav-menu-item-setting.php:739
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:883
 msgid "Invalid URL."
 msgstr "無効な URL。"
@@ -10397,30 +10402,30 @@ msgctxt "Name for the Visual editor tab"
 msgid "Visual"
 msgstr "ビジュアル"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1132
+#: wp-includes/class-wp-customize-nav-menus.php:1138
 msgid "Create New Menu"
 msgstr "メニューを新規作成"
 
-#: wp-includes/class-wp-customize-nav-menus.php:848
+#: wp-includes/class-wp-customize-nav-menus.php:854
 msgid "New Menu"
 msgstr "新規メニュー"
 
 #. translators: URL to the Widgets panel of the Customizer.
-#: wp-includes/class-wp-customize-nav-menus.php:696
+#: wp-includes/class-wp-customize-nav-menus.php:702
 msgid "If your theme has widget areas, you can also add menus there. Visit the <a href=\"%s\">Widgets panel</a> and add a &#8220;Navigation Menu widget&#8221; to display a menu in a sidebar or footer."
 msgstr "テーマにウィジェットエリアがある場合、そこにメニューを追加することもできます。<a href=\"%s\">ウィジェットパネル</a>に行き、サイドバーやフッターにメニューを表示するには「ナビゲーションメニューウィジェット」を追加してください。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:514
+#: wp-includes/class-wp-customize-nav-menus.php:520
 msgid "If your theme has multiple menus, giving them clear names will help you manage them."
 msgstr "テーマに複数のメニューがある場合、区別のつきやすい名前をつけておくと管理するのに役立つでしょう。"
 
 #. translators: %s: Number of menu locations.
-#: wp-includes/class-wp-customize-nav-menus.php:497
+#: wp-includes/class-wp-customize-nav-menus.php:503
 msgid "Your theme can display menus in %s location."
 msgid_plural "Your theme can display menus in %s locations."
 msgstr[0] "お使いのテーマにはメニューの表示位置が%sか所あります。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:494
+#: wp-includes/class-wp-customize-nav-menus.php:500
 msgid "Your theme can display menus in one location."
 msgstr "お使いのテーマにはメニューの表示位置が1か所あります。"
 
@@ -10850,17 +10855,17 @@ msgstr "%1$s は%2$d以上である必要があります"
 msgid "%1$s must be greater than %2$d"
 msgstr "%1$s は%2$dよりも大きい必要があります"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1612
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1618
 msgid "Limit result set to users with one or more specific slugs."
 msgstr "一つ以上の特定のスラッグを持つユーザーに結果を限定します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1203
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1207
 msgid "Limit result set to terms with one or more specific slugs."
 msgstr "一つ以上の特定のスラッグを持つタームに結果を限定します。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php:85
 #: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-revisions-controller.php:229
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:497
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:503
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:336
 #: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:163
 msgid "The page number requested is larger than the number of pages available."
@@ -11051,7 +11056,7 @@ msgid "This address is used for admin purposes, like new user notification."
 msgstr "このアドレスは新規ユーザーの通知などサイト管理のために使われます。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:111
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1052
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1056
 msgid "Unique identifier for the term."
 msgstr "タームの一意識別子。"
 
@@ -11107,72 +11112,72 @@ msgstr "入力された ISO8601 準拠の日付より前に公開されたコメ
 msgid "Limit response to comments published after a given ISO8601 compliant date."
 msgstr "入力された ISO8601 準拠の日付より後に公開されたコメントにレスポンスを限定します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1538
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1544
 msgid "Avatar URLs for the user."
 msgstr "ユーザーのアバター URL。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1491
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1497
 msgid "Roles assigned to the user."
 msgstr "ユーザーに割り当てられた権限グループ。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1468
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1474
 msgid "The nickname for the user."
 msgstr "ユーザーのニックネーム。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1462
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1468
 msgid "Locale for the user."
 msgstr "ユーザーのロケール。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1455
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1461
 msgid "Author URL of the user."
 msgstr "ユーザーの投稿者 URL。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1450
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1456
 msgid "Description of the user."
 msgstr "ユーザーの説明。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1444
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1450
 msgid "URL of the user."
 msgstr "ユーザーの URL。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1429
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1435
 msgid "Last name for the user."
 msgstr "ユーザーの姓。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1421
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1427
 msgid "First name for the user."
 msgstr "ユーザーの名。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1413
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1419
 msgid "Display name for the user."
 msgstr "ユーザーの、ブログ上の表示名。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1404
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1410
 msgid "Login name for the user."
 msgstr "ユーザーのログイン名。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:916
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:963
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:922
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:969
 msgid "The user cannot be deleted."
 msgstr "そのユーザーは削除できません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:626
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:632
 msgid "Error creating new user."
 msgstr "新規ユーザー作成エラー。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1106
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1110
 msgid "The parent term ID."
 msgstr "親のターム ID。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1076
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1080
 msgid "HTML title for the term."
 msgstr "タームの HTML タイトル。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1069
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1073
 msgid "URL of the term."
 msgstr "タームの URL。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:793
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:797
 msgid "The term cannot be deleted."
 msgstr "そのタームは削除できません。"
 
@@ -11184,12 +11189,12 @@ msgstr "テーマを表示する権限がありません。"
 #: wp-includes/class-wp-xmlrpc-server.php:2245
 #: wp-includes/rest-api/endpoints/class-wp-rest-menus-controller.php:207
 #: wp-includes/rest-api/endpoints/class-wp-rest-menus-controller.php:301
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:528
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:675
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:532
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:679
 msgid "Cannot set parent term, taxonomy is not hierarchical."
 msgstr "親のタームを設定できません。タクソノミーが階層化されていません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:420
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:424
 msgid "Term does not exist."
 msgstr "タームが存在しません。"
 
@@ -11279,12 +11284,12 @@ msgstr "RSS エラー:"
 msgid "Cannot create a comment with that type."
 msgstr "そのタイプのコメントを作成することはできません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:789
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:795
 msgid "Invalid slug."
 msgstr "無効なスラッグです。"
 
 #: wp-includes/rest-api.php:2279
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:773
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:779
 #: wp-includes/user.php:4706 wp-admin/network/site-new.php:100
 msgid "Invalid email address."
 msgstr "無効なメールアドレスです。"
@@ -11369,8 +11374,8 @@ msgstr "カレンダー"
 msgid "Sorry, you are not allowed to change the comment type."
 msgstr "コメントタイプを変更する権限がありません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1277
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1291
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1283
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1297
 #: wp-admin/includes/ms.php:1186 wp-admin/includes/user.php:62
 #: wp-admin/users.php:131 wp-admin/network/site-users.php:146
 msgid "Sorry, you are not allowed to give users that role."
@@ -11470,14 +11475,14 @@ msgstr "このサイトについて"
 msgid "Sorry, you are not allowed to edit the %s custom field."
 msgstr "%s カスタムフィールドを編集する権限がありません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:711
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:914
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:717
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:920
 msgid "Sorry, you are not allowed to assign the provided terms."
 msgstr "入力されたタームを割り当てる権限がありません。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:1402
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:695
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:906
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:701
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:912
 msgid "Sorry, you are not allowed to make posts sticky."
 msgstr "投稿を先頭固定表示にする権限がありません。"
 
@@ -11604,16 +11609,16 @@ msgid "Find Us"
 msgstr "アクセス"
 
 #. translators: %s: The '\' character.
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1370
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1376
 msgid "Passwords cannot contain the \"%s\" character."
 msgstr "パスワードに \"%s\" 文字を含めることはできません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1360
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1366
 msgid "Passwords cannot be empty."
 msgstr "パスワードを入力してください。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:188
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:601
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:607
 msgid "Invalid user parameter(s)."
 msgstr "無効なユーザーパラメータです。"
 
@@ -11672,12 +11677,12 @@ msgid "Please enter a valid YouTube URL."
 msgstr "有効な YouTube URL を入力してください。"
 
 #. translators: %s: force=true
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:936
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:942
 msgid "Users do not support trashing. Set '%s' to delete."
 msgstr "ユーザーはゴミ箱機能をサポートしていません。削除するには「%s」を設定してください。"
 
 #. translators: %s: force=true
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:779
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:783
 msgid "Terms do not support trashing. Set '%s' to delete."
 msgstr "タームはゴミ箱機能をサポートしていません。削除するには「%s」を設定してください。"
 
@@ -11687,7 +11692,7 @@ msgid "Revisions do not support trashing. Set '%s' to delete."
 msgstr "リビジョンはゴミ箱機能をサポートしていません。削除するには「%s」を設定してください。"
 
 #. translators: %s: force=true
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1138
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1144
 msgid "The post does not support trashing. Set '%s' to delete."
 msgstr "投稿はゴミ箱機能をサポートしていません。削除するには「%s」を設定してください。"
 
@@ -11704,7 +11709,7 @@ msgstr "または YouTube の URL を入力することもできます。"
 msgid "Invalid JSON body passed."
 msgstr "無効な JSON ボディが渡されました。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3058
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3064
 msgid "Limit result set to posts assigned one or more statuses."
 msgstr "一つ以上のステータスが割り当てられた投稿に結果を限定します。"
 
@@ -11717,7 +11722,7 @@ msgstr "コメントフィールドが上限を超過しています。"
 msgid "Taxonomies associated with post type."
 msgstr "投稿タイプに関連付けられているタクソノミー。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3049
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3055
 msgid "Limit result set to posts with one or more specific slugs."
 msgstr "一つ以上の特定のスラッグを持つ投稿に結果を限定します。"
 
@@ -11725,7 +11730,7 @@ msgstr "一つ以上の特定のスラッグを持つ投稿に結果を限定し
 msgid "Comment is required."
 msgstr "コメントは必須です。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:954
+#: wp-includes/class-wp-customize-nav-menus.php:960
 msgid "Empty title."
 msgstr "タイトルが空です。"
 
@@ -11778,7 +11783,7 @@ msgid "%1$s is not of type %2$s."
 msgstr "%1$s は %2$s タイプではありません。"
 
 #. translators: 1: Parameter, 2: List of valid values.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1624
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1630
 msgid "%1$s is not one of %2$s."
 msgstr "%1$s は %2$s に当てはまりません。"
 
@@ -11790,48 +11795,48 @@ msgstr "メタフィールド。"
 msgid "Could not delete meta value from database."
 msgstr "データベースからメタデータを削除できませんでした。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1620
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1626
 msgid "Limit result set to users matching at least one specific role provided. Accepts csv list or single role."
 msgstr "入力された、少なくとも一つ以上の特定の権限グループに一致するユーザーに結果を限定します。csv ファイルのリスト、あるいは一つの権限グループも可能です。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1514
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1520
 msgid "Any extra capabilities assigned to the user."
 msgstr "このユーザーに割り当てられた追加の権限。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1508
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1514
 msgid "All capabilities assigned to the user."
 msgstr "このユーザーに割り当てられたすべての権限。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1499
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1505
 msgid "Password for the user (never included)."
 msgstr "ユーザーのパスワード (含まれることはありません)。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1484
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1490
 msgid "Registration date for the user."
 msgstr "ユーザーの登録日。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1437
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1443
 msgid "The email address for the user."
 msgstr "ユーザーのメールアドレス。"
 
 #. translators: %s: Role key.
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1259
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1265
 msgid "The role %s does not exist."
 msgstr "%s という権限グループは存在しません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:945
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:951
 msgid "Invalid user ID for reassignment."
 msgstr "再割り当て用のユーザー ID が無効です。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:895
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:901
 msgid "Sorry, you are not allowed to delete this user."
 msgstr "このユーザーを削除する権限がありません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:781
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:787
 msgid "Username is not editable."
 msgstr "ユーザー名は編集できません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:722
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:728
 msgid "Sorry, you are not allowed to edit roles of this user."
 msgstr "このユーザーの権限グループを編集をする権限がありません。"
 
@@ -11840,28 +11845,28 @@ msgstr "このユーザーの権限グループを編集をする権限があり
 msgid "Sorry, you are not allowed to delete this revision."
 msgstr "リビジョンを削除する権限がありません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:578
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:584
 msgid "Cannot create existing user."
 msgstr "既存のユーザーを作成することはできません。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-application-passwords-controller.php:702
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:533
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:539
 msgid "You are not currently logged in."
 msgstr "現在ログインしていません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1197
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1201
 msgid "Limit result set to terms assigned to a specific post."
 msgstr "特定の投稿に割り当てられたタームに結果を限定します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1191
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1195
 msgid "Limit result set to terms assigned to a specific parent."
 msgstr "特定の親に割り当てられたタームに結果を限定します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1184
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1188
 msgid "Whether to hide terms not assigned to any posts."
 msgstr "どの投稿にも割り当てられていないタームを非表示にするかどうか。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1168
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1172
 msgid "Sort collection by term attribute."
 msgstr "タームの属性でコレクションを並べ替えます。"
 
@@ -11873,24 +11878,24 @@ msgstr "タームの属性でコレクションを並べ替えます。"
 msgid "The ID for the parent of the revision."
 msgstr "親リビジョンの ID。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1093
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1097
 msgid "Type attribution for the term."
 msgstr "タームのタイプ属性。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1085
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1089
 msgid "An alphanumeric identifier for the term unique to its type."
 msgstr "そのタイプに特有な、タームの英数字識別子。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1064
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1068
 msgid "HTML description of the term."
 msgstr "タームの HTML の説明。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1058
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1062
 msgid "Number of published posts for the term."
 msgstr "タームの公開された記事の数。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:83
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1398
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1404
 msgid "Unique identifier for the user."
 msgstr "ユーザーの一意識別子。"
 
@@ -11917,119 +11922,119 @@ msgstr "タグクラウドを表示すべきかどうか。"
 #: wp-includes/rest-api/fields/class-wp-rest-meta-fields.php:170
 #: wp-includes/rest-api/fields/class-wp-rest-meta-fields.php:188
 msgid "The %s property has an invalid stored value, and cannot be updated to null."
-msgstr "%s プロパティには無効なストアドバリューがあり、null に更新することはできません。"
+msgstr "%s プロパティには無効な値が含まれており、null に更新はできません。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:208
 msgid "Invalid revision ID."
 msgstr "リビジョン ID が無効です。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:957
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3145
+#: wp-includes/class-wp-customize-nav-menus.php:963
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3151
 msgid "Status is forbidden."
 msgstr "ステータスは禁止されています。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3071
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3077
 msgid "Limit result set to items that are sticky."
 msgstr "先頭固定表示の項目に結果を限定します。"
 
 #. translators: %s: Taxonomy name.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3308
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3314
 msgid "Limit result set to items except those with specific terms assigned in the %s taxonomy."
 msgstr "「%s」タクソノミーに割り当てられた特定のタームを持つ項目以外に結果を限定します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3029
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3035
 msgid "Limit result set to all items except those of a particular parent ID."
 msgstr "特定の親 ID に属さない項目に結果を限定します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3021
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3027
 msgid "Limit result set to items with particular parent IDs."
 msgstr "特定の親 ID に属する項目に結果を限定します。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1624
 #: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:337
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2984
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2990
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:840
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1152
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1584
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1156
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1590
 msgid "Offset the result set by a specific number of items."
 msgstr "特定の項目数で結果をオフセットします。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:954
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2972
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2978
 msgid "Limit result set to posts with a specific menu_order value."
 msgstr "特定の menu_order 値を持つ投稿に結果を限定します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2931
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2937
 msgid "Ensure result set excludes posts assigned to specific authors."
 msgstr "特定の投稿者が割り当てられた投稿を結果から除外します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2923
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2929
 msgid "Limit result set to posts assigned to specific authors."
 msgstr "特定の投稿者に割り当てられた投稿に結果を限定します。"
 
 #. translators: %s: Taxonomy name.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2714
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2720
 msgid "The terms assigned to the post in the %s taxonomy."
 msgstr "タクソノミー「%s」に属し、その投稿に割り当てられているターム。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2684
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2690
 msgid "The theme file to use to display the post."
 msgstr "投稿を表示するために使用するテーマファイル。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2428
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2434
 msgid "A password to protect access to the content and excerpt."
 msgstr "コンテンツや抜粋へのアクセスを保護するパスワード。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2677
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2683
 msgid "Whether or not the post should be treated as sticky."
 msgstr "投稿を先頭固定表示にするかどうか。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2661
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2667
 msgid "The format for the post."
 msgstr "投稿のフォーマット。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2641
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2647
 msgid "Whether or not the post can be pinged."
 msgstr "投稿がピンバックを受け付けているかどうか。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2635
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2641
 msgid "Whether or not comments are open on the post."
 msgstr "投稿がコメントを受け付けているかどうか。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2627
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2633
 msgid "The ID of the featured media for the post."
 msgstr "投稿のアイキャッチとなるメディアの ID。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2616
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2622
 msgid "Whether the excerpt is protected with a password."
 msgstr "抜粋がパスワードで保護されているかどうか。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2610
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2616
 msgid "HTML excerpt for the post, transformed for display."
 msgstr "表示用に変換された、投稿の HTML の抜粋。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2605
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2611
 msgid "Excerpt for the post, as it exists in the database."
 msgstr "データベースに存在する形態の、投稿の抜粋。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2596
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2602
 msgid "The excerpt for the post."
 msgstr "投稿の抜粋。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2588
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2594
 msgid "The ID for the author of the post."
 msgstr "投稿者の ID。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2577
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2583
 msgid "Whether the content is protected with a password."
 msgstr "コンテンツをパスワードで保護するかどうか。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:493
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2540
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2546
 msgid "HTML title for the post, transformed for display."
 msgstr "表示用に整形された、投稿の HTML タイトル。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2535
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2541
 msgid "Title for the post, as it exists in the database."
 msgstr "データベースに存在する形態の、投稿のタイトル。"
 
@@ -12038,7 +12043,7 @@ msgstr "データベースに存在する形態の、投稿のタイトル。"
 msgid "The title for the object."
 msgstr "オブジェクトのタイトル。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2413
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2419
 msgid "A named status for the post."
 msgstr "投稿に対して名前がついているステータス。"
 
@@ -12054,7 +12059,7 @@ msgstr "リビジョンの最終更新日 (GMT)。"
 msgid "The date the revision was last modified, in the site's timezone."
 msgstr "リビジョンの最終更新日 (サイトのタイムゾーン)。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2370
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2376
 msgid "GUID for the post, transformed for display."
 msgstr "表示用に変換された、投稿の GUID。"
 
@@ -12062,7 +12067,7 @@ msgstr "表示用に変換された、投稿の GUID。"
 msgid "GUID for the revision, as it exists in the database."
 msgstr "データベースに存在する形態の、リビジョンの GUID。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2358
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2364
 msgid "The globally unique identifier for the post."
 msgstr "投稿のグローバル一意識別子 (GUID)。"
 
@@ -12074,30 +12079,30 @@ msgstr "リビジョンの公開日 (GMT)。"
 msgid "The date the revision was published, in the site's timezone."
 msgstr "リビジョンの公開日 (サイトのタイムゾーン)。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1577
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1583
 msgid "Invalid featured media ID."
 msgstr "無効なおすすめメディア ID です。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php:273
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:766
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1439
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1445
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:153
 msgid "Invalid post parent ID."
 msgstr "無効な親投稿 ID です。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1423
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1429
 msgid "A password protected post can not be set to sticky."
 msgstr "パスワード保護された投稿を先頭固定表示に設定することはできません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1412
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1418
 msgid "A sticky post can not be password protected."
 msgstr "先頭固定表示投稿はパスワード保護できません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1404
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1410
 msgid "A post can not be sticky and have a password."
 msgstr "投稿を、先頭固定表示かつパスワード保護ありにすることはできません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1147
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1153
 msgid "The post has already been deleted."
 msgstr "その投稿はすでに削除されています。"
 
@@ -12112,16 +12117,16 @@ msgid "Sorry, you are not allowed to manage this plugin."
 msgstr "このプラグインを管理する権限がありません。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:129
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:677
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:731
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:683
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:737
 msgid "Cannot create existing post."
 msgstr "既存の投稿を作成することはできません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:558
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:564
 msgid "Sorry, you are not allowed to create new users."
 msgstr "新規ユーザーを作成する権限がありません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:585
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:591
 msgid "Incorrect post password."
 msgstr "投稿パスワードが正しくありません。"
 
@@ -12155,7 +12160,7 @@ msgstr "タクソノミーが使用するすべての権限。"
 msgid "Sorry, you are not allowed to manage post statuses."
 msgstr "この投稿ステータスを管理する権限がありません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1476
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1482
 msgid "An alphanumeric identifier for the user."
 msgstr "ユーザーの英数字の識別子。"
 
@@ -12239,32 +12244,32 @@ msgstr "オブジェクト属性でコレクションを並び替えます。"
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1629
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:959
 #: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:342
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2989
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2995
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:845
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1158
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1590
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1162
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1596
 msgid "Order sort attribute ascending or descending."
 msgstr "属性で昇順または降順に並べ替えます。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1615
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2962
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2968
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:831
 #: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:348
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1142
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1575
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1146
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1581
 msgid "Limit result set to specific IDs."
 msgstr "特定の ID に結果を限定します。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1606
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2953
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2959
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:822
 #: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:339
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1133
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1566
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1137
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1572
 msgid "Ensure result set excludes specific IDs."
 msgstr "特定の ID を結果から除外します。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2941
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2947
 msgid "Limit response to posts published before a given ISO8601 compliant date."
 msgstr "入力された ISO8601 準拠の日付より前に公開された投稿にレスポンスを限定します。"
 
@@ -12280,7 +12285,7 @@ msgstr "特定のユーザー ID が割り当てられたコメントを結果�
 msgid "Limit result set to comments assigned to specific user IDs. Requires authorization."
 msgstr "特定のユーザー ID が割り当てられたコメントに結果を限定します。認証が必要です。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2910
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2916
 msgid "Limit response to posts published after a given ISO8601 compliant date."
 msgstr "入力された ISO8601 準拠の日付より後に公開された投稿にレスポンスを限定します。"
 
@@ -12290,7 +12295,7 @@ msgstr "コメント投稿者のアバター URL。"
 
 #. translators: %d: Avatar image size in pixels.
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1535
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1530
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1536
 msgid "Avatar URL with image size of %d pixels."
 msgstr "画像サイズが%dピクセルのアバター URL。"
 
@@ -12302,7 +12307,7 @@ msgstr "コメントのステータス。"
 msgid "The ID of the associated post object."
 msgstr "関連投稿オブジェクトの ID。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2464
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2470
 msgid "The ID for the parent of the post."
 msgstr "親投稿の ID。"
 
@@ -12310,19 +12315,19 @@ msgstr "親投稿の ID。"
 msgid "URL to the object."
 msgstr "オブジェクトへの URL。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2352
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2358
 msgid "The date the post was published, as GMT."
 msgstr "投稿の公開日 (GMT)。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2565
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2571
 msgid "HTML content for the post, transformed for display."
 msgstr "表示用に変換された、投稿の HTML コンテンツ。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2560
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2566
 msgid "Content for the post, as it exists in the database."
 msgstr "データベースに存在する形態の、投稿のコンテンツ。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2551
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2557
 msgid "The content for the post."
 msgstr "投稿のコンテンツ。"
 
@@ -12686,13 +12691,13 @@ msgid "Sorry, you are not allowed to assign this term."
 msgstr "タームを割り当てる権限がありません。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:2342
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:750
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:754
 msgid "Sorry, you are not allowed to delete this term."
 msgstr "タームを削除する権限がありません。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:2232
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:458
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:649
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:462
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:653
 msgid "Sorry, you are not allowed to edit this term."
 msgstr "このタームを編集する権限がありません。"
 
@@ -12711,11 +12716,11 @@ msgid "Number of widgets found: %d"
 msgstr "%d件のウィジェットが見つかりました"
 
 #. translators: 1: Post type name, 2: Error message.
-#: wp-includes/class-wp-customize-nav-menus.php:1048
+#: wp-includes/class-wp-customize-nav-menus.php:1054
 msgid "%1$s could not be created: %2$s"
 msgstr "%1$s を作成できませんでした: %2$s"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1043
+#: wp-includes/class-wp-customize-nav-menus.php:1049
 msgid "Post"
 msgstr "投稿"
 
@@ -12984,7 +12989,8 @@ msgid "Sorry, you are not allowed to edit your profile."
 msgstr "プロフィールを編集する権限がありません。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:2722
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:741
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:489
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:747
 #: wp-admin/user-edit.php:104 wp-admin/user-edit.php:136
 #: wp-admin/user-edit.php:195 wp-admin/users.php:114 wp-admin/users.php:143
 #: wp-admin/users.php:249
@@ -13027,8 +13033,8 @@ msgstr "この固定ページを削除する権限がありません。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:1850
 #: wp-includes/class-wp-xmlrpc-server.php:5307
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1060
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1114
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1066
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1120
 msgid "Sorry, you are not allowed to delete this post."
 msgstr "この投稿を削除する権限がありません。"
 
@@ -13108,9 +13114,7 @@ msgid "Sorry, you are not allowed to add a category."
 msgstr "カテゴリーを追加する権限がありません。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:2785
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:223
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:485
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:491
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:497
 #: wp-admin/users.php:16
 msgid "Sorry, you are not allowed to list users."
 msgstr "ユーザー一覧を表示する権限がありません。"
@@ -13292,7 +13296,7 @@ msgstr "%s は禁止されています"
 
 #: wp-includes/customize/class-wp-customize-partial.php:226
 msgid "Partial render must echo the content or return the content string (or array), but not both."
-msgstr "部分描画はコンテンツを出力するか、コンテンツの文字列 (もしくは配列) を返さなければなりませんが、両方ではいけません。"
+msgstr "部分描画はコンテンツを出力するか、コンテンツの文字列 (または配列) を返さなければなりませんが、両方ではいけません。"
 
 #: wp-includes/comment.php:1268
 msgid "<strong>Error:</strong> Your comment is too long."
@@ -13389,7 +13393,7 @@ msgid "(Current: %s)"
 msgstr "(現在: %s)"
 
 #. translators: %s: Menu location.
-#: wp-includes/class-wp-customize-nav-menus.php:510
+#: wp-includes/class-wp-customize-nav-menus.php:516
 msgctxt "menu"
 msgid "(Currently set to: %s)"
 msgstr "(現在の設定: %s)"
@@ -13752,8 +13756,8 @@ msgstr "固定ページアーカイブ"
 msgid "Post Archives"
 msgstr "投稿アーカイブ"
 
-#: wp-includes/class-wp-customize-nav-menus.php:198
-#: wp-includes/customize/class-wp-customize-nav-menu-item-setting.php:319
+#: wp-includes/class-wp-customize-nav-menus.php:200
+#: wp-includes/customize/class-wp-customize-nav-menu-item-setting.php:337
 #: wp-includes/nav-menu.php:922
 msgid "Post Type Archive"
 msgstr "投稿タイプアーカイブ"
@@ -13763,7 +13767,7 @@ msgid "Site names can only contain lowercase letters (a-z) and numbers."
 msgstr "サイト名には半角英字の小文字 (a-z) と半角数字のみを含められます。"
 
 #: wp-includes/ms-functions.php:495 wp-includes/ms-functions.php:502
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1329
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1335
 #: wp-includes/user.php:2259
 msgid "Sorry, that username is not allowed."
 msgstr "そのユーザー名は利用できません。"
@@ -13995,7 +13999,7 @@ msgid "The post type %1$s is not registered, so it may not be reliable to check 
 msgstr "%1$s の投稿タイプは登録されていないので、そのタイプの投稿に対して %2$s の権限を確認できないかもしれません。"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/class-wp-customize-nav-menus.php:1181
+#: wp-includes/class-wp-customize-nav-menus.php:1187
 #: wp-includes/class-wp-customize-widgets.php:944
 msgid "Clear Results"
 msgstr "結果をクリア"
@@ -14020,7 +14024,7 @@ msgstr "パスワードを隠す"
 msgid "Show password"
 msgstr "パスワードを表示"
 
-#: wp-includes/class-wp-customize-nav-menus.php:513 wp-admin/nav-menus.php:1098
+#: wp-includes/class-wp-customize-nav-menus.php:519 wp-admin/nav-menus.php:1098
 msgid "Menu Name"
 msgstr "メニュー名"
 
@@ -14032,7 +14036,7 @@ msgstr "アプリアイコンとしてプレビュー"
 msgid "Preview as a browser icon"
 msgstr "ブラウザーアイコンとしてプレビュー"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1229
+#: wp-includes/class-wp-customize-nav-menus.php:1235
 msgid "No items"
 msgstr "項目なし"
 
@@ -14089,7 +14093,7 @@ msgstr "サイト基本情報"
 
 #. translators: Hidden accessibility text. 1: Title of a menu item, 2: Type of
 #. a menu item.
-#: wp-includes/class-wp-customize-nav-menus.php:1082
+#: wp-includes/class-wp-customize-nav-menus.php:1088
 msgid "Add to menu: %1$s (%2$s)"
 msgstr "メニューに追加: %1$s (%2$s)"
 
@@ -14132,26 +14136,26 @@ msgstr "プレビュー中のテーマ"
 msgid "Active theme"
 msgstr "現在のテーマ"
 
-#: wp-includes/class-wp-customize-nav-menus.php:663
+#: wp-includes/class-wp-customize-nav-menus.php:669
 msgid "Menus can be displayed in locations defined by your theme."
 msgstr "メニューはテーマで設定された位置に表示することができます。"
 
 #. translators: %s: URL to the Widgets panel of the Customizer.
-#: wp-includes/class-wp-customize-nav-menus.php:659
+#: wp-includes/class-wp-customize-nav-menus.php:665
 msgid "Menus can be displayed in locations defined by your theme or in <a href=\"%s\">widget areas</a> by adding a &#8220;Navigation Menu&#8221; widget."
 msgstr "メニューはテーマで設定された位置、または&#8220;ナビゲーションメニュー&#8221;ウィジェットを追加することで<a href=\"%s\">ウィジェットエリア</a>内に表示できます。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:535
+#: wp-includes/class-wp-customize-nav-menus.php:541
 #: wp-includes/class-wp-customize-widgets.php:815
 msgid "Reorder mode closed"
 msgstr "並べ替えモードを終了済み"
 
-#: wp-includes/class-wp-customize-nav-menus.php:534
+#: wp-includes/class-wp-customize-nav-menus.php:540
 #: wp-includes/class-wp-customize-widgets.php:814
 msgid "Reorder mode enabled"
 msgstr "並べ替えモード有効化中"
 
-#: wp-includes/class-wp-customize-nav-menus.php:506
+#: wp-includes/class-wp-customize-nav-menus.php:512
 #: wp-includes/customize/class-wp-customize-nav-menu-setting.php:440
 msgctxt "Missing menu name."
 msgid "(unnamed)"
@@ -14162,11 +14166,11 @@ msgstr "(名称なし)"
 msgid "When in reorder mode, additional controls to reorder menu items will be available in the items list above."
 msgstr "並べ替えモードでは項目リスト内でメニュー項目を並べ替える追加コントロールが利用可能です。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:537
+#: wp-includes/class-wp-customize-nav-menus.php:543
 msgid "Close reorder mode"
 msgstr "並び替えモードを終了"
 
-#: wp-includes/class-wp-customize-nav-menus.php:536
+#: wp-includes/class-wp-customize-nav-menus.php:542
 #: wp-includes/customize/class-wp-customize-nav-menu-control.php:55
 msgid "Reorder menu items"
 msgstr "メニュー項目の並び替え"
@@ -14369,19 +14373,19 @@ msgstr "カスタマイズ中"
 msgid "Menu Options"
 msgstr "メニュー設定"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1280
+#: wp-includes/class-wp-customize-nav-menus.php:1286
 #: wp-admin/includes/nav-menu.php:369 wp-admin/includes/nav-menu.php:817
 #: wp-admin/includes/nav-menu.php:1112
 msgid "Add to Menu"
 msgstr "メニューに追加"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1262
+#: wp-includes/class-wp-customize-nav-menus.php:1268
 #: wp-admin/includes/nav-menu.php:174
 msgid "Custom Links"
 msgstr "カスタムリンク"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/class-wp-customize-nav-menus.php:1173
+#: wp-includes/class-wp-customize-nav-menus.php:1179
 #: wp-includes/class-wp-customize-widgets.php:950
 #: wp-includes/customize/class-wp-customize-themes-section.php:134
 #: wp-includes/customize/class-wp-customize-themes-section.php:148
@@ -14390,137 +14394,137 @@ msgstr "カスタムリンク"
 msgid "The search results will be updated as you type."
 msgstr "入力と同時に検索結果が更新されます。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1168
+#: wp-includes/class-wp-customize-nav-menus.php:1174
 msgid "Search Menu Items"
 msgstr "メニュー項目を検索"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1163
+#: wp-includes/class-wp-customize-nav-menus.php:1169
 msgid "Add Menu Items"
 msgstr "メニュー項目を追加"
 
 #. translators: &#9656; is the unicode right-pointing triangle. %s: Section
 #. title in the Customizer.
-#: wp-includes/class-wp-customize-nav-menus.php:524
-#: wp-includes/class-wp-customize-nav-menus.php:1160
+#: wp-includes/class-wp-customize-nav-menus.php:530
+#: wp-includes/class-wp-customize-nav-menus.php:1166
 #: wp-includes/class-wp-customize-section.php:246
 #: wp-includes/class-wp-customize-widgets.php:926
 msgid "Customizing &#9656; %s"
 msgstr "&#9656;「%s」をカスタマイズ中"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1099
+#: wp-includes/class-wp-customize-nav-menus.php:1105
 msgid "Move one level down"
 msgstr "ひとつ下へ移動"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1098
+#: wp-includes/class-wp-customize-nav-menus.php:1104
 msgid "Move one level up"
 msgstr "ひとつ上へ移動"
 
-#: wp-includes/class-wp-customize-nav-menus.php:511
+#: wp-includes/class-wp-customize-nav-menus.php:517
 msgid "Menu Locations"
 msgstr "メニューの位置"
 
 #. translators: %s: Number of menu locations.
-#: wp-includes/class-wp-customize-nav-menus.php:691
+#: wp-includes/class-wp-customize-nav-menus.php:697
 msgid "Your theme can display menus in %s location. Select which menu you would like to use."
 msgid_plural "Your theme can display menus in %s locations. Select which menu appears in each location."
 msgstr[0] "テーマには %s 箇所のメニュー位置があります。使用するメニューを選択してください。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:655
+#: wp-includes/class-wp-customize-nav-menus.php:661
 msgid "This panel is used for managing navigation menus for content you have already published on your site. You can create menus and add items for existing content such as pages, posts, categories, tags, formats, or custom links."
 msgstr "このパネルではサイトで公開されているコンテンツのナビゲーションメニューを管理します。メニューを作成して、ページ、投稿、カテゴリー、タグ、フォーマット、カスタムリンクといった既存コンテンツを項目として追加できます。"
 
 #. translators: %s: Previous item name.
-#: wp-includes/class-wp-customize-nav-menus.php:564 wp-admin/nav-menus.php:582
+#: wp-includes/class-wp-customize-nav-menus.php:570 wp-admin/nav-menus.php:582
 msgid "Out from under %s"
 msgstr "%s 下の階層から外す"
 
 #. translators: %s: Previous item name.
-#: wp-includes/class-wp-customize-nav-menus.php:562 wp-admin/nav-menus.php:580
+#: wp-includes/class-wp-customize-nav-menus.php:568 wp-admin/nav-menus.php:580
 msgid "Under %s"
 msgstr "%s 下の階層"
 
 #. translators: %s: Previous item name.
-#: wp-includes/class-wp-customize-nav-menus.php:560 wp-admin/nav-menus.php:578
+#: wp-includes/class-wp-customize-nav-menus.php:566 wp-admin/nav-menus.php:578
 msgid "Move out from under %s"
 msgstr "%s 下の階層から外す"
 
 #. translators: %s: Previous item name.
-#: wp-includes/class-wp-customize-nav-menus.php:558 wp-admin/nav-menus.php:576
+#: wp-includes/class-wp-customize-nav-menus.php:564 wp-admin/nav-menus.php:576
 msgid "Move under %s"
 msgstr "%s 下の階層へ"
 
-#: wp-includes/class-wp-customize-nav-menus.php:556 wp-admin/nav-menus.php:574
+#: wp-includes/class-wp-customize-nav-menus.php:562 wp-admin/nav-menus.php:574
 msgid "Move to the top"
 msgstr "先頭へ"
 
-#: wp-includes/class-wp-customize-nav-menus.php:555 wp-admin/nav-menus.php:573
+#: wp-includes/class-wp-customize-nav-menus.php:561 wp-admin/nav-menus.php:573
 msgid "Move down one"
 msgstr "ひとつ下へ"
 
-#: wp-includes/class-wp-customize-nav-menus.php:554 wp-admin/nav-menus.php:572
+#: wp-includes/class-wp-customize-nav-menus.php:560 wp-admin/nav-menus.php:572
 msgid "Move up one"
 msgstr "ひとつ上へ"
 
-#: wp-includes/class-wp-customize-nav-menus.php:533
+#: wp-includes/class-wp-customize-nav-menus.php:539
 msgid "Loading more results... please wait."
 msgstr "追加の検索結果を読み込んでいます。少々お待ちください。"
 
 #. translators: %d: Number of additional menu items found.
-#: wp-includes/class-wp-customize-nav-menus.php:532
+#: wp-includes/class-wp-customize-nav-menus.php:538
 msgid "Additional items found: %d"
 msgstr "一致する追加項目が見つかりました: %d"
 
 #. translators: %d: Number of menu items found.
-#: wp-includes/class-wp-customize-nav-menus.php:530
+#: wp-includes/class-wp-customize-nav-menus.php:536
 msgid "Number of items found: %d"
 msgstr "一致する項目の数: %d"
 
 #. translators: %s: Title of a menu item in draft status.
-#: wp-includes/class-wp-customize-nav-menus.php:528
+#: wp-includes/class-wp-customize-nav-menus.php:534
 #: wp-admin/includes/class-walker-nav-menu-edit.php:113
 msgid "%s (Pending)"
 msgstr "%s (レビュー待ち)"
 
 #. translators: %s: Title of an invalid menu item.
-#: wp-includes/class-wp-customize-nav-menus.php:526
+#: wp-includes/class-wp-customize-nav-menus.php:532
 #: wp-admin/includes/class-walker-nav-menu-edit.php:109
 msgid "%s (Invalid)"
 msgstr "%s (無効)"
 
-#: wp-includes/class-wp-customize-nav-menus.php:522 wp-admin/nav-menus.php:599
+#: wp-includes/class-wp-customize-nav-menus.php:528 wp-admin/nav-menus.php:599
 msgid "Menu item is now a sub-item"
 msgstr "メニュー項目がサブ項目になりました"
 
-#: wp-includes/class-wp-customize-nav-menus.php:521 wp-admin/nav-menus.php:598
+#: wp-includes/class-wp-customize-nav-menus.php:527 wp-admin/nav-menus.php:598
 msgid "Menu item moved out of submenu"
 msgstr "メニュー項目をサブメニューの外に移動しました"
 
-#: wp-includes/class-wp-customize-nav-menus.php:520 wp-admin/nav-menus.php:596
+#: wp-includes/class-wp-customize-nav-menus.php:526 wp-admin/nav-menus.php:596
 msgid "Menu item moved down"
 msgstr "メニュー項目を下に移動しました"
 
-#: wp-includes/class-wp-customize-nav-menus.php:519 wp-admin/nav-menus.php:595
+#: wp-includes/class-wp-customize-nav-menus.php:525 wp-admin/nav-menus.php:595
 msgid "Menu item moved up"
 msgstr "メニュー項目を上に移動しました"
 
-#: wp-includes/class-wp-customize-nav-menus.php:518
+#: wp-includes/class-wp-customize-nav-menus.php:524
 msgid "Menu deleted"
 msgstr "メニューを削除しました"
 
-#: wp-includes/class-wp-customize-nav-menus.php:517
+#: wp-includes/class-wp-customize-nav-menus.php:523
 msgid "Menu created"
 msgstr "メニューを作成しました"
 
-#: wp-includes/class-wp-customize-nav-menus.php:516
+#: wp-includes/class-wp-customize-nav-menus.php:522
 msgid "Menu item deleted"
 msgstr "メニュー項目を削除しました"
 
-#: wp-includes/class-wp-customize-nav-menus.php:515 wp-admin/nav-menus.php:593
+#: wp-includes/class-wp-customize-nav-menus.php:521 wp-admin/nav-menus.php:593
 msgid "Menu item added"
 msgstr "メニュー項目を追加しました"
 
 #: wp-includes/class-wp-customize-nav-menus.php:167
-#: wp-includes/class-wp-customize-nav-menus.php:451
+#: wp-includes/class-wp-customize-nav-menus.php:457
 #: wp-admin/includes/nav-menu.php:455
 msgctxt "nav menu home label"
 msgid "Home"
@@ -14574,12 +14578,12 @@ msgstr "ナビゲーションラベル"
 msgid "Automatically add new top-level pages to this menu"
 msgstr "このメニューに新しいトップレベルページを自動的に追加"
 
-#: wp-includes/class-wp-customize-nav-menus.php:511
+#: wp-includes/class-wp-customize-nav-menus.php:517
 #: wp-includes/js/dist/core-data.js:1634
 msgid "Menu Location"
 msgstr "メニューの位置"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1108
+#: wp-includes/class-wp-customize-nav-menus.php:1114
 #: wp-admin/nav-menus.php:1269
 msgid "Delete Menu"
 msgstr "メニューを削除"
@@ -14645,9 +14649,9 @@ msgid "F j, Y @ H:i:s"
 msgstr "Y年n月j日 H:i:s"
 
 #: wp-includes/class-wp-customize-nav-menus.php:169
-#: wp-includes/class-wp-customize-nav-menus.php:458
-#: wp-includes/class-wp-customize-nav-menus.php:507
-#: wp-includes/customize/class-wp-customize-nav-menu-item-setting.php:321
+#: wp-includes/class-wp-customize-nav-menus.php:464
+#: wp-includes/class-wp-customize-nav-menus.php:513
+#: wp-includes/customize/class-wp-customize-nav-menu-item-setting.php:339
 #: wp-includes/nav-menu.php:955
 msgid "Custom Link"
 msgstr "カスタムリンク"
@@ -14789,7 +14793,7 @@ msgstr "<span class=\"screen-reader-text\">%s への</span>1件のコメント"
 msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "<span class=\"screen-reader-text\">%s への</span>コメントはまだありません"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1274
+#: wp-includes/class-wp-customize-nav-menus.php:1280
 #: wp-includes/class-wp-editor.php:1897 wp-includes/media-template.php:1057
 #: wp-admin/includes/nav-menu.php:358
 msgid "Link Text"
@@ -15147,7 +15151,7 @@ msgstr "一括選択"
 msgid "%s: %l."
 msgstr "%s: %l。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:505 wp-admin/js/nav-menu.js:837
+#: wp-includes/class-wp-customize-nav-menus.php:511 wp-admin/js/nav-menu.js:841
 msgctxt "missing menu item navigation label"
 msgid "(no label)"
 msgstr "(ラベルなし)"
@@ -15253,7 +15257,7 @@ msgstr "アップローダーを閉じる"
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-editor.php:1926
 msgid "Search or use up and down arrow keys to select an item."
-msgstr "検索もしくは上下矢印キーを使って項目を選択してください。"
+msgstr "検索または上下矢印キーを使って項目を選択してください。"
 
 #: wp-includes/class-wp-editor.php:1390
 msgid "Read more..."
@@ -15801,7 +15805,7 @@ msgid "Create a new playlist"
 msgstr "プレイリストを新規作成"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/class-wp-customize-nav-menus.php:1152
+#: wp-includes/class-wp-customize-nav-menus.php:1158
 #: wp-includes/class-wp-customize-panel.php:380
 #: wp-includes/class-wp-customize-section.php:370
 #: wp-includes/class-wp-customize-widgets.php:918
@@ -16103,7 +16107,7 @@ msgid "Select an area to move this widget into:"
 msgstr "ウィジェットを移動するエリアを選択:"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/class-wp-customize-nav-menus.php:1096
+#: wp-includes/class-wp-customize-nav-menus.php:1102
 #: wp-includes/class-wp-customize-widgets.php:723
 #: wp-includes/js/dist/block-editor.js:53026
 #: wp-includes/js/dist/block-editor.js:53027
@@ -16116,7 +16120,7 @@ msgid "Move up"
 msgstr "上に移動"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/class-wp-customize-nav-menus.php:1097
+#: wp-includes/class-wp-customize-nav-menus.php:1103
 #: wp-includes/class-wp-customize-widgets.php:722
 #: wp-includes/js/dist/block-editor.js:53039
 #: wp-includes/js/dist/block-editor.js:53040
@@ -16350,10 +16354,6 @@ msgctxt "Comma-separated list of search stopwords in your language"
 msgid "about,an,are,as,at,be,by,com,for,from,how,in,is,it,of,on,or,that,the,this,to,was,what,when,where,who,will,with,www"
 msgstr "about,an,are,as,at,be,by,com,for,from,how,in,is,it,of,on,or,that,the,this,to,was,what,when,where,who,will,with,www"
 
-#: wp-includes/post-template.php:1810
-msgid "This content is password protected. To view it please enter your password below:"
-msgstr "このコンテンツはパスワードで保護されています。閲覧するには以下にパスワードを入力してください。"
-
 #: wp-includes/class-wp-http-curl.php:283
 #: wp-includes/class-wp-http-streams.php:336
 msgid "Failed to write request to temporary file."
@@ -16428,9 +16428,9 @@ msgstr[0] "%s週間"
 #. translators: %d: ID of a term.
 #: wp-includes/class-walker-page-dropdown.php:81
 #: wp-includes/class-walker-page.php:164
-#: wp-includes/class-wp-customize-nav-menus.php:238
-#: wp-includes/class-wp-customize-nav-menus.php:399
-#: wp-includes/customize/class-wp-customize-nav-menu-item-setting.php:277
+#: wp-includes/class-wp-customize-nav-menus.php:240
+#: wp-includes/class-wp-customize-nav-menus.php:405
+#: wp-includes/customize/class-wp-customize-nav-menu-item-setting.php:296
 #: wp-includes/nav-menu.php:907 wp-includes/nav-menu.php:949
 #: wp-includes/nav-menu.php:996
 msgid "#%d (no title)"
@@ -16545,7 +16545,7 @@ msgstr "WordPress アドレス (URL)"
 
 #: wp-includes/class-wp-xmlrpc-server.php:2728
 #: wp-includes/rest-api/endpoints/class-wp-rest-application-passwords-controller.php:692
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:442
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:446
 #: wp-includes/user.php:2208 wp-includes/user.php:2654
 #: wp-includes/user.php:2660 wp-admin/user-edit.php:28
 #: wp-admin/user-edit.php:30
@@ -17183,8 +17183,8 @@ msgstr "このタクソノミーではタームを編集する権限がありま
 #: wp-includes/class-wp-xmlrpc-server.php:2256
 #: wp-includes/rest-api/endpoints/class-wp-rest-menus-controller.php:213
 #: wp-includes/rest-api/endpoints/class-wp-rest-menus-controller.php:307
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:538
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:685
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:542
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:689
 #: wp-includes/taxonomy.php:2458 wp-includes/taxonomy.php:3260
 msgid "Parent term does not exist."
 msgstr "親タームがありません。"
@@ -17199,7 +17199,7 @@ msgid "The term name cannot be empty."
 msgstr "キーワード名を入力してください。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:2112
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:507
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:511
 #: wp-admin/edit-tags.php:86
 msgid "Sorry, you are not allowed to create terms in this taxonomy."
 msgstr "このタクソノミーではタームを作成する権限がありません。"
@@ -17225,7 +17225,7 @@ msgstr "不正なタクソノミーです。"
 
 #: wp-includes/widgets/class-wp-widget-links.php:147
 msgid "Select Link Category:"
-msgstr "リンクカテゴリーの選択:"
+msgstr "リンクカテゴリーを選択:"
 
 #: wp-includes/class-wp-xmlrpc-server.php:582 wp-admin/includes/file.php:54
 #: wp-admin/includes/file.php:62
@@ -17273,7 +17273,7 @@ msgid "Customize: %s"
 msgstr "カスタマイズ: %s"
 
 #: wp-includes/class-wp-customize-control.php:596
-#: wp-includes/class-wp-customize-nav-menus.php:709
+#: wp-includes/class-wp-customize-nav-menus.php:715
 #: wp-includes/widgets/class-wp-nav-menu-widget.php:191 wp-admin/export.php:226
 #: wp-admin/export.php:231 wp-admin/export.php:278 wp-admin/export.php:283
 #: wp-admin/export.php:323 wp-admin/export.php:328
@@ -17335,8 +17335,8 @@ msgstr "画像リンクタイプの初期設定"
 #: wp-includes/class-wp-xmlrpc-server.php:6508
 #: wp-includes/class-wp-xmlrpc-server.php:6698
 #: wp-includes/class-wp-xmlrpc-server.php:6756
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:575
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:890
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:581
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:896
 #: wp-admin/includes/ajax-actions.php:2075 wp-admin/includes/media.php:3834
 #: wp-admin/includes/post.php:288 wp-admin/includes/post.php:2084
 #: wp-admin/includes/post.php:2088
@@ -17365,7 +17365,7 @@ msgid "Sorry, you are not allowed to edit posts in this post type."
 msgstr "この投稿タイプの投稿を編集する権限がありません。"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:309
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1164
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1170
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:521
 msgid "The post cannot be deleted."
 msgstr "投稿を削除できません。"
@@ -17399,15 +17399,15 @@ msgstr "この項目を表示する権限がありません。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:1510
 #: wp-includes/class-wp-xmlrpc-server.php:5489
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1387
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1393
 #: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:651
 msgid "Invalid author ID."
 msgstr "無効な投稿者 ID。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:1504
 #: wp-includes/class-wp-xmlrpc-server.php:5476
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:687
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:703
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:693
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:709
 #: wp-admin/includes/post.php:43 wp-admin/includes/post.php:88
 #: wp-admin/post-new.php:61 wp-admin/press-this.php:20
 msgid "Sorry, you are not allowed to create posts as this user."
@@ -17418,7 +17418,7 @@ msgid "Sorry, you are not allowed to create password protected posts in this pos
 msgstr "この投稿タイプでパスワード保護された投稿を作成する権限がありません。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:1481
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1533
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1539
 msgid "Sorry, you are not allowed to create private posts in this post type."
 msgstr "この投稿タイプで非公開の投稿を作成する権限がありません。"
 
@@ -18548,7 +18548,7 @@ msgid "One response to %s"
 msgstr "%s への1件のコメント"
 
 #: wp-includes/admin-bar.php:1111
-#: wp-includes/class-wp-customize-nav-menus.php:675
+#: wp-includes/class-wp-customize-nav-menus.php:681
 #: wp-includes/customize/class-wp-customize-nav-menus-panel.php:113
 #: wp-includes/js/dist/block-library.js:34424 wp-admin/menu.php:232
 #: wp-admin/nav-menus.php:32 wp-admin/nav-menus.php:781
@@ -18608,11 +18608,11 @@ msgstr "ページ投稿者をこのユーザーに変更する権限がありま
 msgid "Sorry, you are not allowed to change the post author as this user."
 msgstr "投稿者をこのユーザーに変更する権限がありません。"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:898
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:904
 msgid "Sorry, you are not allowed to update posts as this user."
 msgstr "このユーザーとして投稿を更新する権限がありません。"
 
-#: wp-includes/class-wp-customize-nav-menus.php:951
+#: wp-includes/class-wp-customize-nav-menus.php:957
 #: wp-includes/class-wp-xmlrpc-server.php:1454
 #: wp-includes/class-wp-xmlrpc-server.php:2011
 #: wp-includes/class-wp-xmlrpc-server.php:3690
@@ -18630,7 +18630,7 @@ msgid "Invalid post type."
 msgstr "無効な投稿タイプ。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:1487
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1543
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1549
 msgid "Sorry, you are not allowed to publish posts in this post type."
 msgstr "この投稿タイプで投稿を公開する権限がありません。"
 
@@ -18685,7 +18685,7 @@ msgstr "コメント投稿者の名前とメールアドレスは入力必須で
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:374
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:841
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:445
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:542
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:548
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:205
 #: wp-includes/revision.php:362
 msgid "Invalid post ID."
@@ -18764,7 +18764,7 @@ msgstr "ただし、新しいユーザー名を使用するには、<strong>こ�
 msgid "%s is your new username"
 msgstr "新しいユーザー名は %s です"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1115
+#: wp-includes/class-wp-customize-nav-menus.php:1121
 #: wp-includes/script-loader.php:2002 wp-signup.php:660
 #: wp-includes/js/dist/block-library.js:45134
 #: wp-includes/js/dist/components.js:58773
@@ -19123,6 +19123,10 @@ msgstr "%s [現在のリビジョン]"
 msgid "%s [Autosave]"
 msgstr "%s [自動保存]"
 
+#: wp-includes/post-template.php:1810
+msgid "This content is password protected. To view it please enter your password below:"
+msgstr "このコンテンツはパスワードで保護されています。表示するには以下にパスワードを入力してください:"
+
 #. translators: 'Home' as in a website's home page.
 #: wp-includes/blocks/home-link.php:140 wp-includes/post-template.php:1471
 #: wp-includes/js/dist/block-library.js:25037
@@ -19371,7 +19375,7 @@ msgstr "フルスクリーン"
 #: wp-includes/js/dist/block-editor.js:23928
 #: wp-includes/js/dist/block-editor.js:71464
 msgid "Remove link"
-msgstr "リンクの削除"
+msgstr "リンクを削除"
 
 #: wp-includes/class-wp-editor.php:1267 wp-includes/script-loader.php:803
 #: wp-includes/js/dist/block-editor.js:71164
@@ -19625,7 +19629,7 @@ msgid "Document properties"
 msgstr "ページ設定"
 
 #: wp-includes/class-wp-editor.php:1373 wp-includes/script-loader.php:1311
-#: wp-includes/theme.php:3746 wp-admin/js/nav-menu.js:1555
+#: wp-includes/theme.php:3746 wp-admin/js/nav-menu.js:1564
 #: wp-admin/js/post.js:493 wp-admin/js/theme-plugin-editor.js:71
 #: wp-admin/js/user-profile.js:519 wp-admin/js/widgets.js:98
 msgid "The changes you made will be lost if you navigate away from this page."
@@ -20314,7 +20318,7 @@ msgstr "コメントを読むにはパスワードを入力してください。
 msgid "Comments on %s"
 msgstr "%s へのコメント"
 
-#: wp-includes/class-wp-customize-nav-menus.php:336
+#: wp-includes/class-wp-customize-nav-menus.php:342
 #: wp-includes/script-loader.php:1270
 #: wp-includes/js/dist/block-directory.js:1794
 #: wp-includes/js/dist/block-editor.js:48828
@@ -20323,7 +20327,7 @@ msgstr "%s へのコメント"
 #: wp-includes/js/dist/block-library.js:63257
 #: wp-includes/js/dist/commands.js:3793 wp-includes/js/dist/components.js:60459
 #: wp-admin/includes/nav-menu.php:721 wp-admin/includes/nav-menu.php:1097
-#: wp-admin/js/nav-menu.js:1758 wp-admin/js/tags-suggest.js:141
+#: wp-admin/js/nav-menu.js:1774 wp-admin/js/tags-suggest.js:141
 msgid "No results found."
 msgstr "見つかりませんでした。"
 
@@ -20861,7 +20865,7 @@ msgid "All Categories"
 msgstr "カテゴリー一覧"
 
 #: wp-includes/class-wp-customize-control.php:648
-#: wp-includes/class-wp-customize-nav-menus.php:1241
+#: wp-includes/class-wp-customize-nav-menus.php:1247
 #: wp-includes/class-wp-post-type.php:992
 #: wp-includes/js/dist/block-library.js:22666
 #: wp-includes/js/dist/editor.js:6186 wp-includes/js/dist/editor.js:29355
@@ -20872,7 +20876,7 @@ msgstr "追加"
 
 #: wp-includes/class-wp-taxonomy.php:630
 msgid "Add or remove tags"
-msgstr "タグの追加もしくは削除"
+msgstr "タグを追加または削除"
 
 #: wp-includes/media.php:4968 wp-includes/script-loader.php:1267
 #: wp-login.php:738 wp-includes/js/dist/edit-site.js:14782
@@ -21646,7 +21650,7 @@ msgctxt "noun"
 msgid "Comment"
 msgstr "コメント"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1269
+#: wp-includes/class-wp-customize-nav-menus.php:1275
 #: wp-includes/class-wp-editor.php:1271 wp-includes/class-wp-editor.php:1893
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:111
 #: wp-includes/embed.php:1192 wp-includes/media-template.php:899

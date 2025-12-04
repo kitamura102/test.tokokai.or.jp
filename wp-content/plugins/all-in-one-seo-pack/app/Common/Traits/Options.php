@@ -195,10 +195,10 @@ trait Options {
 			if ( $preserveHtml ) {
 				if ( is_array( $defaults[ $name ]['value'] ) ) {
 					foreach ( $defaults[ $name ]['value'] as $k => $v ) {
-						$defaults[ $name ]['value'][ $k ] = html_entity_decode( $v, ENT_NOQUOTES );
+						$defaults[ $name ]['value'][ $k ] = aioseo()->helpers->decodeHtmlEntities( $v );
 					}
 				} else {
-					$defaults[ $name ]['value'] = html_entity_decode( $defaults[ $name ]['value'], ENT_NOQUOTES );
+					$defaults[ $name ]['value'] = aioseo()->helpers->decodeHtmlEntities( $defaults[ $name ]['value'] );
 				}
 			}
 			$value = $defaults[ $name ]['value'];
@@ -526,10 +526,31 @@ trait Options {
 
 			$keys[]         = $key;
 			$values[ $key ] = $this->resetValues( $value, $defaults, $keys );
+
+			if ( 'llms' === $key ) {
+				$this->handleLlmsReset();
+			}
+
 			array_pop( $keys );
 		}
 
 		return $values;
+	}
+
+	/**
+	 * Handles LLMS reset operations.
+	 *
+	 * @since 4.8.8
+	 *
+	 * @return void
+	 */
+	protected function handleLlmsReset() {
+		// Add LLMS cleanup when doing a full reset
+		aioseo()->actionScheduler->unschedule( aioseo()->llms->llmsTxtSingleAction );
+		aioseo()->actionScheduler->unschedule( aioseo()->llms->llmsTxtRecurrentAction );
+
+		// Regenerate the LLMS files after reset
+		aioseo()->llms->generateLlmsTxt();
 	}
 
 	/**

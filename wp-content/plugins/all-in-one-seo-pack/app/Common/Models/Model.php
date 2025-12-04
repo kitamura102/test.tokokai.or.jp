@@ -225,7 +225,7 @@ class Model implements \JsonSerializable {
 	protected function filter( $keys ) {
 		$fields    = [];
 		$skip      = [ 'created', 'updated' ];
-		$dbColumns = aioseo()->db->getColumns( $this->table );
+		$dbColumns = aioseo()->core->db->getColumns( $this->table );
 
 		foreach ( $dbColumns as $column ) {
 			if ( ! in_array( $column, $skip, true ) && array_key_exists( $column, $keys ) ) {
@@ -470,7 +470,12 @@ class Model implements \JsonSerializable {
 			self::$columns[ get_called_class() ] = [];
 
 			// Let's set the columns that are available by default.
-			$table   = aioseo()->core->db->prefix . $this->table;
+			$table = aioseo()->core->db->prefix . $this->table;
+
+			if ( ! aioseo()->core->db->tableExists( $this->table ) ) {
+				return self::$columns[ get_called_class() ];
+			}
+
 			$results = aioseo()->core->db->start( $table )
 				->output( 'OBJECT' )
 				->execute( 'SHOW COLUMNS FROM `' . $table . '`', true )

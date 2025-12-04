@@ -52,6 +52,9 @@ trait Vue {
 		$this->setWritingAssistantData();
 		$this->setBreadcrumbsData();
 		$this->setSeoAnalyzerData();
+		$this->setAiAssistantData();
+		$this->setAiImageGeneratorData();
+		$this->setAiInsightsData();
 
 		$this->cache[ $hash ] = $this->data;
 
@@ -97,7 +100,7 @@ trait Vue {
 				'assetsPath'        => aioseo()->core->assets->getAssetsPath(),
 				'generalSitemapUrl' => aioseo()->sitemap->helpers->getUrl( 'general' ),
 				'rssSitemapUrl'     => aioseo()->sitemap->helpers->getUrl( 'rss' ),
-				'llmsUrl'           => aioseo()->llms->getUrl(),
+				'llmsUrl'           => aioseo()->helpers->getLlmsUrl(),
 				'robotsTxtUrl'      => $this->getSiteUrl() . '/robots.txt',
 				'marketingSiteUrl'  => $this->getMarketingSiteUrl(),
 				'upgradeUrl'        => apply_filters( 'aioseo_upgrade_link', AIOSEO_MARKETING_URL . 'lite-upgrade/' ),
@@ -182,15 +185,6 @@ trait Vue {
 				],
 				'vueComponentsDefaults' => $this->getVueComponentsDefaults(),
 			],
-			'user'               => [
-				'canManage'      => aioseo()->access->canManage(),
-				'capabilities'   => aioseo()->access->getAllCapabilities(),
-				'customRoles'    => $this->getCustomRoles(),
-				'data'           => wp_get_current_user(),
-				'locale'         => function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale(),
-				'roles'          => $this->getUserRoles(),
-				'unfilteredHtml' => current_user_can( 'unfiltered_html' )
-			],
 			'plugins'            => $this->getPluginData(),
 			'postData'           => [
 				'postTypes'    => array_values( $this->getPublicPostTypes( false, false, true ) ),
@@ -214,6 +208,32 @@ trait Vue {
 			'theme'              => [
 				'features' => aioseo()->helpers->getThemeFeatures()
 			]
+		];
+
+		// In multisite, super admins may not have explicit roles on subsites.
+		// Ensure they have administrator role and capabilities for proper access.
+		$userData     = wp_get_current_user();
+		$roles        = $userData->roles;
+		$capabilities = $userData->allcaps;
+
+		// If the user is a network admin, and doesn't have a user on the subsite, give him admin role/caps.
+		if ( is_multisite() && is_super_admin() && empty( $roles ) ) {
+			$roles     = [ 'administrator' ];
+			$adminRole = get_role( 'administrator' );
+			if ( is_a( $adminRole, 'WP_Role' ) ) {
+				$capabilities = $adminRole->capabilities;
+			}
+		}
+
+		$this->data['user'] = [
+			'emailAddress'   => $userData->user_email,
+			'roles'          => $roles,
+			'capabilities'   => $capabilities,
+			'customRoles'    => $this->getCustomRoles(),
+			'userRoles'      => aioseo()->helpers->getUserRoles(),
+			'locale'         => function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale(),
+			'unfilteredHtml' => current_user_can( 'unfiltered_html' ),
+			'canManage'      => aioseo()->access->canManage()
 		];
 	}
 
@@ -682,6 +702,32 @@ trait Vue {
 	}
 
 	/**
+	 * Set Vue AI Assistant data.
+	 *
+	 * @since 4.9.1
+	 *
+	 * @return void
+	 */
+	private function setAiAssistantData() {
+		if ( 'post' === $this->args['page'] ) {
+			$this->data['aiAssistant'] = aioseo()->ai->assistant->getVueDataEdit( $this->args['staticPostId'] ?? null );
+		}
+	}
+
+	/**
+	 * Set Vue AI Image Generator data.
+	 *
+	 * @since 4.8.9
+	 *
+	 * @return void
+	 */
+	private function setAiImageGeneratorData() {
+		if ( 'post' === $this->args['page'] ) {
+			$this->data['aiImageGenerator'] = aioseo()->ai->image->getVueDataEdit( $this->args['staticPostId'] ?? null );
+		}
+	}
+
+	/**
 	 * Returns the marketing site URL.
 	 *
 	 * @since 4.8.4
@@ -753,5 +799,24 @@ trait Vue {
 		];
 
 		return apply_filters( 'aioseo_vue_components_defaults', $defaults );
+	}
+
+	/**
+	 * Set Vue AI Insights data.
+	 *
+	 * @since 4.9.1
+	 *
+	 * @return void
+	 */
+	private function setAiInsightsData() {
+		if ( 'ai-insights' !== $this->args['page'] ) {
+			return;
+		}
+
+		$rateLimit = aioseo()->core->cache->get( 'ai_insights_rate_limit' );
+
+		$this->data['aiInsights'] = [
+			'rateLimit' => ! empty( $rateLimit ) ? $rateLimit : null
+		];
 	}
 }

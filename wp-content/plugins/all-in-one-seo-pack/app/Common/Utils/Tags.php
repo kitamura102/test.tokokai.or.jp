@@ -187,6 +187,55 @@ class Tags {
 			'tax_name',
 			'taxonomy_title'
 		],
+		'pageDescription'     => [
+			'author_first_name',
+			'author_last_name',
+			'author_name',
+			'current_date',
+			'current_day',
+			'current_month',
+			'current_year',
+			'custom_field',
+			'permalink',
+			'post_content',
+			'post_date',
+			'post_day',
+			'post_excerpt_only',
+			'post_excerpt',
+			'post_month',
+			'post_title',
+			'post_year',
+			'separator_sa',
+			'site_title',
+			'tagline',
+			'tax_name',
+			'taxonomy_title'
+		],
+		'pageTitle'           => [
+			'author_first_name',
+			'author_last_name',
+			'author_name',
+			'categories',
+			'current_date',
+			'current_day',
+			'current_month',
+			'current_year',
+			'custom_field',
+			'permalink',
+			'post_content',
+			'post_date',
+			'post_day',
+			'post_excerpt_only',
+			'post_excerpt',
+			'post_month',
+			'post_title',
+			'post_year',
+			'separator_sa',
+			'site_title',
+			'tagline',
+			'tax_name',
+			'taxonomy_title'
+		],
 		'rss'                 => [
 			'author_link',
 			'author_link_alt',
@@ -303,7 +352,27 @@ class Tags {
 			'tax_parent_name',
 			'taxonomy_description',
 			'taxonomy_title'
-		]
+		],
+		'blocksContent'       => [
+			'author_first_name',
+			'author_last_name',
+			'author_name',
+			'author_url',
+			'current_date',
+			'current_day',
+			'current_month',
+			'current_year',
+			'custom_field',
+			'permalink',
+			'post_date',
+			'post_day',
+			'post_month',
+			'post_title',
+			'post_year',
+			'separator_sa',
+			'site_title',
+			'taxonomy_title'
+		],
 	];
 
 	/**
@@ -1082,6 +1151,9 @@ class Tags {
 	private function getTaxonomyTitle( $postId = null ) {
 		$isWcActive = aioseo()->helpers->isWooCommerceActive();
 		$title      = '';
+
+		// First try to get the title from various WordPress archive/taxonomy pages
+		// This handles cases where we're not on a singular post/page
 		if ( $isWcActive && is_product_category() ) {
 			$title = single_cat_title( '', false );
 		} elseif ( is_category() ) {
@@ -1098,12 +1170,17 @@ class Tags {
 			$title = get_the_archive_title();
 		}
 
-		if ( $postId ) {
-			$currentScreen  = aioseo()->helpers->getCurrentScreen();
-			$isProduct      = $isWcActive && ( is_product() || 'product' === ( $currentScreen->post_type ?? '' ) );
-			$post           = aioseo()->helpers->getPost( $postId );
+		// If we still don't have a title and we have a post ID,
+		// try to get the title from the post's primary term or first hierarchical taxonomy term
+		if ( ! $title && $postId ) {
+			$currentScreen = aioseo()->helpers->getCurrentScreen();
+			$isProduct     = $isWcActive && ( is_product() || 'product' === ( $currentScreen->post_type ?? '' ) );
+			$post          = aioseo()->helpers->getPost( $postId );
+
+			// Get all taxonomies for this post type
 			$postTaxonomies = get_object_taxonomies( $post, 'objects' );
 			$postTerms      = [];
+
 			foreach ( $postTaxonomies as $taxonomySlug => $taxonomy ) {
 				if ( ! $taxonomy->hierarchical ) {
 					continue;

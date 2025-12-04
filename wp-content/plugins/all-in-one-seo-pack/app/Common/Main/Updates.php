@@ -176,7 +176,7 @@ class Updates {
 		}
 
 		if ( version_compare( $lastActiveVersion, '4.2.2', '<' ) ) {
-			aioseo()->internalOptions->database->installedTables = '';
+			aioseo()->core->cache->delete( 'db_schema' );
 
 			$this->addOptionsColumn();
 			$this->removeTabsColumn();
@@ -276,6 +276,11 @@ class Updates {
 			$this->addColumnIndexForCornerstoneContent();
 		}
 
+		if ( version_compare( $lastActiveVersion, '4.9.1', '<' ) ) {
+			$this->addAiInsightsKeywordReportsTable();
+			aioseo()->access->addCapabilities();
+		}
+
 		do_action( 'aioseo_run_updates', $lastActiveVersion );
 
 		// Always clear the cache if the last active version is different from our current.
@@ -317,7 +322,7 @@ class Updates {
 		aioseo()->internalOptions->internal->lastActiveVersion = aioseo()->version;
 
 		// Bust the tableExists and columnExists cache.
-		aioseo()->internalOptions->database->installedTables = '';
+		aioseo()->core->cache->delete( 'db_schema' );
 
 		// Bust the DB cache so we can make sure that everything is fresh.
 		aioseo()->core->db->bustCache();
@@ -438,7 +443,7 @@ class Updates {
 		}
 
 		// Reset the cache for the installed tables.
-		aioseo()->internalOptions->database->installedTables = '';
+		aioseo()->core->cache->delete( 'db_schema' );
 	}
 
 	/**
@@ -476,7 +481,7 @@ class Updates {
 			);
 
 			// Reset the cache for the installed tables.
-			aioseo()->internalOptions->database->installedTables = '';
+			aioseo()->core->cache->delete( 'db_schema' );
 		}
 	}
 
@@ -496,7 +501,7 @@ class Updates {
 			);
 
 			// Reset the cache for the installed tables.
-			aioseo()->internalOptions->database->installedTables = '';
+			aioseo()->core->cache->delete( 'db_schema' );
 		}
 	}
 
@@ -620,7 +625,7 @@ class Updates {
 			);
 
 			// Reset the cache for the installed tables.
-			aioseo()->internalOptions->database->installedTables = '';
+			aioseo()->core->cache->delete( 'db_schema' );
 
 			aioseo()->core->db
 				->update( 'aioseo_notifications' )
@@ -863,7 +868,7 @@ class Updates {
 			}
 
 			// Reset the cache for the installed tables.
-			aioseo()->internalOptions->database->installedTables = '';
+			aioseo()->core->cache->delete( 'db_schema' );
 		}
 	}
 
@@ -883,7 +888,7 @@ class Updates {
 			);
 
 			// Reset the cache for the installed tables.
-			aioseo()->internalOptions->database->installedTables = '';
+			aioseo()->core->cache->delete( 'db_schema' );
 		}
 	}
 
@@ -982,7 +987,7 @@ class Updates {
 			);
 
 			// Reset the cache for the installed tables.
-			aioseo()->internalOptions->database->installedTables = '';
+			aioseo()->core->cache->delete( 'db_schema' );
 		}
 	}
 
@@ -1042,7 +1047,7 @@ class Updates {
 			);
 
 			// Reset the cache for the installed tables.
-			aioseo()->internalOptions->database->installedTables = '';
+			aioseo()->core->cache->delete( 'db_schema' );
 		}
 	}
 
@@ -1952,7 +1957,7 @@ class Updates {
 			);
 
 			// Reset the cache for the installed tables.
-			aioseo()->internalOptions->database->installedTables = '';
+			aioseo()->core->cache->delete( 'db_schema' );
 		}
 	}
 
@@ -2073,5 +2078,50 @@ class Updates {
 			"ALTER TABLE {$tableName}
 			ADD INDEX ndx_aioseo_posts_pillar_content (pillar_content)"
 		);
+	}
+
+	/**
+	 * Adds tables for AI Insights Keyword Reports.
+	 *
+	 * @since 4.9.1
+	 *
+	 * @return void
+	 */
+	private function addAiInsightsKeywordReportsTable() {
+		$db             = aioseo()->core->db->db;
+		$charsetCollate = '';
+
+		if ( ! empty( $db->charset ) ) {
+			$charsetCollate .= "DEFAULT CHARACTER SET {$db->charset}";
+		}
+		if ( ! empty( $db->collate ) ) {
+			$charsetCollate .= " COLLATE {$db->collate}";
+		}
+
+		// Check for keyword tracker reports table.
+		if ( ! aioseo()->core->db->tableExists( 'aioseo_ai_insights_keyword_reports' ) ) {
+			$tableName = $db->prefix . 'aioseo_ai_insights_keyword_reports';
+
+			aioseo()->core->db->execute(
+				"CREATE TABLE {$tableName} (
+					`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+					`uuid` varchar(40) NOT NULL,
+					`keyword` varchar(255) NOT NULL,
+					`status` varchar(20) NOT NULL DEFAULT 'pending',
+					`brands` longtext DEFAULT NULL,
+					`brands_mentioned` int(11) DEFAULT 0,
+					`results` longtext DEFAULT NULL,
+					`created` datetime NOT NULL,
+					`updated` datetime NOT NULL,
+					PRIMARY KEY (id),
+					KEY ndx_aioseo_ai_insights_keyword_reports_uuid (uuid),
+					KEY ndx_aioseo_ai_insights_keyword_reports_keyword (keyword),
+					KEY ndx_aioseo_ai_insights_keyword_reports_status (status)
+				) {$charsetCollate};"
+			);
+		}
+
+		// Reset the cache for the installed tables.
+		aioseo()->core->cache->delete( 'db_schema' );
 	}
 }

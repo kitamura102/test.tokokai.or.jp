@@ -628,7 +628,7 @@ body.home.no_header_logo_image_mobile #header_logo { display:none; }
 body.home.no_header_logo_image_mobile #header_logo2 { display:block; }
 body.home.show_text_logo #header_logo2 { display:block; }
 #header_logo { width:150px; height:150px; left:0; top:0; }
-#header_logo a { width:150px; height:150px; padding:20px; }
+/*#header_logo a { width:150px; height:150px; padding:20px; }*/
 @media screen and (max-width:800px) {
 	#header_logo img.pc { display:none; }
 	#header_logo img.mobile { display:block; }
