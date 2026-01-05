@@ -18,6 +18,10 @@ class Wordpress_CTA_Import_Export {
 		}
 
 
+		if (!isset($post_data['cta'])) {
+			return;
+		}
+
 		$items = $post_data['cta'];
 
 		if (empty($items)) {
@@ -29,7 +33,10 @@ class Wordpress_CTA_Import_Export {
 
 		array_walk($results, function (&$item) {
 			$item = new WP_Sticky_CTA_Data($item);
-			unset($item->id, $item->image_attachment_id, $item->locations);
+			// Convert to array and remove protected properties
+			$item_array = $item->to_array();
+			unset($item_array['id'], $item_array['image_attachment_id'], $item_array['locations']);
+			$item = (object) $item_array;
 		});
 
 		$file_name = sprintf("%s-%s-%s", sanitize_title(get_bloginfo('name')), 'multiple-cta', time());
@@ -45,6 +52,23 @@ class Wordpress_CTA_Import_Export {
 
 	public function import_sidebars() {
 		$post_data = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
+
+		// Only process import if the import form was submitted
+		if (!isset($post_data['action'])) {
+			return;
+		}
+
+		// Check if this is an import action (could be 'Import' or translated version)
+		$is_import_action = false;
+		if ($post_data['action'] === 'Import' || 
+			$post_data['action'] === __('Import', 'easy-sticky-sidebar') ||
+			strpos($post_data['action'], 'Import') !== false) {
+			$is_import_action = true;
+		}
+
+		if (!$is_import_action) {
+			return;
+		}
 
 		if (!isset($_FILES['cta-import']) || !isset($post_data['_nonce']) || !wp_verify_nonce($post_data['_nonce'], 'nonce_import_field')) {
 			return;
@@ -62,9 +86,15 @@ class Wordpress_CTA_Import_Export {
 			next($sidebars);
 
 
-			if (!isset($medias[$sidebar->sticky_s_media])) {
+			if (!empty($sidebar->sticky_s_media) && !isset($medias[$sidebar->sticky_s_media])) {
 
-				$image_content = @file_get_contents($sidebar->sticky_s_media);
+				// Additional validation to ensure the media URL is valid
+				$media_url = trim($sidebar->sticky_s_media);
+				if (empty($media_url) || !filter_var($media_url, FILTER_VALIDATE_URL)) {
+					continue; // Skip this item if media URL is invalid
+				}
+
+				$image_content = @file_get_contents($media_url);
 
 				if ($image_content) {
 					$filename = basename($sidebar->sticky_s_media);
@@ -88,7 +118,7 @@ class Wordpress_CTA_Import_Export {
 						wp_update_attachment_metadata($attach_id, $attach_data);
 					}
 				}
-			} else {
+			} elseif (!empty($sidebar->sticky_s_media) && isset($medias[$sidebar->sticky_s_media])) {
 				$sidebar->image_attachment_id = $medias[$sidebar->sticky_s_media]['id'];
 				$sidebar->sticky_s_media = $medias[$sidebar->sticky_s_media]['guid'];
 			}
@@ -97,8 +127,9 @@ class Wordpress_CTA_Import_Export {
 		}
 
 		$request_data = filter_var_array($_REQUEST, FILTER_SANITIZE_SPECIAL_CHARS);
+		$import_count = count($sidebars);
 
-		exit(wp_safe_redirect(add_query_arg('settings-updated', true, $request_data['_wp_http_referer'])));
+		exit(wp_safe_redirect(add_query_arg(['settings-updated' => true, 'import-count' => $import_count], $request_data['_wp_http_referer'])));
 	}
 
 	public function output() {
@@ -135,7 +166,7 @@ class Wordpress_CTA_Import_Export {
 													<li><label><input type="checkbox" data-select="all"> Select All</label></li>
 
 													<?php foreach ($sidebars as $sidebar) {
-														printf('<li><label><input type="checkbox" name="cta[]" value="%d" /> %s</label></li>', absint($sidebar->id), esc_attr($sidebar->sidebar_name));
+														printf('<li><label><input type="checkbox" name="cta[]" value="%d" /> %s</label></li>', absint($sidebar->__get('id')), esc_attr($sidebar->__get('sidebar_name')));
 													} ?>
 												</ul>
 											</td>
@@ -151,7 +182,12 @@ class Wordpress_CTA_Import_Export {
 							<header><?php _e('Import CTA', 'easy-sticky-sidebar') ?></header>
 							<?php
 							if (isset($_GET['settings-updated'])) {
-								echo '<div class="updated"><p>Successfully imported</p></div>';
+								$import_count = isset($_GET['import-count']) ? intval($_GET['import-count']) : 0;
+								if ($import_count > 0) {
+									echo '<div class="notice notice-success is-dismissible"><p><strong>Success!</strong> ' . sprintf(_n('%d CTA has been successfully imported.', '%d CTAs have been successfully imported.', $import_count, 'easy-sticky-sidebar'), $import_count) . '</p></div>';
+								} else {
+									echo '<div class="notice notice-success is-dismissible"><p><strong>Success!</strong> ' . __('CTA data has been successfully imported.', 'easy-sticky-sidebar') . '</p></div>';
+								}
 							}
 							?>
 

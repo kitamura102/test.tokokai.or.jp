@@ -46,6 +46,15 @@ class Database {
 	public $prefix = '';
 
 	/**
+	 * Cached result of php_sapi_name() for performance.
+	 *
+	 * @since {next}
+	 *
+	 * @var string|null
+	 */
+	private static $sapiName = null;
+
+	/**
 	 * The database table in use by this query.
 	 *
 	 * @since 1.0.0
@@ -766,12 +775,16 @@ class Database {
 			if ( is_null( $value ) && false !== stripos( $field, ' IS ' ) ) {
 				// WHERE `field` IS NOT NULL.
 				$or[] = "$field NULL";
-			} elseif ( is_null( $value ) ) {
+				continue;
+			}
+
+			if ( is_null( $value ) ) {
 				// WHERE `field` IS NULL.
 				$or[] = "$field NULL";
-			} else {
-				$or[] = sprintf( "$field %s", $this->escape( $value, $this->getEscapeOptions() | self::ESCAPE_QUOTE ) );
+				continue;
 			}
+
+			$or[] = sprintf( "$field %s", $this->escape( $value, $this->getEscapeOptions() | self::ESCAPE_QUOTE ) );
 		}
 
 		// Create our subclause, and add it to the WHERE array.
@@ -834,19 +847,56 @@ class Database {
 			}
 
 			foreach ( $values as &$value ) {
-				if ( is_numeric( $value ) ) {
+				// Note: We can no longer check for `is_numeric` because a value like `61021e6242255` returns true and breaks the query.
+				if ( is_int( $value ) || is_float( $value ) ) {
 					// No change.
-				} elseif ( is_null( $value ) || false !== stristr( $value, 'NULL' ) ) {
+					continue;
+				}
+
+				if ( is_null( $value ) || false !== stristr( $value, 'NULL' ) ) {
 					// Change to a true NULL value.
 					$value = null;
-				} else {
-					$value = sprintf( '%s', $this->escape( $value, $this->getEscapeOptions() | self::ESCAPE_QUOTE ) );
+					continue;
 				}
+
+				$value = sprintf( '%s', $this->escape( $value, $this->getEscapeOptions() | self::ESCAPE_QUOTE ) );
 			}
 
 			$values = implode( ',', $values );
 			$this->whereRaw( "$field NOT IN($values)" );
 		}
+
+		return $this;
+	}
+
+	/**
+	 * Adds a WHERE LIKE clause.
+	 *
+	 * @since {next}
+	 *
+	 * @param  string   $field        The column name.
+	 * @param  string   $value        The value to search for.
+	 * @param  bool     $hasWildcard  Whether the value contains LIKE wildcards (% and _) for pattern matching. Default false for security.
+	 * @return Database Returns the Database class which can be method chained for more query building.
+	 */
+	public function whereLike( $field, $value, $hasWildcard = false ) {
+		if ( is_null( $value ) ) {
+			return $this;
+		}
+
+		// Escape the column name.
+		$escapedField = $this->escapeColNames( $field );
+		$field        = array_pop( $escapedField );
+
+		// Escape LIKE wildcards (% and _) unless the value is intended to contain wildcards for pattern matching.
+		if ( ! $hasWildcard ) {
+			$value = $this->db->esc_like( $value );
+		}
+
+		// Escape and quote the value for safe use in LIKE clause.
+		$escapedValue = $this->escape( $value, $this->getEscapeOptions() | self::ESCAPE_QUOTE );
+
+		$this->where[] = sprintf( "$field LIKE %s", $escapedValue );
 
 		return $this;
 	}
@@ -1119,9 +1169,11 @@ class Database {
 			$return = 'results';
 		}
 
-		$prepare        = $this->db->prepare( $this->query(), 1, 1 );
-		$queryHash      = sha1( $this->query() );
-		$cacheTableName = $this->getCacheTableName();
+		// Cache query string to avoid generating it twice.
+		$queryString     = $this->query();
+		$prepare         = $this->db->prepare( $queryString, 1, 1 );
+		$queryHash       = md5( $queryString );
+		$cacheTableName  = $this->getCacheTableName();
 
 		// Pull the result from the in-memory cache if everything checks out.
 		if (
@@ -1151,7 +1203,10 @@ class Database {
 			$this->reset();
 		}
 
-		$this->cache[ $cacheTableName ][ $queryHash ][ $return ] = $this->result;
+		// Only cache SELECT queries for performance.
+		if ( in_array( $this->statement, [ 'SELECT', 'SELECT DISTINCT' ], true ) ) {
+			$this->cache[ $cacheTableName ][ $queryHash ][ $return ] = $this->result;
+		}
 
 		// Reset the cache trigger for the next run.
 		$this->shouldResetCache = false;
@@ -1345,24 +1400,28 @@ class Database {
 			}
 
 			return $value;
-		} else {
-			$options = ( is_null( $options ) ) ? $this->getEscapeOptions() : $options;
-			if ( ( $options & self::ESCAPE_STRIP_HTML ) !== 0 && isset( $this->stripTags ) && true === $this->stripTags ) {
-				$value = wp_strip_all_tags( $value );
-			}
-
-			if (
-				( ( $options & self::ESCAPE_FORCE ) !== 0 || php_sapi_name() === 'cli' ) ||
-				( ( $options & self::ESCAPE_QUOTE ) !== 0 && ! is_integer( $value ) )
-			) {
-				$value = esc_sql( $value );
-				if ( ! is_integer( $value ) ) {
-					$value = "'$value'";
-				}
-			}
-
-			return $value;
 		}
+
+		$options = ( is_null( $options ) ) ? $this->getEscapeOptions() : $options;
+		if ( ( $options & self::ESCAPE_STRIP_HTML ) !== 0 && isset( $this->stripTags ) && true === $this->stripTags ) {
+			$value = wp_strip_all_tags( $value );
+		}
+
+		// Cache php_sapi_name() result for performance.
+		if ( null === self::$sapiName ) {
+			self::$sapiName = php_sapi_name();
+		}
+
+		// Check if we need to escape and quote the value.
+		$needsEscaping = ( ( $options & self::ESCAPE_FORCE ) !== 0 || 'cli' === self::$sapiName ) ||
+			( ( $options & self::ESCAPE_QUOTE ) !== 0 && ! is_int( $value ) && ! is_float( $value ) );
+
+		if ( $needsEscaping ) {
+			$value = esc_sql( $value );
+			$value = "'$value'";
+		}
+
+		return $value;
 	}
 
 	/**

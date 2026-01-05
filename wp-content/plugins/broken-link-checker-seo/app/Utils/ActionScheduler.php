@@ -44,7 +44,7 @@ class ActionScheduler {
 			return;
 		}
 
-		if ( ! apply_filters( 'action_scheduler_enable_recreate_data_store', true ) ) {
+		if ( ! apply_filters( 'action_scheduler_enable_recreate_data_store', true ) ) { // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 			return;
 		}
 

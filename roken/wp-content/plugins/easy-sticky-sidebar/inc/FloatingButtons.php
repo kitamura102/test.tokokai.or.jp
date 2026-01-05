@@ -75,7 +75,7 @@ class Wordpress_CTA_Free_Floating_Buttons {
      * @since 1.4.5
      */
     public function generate_css($stickycta) {
-        $wrapper = sprintf('.easy-sticky-sidebar.easy-sticky-sidebar-%d', $stickycta->id);
+        $wrapper = sprintf('.easy-sticky-sidebar.easy-sticky-sidebar-%d', $stickycta->__get('id'));
 
 
         $font_size = absint($stickycta->floating_button_font_size);

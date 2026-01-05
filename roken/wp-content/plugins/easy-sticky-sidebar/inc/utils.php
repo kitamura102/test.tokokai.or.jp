@@ -129,6 +129,12 @@ class Wordpress_CTA_Free_Utils {
      * @return html
      */
     public static function get_inline_lock($styles = []) {
+        // Don't show lock if pro plugin is active
+        $pro_active = has_wordpress_cta_pro();
+        if ($pro_active) {
+            return;
+        }
+        
         if (!is_array($styles)) {
             $styles = [];
         }

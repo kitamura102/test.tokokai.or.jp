@@ -17,16 +17,26 @@ class SSuprydpproActions {
 			add_action("wp_ajax_nopriv_{$action['name']}", [$this, $action['callback']]);
 		}
 
+		// Fixed: Removed wp_ajax_nopriv_ hooks for security - only authenticated users can access these functions
 		add_action('wp_ajax_update_cta_status', [$this, 'update_cta_status']);
-		add_action('wp_ajax_nopriv_update_cta_status', [$this, 'update_cta_status']);
-
 		add_action('wp_ajax_change_sticky_sidebar_name', [$this, 'change_sticky_sidebar_name']);
-		add_action('wp_ajax_nopriv_change_sticky_sidebar_name', [$this, 'change_sticky_sidebar_name']);
+		
+		// Removed tracking functionality - keeping analytics as pro features
 
 		add_action('easy_sticky_sidebar_after_save', [$this, 'redirect_after_creating_new_sidebar'], 10, 3);
 	}
 
 	public function update_cta_status() {
+		// Security: Check if user has proper capabilities
+		if (!current_user_can('manage_options')) {
+			wp_send_json(['success' => false, 'error' => esc_html__('Insufficient permissions.', 'easy-sticky-sidebar')]);
+		}
+
+		// Security: Verify nonce to prevent CSRF attacks
+		if (!check_ajax_referer('easy_sticky_sidebar_nonce', 'nonce', false)) {
+			wp_send_json(['success' => false, 'error' => esc_html__('Security check failed.', 'easy-sticky-sidebar')]);
+		}
+
 		global $wpdb;
 
 		$post_data = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
@@ -50,6 +60,16 @@ class SSuprydpproActions {
 	}
 
 	public function change_sticky_sidebar_name() {
+		// Security: Check if user has proper capabilities
+		if (!current_user_can('manage_options')) {
+			wp_send_json(['success' => false, 'error' => esc_html__('Insufficient permissions.', 'easy-sticky-sidebar')]);
+		}
+
+		// Security: Verify nonce to prevent CSRF attacks
+		if (!check_ajax_referer('easy_sticky_sidebar_nonce', 'nonce', false)) {
+			wp_send_json(['success' => false, 'error' => esc_html__('Security check failed.', 'easy-sticky-sidebar')]);
+		}
+
 		global $wpdb;
 
 		$post_data = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
@@ -67,7 +87,7 @@ class SSuprydpproActions {
 		}
 
 		$wpdb->replace($wpdb->sticky_cta_options, $data, $data_format);
-		die('');
+		wp_send_json(['success' => true]);
 	}
 
 	/*
@@ -202,4 +222,6 @@ class SSuprydpproActions {
 			wp_send_json($response);
 		}
 	}
+	
+	// Removed tracking methods - keeping analytics as pro features
 }

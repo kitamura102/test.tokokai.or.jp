@@ -52,6 +52,7 @@ function allow_subdomain_install() {
  * @return bool Whether subdirectory installation is allowed
  */
 function allow_subdirectory_install() {
+      return true
 	global $wpdb;
 
 	/**

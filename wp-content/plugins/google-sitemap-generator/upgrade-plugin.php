@@ -15,6 +15,10 @@ include_once( ABSPATH . 'wp-content/plugins/google-sitemap-generator/class-googl
 
 if ( isset( $_GET['action'] ) ) {
 	if ( 'yes' === $_GET['action'] ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( 'Forbidden', '', array( 'response' => 403 ) );
+		}
+
 		update_option( 'sm_user_consent', 'yes' );
 		$plugin_version = GoogleSitemapGeneratorLoader::get_version();
 		global $wp_version;

@@ -10,23 +10,41 @@ $floating_buttons = Wordpress_CTA_Free_Floating_Buttons::get_buttons($ctacontent
 
 if (sizeof($floating_buttons) === 0) {
 	return;
-}
-
+}     	   
+  
 $has_text_items = array_filter($floating_buttons, function ($button) {
 	$text = trim($button->text);
 	return strlen($text) > 0;
-});
+}); 
 
 $hide_text = $ctacontent->hide_floating_button_text === 'yes' || sizeof($has_text_items) === 0;
 
 if ($hide_text) {
 	array_push($cta_classes, 'floating-button-no-text');
-} ?>
+}  
 
-<div id="<?php echo 'easy-sticky-sidebar-' . esc_attr($ctacontent->id) ?>"
+
+
+$horizontal_vertical_position = $ctacontent->dynamic_properties['horizontal_vertical_position'];
+
+   
+$position_style = '';
+$position_a = '';
+if($ctacontent->SSuprydp_cta_position == 'left' || $ctacontent->SSuprydp_cta_position == 'right'){
+	if ($horizontal_vertical_position === 'top') {
+		$position_style = 'top: 0; transform: none;';    
+	} elseif ($horizontal_vertical_position === 'bottom') {
+		$position_style = 'bottom: 0; transform: none; top: auto; --button_width: auto; ';
+		$position_a = 'position: absolute; bottom: 0;';
+
+	}
+}
+?>
+
+<div id="<?php echo 'easy-sticky-sidebar-' . esc_attr($ctacontent->id) ?>" style="<?php echo $position_style;   ?>"
     class="<?php echo esc_attr(implode(' ', $cta_classes)) ?>" data-id="<?php echo esc_attr($ctacontent->id); ?>">
 
-    <ul class="floating-buttons-container">
+    <ul class="floating-buttons-container" style="">
         <?php foreach ($floating_buttons as $key => $button) :
 			$has_link = !empty($button->url);
 			$class = $has_link ? 'has-link' : '';

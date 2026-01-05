@@ -105,7 +105,7 @@ class Turnstile {
 			'cloudflare-turnstile',
 			'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
 			array(),
-			1,
+			null, // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 			array(
 				'strategy' => 'async',
 			)
@@ -150,7 +150,7 @@ class Turnstile {
 					} );
 				} );
 			}',
-			'after'
+			'before'
 		);
 	}
 

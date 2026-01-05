@@ -39,7 +39,7 @@ define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 
 /*20251027 追加*/
-define( 'WP_MEMORY_LIMIT', '256M' );
+define( 'WP_MEMORY_LIMIT', '512M' );
 
 /**#@+
  * Authentication unique keys and salts.

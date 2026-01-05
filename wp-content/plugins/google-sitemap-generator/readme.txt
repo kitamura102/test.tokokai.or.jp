@@ -2,8 +2,8 @@
 Contributors: auctollo
 Tags: SEO, xml sitemap, video sitemap, news sitemap, html sitemap
 Requires at least: 4.6
-Tested up to: 6.7
-Stable tag: 4.1.21
+Tested up to: 6.9
+Stable tag: 4.1.22
 Requires PHP: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -100,6 +100,9 @@ Please post your question at the [WordPress support forum](https://wordpress.org
 
 
 == Changelog ==
+
+= 4.1.22 (2025-12-23) =
+* Fixed preventing unauthenticated users from modifying plugin settings by enforcing proper permission and security‑token checks.
 
 = 4.1.21 (2024-04-21) =
 * Fixed a regression with saving post/page exclusions.
@@ -626,5 +629,5 @@ The plugin comes with various translations, please refer to the [WordPress Codex
 
 == Upgrade Notice ==
 
-= 4.1.18 =
-Thank you for using XML Sitemap Generator! This release resolves critical issues reported in the support forum. Thank you to all who reported issues! Make sure to "Enable auto-updates!" 
+= 4.1.22 =
+Critical Security Fix: Resolved a flaw where certain actions could be triggered without verifying the requester’s identity, privileges, or a valid security token.

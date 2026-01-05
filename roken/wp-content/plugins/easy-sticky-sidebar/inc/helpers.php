@@ -190,7 +190,7 @@ function easy_sticky_sidebar_get_status_menu($stickycta) {
         'off'           => __('Off', 'easy-sticky-sidebar'),
     ]; ?>
 
-    <div class="sticky-cta-status-menu" data-id="<?php echo esc_attr($stickycta->id) ?>">
+    <div class="sticky-cta-status-menu" data-id="<?php echo esc_attr($stickycta->__get('id')) ?>">
         <input type="hidden" name="SSuprydp_development" value="<?php echo esc_attr($stickycta->SSuprydp_development); ?>">
         <label class="status-<?php echo esc_attr($stickycta->SSuprydp_development); ?>"><?php echo esc_html($statuses[$stickycta->SSuprydp_development])  ?></label>
         <ul class="statuses">
@@ -415,7 +415,7 @@ class="button_save" value="Save Setting"></div> -->
         });
     </script>
 <?php
-    do_action('easy_sticky_sidebar_form_after_template', $stickycta, $stickycta->id);
+    do_action('easy_sticky_sidebar_form_after_template', $stickycta, $stickycta->__get('id'));
 }
 
 /**
@@ -432,7 +432,7 @@ function easy_sticky_sidebar_position_tab($stickycta) {
         if (!has_wordpress_cta_pro()) {
             echo '<p class="wordpress-cta-instruction text-bold">Get more options with our <a href="https://wpctapro.com/" target="_blank">pro version</a>.</p>';
         }
-        do_action('easy_sticky_sidebar_cta_position', $stickycta, $stickycta->id);
+        do_action('easy_sticky_sidebar_cta_position', $stickycta, $stickycta->__get('id'));
     endif;
 }
 
@@ -444,7 +444,7 @@ function easy_sticky_sidebar_location_tab($stickycta) {
    
     if (has_action('easy_sticky_sidebar_form_cta_location')) :
        
-        do_action('easy_sticky_sidebar_form_cta_location', $stickycta, $stickycta->id);
+        do_action('easy_sticky_sidebar_form_cta_location', $stickycta, $stickycta->__get('id'));
        
     endif;
 
@@ -580,7 +580,7 @@ function easy_sticky_sidebar_cta_scroll_options_callback($stickycta) {
     if (has_action('easy_sticky_sidebar_cta_scroll_options')) : ?>
         <details class="easy-sticky-sidebar-fieldset  sticky-cta-option <?php echo esc_attr(Wordpress_CTA_Free_Utils::pro_tab_class('easy_sticky_sidebar_cta_scroll_options')); ?>" id="cta-scroll-options">
             <summary class="heading"><?php _e("CTA Scroll Options", "easy-sticky-sidebar"); ?></summary>
-            <?php do_action('easy_sticky_sidebar_cta_scroll_options', $stickycta, $stickycta->id); ?>
+            <?php do_action('easy_sticky_sidebar_cta_scroll_options', $stickycta, $stickycta->__get('id')); ?>
         </details>
     <?php endif;
 }
@@ -594,7 +594,7 @@ function easy_sticky_sidebar_cta_display_options_callback($stickycta) {
     if (has_action('easy_sticky_sidebar_cta_display_options')) : ?>
         <details class="easy-sticky-sidebar-fieldset html-cta-option <?php echo esc_attr(Wordpress_CTA_Free_Utils::pro_tab_class('easy_sticky_sidebar_cta_display_options')); ?>" id="cta-display-options">
             <summary class="heading"><?php _e("CTA Display Options", "easy-sticky-sidebar"); ?></summary>
-            <?php do_action('easy_sticky_sidebar_cta_display_options', $stickycta, $stickycta->id); ?>
+            <?php do_action('easy_sticky_sidebar_cta_display_options', $stickycta, $stickycta->__get('id')); ?>
         </details>
     <?php endif;
 }
@@ -608,7 +608,7 @@ function easy_sticky_sidebar_html_cta_height_callback($stickycta) {
     if (has_action('easy_sticky_sidebar_cta_height')) : ?>
         <details class="easy-sticky-sidebar-fieldset html-cta-option <?php echo esc_attr(Wordpress_CTA_Free_Utils::pro_tab_class('easy_sticky_sidebar_cta_height')); ?>" id="section-cta-height-options">
             <summary class="heading"><?php _e("CTA Height", "easy-sticky-sidebar"); ?></summary>
-            <?php do_action('easy_sticky_sidebar_cta_height', $stickycta, $stickycta->id); ?>
+            <?php do_action('easy_sticky_sidebar_cta_height', $stickycta, $stickycta->__get('id')); ?>
         </details>
     <?php endif;
 }
@@ -622,7 +622,7 @@ function easy_sticky_sidebar_cta_adjustment($stickycta) {
     if (has_action('easy_sticky_sidebar_cta_adjustment')) : ?>
         <details class="easy-sticky-sidebar-fieldset <?php echo esc_attr(Wordpress_CTA_Free_Utils::pro_tab_class('easy_sticky_sidebar_cta_adjustment')); ?>" id="cta-adjustment-options">
             <summary class="heading"><?php _e("CTA Width", "easy-sticky-sidebar"); ?></summary>
-            <?php do_action('easy_sticky_sidebar_cta_adjustment', $stickycta, $stickycta->id); ?>
+            <?php do_action('easy_sticky_sidebar_cta_adjustment', $stickycta, $stickycta->__get('id')); ?>
         </details>
     <?php endif;
 }
@@ -645,7 +645,7 @@ function easy_sticky_sidebar_cta_image($stickycta) {
                     </div>
                 </div>
             </summary>
-            <?php do_action('easy_sticky_sidebar_cta_image', $stickycta, $stickycta->id); ?>
+            <?php do_action('easy_sticky_sidebar_cta_image', $stickycta, $stickycta->__get('id')); ?>
         </details>
     <?php endif;
 }
@@ -670,12 +670,12 @@ function easy_sticky_sidebar_button_options($stickycta) {
                 </div>
             </summary>
 
-            <?php do_action('easy_sticky_sidebar_button_options', $stickycta, $stickycta->id); ?>
+            <?php do_action('easy_sticky_sidebar_button_options', $stickycta, $stickycta->__get('id')); ?>
 
             <?php if (has_action('easy_sticky_sidebar_button2_options')) : ?>
                 <div id="sticky-sidebar-button2-options" class="wordpress-cta-gdpr-options">
                     <h3>Decline Button Options</h3>
-                    <?php do_action('easy_sticky_sidebar_button2_options', $stickycta, $stickycta->id); ?>
+                    <?php do_action('easy_sticky_sidebar_button2_options', $stickycta, $stickycta->__get('id')); ?>
                 </div>
             <?php endif; ?>
         </details>
@@ -700,7 +700,7 @@ function easy_sticky_sidebar_line_separator($stickycta) {
                     </div>
                 </div>
             </summary>
-            <?php do_action('easy_sticky_sidebar_line_separator', $stickycta, $stickycta->id) ?>
+            <?php do_action('easy_sticky_sidebar_line_separator', $stickycta, $stickycta->__get('id')) ?>
         </details>
     <?php endif;
 }
@@ -724,7 +724,7 @@ function easy_sticky_sidebar_call_to_action($stickycta) {
                     </div>
                 </div>
             </summary>
-            <?php do_action('easy_sticky_sidebar_call_to_action', $stickycta, $stickycta->id) ?>
+            <?php do_action('easy_sticky_sidebar_call_to_action', $stickycta, $stickycta->__get('id')) ?>
         </details>
     <?php endif;
 }
@@ -747,7 +747,7 @@ function easy_sticky_sidebar_close_button_options($stickycta) {
                     </div>
                 </div>
             </summary>
-            <?php do_action('easy_sticky_sidebar_close_button_options', $stickycta, $stickycta->id) ?>
+            <?php do_action('easy_sticky_sidebar_close_button_options', $stickycta, $stickycta->__get('id')) ?>
         </details>
     <?php endif;
 }
@@ -758,6 +758,11 @@ add_action('easy_sticky_sidebar_styling_options', 'easy_sticky_sidebar_close_but
  * @since  1.4.5
  */
 function wordpress_cta_pro_get_block($title = '', $description = null) {
+    // Don't show block if pro plugin is active
+    if (has_wordpress_cta_pro()) {
+        return;
+    }
+    
     if (empty($title)) {
         $title = __('This is a pro feature', 'easy-sticky-sidebar');
     }

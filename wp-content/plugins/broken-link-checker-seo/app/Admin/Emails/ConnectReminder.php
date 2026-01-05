@@ -108,7 +108,7 @@ class ConnectReminder {
 		$siteName = get_bloginfo( 'name' ) ?? site_url();
 		$subject  = sprintf(
 			// Translators: 1 - The site name.
-			__( 'Warning: Broken Link Checker has not been connected on %1$s', 'aioseo-broken-link-checker' ),
+			__( 'Warning: Broken Link Checker has not been connected on %1$s', 'broken-link-checker-seo' ),
 			$siteName
 		);
 

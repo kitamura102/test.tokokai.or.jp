@@ -72,7 +72,7 @@ class Easy_Sticky_CTA_Generate_CSS {
 
         $disable_position2 = apply_filters('easy_sticky_sidebar/disable_position2_css', []);
 
-        $wrapper_selector = sprintf("#easy-sticky-sidebar-%d", absint($sticky_cta->id));
+        $wrapper_selector = sprintf("#easy-sticky-sidebar-%d", absint($sticky_cta->__get('id')));
 
         $styles = '';
         if (!in_array($sticky_cta->sidebar_template, $disable_position2)) {
@@ -172,7 +172,7 @@ class Easy_Sticky_CTA_Generate_CSS {
             return;
         }
 
-        $sticky_class = sprintf("#easy-sticky-sidebar-%d.easy-sticky-sidebar", absint($this->item->id));
+        $sticky_class = sprintf("#easy-sticky-sidebar-%d.easy-sticky-sidebar", absint($this->item->__get('id')));
 
         printf("%s {\n", $sticky_class);
         if ($this->item->enable_cta_width == 'yes' && absint($this->item->cta_width) > 0 && $this->item->sidebar_template !== 'tab-cta') {

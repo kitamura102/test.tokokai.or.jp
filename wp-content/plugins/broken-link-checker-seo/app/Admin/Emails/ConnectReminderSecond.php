@@ -109,7 +109,7 @@ class ConnectReminderSecond {
 		$siteName = get_bloginfo( 'name' ) ?? site_url();
 		$subject  = sprintf(
 			// Translators: 1 - The site name.
-			__( 'I don\'t want you to get penalized by Google', 'aioseo-broken-link-checker' ),
+			__( 'I don\'t want you to get penalized by Google', 'broken-link-checker-seo' ),
 			$siteName
 		);
 

@@ -5,13 +5,14 @@
  * Description: Monitor and test all internal and external links on your site for broken links. By AIOSEO, the original SEO plugin for WordPress.
  * Author:      All in One SEO Team
  * Author URI:  https://aioseo.com
- * Version:     1.2.6
- * Text Domain: aioseo-broken-link-checker
- * Domain Path: languages
+ * Version:     1.2.8
+ * Text Domain: broken-link-checker-seo
+ * Domain Path: /languages
+ * License: GPLv3 or later
  *
  * Broken Link Checker by AIOSEO is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  *
  * Broken Link Checker by AIOSEO is distributed in the hope that it will be useful,

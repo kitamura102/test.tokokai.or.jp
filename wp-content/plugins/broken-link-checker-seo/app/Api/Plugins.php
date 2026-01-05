@@ -24,7 +24,7 @@ class Plugins {
 		$body    = $request->get_json_params();
 		$plugins = ! empty( $body['plugins'] ) ? $body['plugins'] : [];
 		$network = ! empty( $body['network'] ) ? $body['network'] : false;
-		$error   = esc_html__( 'Installation failed. Please check permissions and try again.', 'aioseo-broken-link-checker' );
+		$error   = esc_html__( 'Installation failed. Please check permissions and try again.', 'broken-link-checker-seo' );
 
 		if ( ! current_user_can( 'install_plugins' ) ) {
 			return new \WP_REST_Response( [
@@ -86,7 +86,7 @@ class Plugins {
 		$body    = $request->get_json_params();
 		$plugins = ! empty( $body['plugins'] ) ? $body['plugins'] : [];
 		$network = ! empty( $body['network'] ) ? $body['network'] : false;
-		$error   = esc_html__( 'Deactivation failed. Please check permissions and try again.', 'aioseo-broken-link-checker' );
+		$error   = esc_html__( 'Deactivation failed. Please check permissions and try again.', 'broken-link-checker-seo' );
 
 		if ( ! current_user_can( 'deactivate_plugins' ) ) {
 			return new \WP_REST_Response( [

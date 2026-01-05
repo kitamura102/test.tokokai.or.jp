@@ -44,15 +44,8 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
      */
     function extra_tablenav($which)
     {
-        $disable_button = 'disabled';
-
-        global $wpdb;
-        $cta = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->sticky_cta");
-        if ($cta < 3) {
-            return printf('<a style="margin-right: 10px" class="btn-add-new button-primary" href="%s">%s</a>', admin_url('admin.php?page=add-easy-sticky-sidebar'), esc_html__('Add New CTA', 'easy-sticky-sidebar'));
-        }
-
-        printf('<a style="margin-right: 10px" data-toggle="tooltip" title="Upgrade to WP CTA Pro"class="btn-add-new button-primary" href="#" disabled>%s</a>', esc_html__('Add New CTA', 'easy-sticky-sidebar'));
+        // Always show Add New CTA button - removed restriction
+        return printf('<a style="margin-right: 10px" class="btn-add-new button-primary" href="%s">%s</a>', admin_url('admin.php?page=add-easy-sticky-sidebar'), esc_html__('Add New CTA', 'easy-sticky-sidebar'));
     }
 
     /**
@@ -158,7 +151,7 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
     {
         return sprintf(
             '<input type="checkbox" name="sidebar[]" value="%s" />',
-            $sidebar->id
+            $sidebar->__get('id')
         );
     }
 
@@ -172,7 +165,7 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
             '<input class="sticky-sidebar-name-input" type="text" value="%s" placeholder="%s" data-sticky="%d"><i class="dashicons dashicons-edit"></i>',
             esc_attr($sidebar->sidebar_name),
             __('Type sidebar name here', 'easy-sticky-sidebar'),
-            $sidebar->id
+            $sidebar->__get('id')
         );
     }
 
@@ -203,7 +196,7 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
             $location = $wpdb->get_var($wpdb->prepare(
                 "SELECT option_value FROM {$wpdb->prefix}sticky_cta_options 
                 WHERE sticky_cta_id = %d AND option_name = 'cta_location'",
-                $sidebar->id
+                $sidebar->__get('id')
             ));
         }
 
@@ -248,8 +241,8 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
     function column_action($sidebar)
     {
         $permalink = add_query_arg([
-            'id' => $sidebar->id,
-            '_nonce' => wp_create_nonce('nonce_cta_action_' . $sidebar->id),
+            'id' => $sidebar->__get('id'),
+            '_nonce' => wp_create_nonce('nonce_cta_action_' . $sidebar->__get('id')),
         ], admin_url('admin.php?page=easy-sticky-sidebars'));
 
         $actions = [];

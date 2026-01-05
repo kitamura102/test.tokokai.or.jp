@@ -7,7 +7,7 @@
  * Author:              MonsterInsights
  * Author URI:          https://www.monsterinsights.com/lite/?utm_source=liteplugin&utm_medium=pluginheader&utm_campaign=authoruri&utm_content=7%2E0%2E0
  *
- * Version:             9.10.0
+ * Version:             9.11.0
  * Requires at least:   5.6.0
  * Requires PHP:        7.2
  *
@@ -79,7 +79,7 @@ final class MonsterInsights_Lite {
 	 * @access public
 	 * @var string $version Plugin version.
 	 */
-	public $version = '9.10.0';
+	public $version = '9.11.0';
 	/**
 	 * Plugin file.
 	 *
@@ -249,7 +249,7 @@ final class MonsterInsights_Lite {
 
 			// This does the version to version background upgrade routines and initial install
 			$mi_version = get_option( 'monsterinsights_current_version', '5.5.3' );
-			if ( version_compare( $mi_version, '8.13.0', '<' ) ) {
+			if ( version_compare( $mi_version, '9.11.0', '<' ) ) {
 				monsterinsights_lite_call_install_and_upgrade();
 			}
 
@@ -432,6 +432,9 @@ final class MonsterInsights_Lite {
 		require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/options.php';
 		require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/helpers.php';
 		require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/deprecated.php';
+		require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/database/loader.php';
+		require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/cache/functions.php';
+		require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/cache/cron-handler.php';
 		$monsterinsights_settings = monsterinsights_get_options();
 	}
 
@@ -846,6 +849,9 @@ function monsterinsights_lite_deactivation_hook() {
 	wp_clear_scheduled_hook( 'monsterinsights_usage_tracking_cron' );
 	wp_clear_scheduled_hook( 'monsterinsights_email_summaries_cron' );
 	wp_clear_scheduled_hook( 'monsterinsights_charitable_notice_cron' );
+
+	// Unschedule cache cleanup
+	monsterinsights_unschedule_cache_cleanup();
 
 	// Hook to trigger on deactivation.
 	do_action( 'monsterinsights_plugin_deactivated' );

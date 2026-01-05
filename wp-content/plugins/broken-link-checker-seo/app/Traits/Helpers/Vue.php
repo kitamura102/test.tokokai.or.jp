@@ -75,14 +75,27 @@ trait Vue {
 			'mainSite'            => is_main_site(),
 			'hasUrlTrailingSlash' => '/' === user_trailingslashit( '' ),
 			'nonce'               => wp_create_nonce( 'wp_rest' ),
-			'translations'        => $this->getJedLocaleData( 'aioseo-broken-link-checker' )
+			'translations'        => $this->getJedLocaleData( 'broken-link-checker-seo' )
 		];
 
-		// Don't expose all user data.
-		$userData = wp_get_current_user();
+		// In multisite, super admins may not have explicit roles on subsites.
+		// Ensure they have administrator role and capabilities for proper access.
+		$userData     = wp_get_current_user();
+		$roles        = $userData->roles;
+		$capabilities = $userData->allcaps;
+
+		// If the user is a network admin, and doesn't have a user on the subsite, give him admin role/caps.
+		if ( is_multisite() && is_super_admin() && empty( $roles ) ) {
+			$roles     = [ 'administrator' ];
+			$adminRole = get_role( 'administrator' );
+			if ( is_a( $adminRole, 'WP_Role' ) ) {
+				$capabilities = $adminRole->capabilities;
+			}
+		}
+
 		$this->vueData['user'] = [
-			'capabilities' => $userData->allcaps,
-			'roles'        => $userData->roles,
+			'roles'        => $roles,
+			'capabilities' => $capabilities,
 			'locale'       => function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale()
 		];
 
@@ -186,7 +199,7 @@ trait Vue {
 			'linkStatuses' => $this->getLinkStatusesData( $limit ),
 			'plugins'      => [
 				'isAioseoActive'          => function_exists( 'aioseo' ),
-				'isAioseoRedirectsActive' => function_exists( 'aioseoRedirects' )
+				'isAioseoRedirectsActive' => function_exists( 'aioseo' ) && ! empty( aioseo()->redirects )
 			],
 			'postTypes'    => $this->getPublicPostTypes( false, false, true ),
 			'postStatuses' => $this->getPublicPostStatuses(),
@@ -259,37 +272,37 @@ trait Vue {
 			'filters' => [
 				[
 					'slug'   => 'all',
-					'name'   => __( 'All', 'aioseo-broken-link-checker' ),
+					'name'   => __( 'All', 'broken-link-checker-seo' ),
 					'count'  => Models\LinkStatus::rowCountQuery( 'all', $whereClause ),
 					'active' => ( ! $filter || 'all' === $filter ) && ! $searchTerm ? true : false
 				],
 				[
 					'slug'   => 'broken',
-					'name'   => __( 'Broken', 'aioseo-broken-link-checker' ),
+					'name'   => __( 'Broken', 'broken-link-checker-seo' ),
 					'count'  => Models\LinkStatus::rowCountQuery( 'broken', $whereClause ),
 					'active' => 'broken' === $filter ? true : false
 				],
 				[
 					'slug'   => 'redirects',
-					'name'   => __( 'Redirects', 'aioseo-broken-link-checker' ),
+					'name'   => __( 'Redirects', 'broken-link-checker-seo' ),
 					'count'  => Models\LinkStatus::rowCountQuery( 'redirects', $whereClause ),
 					'active' => 'redirects' === $filter ? true : false
 				],
 				[
 					'slug'   => 'good',
-					'name'   => __( 'Good', 'aioseo-broken-link-checker' ),
+					'name'   => __( 'Good', 'broken-link-checker-seo' ),
 					'count'  => Models\LinkStatus::rowCountQuery( 'good', $whereClause ),
 					'active' => 'good' === $filter ? true : false
 				],
 				[
 					'slug'   => 'not-checked',
-					'name'   => __( 'Pending', 'aioseo-broken-link-checker' ),
+					'name'   => __( 'Pending', 'broken-link-checker-seo' ),
 					'count'  => Models\LinkStatus::rowCountQuery( 'not-checked', $whereClause ),
 					'active' => 'not-checked' === $filter ? true : false
 				],
 				[
 					'slug'   => 'dismissed',
-					'name'   => __( 'Dismissed', 'aioseo-broken-link-checker' ),
+					'name'   => __( 'Dismissed', 'broken-link-checker-seo' ),
 					'count'  => Models\LinkStatus::rowCountQuery( 'dismissed', $whereClause ),
 					'active' => 'dismissed' === $filter ? true : false
 				]

@@ -37,7 +37,7 @@ class Dashboard {
 		) {
 			wp_add_dashboard_widget(
 				'aioseo-blc-overview',
-				__( 'Broken Link Checker Overview', 'aioseo-broken-link-checker' ),
+				__( 'Broken Link Checker Overview', 'broken-link-checker-seo' ),
 				[
 					$this,
 					'outputBlcOverview',

@@ -326,7 +326,7 @@ class Base {
 			$potential_logs = \scandir( $this->content_dir );
 			if ( $this->is_iterable( $potential_logs ) ) {
 				foreach ( $potential_logs as $potential_log ) {
-					if ( $this->str_ends_with( $potential_log, '.log' ) && false !== strpos( $potential_log, strtolower( __NAMESPACE__ ) . '-debug-' ) && is_file( $this->content_dir . $potential_log ) ) {
+					if ( \str_ends_with( $potential_log, '.log' ) && false !== strpos( $potential_log, strtolower( __NAMESPACE__ ) . '-debug-' ) && is_file( $this->content_dir . $potential_log ) ) {
 						return $this->content_dir . $potential_log;
 					}
 				}
@@ -420,6 +420,24 @@ class Base {
 	}
 
 	/**
+	 * Checks to see if test mode is enabled, and whether the current user is a logged-in admin.
+	 *
+	 * @return bool True if test mode should be effective and prevent optimizations for guest users. False otherwise.
+	 */
+	public function test_mode_active() {
+		if (
+			$this->get_option( $this->prefix . 'test_mode' ) &&
+			( ! is_user_logged_in() || ! current_user_can( 'manage_options' ) )
+		) {
+			if ( ! empty( $_GET['ewwwio_test_mode'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Escape any spaces in the filename.
 	 *
 	 * @param string $path The path to a binary file.
@@ -444,6 +462,25 @@ class Base {
 		}
 		$safe_arg = "'" . \str_replace( "'", "'\\''", $arg ) . "'";
 		return $safe_arg;
+	}
+
+	/**
+	 * Ensures a file path is UTF-8 encoded.
+	 *
+	 * @param string $path The file path to check.
+	 * @return string The UTF-8 encoded file path.
+	 */
+	public function ensure_utf8_path( $path ) {
+		if ( ! \function_exists( '\mb_convert_encoding' ) ) {
+			return $path;
+		}
+		if (
+			( \function_exists( '\wp_is_valid_utf8' ) && ! \wp_is_valid_utf8( $path ) ) ||
+			( ! \function_exists( '\wp_is_valid_utf8' ) && ! \seems_utf8( $path ) )
+		) {
+			$path = \mb_convert_encoding( $path, 'UTF-8' );
+		}
+		return $path;
 	}
 
 	/**
@@ -779,7 +816,7 @@ class Base {
 		}
 		if ( \is_null( self::$use_network_options ) ) {
 			self::$use_network_options = false;
-			if ( ! \function_exists( 'is_plugin_active_for_network' ) && \is_multisite() ) {
+			if ( ! \function_exists( '\is_plugin_active_for_network' ) && \is_multisite() ) {
 				// Need to include the plugin library for the is_plugin_active function.
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
@@ -1295,7 +1332,7 @@ class Base {
 	public function memory_limit() {
 		if ( \defined( 'EIO_MEMORY_LIMIT' ) && EIO_MEMORY_LIMIT ) {
 			$memory_limit = EIO_MEMORY_LIMIT;
-		} elseif ( \function_exists( 'ini_get' ) ) {
+		} elseif ( \function_exists( '\ini_get' ) ) {
 			$memory_limit = \ini_get( 'memory_limit' );
 		} else {
 			if ( ! \defined( 'EIO_MEMORY_LIMIT' ) ) {
@@ -1330,21 +1367,17 @@ class Base {
 	}
 
 	/**
-	 * Performs a case-sensitive check indicating if
-	 * the haystack ends with needle.
+	 * Wrapper around size_format to remove the decimal from sizes in bytes.
 	 *
-	 * @param string $haystack The string to search in.
-	 * @param string $needle   The substring to search for in the `$haystack`.
-	 * @return bool True if `$haystack` ends with `$needle`, otherwise false.
+	 * @param int $size A filesize in bytes.
+	 * @param int $precision Number of places after the decimal separator.
+	 * @return string Human-readable filesize.
 	 */
-	public function str_ends_with( $haystack, $needle ) {
-		if ( '' === $haystack && '' !== $needle ) {
-			return false;
-		}
-
-		$len = \strlen( $needle );
-
-		return 0 === \substr_compare( $haystack, $needle, -$len, $len );
+	public function size_format( $size, $precision = 1 ) {
+			// Convert it to human readable format.
+			$size_str = \size_format( $size, $precision );
+			// Remove spaces and extra decimals when measurement is in bytes.
+			return \preg_replace( '/\.0+ B ?/', ' B', $size_str );
 	}
 
 	/**
@@ -1614,10 +1647,10 @@ class Base {
 		if ( empty( $url ) ) {
 			return false;
 		}
-		if ( 0 === \strpos( $url, '//' ) ) {
+		if ( \str_starts_with( $url, '//' ) ) {
 			$url = ( \is_ssl() ? 'https:' : 'http:' ) . $url;
 		}
-		if ( false === \strpos( $url, 'http' ) && '/' !== \substr( $url, 0, 1 ) ) {
+		if ( ! \str_starts_with( $url, 'http' ) && ! \str_starts_with( $url, '/' ) && ! \str_starts_with( $url, '.' ) ) {
 			$url = ( \is_ssl() ? 'https://' : 'http://' ) . $url;
 		}
 		// Because encoded ampersands in the filename break things.
