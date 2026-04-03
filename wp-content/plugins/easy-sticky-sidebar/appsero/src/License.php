@@ -1,5 +1,10 @@
 <?php
+
 namespace Appsero;
+
+if (!defined('ABSPATH')) {
+	exit;
+}
 
 /**
  * Appsero License Checker
@@ -224,10 +229,10 @@ class License {
                 <?php $this->show_license_page_card_header(); ?>
 
                 <div class="appsero-license-details">
-                    <p>Activate <strong><?php echo $this->client->name; ?></strong> by your license key to get professional support and automatic update from your WordPress dashboard.</p>
+                    <p>Activate <strong><?php echo esc_html($this->client->name); ?></strong> by your license key to get professional support and automatic update from your WordPress dashboard.</p>
                     <form method="post" action="<?php $this->formActionUrl(); ?>" novalidate="novalidate" spellcheck="false">
-                        <input type="hidden" name="_action" value="<?php echo $action; ?>">
-                        <input type="hidden" name="_nonce" value="<?php echo wp_create_nonce( $this->client->name ); ?>">
+                        <input type="hidden" name="_action" value="<?php echo esc_attr($action); ?>">
+                        <input type="hidden" name="_nonce" value="<?php echo esc_attr(wp_create_nonce( $this->client->name )); ?>">
                         <div class="license-input-fields">
                             <div class="license-input-key">
                                 <svg enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
@@ -238,8 +243,8 @@ class License {
                                     <?php echo ( 'deactive' == $action ) ? 'readonly="readonly"' : ''; ?>
                                 />
                             </div>
-                            <button type="submit" name="submit" class="<?php echo 'deactive' == $action ? 'deactive-button' : ''; ?>">
-                                <?php echo $action == 'active' ? 'Activate License' : 'Deactivate License' ; ?>
+                            <button type="submit" name="submit" class="<?php echo esc_attr('deactive' == $action ? 'deactive-button' : ''); ?>">
+                                <?php echo esc_html($action == 'active' ? 'Activate License' : 'Deactivate License'); ?>
                             </button>
                         </div>
                     </form>
@@ -472,7 +477,7 @@ class License {
                 <?php if ( empty( $license['activation_limit'] ) ): ?>
                     <p>Unlimited</p>
                 <?php else: ?>
-                    <p class="<?php echo $license['remaining'] ? '' : 'occupied'; ?>">
+                    <p class="<?php echo esc_attr($license['remaining'] ? '' : 'occupied'); ?>">
                         <?php echo esc_html($license['remaining']); ?> out of <?php echo esc_html($license['activation_limit']); ?>
                     </p>
                 <?php endif; ?>
@@ -482,7 +487,7 @@ class License {
                 <?php
                     if ( $license['recurring'] && false !== $license['expiry_days'] ) {
                         $occupied = $license['expiry_days'] > 10 ? '' : 'occupied';
-                        echo '<p class="' . $occupied . '">' . $license['expiry_days'] . ' days</p>';
+                        echo '<p class="' . esc_attr($occupied) . '">' . esc_html($license['expiry_days']) . ' days</p>';
                     } else {
                         echo '<p>Never</p>';
                     }
@@ -680,10 +685,10 @@ class License {
 
         $server = filter_input_array(INPUT_SERVER, FILTER_SANITIZE_SPECIAL_CHARS);
 
-        echo add_query_arg(
+        echo esc_url(add_query_arg(
             array( 'page' => $get_data['page'] ),
             admin_url( basename( $server['SCRIPT_NAME'] ) )
-        );
+        ));
     }
 
     /**

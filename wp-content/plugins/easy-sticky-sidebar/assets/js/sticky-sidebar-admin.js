@@ -313,7 +313,7 @@ jQuery(document).ready(function ($) {
             nonce: sticky_sidebar.nonce,
         };
 
-        $.post("/wp-admin/admin-ajax.php", data, function (response) {
+        $.post(sticky_sidebar.ajax_url, data, function (response) {
             if (response.success == false) {
                 return alert(response.error);
             }
@@ -323,12 +323,13 @@ jQuery(document).ready(function ($) {
         });
     });
 
-    var current_tab = "#sticky-sidebar-settings";
-    if (window.location.hash === '#cta-location-options') {
-        current_tab = '#sticky-sidebar-layout'
+    var current_tab = "#sticky-sidebar-template";
+    var $current_tab = $('.nav-tab-wrapper.sticky-sidebar-nav-tab-wrapper .nav-tab[href="' + current_tab + '"]');
+    if ($current_tab.length) {
+        $current_tab.trigger("click");
+    } else {
+        $('.nav-tab-wrapper.sticky-sidebar-nav-tab-wrapper .nav-tab').first().trigger("click");
     }
-
-    $('.nav-tab-wrapper.sticky-sidebar-nav-tab-wrapper .nav-tab[href="' + current_tab + '"]').trigger("click");
 
     var CTA_Button_Options_HTML = $('#sticky-sidebar-button-options > summary h2').html();
 
@@ -545,7 +546,7 @@ jQuery(document).ready(function ($) {
                             input.prop('checked', checked).trigger('change');
 
                         } else {
-                            input.prop('value', values[key]).trigger('change, input');
+                            input.prop('value', values[key]).trigger('change').trigger('input');
                             if (input.hasClass('wp-color-picker')) {
                                 input.iris('color', values[key]);
                             }
@@ -768,6 +769,61 @@ jQuery(document).ready(function ($) {
 
     EasyStickySidebarIconLibrary.init();
 
+    // Button icon selector (free/pro) using shared icon library popup.
+    $(document).on('click', '.icon-library-select-button .btn-select-button-icon', function (e) {
+        e.preventDefault();
+        const container = $(this).closest('.icon-library-select-button');
+        EasyStickySidebarIconLibrary.open({
+            selected: container.find('input').val() || '',
+            onSelect: function (icon_class) {
+                container.find('input').val(icon_class).trigger('input').trigger('change');
+                container.find('.icon').attr('class', `icon ${icon_class}`);
+                // Ensure value is inside main form for saving.
+                const form = $('#SSuprydp_form');
+                if (form.length) {
+                    let hidden = form.find('input[name="button_icon"]');
+                    if (!hidden.length) {
+                        hidden = $('<input type="hidden" name="button_icon" />').appendTo(form);
+                    }
+                    hidden.val(icon_class);
+                }
+            }
+        });
+    });
+
+    // Ensure button_icon is part of the main form even before any new selection.
+    const syncButtonIconToForm = () => {
+        const form = $('#SSuprydp_form');
+        if (!form.length) {
+            return;
+        }
+        const iconInput = form.find('.icon-library-select-button input[name="button_icon"]');
+        if (!iconInput.length) {
+            return;
+        }
+        let hidden = form.find('input[name="button_icon"].ess-button-icon-hidden');
+        if (!hidden.length) {
+            hidden = $('<input type="hidden" class="ess-button-icon-hidden" name="button_icon" />').appendTo(form);
+        }
+        hidden.val(iconInput.val() || '');
+    };
+
+    $(document).on('input change', '.icon-library-select-button input[name="button_icon"]', syncButtonIconToForm);
+    syncButtonIconToForm();
+
+    // Remove selected button icon.
+    $(document).on('click', '.icon-library-select-button .btn-remove-button-icon', function (e) {
+        e.preventDefault();
+        const container = $(this).closest('.icon-library-select-button');
+        const input = container.find('input[name="button_icon"]');
+        input.val('').trigger('input').trigger('change');
+        const previewIcon = container.find('.icon');
+        if (previewIcon.length) {
+            previewIcon.attr('class', 'icon');
+        }
+        syncButtonIconToForm();
+    });
+
 
     const FloatingButton = {
         buttons: {},
@@ -938,3 +994,892 @@ jQuery(document).ready(function ($) {
 //         $btn.removeClass('blurred');  // Plugin active → remove blur
 //     }
 // });
+
+jQuery(document).ready(function ($) {
+    const form = $('#SSuprydp_form');
+    if (!form.length) {
+        return;
+    }
+
+    const tabs = $('.nav-tab-wrapper.sticky-sidebar-nav-tab-wrapper .nav-tab');
+    const navWrapper = $('.nav-tab-wrapper.sticky-sidebar-nav-tab-wrapper').first();
+    const progress = $('.ess-step-progress');
+    const previewCard = $('.ess-live-preview-card');
+    let navBgReady = false;
+
+    const stripText = function (value) {
+        return $('<div>').html(value || '').text().trim();
+    };
+
+    const getValue = function (name, fallback = '') {
+        const input = form.find(`[name="${name}"]`).first();
+        if (!input.length) {
+            return fallback;
+        }
+
+        if (input.attr('type') === 'checkbox') {
+            return input.is(':checked') ? input.val() : '';
+        }
+
+        return input.val() || fallback;
+    };
+
+    const getChecked = function (name) {
+        const input = form.find(`[name="${name}"][type="checkbox"]`).first();
+        return input.length ? input.is(':checked') : false;
+    };
+
+    const setStepState = function () {
+        if (!tabs.length) {
+            return;
+        }
+
+        const activeTab = tabs.filter('.nav-tab-active').first();
+        const activeIndex = tabs.index(activeTab);
+        const total = tabs.length;
+
+        tabs.each(function (index) {
+            let state = 'upcoming';
+            if (index < activeIndex) {
+                state = 'done';
+            } else if (index === activeIndex) {
+                state = 'active';
+            }
+
+            $(this)
+                .attr('data-state', state)
+                // CUSTOM STICKY NAV: class hook for completed tabs.
+                .toggleClass('is-completed', state === 'done');
+        });
+
+        progress.text(`${activeIndex + 1} / ${total}`);
+        $('.ess-step-control[data-direction="prev"]').prop('disabled', activeIndex <= 0);
+        $('.ess-step-control[data-direction="next"]').prop('disabled', activeIndex >= total - 1);
+        moveActiveNavBackground(true);
+    };
+
+    const ensureActiveNavBackground = function () {
+        if (!navWrapper.length) {
+            return null;
+        }
+
+        let bg = navWrapper.children('.ess-nav-active-bg').first();
+        if (!bg.length) {
+            bg = $('<span class="ess-nav-active-bg" aria-hidden="true"></span>');
+            navWrapper.append(bg);
+        }
+
+        return bg;
+    };
+
+    const moveActiveNavBackground = function (animate = true) {
+        const bg = ensureActiveNavBackground();
+        if (!bg || !bg.length) {
+            return;
+        }
+
+        const activeTab = tabs.filter('.nav-tab-active').first();
+        if (!activeTab.length) {
+            return;
+        }
+
+        const left = activeTab.position().left;
+        const top = activeTab.position().top;
+        const width = activeTab.outerWidth();
+        const height = activeTab.outerHeight();
+
+        bg
+            .toggleClass('is-first', activeTab.is(':first-of-type'))
+            .toggleClass('is-last', activeTab.is(':last-of-type'));
+
+        if (!navBgReady || !animate) {
+            bg.css('transition', 'none');
+            bg.css({ left, top, width, height });
+            // Force reflow so transition can be restored for next change.
+            void bg[0].offsetHeight;
+            bg.css('transition', '');
+            navBgReady = true;
+            return;
+        }
+
+        bg.css({ left, top, width, height });
+    };
+
+    $('.ess-step-control').on('click', function (e) {
+        e.preventDefault();
+
+        const activeIndex = tabs.index(tabs.filter('.nav-tab-active').first());
+        const direction = $(this).data('direction');
+        const targetIndex = direction === 'next' ? activeIndex + 1 : activeIndex - 1;
+
+        if (targetIndex < 0 || targetIndex >= tabs.length) {
+            return;
+        }
+
+        tabs.eq(targetIndex).trigger('click');
+    });
+
+    tabs.on('click', function () {
+        setTimeout(setStepState, 0);
+    });
+
+    $(window).on('resize', function () {
+        moveActiveNavBackground(false);
+    });
+
+    const getPreviewFont = function (rawValue, fallback) {
+        const value = (rawValue || '').toString().trim();
+        if (!value.length) {
+            return { family: fallback || '', weight: '', style: '' };
+        }
+
+        const [familyPart, variantPart = ''] = value.split(':');
+        const family = familyPart.replace(/\+/g, ' ').trim();
+        const variant = variantPart.trim().toLowerCase();
+
+        let weight = '';
+        let style = '';
+
+        const weightMatch = variant.match(/\d{3}/);
+        if (weightMatch) {
+            weight = weightMatch[0];
+        }
+
+        if (variant.includes('italic')) {
+            style = 'italic';
+        }
+
+        return { family: family || (fallback || ''), weight, style };
+    };
+
+    const applyPreviewFont = function (selector, value, fallback) {
+        const font = getPreviewFont(value, fallback);
+        const cssData = {};
+
+        if (font.family) {
+            cssData['font-family'] = `'${font.family}'`;
+        }
+        cssData['font-weight'] = font.weight || '';
+        cssData['font-style'] = font.style || '';
+
+        $(selector).css(cssData);
+    };
+
+    const getDimensionCss = function (fieldName) {
+        const top = getValue(`${fieldName}[top]`, '');
+        const right = getValue(`${fieldName}[right]`, '');
+        const bottom = getValue(`${fieldName}[bottom]`, '');
+        const left = getValue(`${fieldName}[left]`, '');
+        const unit = getValue(`${fieldName}[unit]`, 'px') || 'px';
+
+        const values = [top, right, bottom, left];
+        const hasAny = values.some((item) => `${item}`.trim().length > 0);
+        if (!hasAny) {
+            return '';
+        }
+
+        const normalized = values.map((item) => {
+            const raw = `${item}`.trim();
+            if (!raw.length) {
+                return `0${unit}`;
+            }
+
+            if (/^-?\d+(\.\d+)?$/.test(raw)) {
+                return `${raw}${unit}`;
+            }
+
+            return raw;
+        });
+
+        return normalized.join(' ');
+    };
+
+    const collectIndexedValues = function (prefix) {
+        const results = {};
+        const pattern = new RegExp(`^${prefix}\\[(\\d+)\\]\\[(.+)\\]$`);
+
+        form.find(`[name^="${prefix}["]`).each(function () {
+            const name = $(this).attr('name');
+            const match = name.match(pattern);
+            if (!match) {
+                return;
+            }
+
+            const index = match[1];
+            const key = match[2];
+
+            if (!results[index]) {
+                results[index] = {};
+            }
+
+            results[index][key] = $(this).val();
+        });
+
+        return results;
+    };
+
+    const getNormalizedNumber = function (name, fallback = '') {
+        const input = form.find(`[name="${name}"]`).first();
+        if (!input.length) {
+            return fallback;
+        }
+
+        let raw = `${input.val() || ''}`.trim();
+        if (!raw.length) {
+            raw = `${input.attr('value') || ''}`.trim();
+        }
+
+        const parseValue = function (value) {
+            const cleaned = `${value || ''}`.trim();
+            if (!cleaned.length) {
+                return null;
+            }
+            const parsed = parseFloat(cleaned.replace(/[^\d.\-]/g, ''));
+            return Number.isNaN(parsed) ? null : parsed;
+        };
+
+        let parsed = parseValue(raw);
+        if (parsed === null) {
+            parsed = parseValue(fallback);
+        }
+
+        if (parsed === null) {
+            return '';
+        }
+
+        input.val(parsed);
+        return `${parsed}`;
+    };
+
+    let previewSpinnerTimer = null;
+    let previewInitialized = false;
+    const resetPreviewButtonMetrics = function ($root) {
+        if (!$root || !$root.length) {
+            return;
+        }
+        $root.css('--buttonWidth', '');
+        $root.css('--buttonHeight', '');
+    };
+    const applyPreviewButtonMetrics = function ($root, $button) {
+        if (!$root || !$root.length || !$button || !$button.length) {
+            return;
+        }
+
+        const width = Math.ceil($button.outerWidth());
+        const height = Math.ceil($button.outerHeight());
+
+        if (width) {
+            $root.css('--buttonWidth', `${width}px`);
+        }
+        if (height) {
+            $root.css('--buttonHeight', `${height}px`);
+        }
+    };
+
+    const syncPreviewButtonMetrics = function () {
+        applyPreviewButtonMetrics($('#ess-preview-cta'), $('#ess-preview-button-wrap'));
+        applyPreviewButtonMetrics($('#ess-preview-tab-cta'), $('#ess-preview-tab-button'));
+        applyPreviewButtonMetrics($('#ess-preview-html-cta'), $('#ess-preview-html-button'));
+    };
+
+    const updatePreview = function () {
+        const isInitialLoad = !previewInitialized;
+        previewInitialized = true;
+
+        previewCard.addClass('is-preview-loading').attr('aria-busy', 'true');
+        if (previewSpinnerTimer) {
+            clearTimeout(previewSpinnerTimer);
+        }
+        const template = getValue('sidebar_template', 'sticky-cta');
+        const supportedTemplates = ['sticky-cta', 'tab-cta', 'banner', 'gdpr', 'html', 'floating-buttons'];
+        const activeTemplate = supportedTemplates.includes(template) ? template : 'sticky-cta';
+        const isStickyTemplate = activeTemplate === 'sticky-cta';
+        const isProActive = typeof has_easy_sticky_sidebar_pro === 'function' ? has_easy_sticky_sidebar_pro() : false;
+        const allowedPositions = ['left', 'right', 'top', 'bottom'];
+        const allowedAlignments = ['top', 'center', 'bottom'];
+
+        previewCard.toggleClass('is-preview-disabled', !supportedTemplates.includes(template));
+        previewCard.attr('data-preview-template', activeTemplate);
+
+        const previewStage = $('.ess-preview-stage');
+        const previewTemplates = $('.ess-preview-template');
+        previewTemplates.hide().removeClass('is-active');
+        const activePane = previewTemplates.filter(`[data-template="${activeTemplate}"]`);
+        if (activePane.length) {
+            activePane.show().addClass('is-active');
+        } else {
+            previewTemplates.filter('[data-template="sticky-cta"]').show().addClass('is-active');
+        }
+
+        // Resize preview stage to fit the active template to avoid clipping.
+        const activeHeight = activePane.length ? activePane.outerHeight(true) : 0;
+        if (activeHeight && activeHeight > 0) {
+            const nextHeight = Math.max(220, activeHeight + 32);
+            previewStage.css('--ess-preview-height', `${nextHeight}px`);
+        }
+
+        $('.ess-template-label').text(form.find('[name="sidebar_template"] option:selected').text().replace(/\s+\(.*\)$/, ''));
+
+        let ctaPosition = getValue('SSuprydp_cta_position', 'right');
+        let ctaAlignment = getValue('horizontal_vertical_position', 'top');
+
+        if (!allowedPositions.includes(ctaPosition)) {
+            ctaPosition = 'right';
+        }
+
+        if (!allowedAlignments.includes(ctaAlignment)) {
+            ctaAlignment = 'top';
+        }
+
+        if (!isProActive) {
+            ctaPosition = 'right';
+            ctaAlignment = 'top';
+        }
+
+        // Map alignment for top/bottom positions: top->left, center->center, bottom->right.
+        let anchorAlign = ctaAlignment;
+        if (ctaPosition === 'top' || ctaPosition === 'bottom') {
+            anchorAlign = ctaAlignment === 'top' ? 'left' : (ctaAlignment === 'bottom' ? 'right' : 'center');
+        }
+
+        $('.ess-preview-anchor')
+            .attr('data-position', ctaPosition)
+            .attr('data-align', anchorAlign);
+
+        const preview = $('#ess-preview-cta');
+        preview
+            .removeClass('sticky-cta-position-left sticky-cta-position-right sticky-cta-position-top sticky-cta-position-bottom vertical-cta vertical-cta-top vertical-cta-bottom')
+            .addClass(`sticky-cta-position-${ctaPosition}`);
+        resetPreviewButtonMetrics(preview);
+
+        if (ctaPosition === 'top' || ctaPosition === 'bottom') {
+            preview.addClass('vertical-cta').addClass(`vertical-cta-${ctaPosition}`);
+        }
+        const enableCtaWidth = getChecked('enable_cta_width') || getValue('enable_cta_width', 'no') === 'yes';
+        const ctaWidthValue = parseInt(getValue('cta_width', ''), 10);
+        const ctaWidthUnit = getValue('cta_width_unit', 'px') || 'px';
+        const previewWidth = enableCtaWidth && !Number.isNaN(ctaWidthValue) && ctaWidthValue > 0 ? `${ctaWidthValue}${ctaWidthUnit}` : '';
+        preview.css('--width', previewWidth);
+
+        const buttonTextValue = getValue('SSuprydp_button_option_text', '');
+        const buttonIconValue = getValue('button_icon', '');
+        if (buttonIconValue) {
+            $('#ess-preview-button-text').html(`<i class="icon ${buttonIconValue}"></i> ${buttonTextValue}`);
+        } else {
+            $('#ess-preview-button-text').text(buttonTextValue);
+        }
+        $('#ess-preview-content-text').text(stripText(getValue('SSuprydp_content_option_text', 'This is the content area for your sticky CTA.')));
+        $('#ess-preview-link').text(getValue('SSuprydp_action_option_text', 'Click Here to View'));
+
+        const image = getValue('sticky_s_media', '');
+        if (image.length) {
+            $('#ess-preview-image-wrap').css('background-image', `url("${image}")`).show();
+        } else {
+            $('#ess-preview-image-wrap').hide();
+        }
+
+        const hideImage = getChecked('hide_cta_image')
+            || getValue('hide_cta_image', 'no') === 'yes'
+            || getChecked('SSuprydp_img_hideimg')
+            || getValue('SSuprydp_img_hideimg', 'No') === 'Yes';
+        if (hideImage) {
+            $('#ess-preview-image-wrap').hide();
+        }
+
+        const imageOverlayEnabled = getChecked('enable_image_overlay') || getValue('enable_image_overlay', 'no') === 'yes';
+        const overlayColor = getValue('cta_image_overlay_color', '');
+        const overlayOpacityRaw = parseInt(getValue('cta_image_overlay_opacity', ''), 10);
+        const overlayOpacity = Number.isNaN(overlayOpacityRaw) ? '' : Math.max(0, Math.min(100, overlayOpacityRaw)) / 100;
+
+        preview.toggleClass('has-image-ovarlay', !!imageOverlayEnabled);
+        if (imageOverlayEnabled) {
+            preview.css('--ess-image-overlay-color', overlayColor || 'rgba(0,0,0,0.35)');
+            preview.css('--ess-image-overlay-opacity', overlayOpacity === '' ? '0.35' : `${overlayOpacity}`);
+        } else {
+            preview.css('--ess-image-overlay-color', '');
+            preview.css('--ess-image-overlay-opacity', '');
+        }
+
+        $('#ess-preview-button-wrap').css('background-color', getValue('SSuprydp_button_option_backg_color', '#2466d5'));
+        $('#ess-preview-button-text').css('color', getValue('SSuprydp_button_option_color', '#ffffff'));
+        $('#ess-preview-content-text').css({
+            'background-color': getValue('content_background_color', '#ffffff'),
+            'color': getValue('SSuprydp_content_option_color', '#1a2940')
+        });
+        $('#ess-preview-link').css({
+            'background-color': getValue('link_text_background', '#e8eef8'),
+            'color': getValue('SSuprydp_action_option_color', '#1c3f87')
+        });
+
+        const showLine = getChecked('line_separator_show');
+        if (showLine) {
+            $('#ess-preview-divider').show().css('background-color', getValue('line_separator_color', '#c7d7ef'));
+        } else {
+            $('#ess-preview-divider').hide();
+        }
+
+        const buttonFontSize = parseInt(getNormalizedNumber('SSuprydp_button_option_size', '18'), 10);
+        const contentFontSize = parseInt(getNormalizedNumber('SSuprydp_content_option_size', '17'), 10);
+        const linkFontSize = parseInt(getNormalizedNumber('SSuprydp_action_option_size', '15'), 10);
+
+        if (!isNaN(buttonFontSize)) {
+            $('#ess-preview-button-text').css('font-size', `${buttonFontSize}px`);
+        }
+
+        if (!isNaN(contentFontSize)) {
+            $('#ess-preview-content-text').css('font-size', `${contentFontSize}px`);
+        }
+
+        if (!isNaN(linkFontSize)) {
+            $('#ess-preview-link').css('font-size', `${linkFontSize}px`);
+        }
+
+        // Keep preview font rendering in sync with style tab Google font values.
+        applyPreviewFont('#ess-preview-button-text', getValue('SSuprydp_button_option_font', 'Open Sans'), 'Open Sans');
+        applyPreviewFont('#ess-preview-content-text', getValue('SSuprydp_content_option_font', 'Open Sans'), 'Open Sans');
+        applyPreviewFont('#ess-preview-link', getValue('SSuprydp_action_option_font', 'Open Sans'), 'Open Sans');
+
+        const isVerticalPosition = ctaPosition === 'top' || ctaPosition === 'bottom';
+        const axisMap = { start: 'flex-start', center: 'center', end: 'flex-end' };
+        let alignmentValue = (getValue('button_alignment', '') || '').toString().toLowerCase();
+        if (!alignmentValue) {
+            const legacyAlign = (getValue('SSuprydp_button_option_align', 'left') || '').toString().toLowerCase();
+            const legacyMap = { left: 'start', center: 'center', right: 'end', top: 'start', middle: 'center', bottom: 'end' };
+            alignmentValue = legacyMap[legacyAlign] || 'start';
+        }
+        const axisAlign = axisMap[alignmentValue] || 'flex-start';
+        const justifyValue = isVerticalPosition ? 'center' : axisAlign;
+        const alignValue = isVerticalPosition ? axisAlign : 'center';
+        const buttonAlignStyles = {
+            'text-align': 'center',
+            'display': 'flex',
+            'flex-direction': 'column',
+            'align-items': alignValue,
+            'justify-content': justifyValue
+        };
+        const applyAlignStyles = function ($el) {
+            if (!$el || !$el.length) {
+                return;
+            }
+            $el.css(buttonAlignStyles);
+            if (isVerticalPosition) {
+                $el[0].style.setProperty('align-items', alignValue, 'important');
+                $el[0].style.setProperty('justify-content', justifyValue, 'important');
+            }
+        };
+        applyAlignStyles($('#ess-preview-button-wrap'));
+        applyAlignStyles($('#ess-preview-tab-button'));
+        applyAlignStyles($('#ess-preview-html-button'));
+        if (isVerticalPosition) {
+            const textAlign = alignmentValue === 'start' ? 'left' : (alignmentValue === 'end' ? 'right' : 'center');
+            $('#ess-preview-button-text').css('text-align', textAlign);
+            $('#ess-preview-tab-button-text').css('text-align', textAlign);
+            $('#ess-preview-html-button-text').css('text-align', textAlign);
+        }
+
+        const dividerThickness = parseInt(getValue('line_separator_thickness', ''), 10);
+        $('#ess-preview-divider').css('height', Number.isNaN(dividerThickness) ? '' : `${Math.max(1, dividerThickness)}px`);
+
+        const imageHeight = parseInt(getValue('cta_image_height', ''), 10);
+        $('#ess-preview-image-wrap').css('height', Number.isNaN(imageHeight) ? '' : `${Math.max(1, imageHeight)}px`);
+
+        const buttonLetterSpacing = parseInt(getValue('letter_spacing', ''), 10);
+        $('#ess-preview-button-text').css('letter-spacing', Number.isNaN(buttonLetterSpacing) ? '' : `${buttonLetterSpacing}px`);
+        $('#ess-preview-tab-button-text').css('letter-spacing', Number.isNaN(buttonLetterSpacing) ? '' : `${buttonLetterSpacing}px`);
+        $('#ess-preview-html-button-text').css('letter-spacing', Number.isNaN(buttonLetterSpacing) ? '' : `${buttonLetterSpacing}px`);
+
+        const contentLetterSpacing = parseInt(getValue('content_letter_spacing', ''), 10);
+        $('#ess-preview-content-text').css('letter-spacing', Number.isNaN(contentLetterSpacing) ? '' : `${contentLetterSpacing}px`);
+
+        const linkLetterSpacing = parseInt(getValue('call_to_action_letter_spacing', ''), 10);
+        $('#ess-preview-link').css('letter-spacing', Number.isNaN(linkLetterSpacing) ? '' : `${linkLetterSpacing}px`);
+
+        const buttonPadding = getDimensionCss('button_padding');
+        $('#ess-preview-button-wrap').css('padding', buttonPadding || '');
+        $('#ess-preview-tab-button').css('padding', buttonPadding || '');
+        $('#ess-preview-html-button').css('padding', buttonPadding || '');
+
+        const contentPadding = getDimensionCss('content_padding');
+        $('#ess-preview-content-text').css('padding', contentPadding || '');
+
+        const linkPadding = getDimensionCss('call_to_action_padding');
+        $('#ess-preview-link').css('padding', linkPadding || '');
+
+        const buttonRound = parseInt(getValue('button_round', ''), 10);
+        if (!Number.isNaN(buttonRound)) {
+            preview.css('--round', `${Math.max(0, buttonRound)}px`);
+            $('#ess-preview-tab-cta').css('--round', `${Math.max(0, buttonRound)}px`);
+            $('#ess-preview-html-cta').css('--round', `${Math.max(0, buttonRound)}px`);
+        }
+
+        const hideCallToAction = ['yes', 'Yes', '1', true].includes(getValue('hide_call_to_action', 'no')) ||
+            getChecked('hide_call_to_action');
+        const hideContentText = ['yes', 'Yes', '1', true].includes(getValue('hide_content_text', 'no')) ||
+            getChecked('hide_content_text');
+
+        $('#ess-preview-content-text').toggle(!hideContentText);
+        $('#ess-preview-link').toggle(!hideCallToAction);
+        if (hideCallToAction || hideContentText) {
+            $('#ess-preview-divider').hide();
+        }
+
+        const collapseOnLoad = getChecked('collapse_on_page_load') || getValue('collapse_on_page_load', 'no') === 'yes';
+        preview.toggleClass('shrink', collapseOnLoad);
+
+        // Close button preview settings
+        const showCloseButton = getChecked('show_close_button') || getValue('show_close_button', 'no') === 'yes';
+        const closePosition = getValue('close_button_position', 'start') || 'start';
+        const closeEdgeChecked = getChecked('close_button_edge') || getValue('close_button_edge', 'no') === 'yes';
+        const closeEdge = closeEdgeChecked ? 'outside' : '';
+        const closeColor = getValue('close_button_color', '#000000') || '#000000';
+        const closeButtons = activePane.length ? activePane.find('.btn-ess-close') : previewCard.find('.btn-ess-close');
+
+        closeButtons.toggle(!!showCloseButton);
+        closeButtons.css('background-color', closeColor);
+
+        const closeClassTargets = activePane.length ? activePane.find('.easy-sticky-sidebar') : $('#ess-preview-cta, #ess-preview-tab-cta, #ess-preview-html-cta, #ess-preview-banner, #ess-preview-gdpr');
+        closeClassTargets.removeClass('ess-close-button-start ess-close-button-end ess-preview-outside-close')
+            .addClass(`ess-close-button-${closePosition}`);
+        closeButtons.removeClass('start end outside')
+            .addClass(closePosition)
+            .toggleClass('outside', closeEdge === 'outside');
+
+        closeClassTargets.each(function () {
+            const $target = $(this);
+            if ($target.find('.btn-ess-close.outside').length) {
+                $target.addClass('ess-preview-outside-close');
+            }
+        });
+
+        // Box shadow toggle (Pro)
+        const shadowEnabled = getChecked('enable_box_shadow') || getValue('enable_box_shadow', 'no') !== 'no';
+        const previewShadow = shadowEnabled ? '0 0 10px rgba(19, 19, 19, .2)' : '0 0 0 rgba(0, 0, 0, 0)';
+        previewCard.find('.ess-preview-stage .easy-sticky-sidebar').css('--ess-preview-shadow', previewShadow);
+
+        const tabPreview = $('#ess-preview-tab-cta');
+        tabPreview
+            .removeClass('sticky-cta-position-left sticky-cta-position-right sticky-cta-position-top sticky-cta-position-bottom vertical-cta vertical-cta-top vertical-cta-bottom')
+            .addClass(`sticky-cta-position-${ctaPosition}`);
+        resetPreviewButtonMetrics(tabPreview);
+
+        if (ctaPosition === 'top' || ctaPosition === 'bottom') {
+            tabPreview.addClass('vertical-cta').addClass(`vertical-cta-${ctaPosition}`);
+        }
+
+        const tabButtonIconValue = getValue('button_icon', '');
+        if (tabButtonIconValue) {
+            $('#ess-preview-tab-button-text').html(`<i class="icon ${tabButtonIconValue}"></i> ${buttonTextValue}`);
+        } else {
+            $('#ess-preview-tab-button-text').text(buttonTextValue);
+        }
+        $('#ess-preview-tab-button').css('background-color', getValue('SSuprydp_button_option_backg_color', '#2466d5'));
+        $('#ess-preview-tab-button-text').css('color', getValue('SSuprydp_button_option_color', '#ffffff'));
+
+        if (!isNaN(buttonFontSize)) {
+            $('#ess-preview-tab-button-text').css('font-size', `${buttonFontSize}px`);
+        }
+
+        applyPreviewFont('#ess-preview-tab-button-text', getValue('SSuprydp_button_option_font', 'Open Sans'), 'Open Sans');
+
+        const floatingPreview = $('#ess-preview-floating-cta');
+        floatingPreview
+            .removeClass('sticky-cta-position-left sticky-cta-position-right sticky-cta-position-top sticky-cta-position-bottom vertical-cta vertical-cta-top vertical-cta-bottom')
+            .addClass(`sticky-cta-position-${ctaPosition}`);
+
+        if (ctaPosition === 'top' || ctaPosition === 'bottom') {
+            floatingPreview.addClass('vertical-cta').addClass(`vertical-cta-${ctaPosition}`);
+        }
+
+        const floatingButtons = collectIndexedValues('floating_buttons');
+        const floatingStyles = collectIndexedValues('floating_button_style');
+        const floatingList = $('#ess-preview-floating-list');
+        const globalFloatColor = getValue('floating_button_color', '');
+        const globalFloatHoverColor = getValue('floating_button_hover_color', '');
+        const globalFloatBg = getValue('floating_button_background_color', '');
+        const globalFloatHoverBg = getValue('floating_button_background_hover_color', '');
+        const hideFloatText = getChecked('hide_floating_button_text') || getValue('hide_floating_button_text', 'no') === 'yes';
+
+        const orderedFloatingButtons = Object.keys(floatingButtons)
+            .sort((a, b) => parseInt(a, 10) - parseInt(b, 10))
+            .map((key) => {
+                const data = floatingButtons[key] || {};
+                const style = floatingStyles[key] || {};
+                return Object.assign({ id: key }, data, style);
+            });
+
+        floatingList.empty();
+        floatingPreview.toggleClass('floating-button-no-text', hideFloatText);
+
+        const floatWidth = parseInt(getNormalizedNumber('floating_button_width', ''), 10);
+        if (!Number.isNaN(floatWidth) && floatWidth > 0) {
+            floatingPreview.css('--button_width', `${floatWidth}px`);
+        } else {
+            floatingPreview.css('--button_width', '');
+        }
+
+        const floatFontSize = parseInt(getNormalizedNumber('floating_button_font_size', ''), 10);
+        if (!Number.isNaN(floatFontSize) && floatFontSize > 0) {
+            floatingPreview.css('font-size', `${floatFontSize}px`);
+        } else {
+            floatingPreview.css('font-size', '');
+        }
+
+        const fallbackButtons = [
+            { id: 0, text: 'Call Us', icon: 'fa-solid fa-phone' },
+            { id: 1, text: 'Chat Now', icon: 'fa-solid fa-comment-dots' }
+        ];
+
+        const renderButtons = orderedFloatingButtons.length ? orderedFloatingButtons : fallbackButtons;
+        renderButtons.forEach((button, index) => {
+            const itemId = button.id !== undefined ? button.id : index;
+            const item = $(`<li class="floating-button-${itemId}"></li>`);
+            const color = button.color || globalFloatColor;
+            const bg = button.background_color || globalFloatBg;
+            const hoverColor = button.hover_color || globalFloatHoverColor;
+            const hoverBg = button.background_hover_color || globalFloatHoverBg;
+
+            if (color) {
+                item.css('--color', color);
+            }
+            if (bg) {
+                item.css('--background_color', bg);
+            }
+            if (hoverColor) {
+                item.css('--hover_color', hoverColor);
+            }
+            if (hoverBg) {
+                item.css('--background_hover_color', hoverBg);
+            }
+
+            const hasLink = !!(button.url && `${button.url}`.trim().length);
+            if (hasLink) {
+                item.addClass('has-link');
+            }
+
+            const nodes = [];
+            if (button.icon) {
+                nodes.push($(`<i class="icon ${button.icon}"></i>`)[0]);
+            }
+
+            if (!hideFloatText && button.text) {
+                nodes.push(document.createTextNode(button.text));
+            }
+
+            if (hideFloatText && !button.icon) {
+                nodes.push(document.createTextNode('Button'));
+            }
+
+            if (hasLink) {
+                const link = $('<a></a>').attr('href', button.url || '#');
+                nodes.forEach((node) => link.append(node));
+                item.append(link);
+            } else {
+                nodes.forEach((node) => item.append(node));
+            }
+
+            floatingList.append(item);
+        });
+
+        const bannerPreview = $('#ess-preview-banner');
+        const bannerText = $('#ess-preview-banner-text');
+        const bannerLink = $('#ess-preview-banner-link');
+
+        bannerText.text(stripText(getValue('SSuprydp_content_option_text', 'Your banner message goes here.')));
+        bannerPreview.css({
+            'background-color': getValue('content_background_color', '#f8fafc'),
+            'color': getValue('SSuprydp_content_option_color', '#1f2a44'),
+            'display': 'block',
+            'justify-content': '',
+            'align-items': '',
+            'gap': ''
+        });
+
+        const bannerFontSize = parseInt(getValue('SSuprydp_content_option_size', ''), 10);
+        bannerText.css('font-size', Number.isNaN(bannerFontSize) ? '' : `${bannerFontSize}px`);
+        bannerText.css('letter-spacing', Number.isNaN(contentLetterSpacing) ? '' : `${contentLetterSpacing}px`);
+        const bannerPadding = getDimensionCss('content_padding');
+        bannerPreview.css('padding', bannerPadding || '');
+
+        bannerLink.text(getValue('SSuprydp_action_option_text', 'Learn More'));
+        bannerLink.css({
+            'color': getValue('SSuprydp_action_option_color', '#ffffff'),
+            'font-size': Number.isNaN(linkFontSize) ? '' : `${linkFontSize}px`,
+            'letter-spacing': Number.isNaN(linkLetterSpacing) ? '' : `${linkLetterSpacing}px`,
+            'padding': linkPadding || '',
+            'display': ''
+        });
+
+        const linkBackground = getValue('link_text_background', '#1d5fd1');
+        const isBannerButton = getChecked('call_to_action_button') || getValue('call_to_action_button', 'no') === 'yes';
+
+        bannerLink.toggleClass('btn', isBannerButton);
+
+        bannerLink.css('background-image', 'none');
+        bannerLink.css('background-color', '');
+        if (isBannerButton) {
+            bannerLink.css('background-color', linkBackground);
+            bannerLink.css('padding', linkPadding || '');
+            bannerLink.css('display', 'inline-block');
+        } else {
+            bannerLink.css('padding', '');
+            bannerLink.css('display', 'inline');
+        }
+
+        bannerLink.toggle(!hideCallToAction);
+
+        applyPreviewFont('#ess-preview-banner-text', getValue('SSuprydp_content_option_font', 'Open Sans'), 'Open Sans');
+        applyPreviewFont('#ess-preview-banner-link', getValue('SSuprydp_action_option_font', 'Open Sans'), 'Open Sans');
+
+        const gdprPreview = $('#ess-preview-gdpr');
+        const gdprText = $('#ess-preview-gdpr-text');
+        const gdprAccept = $('#ess-preview-gdpr-accept');
+        const gdprDecline = $('#ess-preview-gdpr-decline');
+
+        gdprText.text(stripText(getValue('SSuprydp_content_option_text', 'We use cookies to improve your experience.')));
+        gdprPreview.css({
+            'background-color': getValue('content_background_color', '#1f2937'),
+            'color': getValue('SSuprydp_content_option_color', '#f8fafc')
+        });
+
+        gdprAccept.text(getValue('SSuprydp_button_option_text', 'Got it.'));
+        gdprAccept.css({
+            'background-color': getValue('SSuprydp_button_option_backg_color', '#1d5fd1'),
+            'color': getValue('SSuprydp_button_option_color', '#ffffff'),
+            'font-size': Number.isNaN(buttonFontSize) ? '' : `${buttonFontSize}px`,
+            'letter-spacing': Number.isNaN(buttonLetterSpacing) ? '' : `${buttonLetterSpacing}px`,
+            'border-radius': Number.isNaN(buttonRound) ? '' : `${Math.max(0, buttonRound)}px`
+        });
+
+        applyPreviewFont('#ess-preview-gdpr-accept', getValue('SSuprydp_button_option_font', 'Open Sans'), 'Open Sans');
+
+        const button2Show = getChecked('button2_show') || getValue('button2_show', 'no') === 'yes';
+        const button2Text = getValue('button2_text', '');
+        gdprDecline.toggle(button2Show && !!button2Text);
+        gdprDecline.text(button2Text || 'Decline');
+
+        const button2FontSize = parseInt(getNormalizedNumber('button2_font_size', ''), 10);
+        const button2LetterSpacing = parseInt(getValue('button2_letter_spacing', ''), 10);
+        const button2Radius = parseInt(getValue('button2_radius', ''), 10);
+        gdprDecline.css({
+            'background-color': getValue('button2_background_color', '#111827'),
+            'color': getValue('button2_text_color', '#ffffff'),
+            'font-size': Number.isNaN(button2FontSize) ? '' : `${button2FontSize}px`,
+            'letter-spacing': Number.isNaN(button2LetterSpacing) ? '' : `${button2LetterSpacing}px`,
+            'border-radius': Number.isNaN(button2Radius) ? '' : `${Math.max(0, button2Radius)}px`
+        });
+
+        applyPreviewFont('#ess-preview-gdpr-decline', getValue('button2_font_family', 'Open Sans'), 'Open Sans');
+
+        const htmlPreview = $('#ess-preview-html-cta');
+        htmlPreview
+            .removeClass('sticky-cta-position-left sticky-cta-position-right sticky-cta-position-top sticky-cta-position-bottom vertical-cta vertical-cta-top vertical-cta-bottom')
+            .addClass(`sticky-cta-position-${ctaPosition}`);
+        resetPreviewButtonMetrics(htmlPreview);
+
+        if (ctaPosition === 'top' || ctaPosition === 'bottom') {
+            htmlPreview.addClass('vertical-cta').addClass(`vertical-cta-${ctaPosition}`);
+        }
+        htmlPreview.css('--width', previewWidth);
+
+        const htmlButtonText = $('#ess-preview-html-button-text');
+        const htmlButton = $('#ess-preview-html-button');
+        const htmlContent = $('#ess-preview-html-content-text');
+
+        const htmlButtonLabel = getValue('SSuprydp_button_option_text', '');
+        const htmlButtonIcon = getValue('button_icon', '');
+        if (htmlButtonIcon) {
+            htmlButtonText.html(`<i class="icon ${htmlButtonIcon}"></i> ${htmlButtonLabel}`);
+        } else {
+            htmlButtonText.text(htmlButtonLabel);
+        }
+        const rawHtmlValue = `${getValue('SSuprydp_content_option_text', '') || ''}`.trim();
+        if (rawHtmlValue.length) {
+            htmlContent.html(rawHtmlValue);
+        } else {
+            htmlContent.text('Add your HTML or iframe content here.');
+        }
+        htmlContent.toggle(!hideContentText);
+
+        const htmlButtonBg = getValue('SSuprydp_button_option_backg_color', '#2466d5');
+
+        htmlButton.css('background-image', 'none');
+        htmlButton.css('background-color', htmlButtonBg);
+
+        htmlButtonText.css('color', getValue('SSuprydp_button_option_color', '#ffffff'));
+        htmlContent.css({
+            'background-color': getValue('content_background_color', '#ffffff'),
+            'color': getValue('SSuprydp_content_option_color', '#1a2940')
+        });
+
+        if (!isNaN(buttonFontSize)) {
+            htmlButtonText.css('font-size', `${buttonFontSize}px`);
+        }
+
+        if (!isNaN(contentFontSize)) {
+            htmlContent.css('font-size', `${contentFontSize}px`);
+        }
+
+        applyPreviewFont('#ess-preview-html-button-text', getValue('SSuprydp_button_option_font', 'Open Sans'), 'Open Sans');
+        applyPreviewFont('#ess-preview-html-content-text', getValue('SSuprydp_content_option_font', 'Open Sans'), 'Open Sans');
+
+        const keepHtmlOpen = getValue('keep_html_cta_open', 'no') === 'yes';
+        htmlPreview.toggleClass('shrink', !keepHtmlOpen);
+
+        requestAnimationFrame(() => {
+            syncPreviewButtonMetrics();
+            requestAnimationFrame(syncPreviewButtonMetrics);
+        });
+
+        const finishPreviewLoading = function () {
+            previewCard.removeClass('is-preview-loading').attr('aria-busy', 'false');
+        };
+
+        if (isInitialLoad) {
+            const previewImageUrl = image.length ? image : '';
+            let imagePending = false;
+
+            if (previewImageUrl) {
+                imagePending = true;
+                const preload = new Image();
+                preload.onload = preload.onerror = function () {
+                    imagePending = false;
+                    previewSpinnerTimer = setTimeout(finishPreviewLoading, 200);
+                };
+                preload.src = previewImageUrl;
+            }
+
+            if (!imagePending) {
+                previewSpinnerTimer = setTimeout(finishPreviewLoading, 300);
+            }
+        } else {
+            previewSpinnerTimer = setTimeout(finishPreviewLoading, 180);
+        }
+    };
+
+    form.on('input change', 'input, textarea, select', function () {
+        updatePreview();
+    });
+
+    form.on('change', '#sticky_s_media, #image_attachment_id, [name="sidebar_template"]', function () {
+        updatePreview();
+    });
+
+    // Font selector dropdowns update values programmatically; ensure preview refreshes immediately.
+    form.on('click', '.font-select a, .font-select li', function () {
+        setTimeout(updatePreview, 0);
+    });
+
+    // Preview-only interaction: mimic frontend hide/show by toggling shrink.
+    previewCard.on('click', '.ess-preview-template.ess-preview-sticky .sticky-sidebar-button, .ess-preview-template.ess-preview-html .sticky-sidebar-button', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const preview = $(this).closest('.easy-sticky-sidebar');
+        applyPreviewButtonMetrics(preview, $(this));
+        preview.toggleClass('shrink');
+    });
+
+    setStepState();
+    moveActiveNavBackground(false);
+    updatePreview();
+
+});

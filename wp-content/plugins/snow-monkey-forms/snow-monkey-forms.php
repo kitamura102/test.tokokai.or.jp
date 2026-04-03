@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin name: Snow Monkey Forms
- * Version: 12.0.3
+ * Version: 12.1.0
  * Description: The Snow Monkey Forms is a mail form plugin for the block editor.
  * Author: inc2734
  * Author URI: https://2inc.org
@@ -20,8 +20,10 @@ use WP_REST_Response;
 use Snow_Monkey\Plugin\Forms\App\Model\Csrf;
 use Snow_Monkey\Plugin\Forms\App\Model\Directory;
 use Snow_Monkey\Plugin\Forms\App\Model\Meta;
+use Snow_Monkey\Plugin\Forms\App\Helper;
 use Snow_Monkey\Plugin\Forms\App\Rest;
 use Snow_Monkey\Plugin\Forms\App\Service\Admin\Admin;
+use Snow_Monkey\Plugin\Forms\App\Service\BlockedSender\BlockedSender;
 use Snow_Monkey\Plugin\Forms\App\Service\ReCaptcha\ReCaptcha;
 use Snow_Monkey\Plugin\Forms\App\Service\Turnstile\Turnstile;
 
@@ -70,6 +72,7 @@ class Bootstrap {
 
 		add_action( 'template_redirect', array( $this, '_do_empty_save_dir' ) );
 
+		new BlockedSender();
 		new ReCaptcha();
 		new Turnstile();
 	}
@@ -183,10 +186,13 @@ class Bootstrap {
 					}
 
 					// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-					$form_id = isset( $_SERVER['HTTP_X_SMF_FORMID'] ) ? wp_unslash( $_SERVER['HTTP_X_SMF_FORMID'] ) : false;
+					$form_id = isset( $_SERVER['HTTP_X_SMF_FORMID'] )
+						? wp_unslash( $_SERVER['HTTP_X_SMF_FORMID'] )
+						: '';
 					// phpcs:enable
 
-					if ( ! $form_id ) {
+					$form_id = Helper::sanitize_form_id( $form_id );
+					if ( false === $form_id ) {
 						return new WP_REST_Response( 'Bad request.', 400 );
 					}
 
@@ -220,6 +226,16 @@ class Bootstrap {
 					$data = $data ? $data : array();
 
 					if ( isset( $data[ Meta::get_key() ] ) ) {
+						$raw_form_id = isset( $data[ Meta::get_key() ]['formid'] )
+							? $data[ Meta::get_key() ]['formid']
+							: '';
+
+						$raw_form_id = Helper::sanitize_form_id( $raw_form_id );
+						if ( false === $raw_form_id ) {
+							return new WP_REST_Response( 'Bad request.', 400 );
+						}
+
+						$data[ Meta::get_key() ]['formid'] = $raw_form_id;
 						$data[ Meta::get_key() ]['sender'] = wp_get_current_user();
 					}
 
@@ -359,6 +375,31 @@ class Bootstrap {
 	 * Register meta.
 	 */
 	public function _register_meta() {
+		register_post_meta(
+			'snow-monkey-forms',
+			'blocked_sender_source',
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'string',
+			)
+		);
+
+		register_post_meta(
+			'snow-monkey-forms',
+			'blocked_sender_list',
+			array(
+				'single'       => true,
+				'type'         => 'string',
+				'show_in_rest' => array(
+					'schema' => array(
+						'type'    => 'string',
+						'default' => '[]',
+					),
+				),
+			)
+		);
+
 		register_post_meta(
 			'snow-monkey-forms',
 			'administrator_email_to',

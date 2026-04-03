@@ -48,6 +48,11 @@
     border-radius: var(--round) var(--round) 0 0
 }
 
+/* Ensure shrink works for top/bottom even when GSAP sets inline transforms (frontend only). */
+body:not(.wp-admin) .easy-sticky-sidebar.vertical-cta.shrink {
+    transform: translate(var(--translateX, 0), var(--translateY, 0)) !important;
+}
+
 .easy-sticky-sidebar.sticky-cta .sticky-sidebar-button>div {
     white-space: nowrap;
     writing-mode: vertical-lr
@@ -70,14 +75,14 @@
     --width: min(90%, 525px);
     display: flex;
     width: var(--width);
-    box-shadow: 0 0 10px 0 rgba(19, 19, 19, .2);
     border-top-left-radius: calc(var(--round) + 2px);
     border-bottom-left-radius: calc(var(--round) + 2px);
 }
 
 .easy-sticky-sidebar.sticky-cta .sticky-sidebar-button {
     color: #fff;
-    width: var(--buttonWidth);
+    width: auto;
+    min-width: var(--buttonWidth);
     cursor: pointer;
     padding: 20px 0;
     display: flex;
@@ -200,10 +205,16 @@ body.admin-bar .easy-sticky-sidebar.sticky-cta-top {
     --round: 5px;
     --width: 50px !important;
     display: flex;
-    width: var(--width, 50px)!important;
-    box-shadow: 0 0 10px 0 rgba(19, 19, 19, .2);
+    width: auto !important;
+    min-width: var(--width, 50px) !important;
     border-top-left-radius: calc(var(--round) + 2px);
     border-bottom-left-radius: calc(var(--round) + 2px);
+}
+
+/* Box shadow is a Pro feature (enabled via class). */
+.easy-sticky-sidebar.ess-shadow-enabled,
+.wordpress-cta-pro-banner.ess-shadow-enabled {
+    box-shadow: 0 0 10px 0 rgba(19, 19, 19, .2);
 }
 
 .easy-sticky-sidebar.tab-cta .sticky-sidebar-button {
@@ -211,7 +222,8 @@ body.admin-bar .easy-sticky-sidebar.sticky-cta-top {
     display: block;
     position: relative;
     height: max-content;
-    width: var(--width, 50px);
+    width: auto;
+    min-width: var(--width, 50px);
     cursor: pointer;
     padding: 20px 0;
     display: flex;
@@ -227,6 +239,26 @@ body.admin-bar .easy-sticky-sidebar.sticky-cta-top {
 
 }
 
+/* Tab CTA border radius by position */
+.easy-sticky-sidebar.tab-cta.sticky-cta-position-left {
+    border-radius: 0 calc(var(--round) + 2px) calc(var(--round) + 2px) 0;
+}
+.easy-sticky-sidebar.tab-cta.sticky-cta-position-left .sticky-sidebar-button {
+    border-radius: 0 var(--round, 5px) var(--round, 5px) 0;
+}
+.easy-sticky-sidebar.tab-cta.sticky-cta-position-right {
+    border-radius: calc(var(--round) + 2px) 0 0 calc(var(--round) + 2px);
+}
+.easy-sticky-sidebar.tab-cta.sticky-cta-position-right .sticky-sidebar-button {
+    border-radius: var(--round, 5px) 0 0 var(--round, 5px);
+}
+.easy-sticky-sidebar.tab-cta.vertical-cta.sticky-cta-position-top {
+    border-radius: 0 0 calc(var(--round) + 2px) calc(var(--round) + 2px);
+}
+.easy-sticky-sidebar.tab-cta.vertical-cta.sticky-cta-position-bottom {
+    border-radius: calc(var(--round) + 2px) calc(var(--round) + 2px) 0 0;
+}
+
 .easy-sticky-sidebar.tab-cta.vertical-cta {
     width: max-content !important
 }
@@ -238,6 +270,18 @@ body.admin-bar .easy-sticky-sidebar.sticky-cta-top {
     align-items: center;
     min-height: var(--buttonHeight);
     border-radius: var(--round) var(--round) 0 0;
+}
+.easy-sticky-sidebar.vertical-cta.sticky-cta-position-top .sticky-sidebar-button,
+.easy-sticky-sidebar.vertical-cta.sticky-cta-position-bottom .sticky-sidebar-button {
+    justify-content: center !important;
+    align-items: center !important;
+}
+.easy-sticky-sidebar.vertical-cta.sticky-cta-position-top .sticky-sidebar-button > div,
+.easy-sticky-sidebar.vertical-cta.sticky-cta-position-bottom .sticky-sidebar-button > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 
@@ -430,3 +474,9 @@ ul.floating-buttons-container li .icon:before {
 .easy-sticky-sidebar.sticky-cta .sticky-sidebar-button>div i {
     margin-inline-end: 8px;
 }
+
+.easy-sticky-sidebar.tab-cta .sticky-sidebar-button>div i {
+    display: inline-block;
+}
+
+/* Display animation helpers */

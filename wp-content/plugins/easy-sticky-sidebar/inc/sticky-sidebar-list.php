@@ -45,7 +45,11 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
     function extra_tablenav($which)
     {
         // Always show Add New CTA button - removed restriction
-        return printf('<a style="margin-right: 10px" class="btn-add-new button-primary" href="%s">%s</a>', admin_url('admin.php?page=add-easy-sticky-sidebar'), esc_html__('Add New CTA', 'easy-sticky-sidebar'));
+        return printf(
+            '<a style="margin-right: 10px" class="btn-add-new button-primary" href="%s">%s</a>',
+            esc_url(admin_url('admin.php?page=add-easy-sticky-sidebar')),
+            esc_html__('Add New CTA', 'easy-sticky-sidebar')
+        );
     }
 
     /**
@@ -106,16 +110,9 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
             case 'impressions':
                 return $sidebar->SSuprydp_impressions;
             case 'clicks':
-                return sprintf(
-                    '<div class="pro-feature-stat" title="%s"><span class="dashicons dashicons-lock"></span><span class="stat-value">654</span></div>',
-                    __( 'Upgrade to Pro to view statistics', 'easy-sticky-sidebar' )
-                );
+                return absint($sidebar->SSuprydp_clicks);
             case 'ctr':
-                return sprintf(
-                    '<div class="pro-feature-stat" title="%s"><span class="dashicons dashicons-lock"></span><span class="stat-value">%s</span></div>',
-                    esc_attr__( 'Upgrade to Pro to view statistics', 'easy-sticky-sidebar' ),
-                    esc_html( '78%' )
-                );
+                return esc_html($sidebar->get_ctr());
             default:
                 return print_r( $sidebar, true );
         }
@@ -151,7 +148,7 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
     {
         return sprintf(
             '<input type="checkbox" name="sidebar[]" value="%s" />',
-            $sidebar->__get('id')
+            esc_attr($sidebar->__get('id'))
         );
     }
 
@@ -164,7 +161,7 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
         return sprintf(
             '<input class="sticky-sidebar-name-input" type="text" value="%s" placeholder="%s" data-sticky="%d"><i class="dashicons dashicons-edit"></i>',
             esc_attr($sidebar->sidebar_name),
-            __('Type sidebar name here', 'easy-sticky-sidebar'),
+            esc_attr__('Type sidebar name here', 'easy-sticky-sidebar'),
             $sidebar->__get('id')
         );
     }
@@ -186,7 +183,8 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
 
             $post = get_post($location);
             if ($post) {
-                return sprintf(__('Single: %s', 'easy-sticky-sidebar'), $post->post_title);
+                // translators: %s: Post title.
+                return sprintf(esc_html__('Single: %s', 'easy-sticky-sidebar'), esc_html($post->post_title));
             }
         }
 
@@ -208,7 +206,8 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
             case '':
                 return __('Entire Site', 'easy-sticky-sidebar');
             default:
-                return sprintf(__('Custom Location: %s', 'easy-sticky-sidebar'), $location);
+                // translators: %s: Location label.
+                return sprintf(esc_html__('Custom Location: %s', 'easy-sticky-sidebar'), esc_html($location));
         }
     }
 
@@ -248,13 +247,13 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
         $actions = [];
         $actions[] = sprintf(
             '<a href="%s" class="button button-small">%s</a>',
-            admin_url('admin.php?page=edit-easy-sticky-sidebar&id=' . $sidebar->id),
-            __('Edit', 'easy-sticky-sidebar')
+            esc_url(admin_url('admin.php?page=edit-easy-sticky-sidebar&id=' . absint($sidebar->id))),
+            esc_html__('Edit', 'easy-sticky-sidebar')
         );
         $actions[] = sprintf(
             '<a href="%s" class="button button-small button-link-delete cta-delete">%s</a>',
-            add_query_arg('action', 'delete', $permalink),
-            __('Delete', 'easy-sticky-sidebar')
+            esc_url(add_query_arg('action', 'delete', $permalink)),
+            esc_html__('Delete', 'easy-sticky-sidebar')
         );
 
         return '<div class="action-buttons">' . implode(' ', $actions) . '</div>';
@@ -349,11 +348,11 @@ class Easy_Sticky_Sidebar_List  extends WP_List_Table
         <div class="wordpress-cta-advertisement">
             <span class="div-two">
                 <a href="https://wpctapro.com/" target="_blank"><img
-                        src="<?php echo EASY_STICKY_SIDEBAR_PLUGIN_URL; ?>/assets/img/ads.jpeg" /></a>
+                        src="<?php echo esc_url(EASY_STICKY_SIDEBAR_PLUGIN_URL); ?>/assets/img/ads.jpeg" /></a>
             </span>
             <span class="div-two">
-                <a href="https://alphalinkseo.com/" target="_blank"><img
-                        src="<?php echo EASY_STICKY_SIDEBAR_PLUGIN_URL; ?>/assets/img/alphalinkseo.jpg" /></a>
+                <a href="https://wordpress.org/plugins/ez-countdown-timer//" target="_blank"><img
+                        src="<?php echo esc_url(EASY_STICKY_SIDEBAR_PLUGIN_URL); ?>/assets/img/ezcountdowntimer.jpg" /></a>
             </span>
         </div>
         <?php endif; ?>

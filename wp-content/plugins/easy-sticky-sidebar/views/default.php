@@ -31,22 +31,20 @@ if ('yes' == $ctacontent->collapse_on_page_load) {
 	array_push($cta_classes, 'shrink');
 }
 
-$cta_links_attrs = '';
+$hide_content_text = ($ctacontent->hide_content_text ?? '') === 'yes';
+
+$cta_link_url = '';
 $tag = 'div';
 if ($ctacontent->SSuprydp_action_option_url) {
 	$tag = 'a';
-	$cta_links_attrs = sprintf('href="%s"', esc_url_raw($ctacontent->SSuprydp_action_option_url));
+	$cta_link_url = $ctacontent->SSuprydp_action_option_url;
 }
+$cta_target_blank = ($ctacontent->SSuprydp_target_blank == 'Yes');
+$cta_nofollow = ($ctacontent->SSuprydp_nofollow == 'Yes');
 
-if ($ctacontent->SSuprydp_target_blank == 'Yes') {
-	$cta_links_attrs .= ' target="_blank"';
-}
-
-if ($ctacontent->SSuprydp_nofollow == 'Yes') {
-	$cta_links_attrs .= ' rel="nofollow"';
-}
-
-if ( $ctacontent->call_to_action_padding ) {
+$padding_css = "14px 24px";
+$pro_enabled = function_exists('has_wordpress_cta_pro') && has_wordpress_cta_pro();
+if ($pro_enabled && $ctacontent->call_to_action_padding) {
     $padding_top    = isset($ctacontent->call_to_action_padding['top']) ? intval($ctacontent->call_to_action_padding['top']) : 0;
     $padding_bottom = isset($ctacontent->call_to_action_padding['bottom']) ? intval($ctacontent->call_to_action_padding['bottom']) : 0;
     $padding_right  = isset($ctacontent->call_to_action_padding['right']) ? intval($ctacontent->call_to_action_padding['right']) : 0;
@@ -55,15 +53,9 @@ if ( $ctacontent->call_to_action_padding ) {
                         ? sanitize_text_field((string) $ctacontent->call_to_action_padding['unit']) 
                         : 'px';
 
-    // If all paddings are 0, use default
-    if ($padding_top === 0 && $padding_right === 0 && $padding_bottom === 0 && $padding_left === 0) {
-        $padding_css = "14px 24px";
-    } else {
+    if (!($padding_top === 0 && $padding_right === 0 && $padding_bottom === 0 && $padding_left === 0)) {
         $padding_css = "{$padding_top}{$padding_unit} {$padding_right}{$padding_unit} {$padding_bottom}{$padding_unit} {$padding_left}{$padding_unit}";
     }
-} else {
-    // No padding set, use default
-    $padding_css = "14px 24px";
 }
 
 
@@ -82,23 +74,50 @@ if($ctacontent->SSuprydp_cta_position == 'left' || $ctacontent->SSuprydp_cta_pos
         $position_style = 'bottom: 0; transform: none; top: unset;';
     }
 }
-$button_alignment = $ctacontent->dynamic_properties['button_alignment'];
-if($button_alignment == 'start'){
-    $button_alignment_style = 'text-align:start;';
+$button_alignment = $ctacontent->SSuprydp_button_option_align ?? 'left';
+$justify_map = ['left' => 'flex-start', 'center' => 'center', 'right' => 'flex-end'];
+$justify_value = $justify_map[$button_alignment] ?? 'flex-start';
+$button_alignment_style = sprintf(
+    'text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:%s;',
+    esc_attr($justify_value)
+);
+
+$display_trigger = $ctacontent->display_trigger ?? 'immediately';
+$display_trigger_seconds = absint($ctacontent->display_trigger_seconds ?? 0);
+$display_trigger_scroll = absint($ctacontent->display_trigger_scroll ?? 0);
+$display_animation = $ctacontent->display_animation ?? 'none';
+$hide_behavior = $ctacontent->hide_behavior ?? 'none';
+$hide_after_seconds = absint($ctacontent->hide_after_seconds ?? 0);
+$display_frequency = $ctacontent->display_frequency ?? 'every_time';
+$after_close_behavior = $ctacontent->after_close_behavior ?? 'next_visit';
+$after_close_time = absint($ctacontent->after_close_time ?? 0);
+$after_close_time_unit = $ctacontent->after_close_time_unit ?? 'hours';
+if (in_array($display_trigger, ['after_seconds', 'after_scroll'], true)) {
+    $cta_classes[] = 'ess-cta-hidden';
 }
-elseif($button_alignment == 'center'){
-    $button_alignment_style = 'text-align:center;';
+if (in_array($display_frequency, ['once_per_visit', 'every_24_hours', 'every_7_days'], true)) {
+    $cta_classes[] = 'ess-cta-hidden';
 }
-else{
-    $button_alignment_style = 'text-align:end;';
+if ($display_animation && $display_animation !== 'none') {
+    $cta_classes[] = 'ess-cta-hidden';
 }
 
 ?>
-<div id="<?php echo esc_attr('easy-sticky-sidebar-' . $ctacontent->id); ?>" style="<?php echo $position_style;   ?>"
-    class="<?php echo esc_attr(implode(' ', $cta_classes)); ?>" data-id="<?php echo esc_attr($ctacontent->id); ?>">
+<div id="<?php echo esc_attr('easy-sticky-sidebar-' . $ctacontent->id); ?>" style="<?php echo esc_attr($position_style); ?>"
+    class="<?php echo esc_attr(implode(' ', $cta_classes)); ?>" data-id="<?php echo esc_attr($ctacontent->id); ?>"
+    data-display-trigger="<?php echo esc_attr($display_trigger); ?>"
+    data-display-trigger-seconds="<?php echo esc_attr($display_trigger_seconds); ?>"
+    data-display-trigger-scroll="<?php echo esc_attr($display_trigger_scroll); ?>"
+    data-display-animation="<?php echo esc_attr($display_animation); ?>"
+    data-hide-behavior="<?php echo esc_attr($hide_behavior); ?>"
+    data-hide-after-seconds="<?php echo esc_attr($hide_after_seconds); ?>"
+    data-display-frequency="<?php echo esc_attr($display_frequency); ?>"
+    data-after-close-behavior="<?php echo esc_attr($after_close_behavior); ?>"
+    data-after-close-time="<?php echo esc_attr($after_close_time); ?>"
+    data-after-close-time-unit="<?php echo esc_attr($after_close_time_unit); ?>">
 
     <div class="sticky-sidebar-button"
-        style="background-color:<?php echo esc_attr($button_background_color); ?>; <?php echo $button_alignment_style; ?>">
+        style="background-color:<?php echo esc_attr($button_background_color); ?>; <?php echo esc_attr($button_alignment_style); ?>">
         <div style="color: <?php echo esc_attr($button_color); ?>;">
             <?php do_action('easy_sticky_sidebar_sticky_cta_button', $ctacontent); ?>
         </div>
@@ -110,7 +129,11 @@ else{
     </div>
 
     <<?php echo esc_html($tag); ?> class="sticky-sidebar-content sticky-sidebar-container"
-        <?php echo $cta_links_attrs; ?>>
+        <?php if ($tag === 'a') : ?>
+            href="<?php echo esc_url($cta_link_url); ?>"
+            <?php echo $cta_target_blank ? ' target="_blank"' : ''; ?>
+            <?php echo $cta_nofollow ? ' rel="nofollow"' : ''; ?>
+        <?php endif; ?>>
 
         <?php
 		$image = $ctacontent->sticky_s_media;
@@ -119,10 +142,12 @@ else{
         <div class="sticky-sidebar-image" style="background-image: url('<?php echo esc_url($image); ?>');"></div>
         <?php } ?>
 
-        <div class="sticky-sidebar-text sticky-content-inner"
-            style="color: <?php echo esc_attr($content_color); ?>; background-color: <?php echo esc_attr($contents_background_color); ?>;">
-            <?php echo do_shortcode(wp_kses_post($ctacontent->SSuprydp_content_option_text)); ?>
-        </div>
+        <?php if (!$hide_content_text) : ?>
+            <div class="sticky-sidebar-text sticky-content-inner"
+                style="color: <?php echo esc_attr($content_color); ?>; background-color: <?php echo esc_attr($contents_background_color); ?>;">
+                <?php echo do_shortcode(wp_kses_post($ctacontent->SSuprydp_content_option_text)); ?>
+            </div>
+        <?php endif; ?>
 
         <?php 
 
@@ -132,7 +157,7 @@ else{
         $line_height = $ctacontent->dynamic_properties['line_separator_thickness'] ?? '';
 
         if (!empty($url)) :
-            if ($ctacontent->line_separator_show !== 'no') {
+            if (!$hide_content_text && $ctacontent->line_separator_show !== 'no') {
                 echo '<hr style="background-color:' . esc_attr($line_background) . '; height:' . esc_attr($line_height) . 'px; border: none;">';
             }
 
@@ -147,7 +172,7 @@ else{
 
                 printf(
                     '<div class="sticky-sidebar-call-to-action sticky-content-inner" style="%s">%s</div>',
-                    $style,
+                    esc_attr($style),
                     wp_kses_post($text)
                 );
             } 
@@ -157,4 +182,4 @@ else{
     </<?php echo esc_html($tag); ?>>
 </div>
 <?php
-echo ob_get_clean();
+echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

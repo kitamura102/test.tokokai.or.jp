@@ -100,12 +100,18 @@
     }
     // animate caption and logo
     function captionAnimation() {
-        slide.find(".catch span").each(function(i){
-          $(this).delay(i *400).queue(function(next) {
-            $(this).addClass('animate');
-            next();
+      slide.find(".catch span").each(function(i){
+        const $el = $(this);
+        $el.removeClass('animate');
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            $el.delay(i * 400).queue(function(next) {
+              $el.addClass('animate');
+              next();
+            });
           });
         });
+      });
     }
     // youtube item --------------------------
     if (slide.hasClass('youtube')) {

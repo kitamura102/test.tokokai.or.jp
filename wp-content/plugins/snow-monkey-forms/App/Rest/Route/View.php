@@ -74,6 +74,10 @@ class View {
 		}
 
 		$spam_validate = apply_filters( 'snow_monkey_forms/spam/validate', true, $this->responser, $this->setting );
+		if ( is_wp_error( $spam_validate ) ) {
+			return $this->_send_systemerror( $spam_validate->get_error_message() );
+		}
+
 		if ( ! $spam_validate ) {
 			return $this->_send_systemerror( __( 'There is a possibility of spamming.', 'snow-monkey-forms' ) );
 		}
@@ -187,6 +191,12 @@ class View {
 		}
 
 		if ( 'input' === $method || 'complete' === $method || 'systemerror' === $method ) {
+			// If the token cannot be verified,
+			// the file deletion process will not be performed.
+			if ( ! Csrf::validate( Meta::get_token() ) ) {
+				return $controller->send();
+			}
+
 			$user_dirpath = Directory::generate_user_dirpath( $this->setting->get( 'form_id' ), false );
 
 			Directory::do_empty( $user_dirpath, true );

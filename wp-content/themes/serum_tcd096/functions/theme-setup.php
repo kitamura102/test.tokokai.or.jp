@@ -68,3 +68,11 @@ function get_tcd_update_notifier_xml() {
 
 	return false;
 }
+
+/**
+ * 管理画面 カテゴリーやタグなどの説明文でHTMLを許可範囲を広げる
+ *
+ * NOTE: wp_filter_post_ksesを新たに追加して、scriptタグを無害化する
+ */
+remove_filter( 'pre_term_description', 'wp_filter_kses' );
+add_filter( 'pre_term_description', 'wp_filter_post_kses' );

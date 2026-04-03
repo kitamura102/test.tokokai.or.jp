@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+	exit;
+}
 
 /**
  * Icon library
@@ -435,7 +438,7 @@ class Easy_Sticky_Sidebar_Icons_Library {
         <div id="easy-sticky-sidebar-icon-library-popup">
             <div class="dialog-container">
                 <header class="dialog-header">
-                    <h3><?php _e('Icon Library', 'easy-sticky-sidebar') ?></h3>
+                    <h3><?php esc_html_e('Icon Library', 'easy-sticky-sidebar'); ?></h3>
                     <span class="close dashicons dashicons-no-alt"></span>
                 </header>
                 <div class="dialog-content">
@@ -446,7 +449,7 @@ class Easy_Sticky_Sidebar_Icons_Library {
                     
                     if ( $this->has_library() ) { ?>
                     <form class="form-search-icons">
-                        <input type="text" placeholder="<?php _e('Search icon...', 'easy-sticky-sidebar') ?>">
+                        <input type="text" placeholder="<?php esc_attr_e('Search icon...', 'easy-sticky-sidebar'); ?>">
                         <button class="fa-solid fa-magnifying-glass"></button>
                     </form>
                     <?php } ?>                   
@@ -461,7 +464,7 @@ class Easy_Sticky_Sidebar_Icons_Library {
                 </div>
 
                 <footer class="dialog-footer">
-                    <a class="button btn-add-icon btn-wordpress-cta-primary" href="#"><?php _e('Insert', 'easy-sticky-sidebar') ?></a>
+                    <a class="button btn-add-icon btn-wordpress-cta-primary" href="#"><?php esc_html_e('Insert', 'easy-sticky-sidebar'); ?></a>
                 </footer>
             </div>
         </div>

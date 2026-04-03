@@ -77,8 +77,18 @@
 
  <?php if(!is_paged() && $desc){ ?>
  <div id="archive_header">
-  <p<?php if($desc_mobile){ echo ' class="pc"'; }; ?>><?php echo wp_kses_post(nl2br($desc)); ?></p>
-  <?php if($desc_mobile){ ?><p class="mobile"><?php echo wp_kses_post(nl2br($desc_mobile)); ?></p><?php }; ?>
+    <div<?php if($desc_mobile){ echo ' class="pc"'; }; ?>>
+      <div class="post_content">
+        <?php echo apply_filters('the_content', $desc); ?>
+      </div>
+    </div>
+    <?php if($desc_mobile){ ?>
+      <div class="mobile">
+        <div class="post_content">
+          <?php echo apply_filters('the_content', $desc_mobile); ?>
+        </div>
+      </div>
+    <?php }; ?>
  </div>
  <?php }; ?>
 

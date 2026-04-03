@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+	exit;
+}
 
 /**
  * WP Sticky CTA Data
@@ -107,7 +110,8 @@ class WP_Sticky_CTA_Data {
             'sidebar_template' => 'sticky-cta',
             'line_separator_show' => 'yes',
             'line_separator_color' => '#fff',
-            'collapse_on_page_load' => 'no'
+            'collapse_on_page_load' => 'no',
+            'hide_content_text' => 'no'
         )));
 
         $this->get_options();

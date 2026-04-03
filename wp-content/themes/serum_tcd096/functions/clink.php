@@ -89,13 +89,53 @@ if(!empty($post)){
     $img = get_template_directory_uri() . "/img/common/no_image2.gif";
   }
 
+  // 通常の日付
+  // NOTE: 固定ページは日付を非表示決め打ちに
+  $date_output = sprintf(
+    '<p class="date">%s</p>',
+    esc_html( $date )
+  );
+  if( $post->post_type === 'page' ){
+    $date_output = '';
+  }
+
+  // NOTE: 投稿タイプ別に、テーマオプションの最終更新日を表示しない場合は非表示
+  $show_modified_date_output = function( $post ){
+    global $options;
+
+    switch( $post->post_type ){
+      // 投稿
+      case 'post' :
+        return $options['single_blog_show_mod_date'] == 'display';
+
+      // お知らせ
+      case 'news' :
+        return $options['single_news_show_mod_date'] == 'display';
+
+      // その他は表示しない
+      default :
+        return false;
+    }
+  };
+
+  $modified_date_output = '';
+  if( $show_modified_date_output( $post ) ){
+    $modified_date_output = sprintf(
+      '<p class="modified_date">%s</p>',
+      esc_html( get_the_modified_date( 'Y.m.d', $post ) )
+    );
+  }
+
   $clink  = '<div class="cardlink">
     <a class="image" href="' . esc_url( $atts['url'] ) . '">
      <img src="' . esc_attr( $img ) . '">
     </a>
     <div class="content">
      <div class="title_area">
-      <p class="date">' . esc_html( $date ) . '</p>
+      <div class="meta">
+       ' . $date_output . '
+       ' . $modified_date_output . '
+      </div>
       <div class="title">
        <a href="' . esc_url( $atts['url'] ) . '">' . wp_strip_all_tags( $title ) . '</a>
       </div>

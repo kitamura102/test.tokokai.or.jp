@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+	exit;
+}
 
 /**
  * Easy_Sticky_CTA_Generate_CSS
@@ -9,21 +12,30 @@ class Easy_Sticky_CTA_Generate_CSS {
 
     // Declare the property to avoid dynamic property creation deprecated warning
     protected $item;
+    protected static $has_generated = false;
 
-    function __construct() {
-        $this->generate_css_file();
-        add_action('easy_sticky_sidebar_after_save', [$this, 'generate_style'], 2);
+    function __construct($register_hooks = true) {
+        if ($register_hooks) {
+            $this->generate_css_file();
+            add_action('easy_sticky_sidebar_after_save', [$this, 'generate_style'], 2);
+        }
     }
 
     public function generate_css_file() {
         $upload_dir = wp_get_upload_dir();
         $css_file = $upload_dir['basedir'] . '/sticky-sidebar-generated.css';
-        if (!file_exists($css_file)) {
+        $has_pro = function_exists('has_wordpress_cta_pro') && has_wordpress_cta_pro();
+        $current_status = $has_pro ? '1' : '0';
+        $last_status = get_option('ess_last_pro_status', '');
+
+        if (!file_exists($css_file) || $last_status !== $current_status) {
             $this->generate_style();
+            update_option('ess_last_pro_status', $current_status);
         }
     }
 
     public function generate_style() {
+        self::$has_generated = true;
         global $wpdb;
 
         $results = $wpdb->get_results("SELECT * FROM $wpdb->sticky_cta WHERE SSuprydp_development != 'off' ORDER BY id");
@@ -41,6 +53,15 @@ class Easy_Sticky_CTA_Generate_CSS {
         $styles = ob_get_clean();
 
         file_put_contents(wp_upload_dir()['basedir'] . '/sticky-sidebar-generated.css', $styles);
+    }
+
+    public static function regenerate_now() {
+        if (self::$has_generated) {
+            return;
+        }
+
+        $generator = new self(false);
+        $generator->generate_style();
     }
 
     public static function get_font_style($font) {
@@ -84,7 +105,7 @@ class Easy_Sticky_CTA_Generate_CSS {
         }
 
         if (!empty($styles)) {
-            printf("%s {%s}\n\n", esc_html($wrapper_selector), $styles);
+            printf("%s {%s}\n\n", esc_html($wrapper_selector), esc_html($styles));
         }
     }
 
@@ -99,7 +120,7 @@ class Easy_Sticky_CTA_Generate_CSS {
 
         $font_size = absint($this->item->SSuprydp_button_option_size);
         if ($font_size > 0) {
-            printf("\tfont-size: %spx;\n", $font_size);
+            printf("\tfont-size: %dpx;\n", absint($font_size));
         }
 
         printf("\ttext-align: %s;\n", esc_html($this->item->SSuprydp_button_option_align));
@@ -108,7 +129,9 @@ class Easy_Sticky_CTA_Generate_CSS {
             printf("\tbackground-color: %s;\n", esc_html($this->item->SSuprydp_button_option_backg_color));
         }
 
-        Wordpress_CTA_Free_Utils::get_dimensions_output($sticky_cta->button_padding, 'padding-%');
+        if (function_exists('has_wordpress_cta_pro') && has_wordpress_cta_pro()) {
+            Wordpress_CTA_Free_Utils::get_dimensions_output($sticky_cta->button_padding, 'padding-%');
+        }
 
         do_action('easy_sticky_sidebar_generate_button_style', $this->item);
     }
@@ -134,14 +157,16 @@ class Easy_Sticky_CTA_Generate_CSS {
 
         $font_size = absint($this->item->SSuprydp_content_option_size);
         if ($font_size > 0) {
-            printf("\tfont-size: %spx;\n", $font_size);
+            printf("\tfont-size: %dpx;\n", absint($font_size));
         }
 
         if (!empty($this->item->content_background_color)) {
             printf("background-color: %s;\n", esc_attr($this->item->content_background_color));
         }
 
-        Wordpress_CTA_Free_Utils::get_dimensions_output($this->item->content_padding, 'padding-%');
+        if (function_exists('has_wordpress_cta_pro') && has_wordpress_cta_pro()) {
+            Wordpress_CTA_Free_Utils::get_dimensions_output($this->item->content_padding, 'padding-%');
+        }
 
         do_action('easy_sticky_sidebar_generate_content_style', $this->item);
     }
@@ -155,14 +180,16 @@ class Easy_Sticky_CTA_Generate_CSS {
 
         $font_size = absint($this->item->SSuprydp_action_option_size);
         if ($font_size > 0) {
-            printf("\tfont-size: %spx;\n", esc_attr($font_size));
+            printf("\tfont-size: %dpx;\n", absint($font_size));
         }
 
         if (!empty($this->item->link_text_background)) {
             printf("background-color: %s;\n", esc_attr($this->item->link_text_background));
         }
 
-        Wordpress_CTA_Free_Utils::get_dimensions_output($this->item->call_to_action_padding, 'padding-%');
+        if (function_exists('has_wordpress_cta_pro') && has_wordpress_cta_pro()) {
+            Wordpress_CTA_Free_Utils::get_dimensions_output($this->item->call_to_action_padding, 'padding-%');
+        }
 
         do_action('easy_sticky_sidebar_generate_call_to_action_style', $this->item);
     }
@@ -174,20 +201,20 @@ class Easy_Sticky_CTA_Generate_CSS {
 
         $sticky_class = sprintf("#easy-sticky-sidebar-%d.easy-sticky-sidebar", absint($this->item->__get('id')));
 
-        printf("%s {\n", $sticky_class);
+        printf("%s {\n", esc_html($sticky_class));
         if ($this->item->enable_cta_width == 'yes' && absint($this->item->cta_width) > 0 && $this->item->sidebar_template !== 'tab-cta') {
             $unit = empty($this->item->cta_width_unit) ? 'px' : $this->item->cta_width_unit;
-            printf("\t--width: %d%s;\n", absint($this->item->cta_width), $unit);
+            printf("\t--width: %d%s;\n", absint($this->item->cta_width), esc_attr($unit));
         }
 
         do_action('easy_sticky_sidebar_wrapper_style', $this->item);
         echo "}\n\n";
 
         echo '@media screen and (min-width: 768px) and (max-width: 1024px){';
-        printf("%s {\n", $sticky_class);
+        printf("%s {\n", esc_html($sticky_class));
         if ($this->item->enable_cta_width == 'yes' && absint($this->item->cta_tablet_width) > 0) {
             $unit = empty($this->item->cta_tablet_width_unit) ? 'px' : $this->item->cta_tablet_width_unit;
-            printf("\t--width: %d%s;\n", absint($this->item->cta_tablet_width), $unit);
+            printf("\t--width: %d%s;\n", absint($this->item->cta_tablet_width), esc_attr($unit));
         }
 
         do_action('easy_sticky_sidebar_wrapper_style_tablet', $this->item);
@@ -196,10 +223,10 @@ class Easy_Sticky_CTA_Generate_CSS {
         echo '}';
 
         echo '@media screen and (max-width: 767px){';
-        printf("%s {\n", $sticky_class);
+        printf("%s {\n", esc_html($sticky_class));
         if ($this->item->enable_cta_width == 'yes' && absint($this->item->cta_mobile_width) > 0) {
             $unit = empty($this->item->cta_mobile_width_unit) ? 'px' : $this->item->cta_mobile_width_unit;
-            printf("\t--width: %d%s;\n", absint($this->item->cta_mobile_width), $unit);
+            printf("\t--width: %d%s;\n", absint($this->item->cta_mobile_width), esc_attr($unit));
         }
 
         do_action('easy_sticky_sidebar_wrapper_style_mobile', $this->item);
@@ -208,19 +235,19 @@ class Easy_Sticky_CTA_Generate_CSS {
 
         echo '}';
 
-        printf("%s .sticky-sidebar-button {\n", $sticky_class);
+        printf("%s .sticky-sidebar-button {\n", esc_html($sticky_class));
         $this->generate_button_style();
         echo "}\n\n";
 
-        printf("%s .sticky-sidebar-image {\n", $sticky_class);
+        printf("%s .sticky-sidebar-image {\n", esc_html($sticky_class));
         $this->sidebar_image_style();
         echo "}\n\n";
 
-        printf("%s .sticky-sidebar-content {\n", $sticky_class);
+        printf("%s .sticky-sidebar-content {\n", esc_html($sticky_class));
         $this->content_style();
         echo "}\n\n";
 
-        printf("%s .call-to-action {\n", $sticky_class);
+        printf("%s .call-to-action {\n", esc_html($sticky_class));
         $this->call_to_action_style();
         echo "}\n\n";
     }

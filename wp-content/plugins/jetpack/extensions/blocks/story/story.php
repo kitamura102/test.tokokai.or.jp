@@ -11,9 +11,9 @@ namespace Automattic\Jetpack\Extensions\Story;
 
 use Automattic\Jetpack\Blocks;
 use Automattic\Jetpack\Connection\Connection_Assets;
+use Automattic\Jetpack\Post_Media\Images;
 use Jetpack;
 use Jetpack_Gutenberg;
-use Jetpack_PostImages;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 0 );
@@ -278,7 +278,7 @@ function get_image_crop_class( $width, $height ) {
  * @return string
  */
 function get_blavatar_or_site_icon_url( $size, $fallback ) {
-	$image_array = Jetpack_PostImages::from_blavatar( get_the_ID(), $size );
+	$image_array = Images::from_blavatar( get_the_ID(), $size );
 	if ( ! empty( $image_array ) ) {
 		return $image_array[0]['src'];
 	} else {
@@ -506,7 +506,7 @@ function render_block( $attributes ) {
 		</div>',
 		esc_attr( Blocks::classes( Blocks::get_block_feature( __DIR__ ), $attributes, array( 'wp-story', 'aligncenter' ) ) ),
 		esc_attr( 'wp-story-' . get_the_ID() . '-' . strval( ++$story_block_counter ) ),
-		filter_var( wp_json_encode( $settings ), FILTER_SANITIZE_SPECIAL_CHARS ),
+		filter_var( wp_json_encode( $settings, JSON_UNESCAPED_SLASHES ), FILTER_SANITIZE_SPECIAL_CHARS ),
 		get_permalink() . '?wp-story-load-in-fullscreen=true&amp;wp-story-play-on-load=true',
 		__( 'Play story in new tab', 'jetpack' ),
 		__( 'Site icon', 'jetpack' ),

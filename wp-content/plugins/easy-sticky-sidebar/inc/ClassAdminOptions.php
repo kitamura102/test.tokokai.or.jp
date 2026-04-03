@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+	exit;
+}
+
 class SSuprydpStickySidebarOptions {
 
     /**
@@ -67,7 +71,8 @@ class SSuprydpStickySidebarOptions {
 
         if ($wpdb->delete($wpdb->sticky_cta, array('ID' => $get_data['id']), array('%d'))) {
             $wpdb->delete($wpdb->sticky_cta_options, array('sticky_cta_id' => $get_data['id']), array('%d'));
-            exit(wp_safe_redirect(site_url('/wp-admin/admin.php?page=easy-sticky-sidebars')));
+            wp_safe_redirect(admin_url('admin.php?page=easy-sticky-sidebars'));
+            exit;
         }
     }
 
@@ -134,7 +139,7 @@ class SSuprydpStickySidebarOptions {
             $data['form_attributes'][] = sprintf('%s="%s"', $attribute, esc_attr($value));
         }
 
-        print SSuprydpStickySidebar()->engine->getView('add_pages', $data);
+        print SSuprydpStickySidebar()->engine->getView('add_pages', $data); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     public function how_to_use_wordpress_cta() {
@@ -159,7 +164,7 @@ document.getElementById("cta-button").addEventListener("click", function() {
 <?php
         // End output buffering and output everything
         $output = ob_get_clean();
-        echo $output;
+        echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
 
@@ -206,7 +211,7 @@ document.getElementById("cta-button").addEventListener("click", function() {
             $data['form_attributes'][] = sprintf('%s="%s"', $attribute, esc_attr($value));
         }
 
-        print SSuprydpStickySidebar()->engine->getView('add_pages', $data);
+        print SSuprydpStickySidebar()->engine->getView('add_pages', $data); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     /**
@@ -247,14 +252,14 @@ document.getElementById("cta-button").addEventListener("click", function() {
         } ?>
 <div id="wordpress-cta-popup-load-design" class="wordpress-cta-popup">
     <div class="popup-content">
-        <?php _e('Do you want to replace this style?', 'easy-sticky-sidebar'); ?>
+        <?php esc_html_e('Do you want to replace this style?', 'easy-sticky-sidebar'); ?>
 
         <footer>
             <a class="button btn-wordpress-cta-primary"
-                href="#load-style"><?php _e('Load Styles', 'easy-sticky-sidebar') ?></a>
+                href="#load-style"><?php esc_html_e('Load Styles', 'easy-sticky-sidebar'); ?></a>
             <a class="button btn-wordpress-cta-primary"
-                href="#load-style-content"><?php _e('Load Styles and Content', 'easy-sticky-sidebar') ?></a>
-            <a class="button btn-cancel" href="#"><?php _e('Cancel', 'easy-sticky-sidebar') ?></a>
+                href="#load-style-content"><?php esc_html_e('Load Styles and Content', 'easy-sticky-sidebar'); ?></a>
+            <a class="button btn-cancel" href="#"><?php esc_html_e('Cancel', 'easy-sticky-sidebar'); ?></a>
         </footer>
         <span class="close"></span>
     </div>

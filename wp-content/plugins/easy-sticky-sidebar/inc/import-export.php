@@ -22,14 +22,17 @@ class Wordpress_CTA_Import_Export {
 			return;
 		}
 
-		$items = $post_data['cta'];
+		$items = array_map('absint', (array) $post_data['cta']);
 
 		if (empty($items)) {
 			return;
 		}
 
 		global $wpdb;
-		$results = $wpdb->get_results(sprintf("SELECT * FROM $wpdb->sticky_cta WHERE id IN (%s)", implode(', ', $items)));
+		$placeholders = implode(', ', array_fill(0, count($items), '%d'));
+		$results = $wpdb->get_results(
+			$wpdb->prepare("SELECT * FROM $wpdb->sticky_cta WHERE id IN ($placeholders)", $items)
+		);
 
 		array_walk($results, function (&$item) {
 			$item = new WP_Sticky_CTA_Data($item);
@@ -94,7 +97,11 @@ class Wordpress_CTA_Import_Export {
 					continue; // Skip this item if media URL is invalid
 				}
 
-				$image_content = @file_get_contents($media_url);
+				if (!$this->is_safe_media_url($media_url)) {
+					continue;
+				}
+
+				$image_content = $this->fetch_remote_media($media_url);
 
 				if ($image_content) {
 					$filename = basename($sidebar->sticky_s_media);
@@ -129,7 +136,67 @@ class Wordpress_CTA_Import_Export {
 		$request_data = filter_var_array($_REQUEST, FILTER_SANITIZE_SPECIAL_CHARS);
 		$import_count = count($sidebars);
 
-		exit(wp_safe_redirect(add_query_arg(['settings-updated' => true, 'import-count' => $import_count], $request_data['_wp_http_referer'])));
+		$redirect_url = add_query_arg(
+			['settings-updated' => true, 'import-count' => $import_count],
+			$request_data['_wp_http_referer']
+		);
+		$redirect_url = wp_sanitize_redirect($redirect_url);
+		wp_safe_redirect($redirect_url);
+		exit;
+	}
+
+	private function is_safe_media_url($media_url) {
+		$validated_url = wp_http_validate_url($media_url);
+		if (empty($validated_url)) {
+			return false;
+		}
+
+		$parsed = wp_parse_url($validated_url);
+		if (empty($parsed['host'])) {
+			return false;
+		}
+
+		$host = $parsed['host'];
+		$resolved = gethostbyname($host);
+		if ($resolved && $this->is_private_ip($resolved)) {
+			return false;
+		}
+
+		return true;
+	}
+
+	private function is_private_ip($ip) {
+		if (!filter_var($ip, FILTER_VALIDATE_IP)) {
+			return true;
+		}
+
+		if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+			return !filter_var(
+				$ip,
+				FILTER_VALIDATE_IP,
+				FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE
+			);
+		}
+
+		return !filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE);
+	}
+
+	private function fetch_remote_media($media_url) {
+		$response = wp_remote_get($media_url, [
+			'timeout' => 10,
+			'redirection' => 3,
+		]);
+
+		if (is_wp_error($response)) {
+			return false;
+		}
+
+		$code = wp_remote_retrieve_response_code($response);
+		if ($code < 200 || $code >= 300) {
+			return false;
+		}
+
+		return wp_remote_retrieve_body($response);
 	}
 
 	public function output() {
@@ -146,13 +213,13 @@ class Wordpress_CTA_Import_Export {
 				<hr class="wp-header-end">
 				<div class="easy-sticky-sidebar-tab-panel">
 					<nav class="tab-nav">
-						<a class="active" href="#tab-content-export"><?php _e('Export', 'easy-sticky-sidebar') ?></a>
-						<a href="#tab-content-import"><?php _e('Import', 'easy-sticky-sidebar') ?></a>
+						<a class="active" href="#tab-content-export"><?php esc_html_e('Export', 'easy-sticky-sidebar'); ?></a>
+						<a href="#tab-content-import"><?php esc_html_e('Import', 'easy-sticky-sidebar'); ?></a>
 					</nav>
 
 					<div class="easy-sticky-sidebar-tab-content">
 						<div id="tab-content-export">
-							<header><?php _e('Export CTA', 'easy-sticky-sidebar') ?></header>
+							<header><?php esc_html_e('Export CTA', 'easy-sticky-sidebar'); ?></header>
 
 							<form method="post">
 								<?php wp_nonce_field('_nonce_export_cta', '_nonce_export') ?>
@@ -160,10 +227,10 @@ class Wordpress_CTA_Import_Export {
 								<table class="form-table form-table-export">
 									<tbody>
 										<tr valign="top">
-											<th scope="row">Select Items</th>
+											<th scope="row"><?php esc_html_e('Select Items', 'easy-sticky-sidebar'); ?></th>
 											<td>
 												<ul class="export-cta-list">
-													<li><label><input type="checkbox" data-select="all"> Select All</label></li>
+													<li><label><input type="checkbox" data-select="all"> <?php esc_html_e('Select All', 'easy-sticky-sidebar'); ?></label></li>
 
 													<?php foreach ($sidebars as $sidebar) {
 														printf('<li><label><input type="checkbox" name="cta[]" value="%d" /> %s</label></li>', absint($sidebar->__get('id')), esc_attr($sidebar->__get('sidebar_name')));
@@ -179,14 +246,16 @@ class Wordpress_CTA_Import_Export {
 						</div>
 
 						<div id="tab-content-import">
-							<header><?php _e('Import CTA', 'easy-sticky-sidebar') ?></header>
+							<header><?php esc_html_e('Import CTA', 'easy-sticky-sidebar'); ?></header>
 							<?php
 							if (isset($_GET['settings-updated'])) {
 								$import_count = isset($_GET['import-count']) ? intval($_GET['import-count']) : 0;
 								if ($import_count > 0) {
-									echo '<div class="notice notice-success is-dismissible"><p><strong>Success!</strong> ' . sprintf(_n('%d CTA has been successfully imported.', '%d CTAs have been successfully imported.', $import_count, 'easy-sticky-sidebar'), $import_count) . '</p></div>';
+									// translators: %d: Number of CTAs imported.
+									$message = sprintf(_n('%d CTA has been successfully imported.', '%d CTAs have been successfully imported.', $import_count, 'easy-sticky-sidebar'), $import_count);
+									echo '<div class="notice notice-success is-dismissible"><p><strong>' . esc_html__('Success!', 'easy-sticky-sidebar') . '</strong> ' . esc_html($message) . '</p></div>';
 								} else {
-									echo '<div class="notice notice-success is-dismissible"><p><strong>Success!</strong> ' . __('CTA data has been successfully imported.', 'easy-sticky-sidebar') . '</p></div>';
+									echo '<div class="notice notice-success is-dismissible"><p><strong>' . esc_html__('Success!', 'easy-sticky-sidebar') . '</strong> ' . esc_html__('CTA data has been successfully imported.', 'easy-sticky-sidebar') . '</p></div>';
 								}
 							}
 							?>

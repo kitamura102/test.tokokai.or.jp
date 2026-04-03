@@ -35,7 +35,7 @@
      <?php
           $post_date = get_the_time('Ymd');
           $modified_date = get_the_modified_date('Ymd');
-          if($post_date < $modified_date){
+          if($options['single_blog_show_mod_date'] !== 'hide' && $post_date < $modified_date){
      ?>
      <time class="update entry-date updated" datetime="<?php the_modified_time('c'); ?>"><?php the_modified_date('Y.m.d'); ?></time>
      <?php }; ?>

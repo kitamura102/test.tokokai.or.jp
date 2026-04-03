@@ -144,8 +144,8 @@ class Wordpress_CTA_Free_Utils {
             $style[] = sprintf('%s: %s', $key, $value);
         } ?>
         <div class="wordpress-cta-pro-feature-lock-inline" style="<?php echo esc_attr(implode(';', $style)) ?>">
-            <a class="button btn-wordpress-cta-primary" href="https://wpctapro.com/pricing/" target="_blank"><?php _e('Upgrade now', 'easy-sticky-sidebar') ?></a>
-            <a href="https://wpctapro.com/" target="_blank"><?php _e('Learn more', 'easy-sticky-sidebar') ?></a>
+            <a class="button btn-wordpress-cta-primary" href="https://wpctapro.com/pricing/" target="_blank"><?php esc_html_e('Upgrade now', 'easy-sticky-sidebar') ?></a>
+            <a href="https://wpctapro.com/" target="_blank"><?php esc_html_e('Learn more', 'easy-sticky-sidebar') ?></a>
         </div>
     <?php
     }
@@ -173,7 +173,7 @@ class Wordpress_CTA_Free_Utils {
                 continue;
             }
 
-            printf("\t%s%s: %s%s;", $prefix, $dimension, $value, $unit);
+            printf("\t%s%s: %s%s;", esc_attr($prefix), esc_attr($dimension), esc_attr($value), esc_attr($unit));
         }
     }
 
@@ -220,22 +220,22 @@ class Wordpress_CTA_Free_Utils {
         <ul class="wordpress-cta-dimension-field">
             <li>
                 <input type="number" name="<?php echo esc_attr($names['top']) ?>" value="<?php echo esc_attr($values->top) ?>" min="0">
-                <span><?php _e('Top', 'easy-sticky-sidebar') ?></span>
+                <span><?php esc_html_e('Top', 'easy-sticky-sidebar') ?></span>
             </li>
 
             <li>
                 <input type="number" name="<?php echo esc_attr($names['right']) ?>" value="<?php echo esc_attr($values->right) ?>" min="0">
-                <span><?php _e('Right', 'easy-sticky-sidebar') ?></span>
+                <span><?php esc_html_e('Right', 'easy-sticky-sidebar') ?></span>
             </li>
 
             <li>
                 <input type="number" name="<?php echo esc_attr($names['bottom']) ?>" value="<?php echo esc_attr($values->bottom) ?>" min="0">
-                <span><?php _e('Bottom', 'easy-sticky-sidebar') ?></span>
+                <span><?php esc_html_e('Bottom', 'easy-sticky-sidebar') ?></span>
             </li>
 
             <li>
                 <input type="number" name="<?php echo esc_attr($names['left']) ?>" value="<?php echo esc_attr($values->left) ?>" min="0">
-                <span><?php _e('Left', 'easy-sticky-sidebar') ?></span>
+                <span><?php esc_html_e('Left', 'easy-sticky-sidebar') ?></span>
             </li>
 
             <li class="input-link dashicons dashicons-admin-links"></li>
@@ -245,3 +245,4 @@ class Wordpress_CTA_Free_Utils {
 <?php
     }
 }
+

@@ -2,6 +2,10 @@
 
 namespace EasyStickySidebar;
 
+if (!defined('ABSPATH')) {
+	exit;
+}
+
 /**
  * Filter Class for templates
  * @since 1.5.0

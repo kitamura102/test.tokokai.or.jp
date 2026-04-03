@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+	exit;
+}
 
 /*
  * Wordpress_CTA_Pro_Content tab option
@@ -75,6 +78,9 @@ class Wordpress_CTA_Free_Floating_Buttons {
      * @since 1.4.5
      */
     public function generate_css($stickycta) {
+        if (empty($stickycta) || $stickycta->sidebar_template !== 'floating-buttons') {
+            return;
+        }
         $wrapper = sprintf('.easy-sticky-sidebar.easy-sticky-sidebar-%d', $stickycta->__get('id'));
 
 
@@ -97,7 +103,7 @@ class Wordpress_CTA_Free_Floating_Buttons {
 
         if ($stickycta->enable_cta_width == 'yes' && absint($stickycta->cta_width) > 0) {
             $unit = empty($stickycta->cta_width_unit) ? 'px' : $stickycta->cta_width_unit;
-            printf("\twidth: %d%s;\n", esc_html($stickycta->cta_width), $unit);
+            printf("\twidth: %d%s;\n", absint($stickycta->cta_width), esc_attr($unit));
         }
 
         Easy_Sticky_CTA_Generate_CSS::get_font_style($stickycta->default_font_family);
@@ -106,14 +112,14 @@ class Wordpress_CTA_Free_Floating_Buttons {
         $style = ob_get_clean();
 
         if (!empty($style)) {
-            printf('%s {%s}', $wrapper, $style);
+            printf('%s {%s}', esc_html($wrapper), esc_html($style));
         }
 
         echo '@media screen and (min-width: 768px) and (max-width: 1024px){';
         printf("%s {\n", esc_html($wrapper));
         if ($stickycta->enable_cta_width == 'yes' && absint($stickycta->cta_tablet_width) > 0) {
             $unit = empty($stickycta->cta_tablet_width_unit) ? 'px' : $stickycta->cta_tablet_width_unit;
-            printf("\twidth: %d%s;\n", esc_html($stickycta->cta_tablet_width), $unit);
+            printf("\twidth: %d%s;\n", absint($stickycta->cta_tablet_width), esc_attr($unit));
         }
         echo "}\n\n";
         echo '}';
@@ -122,7 +128,7 @@ class Wordpress_CTA_Free_Floating_Buttons {
         printf("%s {\n", esc_html($wrapper));
         if ($stickycta->enable_cta_width == 'yes' && absint($stickycta->cta_mobile_width) > 0) {
             $unit = empty($stickycta->cta_mobile_width_unit) ? 'px' : $stickycta->cta_mobile_width_unit;
-            printf("\twidth: %d%s;\n", esc_html($stickycta->cta_mobile_width), esc_html($unit));
+            printf("\twidth: %d%s;\n", absint($stickycta->cta_mobile_width), esc_attr($unit));
         }
 
         echo "}\n\n";
@@ -149,7 +155,7 @@ class Wordpress_CTA_Free_Floating_Buttons {
         $button_style = ob_get_clean();
 
         if (!empty($button_style)) {
-            printf("%s li {%s}\n", esc_html($wrapper), $button_style);
+            printf("%s li {%s}\n", esc_html($wrapper), esc_html($button_style));
         }
 
         $floating_buttons = self::get_buttons($stickycta);
@@ -174,7 +180,7 @@ class Wordpress_CTA_Free_Floating_Buttons {
             $button_style = ob_get_clean();
 
             if (!empty($button_style)) {
-                printf('%s li.floating-button-%d {%s}', $wrapper, $key, $button_style);
+                printf('%s li.floating-button-%d {%s}', esc_html($wrapper), absint($key), esc_html($button_style));
             }
         }
     }
@@ -186,9 +192,9 @@ class Wordpress_CTA_Free_Floating_Buttons {
     public function style_options($stickycta) {
         if (has_action('easy_sticky_sidebar_floating_buttons_style')) : ?>
             <details class="easy-sticky-sidebar-fieldset floating-buttons-options <?php echo esc_attr(Wordpress_CTA_Free_Utils::pro_tab_class('easy_sticky_sidebar_floating_buttons_style')); ?>" id="section-floating-button-style-options">
-                <summary class="heading"><?php _e("Floating Button Options", "easy-sticky-sidebar"); ?></summary>
-                <div class="gap-5"></div>
-                <p class="wordpress-cta-instruction">If you edit an individual button, that style will override the global style for only that button.</p>
+            <summary class="heading"><?php esc_html_e("Floating Button Options", "easy-sticky-sidebar"); ?></summary>
+            <div class="gap-5"></div>
+            <p class="wordpress-cta-instruction"><?php esc_html_e('If you edit an individual button, that style will override the global style for only that button.', 'easy-sticky-sidebar'); ?></p>
                 <?php do_action('easy_sticky_sidebar_floating_buttons_style', $stickycta); ?>
             </details>
         <?php endif;
@@ -200,11 +206,11 @@ class Wordpress_CTA_Free_Floating_Buttons {
      */
     public function floating_buttons_options($stickycta) {
         $floating_buttons = self::get_buttons($stickycta); ?>
-        <div id="floating-buttons-options" data-button-default-args='<?php echo wp_json_encode(self::get_data()) ?>' data-buttons='<?php echo wp_json_encode(self::get_buttons($stickycta)) ?>'>
-            <div class="heading"><?php _e('Floating Buttons', 'easy-sticky-sidebar') ?></div>
+        <div id="floating-buttons-options" data-button-default-args='<?php echo esc_attr(wp_json_encode(self::get_data())); ?>' data-buttons='<?php echo esc_attr(wp_json_encode(self::get_buttons($stickycta))); ?>'>
+            <div class="heading"><?php esc_html_e('Floating Buttons', 'easy-sticky-sidebar'); ?></div>
 
             <div class="SSuprydp_field_wrap">
-                <h4 class="heading"><?php _e('Hide Text', 'easy-sticky-sidebar') ?></h4>
+                <h4 class="heading"><?php esc_html_e('Hide Text', 'easy-sticky-sidebar'); ?></h4>
                 <label class="SSuprydp_switch">
                     <input type="hidden" name="hide_floating_button_text" value="no">
                     <input type="checkbox" name="hide_floating_button_text" value="yes" <?php checked('yes', $stickycta->hide_floating_button_text) ?> class="checkbox-hide-show">
@@ -219,11 +225,39 @@ class Wordpress_CTA_Free_Floating_Buttons {
                 ?>
             </div>
 
-            <a class="btn-add-button button btn-primary" href="#"><?php _e('Add Button', 'easy-sticky-sidebar'); ?></a>
+            <a class="btn-add-button button btn-primary" href="#"><?php esc_html_e('Add Button', 'easy-sticky-sidebar'); ?></a>
         </div>
 
         <script id="tmpl-easy-sticky-sidebar-floating-button" type="text/html">
-            <?php echo $this->single_button_html($stickycta); ?>
+            <?php
+            $allowed_html = array(
+                'div' => array(
+                    'class' => array(),
+                    'data-id' => array(),
+                ),
+                'label' => array(
+                    'class' => array(),
+                ),
+                'input' => array(
+                    'class' => array(),
+                    'type' => array(),
+                    'name' => array(),
+                    'value' => array(),
+                    'placeholder' => array(),
+                ),
+                'a' => array(
+                    'href' => array(),
+                    'class' => array(),
+                ),
+                'i' => array(
+                    'class' => array(),
+                ),
+                'span' => array(
+                    'class' => array(),
+                ),
+            );
+            echo wp_kses($this->single_button_html($stickycta), $allowed_html);
+            ?>
         </script>
     <?php
     }
@@ -261,22 +295,22 @@ class Wordpress_CTA_Free_Floating_Buttons {
         ob_start() ?>
         <div class="floating-button-item" data-id="{{data.button_no}}">
             <div class="button-field-item">
-                <label><?php _e('Icon', 'easy-sticky-sidebar') ?></label>
+                <label><?php esc_html_e('Icon', 'easy-sticky-sidebar') ?></label>
                 <div class="sticky-sidebar-select-icon">
                     <input class="button-icon" type="hidden" name="floating_buttons[{{data.button_no}}][icon]" value="{{data.icon}}">
-                    <a href="#" class="button btn-primary"><?php _e('Select Icon', 'easy-sticky-sidebar') ?></a>
+                    <a href="#" class="button btn-primary"><?php esc_html_e('Select Icon', 'easy-sticky-sidebar') ?></a>
                     <i class="icon {{data.icon}}"></i>
                 </div>
             </div>
 
             <div class="button-field-item button-field-item-text">
-                <label><?php _e('Text', 'easy-sticky-sidebar') ?></label>
-                <input class="button-text" type="text" name="floating_buttons[{{data.button_no}}][text]" value="{{data.text}}" placeholder="<?php _e('Enter button text here', 'easy-sticky-sidebar') ?>">
+                <label><?php esc_html_e('Text', 'easy-sticky-sidebar') ?></label>
+                <input class="button-text" type="text" name="floating_buttons[{{data.button_no}}][text]" value="{{data.text}}" placeholder="<?php esc_attr_e('Enter button text here', 'easy-sticky-sidebar'); ?>">
             </div>
 
             <div class="button-field-item">
-                <label><?php _e('URL', 'easy-sticky-sidebar') ?></label>
-                <input type="text" name="floating_buttons[{{data.button_no}}][url]" value="{{data.url}}" placeholder="<?php _e('Enter button url here', 'easy-sticky-sidebar') ?>">
+                <label><?php esc_html_e('URL', 'easy-sticky-sidebar') ?></label>
+                <input type="text" name="floating_buttons[{{data.button_no}}][url]" value="{{data.url}}" placeholder="<?php esc_attr_e('Enter button url here', 'easy-sticky-sidebar'); ?>">
             </div>
 
             <?php do_action('easy_sticky_sidebar_floating_single_button', $stickycta); ?>
@@ -294,7 +328,7 @@ class Wordpress_CTA_Free_Floating_Buttons {
      */
     public function icon_width($stickycta) { ?>
         <div class="SSuprydp_field_wrap">
-            <label><?php _e('Button Width', 'easy-sticky-sidebar') ?></label>
+            <label><?php esc_html_e('Button Width', 'easy-sticky-sidebar') ?></label>
             <input name="floating_button_width" style="width: 50px;text-align:right" type="number" value="<?php echo esc_attr($stickycta->floating_button_width) ?>"> px
         </div>
     <?php
@@ -306,7 +340,7 @@ class Wordpress_CTA_Free_Floating_Buttons {
      */
     public function text_font_size($stickycta) { ?>
         <div class="SSuprydp_field_wrap">
-            <label><?php _e("Icon / Font Size", "easy-sticky-sidebar"); ?></label>
+            <label><?php esc_html_e("Icon / Font Size", "easy-sticky-sidebar"); ?></label>
             <input name="floating_button_font_size" style="width: 50px;text-align:right" type="number" min="0" value="<?php echo esc_attr($stickycta->floating_button_font_size) ?>"> px
         </div>
     <?php
@@ -319,12 +353,12 @@ class Wordpress_CTA_Free_Floating_Buttons {
     public function default_color($stickycta) { ?>
         <div class="easy-sticky-sidebar-group-fields">
             <div class="SSuprydp_field_wrap">
-                <label><?php _e("Color", "easy-sticky-sidebar"); ?></label>
+                <label><?php esc_html_e("Color", "easy-sticky-sidebar"); ?></label>
                 <input class="sticky-sidebar-colorpicker" type="text" name="floating_button_color" value="<?php echo esc_attr($stickycta->floating_button_color) ?>" />
             </div>
 
             <div class="SSuprydp_field_wrap">
-                <label><?php _e("Hover Color", "easy-sticky-sidebar"); ?></label>
+                <label><?php esc_html_e("Hover Color", "easy-sticky-sidebar"); ?></label>
                 <input class="sticky-sidebar-colorpicker" type="text" name="floating_button_hover_color" value="<?php echo esc_attr($stickycta->floating_button_hover_color) ?>" />
             </div>
         </div>
@@ -338,12 +372,12 @@ class Wordpress_CTA_Free_Floating_Buttons {
     public function background_color($stickycta) { ?>
         <div class="easy-sticky-sidebar-group-fields">
             <div class="SSuprydp_field_wrap">
-                <label><?php _e("Background Color", "easy-sticky-sidebar"); ?></label>
+                <label><?php esc_html_e("Background Color", "easy-sticky-sidebar"); ?></label>
                 <input class="sticky-sidebar-colorpicker" type="text" name="floating_button_background_color" value="<?php echo esc_attr($stickycta->floating_button_background_color) ?>" />
             </div>
 
             <div class="SSuprydp_field_wrap">
-                <label><?php _e("Background Hover Color", "easy-sticky-sidebar"); ?></label>
+                <label><?php esc_html_e("Background Hover Color", "easy-sticky-sidebar"); ?></label>
                 <input class="sticky-sidebar-colorpicker" type="text" name="floating_button_background_hover_color" value="<?php echo esc_attr($stickycta->floating_button_background_hover_color) ?>" />
             </div>
         </div>
@@ -360,24 +394,24 @@ class Wordpress_CTA_Free_Floating_Buttons {
 
             <div class="easy-sticky-sidebar-group-fields">
                 <div class="SSuprydp_field_wrap">
-                    <label><?php _e("Color", "easy-sticky-sidebar"); ?></label>
+                    <label><?php esc_html_e("Color", "easy-sticky-sidebar"); ?></label>
                     <input class="sticky-sidebar-colorpicker" type="text" name="floating_button_style[{{data.button_no}}][color]" value="{{data.color}}" data-name="color" />
                 </div>
 
                 <div class="SSuprydp_field_wrap">
-                    <label><?php _e("Hover Color", "easy-sticky-sidebar"); ?></label>
+                    <label><?php esc_html_e("Hover Color", "easy-sticky-sidebar"); ?></label>
                     <input type="text" name="floating_button_style[{{data.button_no}}][hover_color]" value="{{data.hover_color}}" class="sticky-sidebar-colorpicker" data-name="hover_color" />
                 </div>
             </div>
 
             <div class="easy-sticky-sidebar-group-fields">
                 <div class="SSuprydp_field_wrap">
-                    <label><?php _e("Background Color", "easy-sticky-sidebar"); ?></label>
+                    <label><?php esc_html_e("Background Color", "easy-sticky-sidebar"); ?></label>
                     <input class="sticky-sidebar-colorpicker" type="text" name="floating_button_style[{{data.button_no}}][background_color]" value="{{data.background_color}}" data-name="background_color" />
                 </div>
 
                 <div class="SSuprydp_field_wrap">
-                    <label><?php _e("Background Hover Color", "easy-sticky-sidebar"); ?></label>
+                    <label><?php esc_html_e("Background Hover Color", "easy-sticky-sidebar"); ?></label>
                     <input type="text" name="floating_button_style[{{data.button_no}}][background_hover_color]" value="{{data.background_hover_color}}" class="sticky-sidebar-colorpicker" data-name="background_hover_color" />
                 </div>
             </div>
@@ -400,8 +434,9 @@ class Wordpress_CTA_Free_Floating_Buttons {
                     $button_heading = sprintf('<i class="icon %s"></i>', esc_attr($button->icon));
                 }
 
-                $button_heading .= $button->text;
-                if (empty($button_heading)) {
+                $button_heading .= esc_html((string) $button->text);
+                if (trim(wp_strip_all_tags($button_heading)) === '') {
+                    // translators: %d: Button number.
                     $button_heading = sprintf(__("Button %d", "easy-sticky-sidebar"), $key + 1);
                 }
 
@@ -409,9 +444,10 @@ class Wordpress_CTA_Free_Floating_Buttons {
                 $this->single_buttons_style_template();
                 $single_button_html = ob_get_clean();
 
-                $data = array_merge((array) $button, array('heading' => $button_heading, 'button_no' => esc_attr($key)));
-                foreach ($data as $key => $value) {
-                    $single_button_html = preg_replace(sprintf('/({{data.%s}}|{{{data.%s}}})/', $key, $key), $value, $single_button_html);
+                $data = array_merge((array) $button, array('heading' => $button_heading, 'button_no' => absint($key)));
+                foreach ($data as $data_key => $value) {
+                    $replacement = ($data_key === 'heading') ? wp_kses_post($value) : esc_attr($value);
+                    $single_button_html = preg_replace(sprintf('/({{data.%s}}|{{{data.%s}}})/', $data_key, $data_key), $replacement, $single_button_html);
                 }
 
                 echo wp_kses_post($single_button_html);
@@ -424,3 +460,4 @@ class Wordpress_CTA_Free_Floating_Buttons {
 <?php
     }
 }
+

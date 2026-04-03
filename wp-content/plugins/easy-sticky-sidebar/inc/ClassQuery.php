@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+	exit;
+}
 
 /**
  * Easy_Sticky_Sidebar_Query
@@ -51,7 +54,20 @@ class Easy_Sticky_Sidebar_Query {
 	public function get_cta() {
 		global $wpdb;
 
-		$results = $wpdb->get_results($wpdb->prepare("SELECT * FROM $wpdb->sticky_cta WHERE SSuprydp_location = %d OR SSuprydp_location = '' ORDER BY id ASC LIMIT 0, 3", get_the_ID()));
+		$current_id = get_the_ID();
+		$is_front = is_front_page() || is_home();
+
+		if ($is_front) {
+			$results = $wpdb->get_results($wpdb->prepare(
+				"SELECT * FROM $wpdb->sticky_cta WHERE SSuprydp_location = %d OR SSuprydp_location = '' OR SSuprydp_location = 'home' OR SSuprydp_location IN ('entire_site','all') ORDER BY id ASC LIMIT 0, 3",
+				$current_id
+			));
+		} else {
+			$results = $wpdb->get_results($wpdb->prepare(
+				"SELECT * FROM $wpdb->sticky_cta WHERE SSuprydp_location = %d OR SSuprydp_location IN ('entire_site','all') ORDER BY id ASC LIMIT 0, 3",
+				$current_id
+			));
+		}
 		$results = apply_filters('easy_sticky_sidebar_query', $results);
 
 		//field keys for fonts

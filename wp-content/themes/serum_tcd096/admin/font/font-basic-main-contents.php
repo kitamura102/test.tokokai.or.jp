@@ -73,7 +73,7 @@ $dp_default_options = get_query_var('dp_default_options');
               UI\select(
                 "{$name}[latin]",
                 $value['latin'] ?? '',
-                [ '' => __( 'Unspecified','tcd-serum' ) ] + array_map(
+                [ '' => __( 'Unspecified (Japanese font will be applied)','tcd-serum' ) ] + array_map(
                   fn ( $value ) => $value['label'],
                   $tcd_font_manager->system_font_latin
                 ),
@@ -100,7 +100,7 @@ $dp_default_options = get_query_var('dp_default_options');
               UI\select(
               "{$name}[web_latin]",
               $value['web_latin'] ?? '',
-              [ '' => __( 'Unspecified','tcd-serum' ) ] + array_map(
+              [ '' => __( 'Unspecified (Japanese font will be applied)','tcd-serum' ) ] + array_map(
                 fn ( $value ) => $value['label'],
                 $tcd_font_manager->web_font_latin
               ),

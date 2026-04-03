@@ -47,6 +47,7 @@ function add_blog_dp_default_options( $dp_default_options ) {
 	$dp_default_options['archive_blog_desc_mobile'] = '';
 
 	// 詳細ページ
+  $dp_default_options['single_blog_show_mod_date'] = 'display';
 	$dp_default_options['single_blog_show_sns_top'] = 'display';
 	$dp_default_options['single_blog_show_sns_btm'] = 'display';
 	$dp_default_options['single_blog_show_copy_top'] = 'display';
@@ -223,6 +224,7 @@ function add_blog_tab_panel( $options ) {
       <p><?php _e('You can set share button design from basic setting menu in theme option page.', 'tcd-serum');  ?></p>
      </div>
      <ul class="option_list">
+      <li class="cf"><span class="label"><?php _e('Modified Date', 'tcd-serum');  ?></span><?php echo tcd_basic_radio_button($options, 'single_blog_show_mod_date', $basic_display_options); ?></li>
       <li class="cf"><span class="label"><span class="num">1</span><?php _e('Share button above post content', 'tcd-serum');  ?></span><?php echo tcd_basic_radio_button($options, 'single_blog_show_sns_top', $basic_display_options); ?></li>
       <li class="cf"><span class="label"><span class="num">2</span><?php _e('Share button under post content', 'tcd-serum');  ?></span><?php echo tcd_basic_radio_button($options, 'single_blog_show_sns_btm', $basic_display_options); ?></li>
       <li class="cf"><span class="label"><span class="num">3</span><?php _e('"COPY Title&amp;URL" button under title', 'tcd-serum');  ?></span><?php echo tcd_basic_radio_button($options, 'single_blog_show_copy_top', $basic_display_options); ?></li>
@@ -424,11 +426,12 @@ function add_blog_theme_options_validate( $input ) {
   $input['archive_blog_header_bg_image'] = wp_filter_nohtml_kses( $input['archive_blog_header_bg_image'] );
   $input['archive_blog_header_overlay_color'] = wp_filter_nohtml_kses( $input['archive_blog_header_overlay_color'] );
   $input['archive_blog_header_overlay_opacity'] = wp_filter_nohtml_kses( $input['archive_blog_header_overlay_opacity'] );
-  $input['archive_blog_desc'] = wp_filter_nohtml_kses( $input['archive_blog_desc'] );
-  $input['archive_blog_desc_mobile'] = wp_filter_nohtml_kses( $input['archive_blog_desc_mobile'] );
+  $input['archive_blog_desc'] = wp_kses_post( $input['archive_blog_desc'] );
+  $input['archive_blog_desc_mobile'] = wp_kses_post( $input['archive_blog_desc_mobile'] );
 
 
   // 記事ページ
+  $input['single_blog_show_mod_date'] = wp_filter_nohtml_kses( $input['single_blog_show_mod_date'] );
   $input['single_blog_show_sns_top'] = wp_filter_nohtml_kses( $input['single_blog_show_sns_top'] );
   $input['single_blog_show_sns_btm'] = wp_filter_nohtml_kses( $input['single_blog_show_sns_btm'] );
   $input['single_blog_show_copy_top'] = wp_filter_nohtml_kses( $input['single_blog_show_copy_top'] );

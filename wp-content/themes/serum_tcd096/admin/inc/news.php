@@ -53,6 +53,7 @@ function add_news_dp_default_options( $dp_default_options ) {
 	$dp_default_options['archive_news_num_sp'] = '6';
 
 	// 詳細ページ
+  $dp_default_options['single_news_show_mod_date'] = 'display';
 	$dp_default_options['single_news_show_sns_top'] = 'display';
 	$dp_default_options['single_news_show_sns_btm'] = 'display';
 	$dp_default_options['single_news_show_copy_top'] = 'display';
@@ -218,6 +219,7 @@ function add_news_tab_panel( $options ) {
       <p><?php _e('You can set share button design from basic setting menu in theme option page.', 'tcd-serum');  ?></p>
      </div>
      <ul class="option_list">
+      <li class="cf"><span class="label"><?php _e('Modified Date', 'tcd-serum');  ?></span><?php echo tcd_basic_radio_button($options, 'single_news_show_mod_date', $basic_display_options); ?></li>
       <li class="cf"><span class="label"><span class="num">1</span><?php _e('Share button above post content', 'tcd-serum');  ?></span><?php echo tcd_basic_radio_button($options, 'single_news_show_sns_top', $basic_display_options); ?></li>
       <li class="cf"><span class="label"><span class="num">2</span><?php _e('Share button under post content', 'tcd-serum');  ?></span><?php echo tcd_basic_radio_button($options, 'single_news_show_sns_btm', $basic_display_options); ?></li>
       <li class="cf"><span class="label"><span class="num">3</span><?php _e('"COPY Title&amp;URL" button under title', 'tcd-serum');  ?></span><?php echo tcd_basic_radio_button($options, 'single_news_show_copy_top', $basic_display_options); ?></li>
@@ -377,6 +379,7 @@ function add_news_theme_options_validate( $input ) {
 
 
   //詳細ページ
+  $input['single_news_show_mod_date'] = wp_filter_nohtml_kses( $input['single_news_show_mod_date'] );
   $input['single_news_show_sns_top'] = wp_filter_nohtml_kses( $input['single_news_show_sns_top'] );
   $input['single_news_show_sns_btm'] = wp_filter_nohtml_kses( $input['single_news_show_sns_btm'] );
   $input['single_news_show_copy_top'] = wp_filter_nohtml_kses( $input['single_news_show_copy_top'] );

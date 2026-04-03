@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Akismet Anti-spam: Spam Protection - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-11-12 16:51:25+0000\n"
+"PO-Revision-Date: 2026-01-09 13:51:10+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -113,6 +113,11 @@ msgstr "%s のドキュメント"
 #: views/compatible-plugins.php:62
 msgid "%s logo"
 msgstr "%s logo"
+
+#: views/compatible-plugins.php:33
+msgid "This plugin you've installed is compatible. Follow the documentation link to get started."
+msgid_plural "These plugins you've installed are compatible. Follow the documentation links to get started."
+msgstr[0] "インストールしたこのプラグインは互換性があります。ドキュメントのリンクに従って開始してください。"
 
 #: views/compatible-plugins.php:29
 msgid "See supported integrations"
@@ -262,6 +267,11 @@ msgstr "(新しいタブで開く)"
 #: views/notice.php:370
 msgid "Upgrade to %s"
 msgstr "%s へのアップグレード"
+
+#: views/notice.php:312 views/notice.php:320 views/notice.php:328
+#: views/notice.php:337
+msgid "Learn more about usage limits"
+msgstr "利用制限について詳しくはこちら。"
 
 #. translators: The first placeholder is a date, the second is a (formatted)
 #. number, the third is another formatted number.
@@ -577,6 +587,11 @@ msgstr[0] "Akismet は合計%s日を節約しました。"
 #: class.akismet-admin.php:283
 msgid "Akismet filters out spam, so you can focus on more important things."
 msgstr "Akismet はスパムをフィルターし、あなたがもっと重要なことに集中できるようにします。"
+
+#. translators: The placeholder is a URL.
+#: views/notice.php:264
+msgid "The connection to akismet.com could not be established. Please refer to <a class=\"akismet-external-link\" href=\"%s\" target=\"_blank\">our guide about firewalls</a> and check your server configuration."
+msgstr "akismet.com との接続を確立できませんでした。 <a class=\"akismet-external-link\" href=\"%s\" target=\"_blank\">ファイアウォールに関するガイド</a>を参照し、サーバー設定を確認してください。"
 
 #: views/notice.php:258
 msgid "The API key you entered could not be verified."

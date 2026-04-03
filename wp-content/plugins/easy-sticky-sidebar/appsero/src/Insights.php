@@ -2,6 +2,10 @@
 
 namespace Appsero;
 
+if (!defined('ABSPATH')) {
+	exit;
+}
+
 /**
  * Appsero Insights
  *
@@ -381,8 +385,8 @@ class Insights {
 			echo '<div class="updated"><p>';
 			echo wp_kses_post($notice);
 			echo '</p><p class="submit">';
-			echo '&nbsp;<a href="' . esc_url($optin_url) . '" class="button-primary button-large">' . $this->client->__trans('Allow') . '</a>';
-			echo '&nbsp;<a href="' . esc_url($optout_url) . '" class="button-secondary button-large">' . $this->client->__trans('No thanks') . '</a>';
+			echo '&nbsp;<a href="' . esc_url($optin_url) . '" class="button-primary button-large">' . esc_html($this->client->__trans('Allow')) . '</a>';
+			echo '&nbsp;<a href="' . esc_url($optout_url) . '" class="button-secondary button-large">' . esc_html($this->client->__trans('No thanks')) . '</a>';
 			echo '</p></div>';
 
 			esc_html("<script type='text/javascript'>jQuery('." . $this->client->slug . "-insights-data-we-collect').on('click', function(e) {
@@ -452,7 +456,7 @@ class Insights {
 	public function get_post_count($post_type) {
 		global $wpdb;
 
-		return (int) $wpdb->get_var("SELECT count(ID) FROM $wpdb->posts WHERE post_type = '$post_type' and post_status = 'publish'");
+		return (int) $wpdb->get_var($wpdb->prepare("SELECT count(ID) FROM $wpdb->posts WHERE post_type = %s and post_status = 'publish'", $post_type));
 	}
 
 	/**
@@ -522,22 +526,22 @@ class Insights {
 		foreach ($plugins as $k => $v) {
 			// Take care of formatting the data how we want it.
 			$formatted = array();
-			$formatted['name'] = strip_tags($v['Name']);
+			$formatted['name'] = wp_strip_all_tags($v['Name']);
 
 			if (isset($v['Version'])) {
-				$formatted['version'] = strip_tags($v['Version']);
+				$formatted['version'] = wp_strip_all_tags($v['Version']);
 			}
 
 			if (isset($v['Author'])) {
-				$formatted['author'] = strip_tags($v['Author']);
+				$formatted['author'] = wp_strip_all_tags($v['Author']);
 			}
 
 			if (isset($v['Network'])) {
-				$formatted['network'] = strip_tags($v['Network']);
+				$formatted['network'] = wp_strip_all_tags($v['Network']);
 			}
 
 			if (isset($v['PluginURI'])) {
-				$formatted['plugin_uri'] = strip_tags($v['PluginURI']);
+				$formatted['plugin_uri'] = wp_strip_all_tags($v['PluginURI']);
 			}
 
 			if (in_array($k, $active_plugins_keys)) {
@@ -765,7 +769,7 @@ class Insights {
 <div class="wd-dr-modal" id="<?php echo esc_attr($this->client->slug); ?>-wd-dr-modal">
     <div class="wd-dr-modal-wrap">
         <div class="wd-dr-modal-header">
-            <h3><?php $this->client->_etrans('If you have a moment, please let us know why you are deactivating:'); ?>
+            <h3><?php echo esc_html($this->client->__trans('If you have a moment, please let us know why you are deactivating:')); ?>
             </h3>
         </div>
 
@@ -788,12 +792,12 @@ class Insights {
         </div>
 
         <input type="hidden" id="unistall-nonce"
-            value="<?php echo wp_create_nonce('_nonce_unistall_easy_sticky_sidebar') ?>">
+            value="<?php echo esc_attr(wp_create_nonce('_nonce_unistall_easy_sticky_sidebar')); ?>">
 
         <div class="wd-dr-modal-footer">
-            <a href="#" class="dont-bother-me"><?php $this->client->_etrans("I rather wouldn't say"); ?></a>
-            <button class="button-secondary"><?php $this->client->_etrans('Submit & Deactivate'); ?></button>
-            <button class="button-primary"><?php $this->client->_etrans('Cancel'); ?></button>
+            <a href="#" class="dont-bother-me"><?php echo esc_html($this->client->__trans("I rather wouldn't say")); ?></a>
+            <button class="button-secondary"><?php echo esc_html($this->client->__trans('Submit & Deactivate')); ?></button>
+            <button class="button-primary"><?php echo esc_html($this->client->__trans('Cancel')); ?></button>
         </div>
     </div>
 </div>
@@ -854,10 +858,10 @@ class Insights {
 <script type="text/javascript">
 (function($) {
     $(function() {
-        var modal = $('#<?php echo $this->client->slug; ?>-wd-dr-modal');
+        var modal = $('#<?php echo esc_js($this->client->slug); ?>-wd-dr-modal');
         var deactivateLink = '';
 
-        $('#the-list').on('click', 'a.<?php echo $this->client->slug; ?>-deactivate-link', function(e) {
+        $('#the-list').on('click', 'a.<?php echo esc_js($this->client->slug); ?>-deactivate-link', function(e) {
             e.preventDefault();
 
             modal.addClass('modal-active');
@@ -908,7 +912,7 @@ class Insights {
                 url: ajaxurl,
                 type: 'POST',
                 data: {
-                    action: '<?php echo esc_html($this->client->slug); ?>_submit-uninstall-reason',
+                    action: '<?php echo esc_js($this->client->slug); ?>_submit-uninstall-reason',
                     reason_id: (0 === $radio.length) ? 'none' : $radio.val(),
                     reason_info: (0 !== $input.length) ? $input.val().trim() : '',
                     nonce: unistall_nonce
