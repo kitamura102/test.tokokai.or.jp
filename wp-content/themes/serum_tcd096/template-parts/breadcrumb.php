@@ -148,7 +148,18 @@
       $category = get_the_category();
  ?>
  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="home"><a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>"><span itemprop="name"><?php _e('Home', 'tcd-serum'); ?></span></a><meta itemprop="position" content="1"></li>
- <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/info"><span itemprop="name"><?php echo "お知らせ"; ?></span></a><meta itemprop="position" content="2"></li>
+ <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>"><span itemprop="name"><?php echo esc_html($blog_label); ?></span></a><meta itemprop="position" content="2"></li>
+ <?php if($category) { ?>
+ <li class="category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <?php
+       $count=1;
+       foreach ($category as $cat) {
+  ?>
+  <a itemprop="item" href="<?php echo esc_url(get_category_link($cat->term_id)); ?>"><span itemprop="name"><?php echo esc_html($cat->name); ?></span></a>
+  <?php $count++; } ?>
+  <meta itemprop="position" content="3">
+ </li>
+ <?php }; ?>
  <li class="last" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name"><?php the_title_attribute(); ?></span><meta itemprop="position" content="<?php if ( $category ) { echo '4'; } else { echo '3'; }; ?>"></li>
  <?php }; ?>
  </ul>

@@ -5,7 +5,7 @@ Theme URI:https://tcd-theme.com/tcd096/
 Description:WordPress theme "SERUM" is a template with the image of a dermatology clinic, featuring side icon buttons and a post type that allows you to organize the subjects of treatment. CTAs can also be easily set up.
 Author:TCD
 Author URI:https://tcd-theme.com/
-Version:2.8.2
+Version:2.9
 Text Domain:tcd-serum
 */
 
@@ -76,7 +76,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border:0; padding:0; }
 iframe { max-width:100%; }
 svg { display:block; }
 *:focus { outline:none; }
-h1, h2, h3, h4, h5, h6 { font-weight:400; }
+h1, h2, h3, h4, h5, h6 { font-weight:600; }
 
 /* clearfix */
 .clearfix::after { display:block; clear:both; content:""; }
@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 { font-weight:400; }
 ---------------------------------------------------------------------- */
 html { height:100%; position:relative; }
 html:before { content:''; width:100%; height:80px; position:absolute; top:0; left:0; background:#fff; z-index:-1; }
-body { overflow-x:hidden; height:100%; padding:80px 80px 0; font-family:Arial,sans-serif; font-size:16px; /*line-height:1.8; */width:100%; position:relative; -webkit-font-smoothing:antialiased; }
+body { overflow-x:hidden; height:100%; padding:80px 80px 0; font-family:Arial,sans-serif; font-size:14px; line-height:1; width:100%; position:relative; -webkit-font-smoothing:antialiased; }
 body.hide_page_side_bar { padding-right:0; padding-left:0; }
 body.hide_page_header_bar { padding-top:0; }
 body.admin-bar { padding-top:102px; }
@@ -143,8 +143,7 @@ body.single-news #main_content { background:#f6f6f6; padding-top:80px; }
 #header_slider .item > a { width:100%; height:100%; position:relative; overflow:hidden; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; }
 
 #header_slider .catch { padding:110px 100px 100px; color:#fff; text-align:center; z-index:3; line-height:1.7; }
-/*#header_slider .catch.direction_type2 { writing-mode:vertical-rl; display:inline-block; text-align:left; }*/
-#header_slider .catch.direction_type2 { display:inline-block; text-align:left; }
+#header_slider .catch.direction_type2 { writing-mode:vertical-rl; display:inline-block; text-align:left; }
 #header_slider .common_catch span { display:block; position:relative; transition: transform 1.8s ease, opacity 1.8s ease; transform: translate3d(0,30px,0); opacity:0; }
 #header_slider .common_catch span.animate { transform: translate3d(0,0,0); opacity:1; }
 
@@ -357,7 +356,7 @@ body.page_width_small .cb_free_space .post_content { width:750px; margin-left:au
 #page_header { width:calc(100% + 2px); margin:0 -1px; height:400px; position:relative; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; }
 #page_header.type2 { height:730px; }
 #page_header .catch { max-height:100%; padding:0; color:#fff; text-align:center; z-index:3; line-height:1.6; }
-#page_header .catch.direction_type2 { writing-mode:horizontal-tb; display:inline-block; text-align:left; }
+#page_header .catch.direction_type2 { writing-mode:vertical-rl; display:inline-block; text-align:left; }
 #page_header .catch span { display:block; position:relative; transition: transform 1.8s ease, opacity 1.8s ease; transform: translate3d(0,30px,0); opacity:0; }
 #page_header .catch span.animate { transform: translate3d(0,0,0); opacity:1; }
 #page_header .overlay { width:100%; height:100%; position:absolute; top:0px; left:0px; z-index:2; }
@@ -826,11 +825,10 @@ body.hide_page_header.hide_page_header_bar #header:after { display:none; }
 @media screen and (max-width:800px) {
   body.no_header_logo_image_mobile #header_logo{ display:none; }
 }
-#header_logo { width:210px; height:210px; position:absolute; left:0; top:0; display:inline-block; z-index:2000; }
+#header_logo { width:210px; height:210px; background:#fff; position:absolute; left:0; top:0; display:inline-block; z-index:2000; }
 #header_logo img { display:block; transition: opacity 0.3s ease-in-out; max-width:100%; height:auto; }
 #header_logo img.mobile { display:none; }
-/*#header_logo a { width:210px; height:210px; display:block; padding:20px; aspect-ratio:1/1; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; transition:opacity 1.4s ease 0.5s; }*/
-#header_logo a {padding:20px; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; transition:opacity 1.4s ease 0.5s;}
+#header_logo a { width:210px; height:210px; display:block; padding:20px; aspect-ratio:1/1; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; transition:opacity 1.4s ease 0.5s; }
 #header_logo a:hover img { opacity:0.5; }
 #header_logo a .logo_text { font-weight:500; line-height:1.4; }
 #header_logo a:hover .logo_text { }
@@ -879,7 +877,7 @@ body.no_header_logo_image.hide_page_header_bar.close_header #header_logo2 { disp
 #site_desc { width:80px; height:100vh; position:fixed; left:0; top:0px; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; }
 body.home #site_desc { opacity:0; }
 body.home #site_desc.animate { opacity:1; transition:opacity 1.4s ease 2.0s; }
-#site_desc .desc { color:#413126; font-size:16px; writing-mode:vertical-rl; display:inline-block; text-align:left; position:relative;}
+#site_desc .desc { font-size:16px; font-weight:500; writing-mode:vertical-rl; display:inline-block; text-align:left; position:relative; }
 
 
 /* グローバルメニュー */
@@ -887,7 +885,7 @@ body.hide_page_header_bar #global_menu { display:none; }
 #global_menu { width:100%; height:80px; z-index:2; position:absolute; top:0; left:50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); z-index:1; }
 #global_menu > ul { position:relative; text-align:center; font-size:0; }
 #global_menu > ul > li { display:inline-block; position:relative; line-height:1; text-align:center; font-size:16px; }
-#global_menu > ul > li > a { text-decoration:none; height:80px; line-height:80px; padding:0 19px; display:block; position:relative; overflow:hidden; color:#413126; }
+#global_menu > ul > li > a { color:#000; text-decoration:none; height:80px; line-height:80px; padding:0 19px; display:block; position:relative; overflow:hidden; }
 #global_menu > ul > li.active > a { }
 #global_menu ul ul { background:#f3f3f3; display:none; width:250px; position:absolute; top:80px; margin:0; padding:0; z-index:100; }
 #global_menu ul ul ul { left: 100%; top:0 !important; margin:0; }
@@ -959,8 +957,8 @@ body.hide_page_header_bar.close_header #side_icon_button { top:-80px !important;
   100%{ transform: translate3d(0,-100%,0); opacity:0; }
 }
 #side_icon_button .item { width:81px; height:80px; }
-#side_icon_button a { color:#289e74; width:100%; height:100%; display:block; position:relative; border-bottom:1px solid #ddd; display:flex; flex-wrap:wrap; flex-direction:column; justify-content:center; align-items:center; }
-#side_icon_button a.no_icon { /*background:#289e74; border-color:#289e74; */color:#fff !important; }
+#side_icon_button a { color:#937960; width:100%; height:100%; display:block; position:relative; border-bottom:1px solid #ddd; display:flex; flex-wrap:wrap; flex-direction:column; justify-content:center; align-items:center; }
+#side_icon_button a.no_icon { background:#937960; border-color:#937960; color:#fff !important; }
 #side_icon_button .item:first-of-type a { border-top:1px solid #ddd; }
 #side_icon_button a:hover span, #side_icon_button a:hover:before { opacity:0.5; }
 #side_icon_button a.no_icon:hover span, #side_icon_button a.no_icon:hover:before { opacity:1; }
@@ -1025,14 +1023,14 @@ body.page_width_large #bread_crumb ul { width:1100px; }
 body.page_width_small #bread_crumb ul { width:750px; }
 #bread_crumb li { display:inline; font-size:14px; margin:0 10px 0 0; padding:0 20px 0 0; position:relative; }
 #bread_crumb li:after {
-  font-family:'design_plus'; content:'\e910'; font-size:11px; color:#413126;
+  font-family:'design_plus'; content:'\e910'; font-size:11px; color:#000;
   display:block; height:13px; line-height:13px;
   position:absolute; right:0px; top:2px;
 }
 #bread_crumb li:last-of-type:after { display:none; }
 #bread_crumb, #bread_crumb li.last { }
 #bread_crumb li a {
-	color:#413126;display:inline-block;
+	color:#000;display:inline-block;
   -webkit-transition: opacity 0.2s ease-in-out; transition: opacity 0.2s ease-in-out;
 }
 #bread_crumb li a:hover { opacity:0.5; }
@@ -1041,7 +1039,7 @@ body.page_width_small #bread_crumb ul { width:750px; }
 #bread_crumb li.home a { position:relative; width:16px; }
 #bread_crumb li.home a span { opacity:0; }
 #bread_crumb li.home a:before {
-  font-family:'design_plus'; content:'\e90c'; font-size:12px; color:#413126;
+  font-family:'design_plus'; content:'\e90c'; font-size:12px; color:#000;
   display:inline-block; top:0px; position:relative;
   -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
 }
@@ -1168,8 +1166,8 @@ body.hide_blog_date .megamenu_b .post_list .title a { height:auto; max-height:4.
 #footer_icon_banner .item { flex: 1 1 0%; }
 #footer_icon_banner .item a { display:block; width:100%; height:70px; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; border-right:1px solid #ddd; }
 #footer_icon_banner .item:last-of-type a { border-right:none; }
-#footer_icon_banner a:before { color:#e36093; margin:0 12px 0 0; }
-#footer_icon_banner a span { color:#413126; transition: color 0.1s ease;}
+#footer_icon_banner a:before { color:#937960; margin:0 12px 0 0; }
+#footer_icon_banner a span { transition: color 0.1s ease; }
 
 
 /* ロゴエリア */
@@ -1192,7 +1190,7 @@ body.hide_blog_date .megamenu_b .post_list .title a { height:auto; max-height:4.
 /* メニュー */
 .footer_menu li { margin:0 0 30px 0; font-size:14px; }
 .footer_menu li:last-of-type { margin:0; }
-.footer_menu li a { display:block; color:#413126;}
+.footer_menu li a { display:block; }
 .footer_menu li a:hover { color:rgba(0,0,0,0.5) !important; }
 
 /* 住所 */
@@ -1205,7 +1203,7 @@ body.hide_blog_date .megamenu_b .post_list .title a { height:auto; max-height:4.
 
 /* 上部へ戻る*/
 #return_top { opacity:0; transition: opacity 0.5s ease; position:fixed; right:0px; bottom:0px; display:flex; flex-wrap:wrap; justify-content:center; align-items:end; z-index:2; }
-#return_top a { color:#413126; width:80px; line-height:80px; font-size:14px; font-weight:500; writing-mode:vertical-rl; display:inline-block; text-align:left; position:relative; padding:60px 0 30px 0; }
+#return_top a { color:#000; width:80px; line-height:80px; font-size:14px; font-weight:500; writing-mode:vertical-rl; display:inline-block; text-align:left; position:relative; padding:60px 0 30px 0; }
 #return_top a:before { content:'\e90f'; font-family:'design_plus'; display:block; transform:rotate(90deg); position:absolute; top:35px; }
 #return_top.active { opacity:1; }
 #return_top span, #return_top a:before { transition: opacity 0.2s ease; }
@@ -1880,7 +1878,7 @@ a.guest-url { text-decoration:underline; }
  WordPress プリセットスタイル
 ---------------------------------------------------------------------- */
 .post_content *:first-child { margin-top:0; }
-/*.post_content *:last-child { margin-bottom:0; }*/
+.post_content *:last-child { margin-bottom:0; }
 
 /* パスワード保護 */
 .c-pw__desc, .c-pw__desc p { line-height:2.5; }
@@ -1919,25 +1917,6 @@ a.guest-url { text-decoration:underline; }
 @media screen and (max-width:550px) {
   .c-pw__box-label { margin:0 0 15px 0; width:100%; }
 }
-
-
-/* Cardlink style - カードリンクのスタイル */
-.cardlink { word-wrap: break-word; max-width: 100%; margin: 45px 0 !important; padding: 12px; border: 1px solid #ddd; background: #fafafa; }
-.cardlink_thumbnail { margin-right: 20px; float: left; }
-.cardlink_content { line-height: 1.6; }
-.cardlink_timestamp { display: inline; margin: 0; padding: 0; color: #222; font-size: 12px; line-height: 1.6; vertical-align: top; }
-.cardlink_title { margin: 0 0 5px; font-size: 14px; }
-.cardlink_title a { color: #000; font-weight: bold; text-decoration: none; }
-.cardlink_title a:hover { text-decoration: underline; }
-.cardlink_excerpt { overflow: hidden; color: #333; font-size: 12px; line-height: 1.8; }
-.cardlink_footer { clear: both; }
-.clear { clear: both; }
-@media screen and (max-width: 767px) {
-  .cardlink_thumbnail { float: none; }
-  .cardlink_timestamp { line-height: 2.4; vertical-align: middle; }
-  .cardlink_excerpt { float: none; }
-}
-
 
 /* Google Mapの設定 */
 .p-btn {
@@ -2218,9 +2197,3 @@ font-size: smaller;
 #page_404_header .tcdce-button {
   text-decoration: none !important;
 }
-
-#footer_icon_banner a:before { color:#289e74;}
-#site_desc .desc{ color:#413126; }
-#footer_icon_banner a span { color:#413126; }
-.footer_menu li a { color:#413126;}
-#global_menu > ul > li > a{ color:#413126;}
